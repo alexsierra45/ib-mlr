@@ -1,0 +1,292 @@
+query,long_common_name,component,system,property
+glucose in blood,Glucose [Moles/volume] in Blood,Glucose,Bld,SCnc
+glucose in blood,Glucose [Mass/volume] in Blood,Glucose,Bld,MCnc
+glucose in blood,Glucose [Mass/volume] in Capillary blood --baseline,Glucose^baseline,BldC,MCnc
+glucose in blood,Glucose [Mass/volume] in Venous blood,Glucose,BldV,MCnc
+glucose in blood,Glucose [Moles/volume] in Arterial blood,Glucose,BldA,SCnc
+glucose in blood,Glucose [Moles/volume] in Capillary blood,Glucose,BldC,SCnc
+glucose in blood,Glucose [Moles/volume] in Venous blood,Glucose,BldV,SCnc
+glucose in blood,Glucose [Mass/volume] in Arterial blood,Glucose,BldA,MCnc
+glucose in blood,Glucose [Mass/volume] in Blood --2 hours post dose glucose,Glucose^2H post dose glucose,Bld,MCnc
+glucose in blood,Glucose [Mass/volume] in Arterial blood by Glucometer,Glucose,BldA,MCnc
+glucose in blood,Glucose [Mass/volume] in Capillary blood,Glucose,BldC,MCnc
+glucose in blood,Glucose [Mass/volume] in Venous blood by Glucometer,Glucose,BldV,MCnc
+glucose in blood,Glucose [Moles/volume] in Cord blood,Glucose,BldCo,SCnc
+glucose in blood,Blood glucose monitor attachment,Blood glucose monitors attachment,^Patient,Find
+glucose in blood,Fasting glucose [Moles/volume] in Venous blood,Glucose^post CFst,BldV,SCnc
+glucose in blood,Glucose [Mass/volume] in DBS,Glucose,Bld.dot,MCnc
+glucose in blood,Glucose [Mass/volume] in Blood --pre-meal,Glucose^pre-meal,Bld,MCnc
+glucose in blood,Glucose [Mass/volume] in Capillary blood by Glucometer,Glucose,BldC,MCnc
+glucose in blood,Glucose [Moles/volume] in Capillary blood by Glucometer,Glucose,BldC,SCnc
+glucose in blood,Glucose mean value [Mass/volume] in Blood Estimated from glycated hemoglobin,Estimated average glucose,Bld,MCnc
+glucose in blood,Glucose mean value [Moles/volume] in Blood Estimated from glycated hemoglobin,Estimated average glucose,Bld,SCnc
+glucose in blood,Fasting glucose [Mass/volume] in Capillary blood,Glucose^post CFst,BldC,MCnc
+glucose in blood,Glucose [Moles/volume] in Capillary blood by Glucometer --7 AM specimen,Glucose^7 AM specimen,BldC,SCnc
+glucose in blood,Fasting glucose [Mass/volume] in Venous blood,Glucose^post CFst,BldV,MCnc
+glucose in blood,Glucose [Mass/volume] in Blood --post meal,Glucose^post meal,Bld,MCnc
+glucose in blood,Glucose [Moles/volume] in Mixed venous blood,Glucose,BldMV,SCnc
+glucose in blood,Glucose [Mass/volume] in Mixed venous blood,Glucose,BldMV,MCnc
+glucose in blood,Glucose [Moles/volume] in Blood by Automated test strip,Glucose,Bld,SCnc
+glucose in blood,Fasting glucose [Moles/volume] in Blood,Glucose^post CFst,Bld,SCnc
+glucose in blood,Glucose [Mass/volume] in Blood by Test strip manual,Glucose,Bld,MCnc
+glucose in blood,Glucose [Mass/volume] in Blood by Automated test strip,Glucose,Bld,MCnc
+glucose in blood,Fasting glucose [Mass/volume] in Capillary blood by Glucometer,Glucose^post CFst,BldC,MCnc
+glucose in blood,Fasting glucose [Moles/volume] in Capillary blood by Glucometer,Glucose^post CFst,BldC,SCnc
+bilirubin in plasma,Bilirubin.indirect [Measurement] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,{Measurement}
+bilirubin in plasma,Bilirubin.conjugated+indirect [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.non-glucuronidated,Ser/Plas,MCnc
+bilirubin in plasma,Bilirubin.conjugated+indirect [Moles/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.non-glucuronidated,Ser/Plas,SCnc
+bilirubin in plasma,Neonatal bilirubin panel [Mass/volume] - Serum or Plasma,Neonatal bilirubin panel,Ser/Plas,MCnc
+bilirubin in plasma,Deprecated Indirect bilirubin [Mass/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MCnc
+bilirubin in plasma,Bilirubin.direct [Measurement] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,{Measurement}
+bilirubin in plasma,Bilirubin.indirect [Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,SCnc
+bilirubin in plasma,Bilirubin.direct/Bilirubin.total in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound/Bilirubin.total,Ser/Plas,MFr
+bilirubin in plasma,Bilirubin.direct [Presence] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,PrThr
+bilirubin in plasma,Bilirubin.conjugated/Bilirubin.total in Serum or Plasma,Bilirubin.glucuronidated/Bilirubin.total,Ser/Plas,MFr
+bilirubin in plasma,Bilirubin.direct [Mass or Moles/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,MSCnc
+bilirubin in plasma,Bilirubin.direct [Moles/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,SCnc
+bilirubin in plasma,Deprecated Direct bilirubin [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,MCnc
+bilirubin in plasma,Bilirubin direct and total panel [Mass/volume] - Serum or Plasma,Bilirubin direct & total panel,Ser/Plas,MCnc
+bilirubin in plasma,Bilirubin.total [Measurement] in Serum or Plasma,Bilirubin,Ser/Plas,{Measurement}
+bilirubin in plasma,Bilirubin.conjugated [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated,Ser/Plas,MCnc
+bilirubin in plasma,Bilirubin.conjugated [Moles/volume] in Serum or Plasma,Bilirubin.glucuronidated,Ser/Plas,SCnc
+bilirubin in plasma,Bilirubin.total [Moles/volume] in Serum or Plasma,Bilirubin,Ser/Plas,SCnc
+bilirubin in plasma,Bilirubin.total [Mass or Moles/volume] in Serum or Plasma,Bilirubin,Ser/Plas,MSCnc
+bilirubin in plasma,"Bilirubin.total [Moles/volume] in Serum, Plasma or Blood",Bilirubin,Ser/Plas/Bld,SCnc
+bilirubin in plasma,Bilirubin.delta [Mass/volume] in Serum or Plasma,Bilirubin.albumin bound,Ser/Plas,MCnc
+bilirubin in plasma,Bilirubin.delta [Moles/volume] in Serum or Plasma,Bilirubin.albumin bound,Ser/Plas,SCnc
+bilirubin in plasma,Bilirubin.total renal clearance in 24 hour Urine and Serum or Plasma,Bilirubin renal clearance,Urine+Ser/Plas,VRat
+white blood cells count,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Alanine aminotransferase,Ser/Plas,CCnc
+white blood cells count,Ampicillin+Sulbactam [Susceptibility],Ampicillin+Sulbactam,Isolate,Susc
+white blood cells count,Sezary cells/Leukocytes in Blood by Manual count,Sezary cells/Leukocytes,Bld,NFr
+white blood cells count,Other cells/Leukocytes in Blood by Manual count,Other cells/Leukocytes,Bld,NFr
+white blood cells count,Lymphoma cells/Leukocytes in Blood by Manual count,Lymphoma cells/Leukocytes,Bld,NFr
+white blood cells count,Malignant cells/Leukocytes in Blood by Manual count,Malignant cells/Leukocytes,Bld,NFr
+white blood cells count,Mononuclear cells/Leukocytes in Blood by Manual count,Mononuclear cells/Leukocytes,Bld,NFr
+white blood cells count,Smudge cells/Leukocytes in Blood by Manual count,Smudge cells/Leukocytes,Bld,NFr
+white blood cells count,Smudge cells/Leukocytes [Pure number fraction] in Blood by Manual count,Smudge cells/Leukocytes,Bld,NFr.DF
+white blood cells count,Plasma cells/Leukocytes in Blood by Manual count,Plasma cells/Leukocytes,Bld,NFr
+white blood cells count,Unidentified cells/Leukocytes in Blood by Automated count,Unidentified cells/Leukocytes,Bld,NFr
+white blood cells count,Unidentified cells/Leukocytes in Blood by Manual count,Unidentified cells/Leukocytes,Bld,NFr
+white blood cells count,Other cells/Leukocytes in Blood by Automated count,Other cells/Leukocytes,Bld,NFr
+white blood cells count,Hairy cells/Leukocytes in Blood by Manual count,Hairy cells/Leukocytes,Bld,NFr
+white blood cells count,Mononuclear cells atypical/Leukocytes in Blood by Manual count,Mononuclear cells.atypical/Leukocytes,Bld,NFr
+white blood cells count,Mononuclear cells immature/Leukocytes in Blood by Manual count,Mononuclear cells.immature/Leukocytes,Bld,NFr
+white blood cells count,Mesothelial cells/Leukocytes in Blood by Manual count,Mesothelial cells/Leukocytes,Bld,NFr
+white blood cells count,Large unstained cells/Leukocytes in Blood by Automated count,Large unstained cells/Leukocytes,Bld,NFr
+white blood cells count,Plasma cells.centroblasts/Leukocytes in Blood by Manual count,Plasma cells.centroblasts/Leukocytes,Bld,NFr
+white blood cells count,Plasma cells.centrocytes/Leukocytes in Blood by Manual count,Plasma cells.centrocytes/Leukocytes,Bld,NFr
+white blood cells count,Other cells/Leukocytes in Bronchial specimen by Manual count,Other cells/Leukocytes,Bronchial,NFr
+white blood cells count,Other cells/Leukocytes in Sputum by Manual count,Other cells/Leukocytes,Sputum,NFr
+white blood cells count,Large unstained cells/Leukocytes in Cord blood by Automated count,Large unstained cells/Leukocytes,BldCo,NFr
+white blood cells count,Mononuclear cells/Leukocytes in Gastric fluid by Manual count,Mononuclear cells/Leukocytes,Gast fld,NFr
+white blood cells count,Mononuclear cells/Leukocytes in Peritoneal fluid by Manual count,Mononuclear cells/Leukocytes,Periton fld,NFr
+white blood cells count,Mononuclear cells/Leukocytes in Stem cell product by Manual count,Mononuclear cells/Leukocytes,^Stem cell product,NFr
+white blood cells count,Mononuclear cells/Leukocytes in Pleural fluid by Manual count,Mononuclear cells/Leukocytes,Plr fld,NFr
+white blood cells count,Mononuclear cells/Leukocytes in Semen by Manual count,Mononuclear cells/Leukocytes,Semen,NFr
+white blood cells count,Plasma cells/Leukocytes in Pericardial fluid by Manual count,Plasma cells/Leukocytes,Pericard fld,NFr
+white blood cells count,Plasma cells/Leukocytes in Peritoneal fluid by Manual count,Plasma cells/Leukocytes,Periton fld,NFr
+white blood cells count,Plasma cells/Leukocytes in Pleural fluid by Manual count,Plasma cells/Leukocytes,Plr fld,NFr
+white blood cells count,Unidentified cells/Leukocytes in Pericardial fluid by Manual count,Unidentified cells/Leukocytes,Pericard fld,NFr
+white blood cells count,Large unstained cells/Leukocytes in Blood from Fetus by Automated count,Large unstained cells/Leukocytes,Bld^Fetus,NFr
+white blood cells count,Monocytoid cells/Leukocytes in Cerebrospinal Fluid by Manual count,Monocytoid cells/Leukocytes,CSF,NFr
+white blood cells count,Neoplastic cells/Leukocytes in Cerebrospinal Fluid by Manual count,Neoplastic cells/Leukocytes,CSF,NFr
+platelets in blood,Leukocytes+Platelets [Morphology] in Blood,Leukocytes+Platelets,Bld,Morph
+platelets in blood,Transfuse pooled platelets units [#],Transfuse pooled platelets units,^BPU,Num
+platelets in blood,Platelets Large/Platelets in Blood by Automated count,Platelets.large/Platelets,Bld,NFr
+platelets in blood,Pooled platelets units available [#],Pooled platelets units available,^BPU,Num
+platelets in blood,Platelets reticulated/Platelets in Blood by Automated count,Platelets.reticulated/Platelets,Bld,NFr
+platelets in blood,Platelets Large/Platelets in Blood by Automated count.optical,Platelets.large/Platelets,Bld,NFr
+platelets in blood,Transfuse platelets [Volume],Transfuse platelets,^Patient,Vol
+platelets in blood,Transfuse leukocyte-poor platelets units [#],Transfuse leukocyte-poor platelets units,^BPU,Num
+platelets in blood,Platelets panel - Blood by Automated count,Platelets panel,Bld,-
+platelets in blood,Giant platelets [Presence] in Blood,Platelets.giant,Bld,PrThr
+platelets in blood,Platelets Large [Presence] in Blood,Platelets.large,Bld,PrThr
+platelets in blood,Platelets agranular [Presence] in Blood by Light microscopy,Platelets.agranular,Bld,PrThr
+platelets in blood,Pooled platelets given [Volume],Pooled platelets given,^Patient,Vol
+platelets in blood,Giant platelets/Leukocytes [Ratio] in Blood by Manual count,Platelets.giant/Leukocytes,Bld,Ratio
+platelets in blood,Platelets [Morphology] in Blood,Platelets,Bld,Morph
+platelets in blood,Giant platelets [Presence] in Blood by Light microscopy,Platelets.giant,Bld,PrThr
+platelets in blood,Platelets Large [Presence] in Blood by Light microscopy,Platelets.large,Bld,PrThr
+platelets in blood,Platelets Small [Presence] in Blood by Light microscopy,Platelets.small,Bld,PrThr
+platelets in blood,Platelets given [Type],Platelets given,^Patient,Type
+platelets in blood,Platelets Large Fragments [#/volume] in Blood by Manual count,Platelets.large fragments,Bld,NCnc
+platelets in blood,Platelets Large [Presence] in Blood by Automated count,Platelets.large,Bld,PrThr
+platelets in blood,Bizarre platelets [Presence] in Blood by Light microscopy,Bizarre platelets,Bld,PrThr
+platelets in blood,Platelets [Presence] in Blood,Platelets,Bld,PrThr
+platelets in blood,Platelets Large [#/volume] in Blood by Automated count,Platelets.large,Bld,NCnc
+platelets in blood,Platelets reticulated [#/volume] in Blood by Automated count,Platelets.reticulated,Bld,NCnc
+platelets in blood,Platelets given [Volume],Platelets given,Dose,Vol
+platelets in blood,Platelets [#/volume] in Cord blood,Platelets,BldCo,NCnc
+platelets in blood,Platelets [#/area] in Blood by Microscopy high power field,Platelets,Bld,Naric
+platelets in blood,Platelets [#/volume] in Blood,Platelets,Bld,NCnc
+platelets in blood,Platelets [#/volume] in Blood by Estimate,Platelets,Bld,NCnc
+platelets in blood,Platelets [#/volume] in Capillary blood by Manual count,Platelets,BldC,NCnc
+platelets in blood,Platelets [#/volume] in Cord blood by Estimate,Platelets,BldCo,NCnc
+platelets in blood,Platelets [#/volume] in Blood by Automated count --in presence of EDTA to detect possible clumping,Platelets^in presence of EDTA to detect possible clumping,Bld,NCnc
+platelets in blood,Platelets [#/volume] in Blood by Manual count,Platelets,Bld,NCnc
+platelets in blood,Platelets [#/volume] in Blood by Automated count,Platelets,Bld,NCnc
+platelets in blood,Platelets [#/volume] in Blood by Automated count.optical,Platelets,Bld,NCnc
+platelets in blood,Platelets [#/volume] in Blood from Fetus by Automated count,Platelets,Bld^Fetus,NCnc
+platelets in blood,Platelet adequacy [Presence] in Blood by Light microscopy,Platelets,Bld,PrThr
+platelets in blood,Bacteria identified in Platelets from Blood product unit by Aerobe culture,Bacteria,Platelets^BPU,Prid
+platelets in blood,Bacteria identified in Platelets from Blood product unit by Anaerobe culture,Bacteria,Platelets^BPU,Prid
+platelets in blood,Microorganism preliminary growth detection panel - Platelets from Blood product unit by Culture,Microorganism preliminary growth detection panel,Platelets^BPU,-
+platelets in blood,Microorganism preliminary growth [Presence] in Platelets from Blood product unit by Aerobe culture,Microorganism preliminary growth,Platelets^BPU,PrThr
+platelets in blood,Microorganism preliminary growth [Presence] in Platelets from Blood product unit by Anaerobe culture,Microorganism preliminary growth,Platelets^BPU,PrThr
+platelets in blood,Platelet genotype [Identifier] in Blood,Platelet genotype,Bld,Prid
+platelets in blood,Platelet [Entitic mean volume] in Blood,Platelet,Bld,EntMeanVol
+platelets in blood,Maximum clot strength amplitude [Units/volume] in Blood by Thromboelastography.extrinsic coagulation system activated.platelets,Maximum clot strength amplitude,Bld,ACnc
+platelets in blood,Maximum clot strength amplitude [Length] in Blood by Thromboelastography.extrinsic coagulation system activated.platelets,Maximum clot strength amplitude,Bld,Len
+platelets in blood,Platelet clump [Presence] in Blood,Platelet clump,Bld,PrThr
+platelets in blood,Platelet [Entitic mean volume] in Cord blood,Platelet,BldCo,EntMeanVol
+platelets in blood,Platelet concentrate units given [#],Platelet concentrate units given,^BPU,Num
+platelets in blood,Platelet distribution width [Ratio] in Blood,Platelet distribution width,Bld,Ratio
+platelets in blood,Platelet concentrate units available [#],Platelet concentrate units available,^BPU,Num
+platelets in blood,Pooled platelet concentrate units given [#],Pooled platelet concentrate units given,^BPU,Num
+platelets in blood,Platelet mean diameter [Entitic length] in Blood,Platelet mean diameter,Bld,EntLen
+platelets in blood,Platelet aggregation [Units/volume] in Blood by arachidonate induced,Platelet aggregation,Bld,ACnc
+platelets in blood,Platelet [Entitic mean volume] in Blood by Rees-Ecker,Platelet,Bld,EntMeanVol
+platelets in blood,Platelet aggregation [Units/volume] in Blood by collagen induced,Platelet aggregation,Bld,ACnc
+platelets in blood,Transfuse platelet concentrate units [#],Transfuse platelet concentrate units,^BPU,Num
+platelets in blood,Clot formation [Time] in Blood by Thromboelastography.rotational.extrinsic coagulation system activated.platelets inhibited,Clot formation,Bld,Time
+platelets in blood,Maximum clot firmness [Length] in Blood by Thromboelastography.rotational.extrinsic coagulation system activated.platelets inhibited,Maximum clot firmness,Bld,Len
+platelets in blood,Clotting time of Blood by Thromboelastography.rotational.extrinsic coagulation system activated.platelets inhibited,Clotting time,Bld,Time
+platelets in blood,Platelet crossmatch [Interpretation],Platelet crossmatch,Ser/Plas,Imp
+platelets in blood,Platelet anisocytosis [Presence] in Blood by Light microscopy,Platelet anisocytosis,Bld,PrThr
+platelets in blood,Platelet clump [Presence] in Blood by Automated count,Platelet clump,Bld,PrThr
+platelets in blood,Platelet clump [Presence] in Blood by Light microscopy,Platelet clump,Bld,PrThr
+platelets in blood,Platelet function (closure time) [Interpretation] in Blood Narrative,Platelet function,Bld,Imp
+platelets in blood,Platelet satellitism [Presence] in Blood by Light microscopy,Platelet satellitism,Bld,PrThr
+platelets in blood,Platelet [Entitic mean volume] in Blood by Automated count,Platelet,Bld,EntMeanVol
+platelets in blood,AST to platelet ratio index in Serum and Blood by calculation,AST to platelet ratio index,Ser+Bld,Ratio
+platelets in blood,Mean platelet component [Mass/volume] in Blood by calculation,Mean platelet component,Bld,MCnc
+platelets in blood,Mean platelet dry mass [Entitic mass] in Blood by calculation,Mean platelet dry mass,Bld,EntMass
+platelets in blood,Platelet component distribution width [Mass/volume] in Blood by calculation,Platelet component distribution width,Bld,MCnc
+platelets in blood,Platelet distribution width [Entitic volume] in Blood by Automated count,Platelet distribution width,Bld,EntVol
+platelets in blood,Platelet-induced clot retraction in Blood by Microviscometry.glass bead induced,Platelet-induced clot retraction,Bld,Arb
+platelets in blood,Platelet aggregation [Units/volume] in Blood by ADP induced,Platelet aggregation,Bld,ACnc
+platelets in blood,Platelet aggregation [Units/volume] in Blood by ristocetin induced High dose,Platelet aggregation,Bld,ACnc
+platelets in blood,Platelet aggregation [Units/volume] in Blood by ristocetin induced Low dose,Platelet aggregation,Bld,ACnc
+platelets in blood,Platelet and HLA glycoprotein antibody panel - Blood,Platelet & HLA glycoprotein antibody panel,Bld,-
+platelets in blood,Platelet associated Ab [Presence] in Blood,Platelet associated Ab,Bld,PrThr
+platelets in blood,Platelet distribution width [Entitic volume] in Cord blood by Automated count,Platelet distribution width,BldCo,EntVol
+platelets in blood,Platelet mapping (function) panel - Blood by Resonance TEG,Platelet mapping (function) panel,Bld,-
+platelets in blood,Clot stiffness.platelet contribution (elasticity) in Blood by calculation,Clot stiffness.platelet contribution,Bld,Pres
+platelets in blood,Platelet aggregation in Blood by collagen induced 1 ug/mL,Platelet aggregation,Bld,RelACnc
+platelets in blood,Platelet aggregation in Blood by collagen induced 5 ug/mL,Platelet aggregation,Bld,RelACnc
+platelets in blood,Platelet aggregation in Blood by ristocetin induced 1.0 mg/mL,Platelet aggregation,Bld,RelACnc
+platelets in blood,Platelet aggregation in Blood by ristocetin induced 250 ug/mL,Platelet aggregation,Bld,RelACnc
+platelets in blood,Platelet dry mass distribution width [Entitic mass] in Blood by calculation,Platelet dry mass distribution width,Bld,EntMass
+platelets in blood,Platelet function (closure time) [Time] in Blood by Collagen+Epinephrine induced,Platelet function,Bld,Time
+platelets in blood,Platelet mean diameter [Entitic length] in Blood by Rees-Ecker,Platelet mean diameter,Bld,EntLen
+platelets in blood,Platelet aggregation [Units/volume] in Blood by adenosine diphosphate+prostaglandin E1 induced,Platelet aggregation,Bld,ACnc
+platelets in blood,Platelet aggregation in Blood by arachidonate induced 500 ug/mL,Platelet aggregation,Bld,RelACnc
+platelets in blood,Platelet aggregation in Blood by collagen induced ATP secretion 5 ug/mL,Platelet aggregation,Bld,RelACnc
+platelets in blood,Platelet aggregation in Blood by thrombin induced ATP secretion 1 U/mL,Platelet aggregation,Bld,RelACnc
+platelets in blood,Platelet CD42b actual/normal in Blood by Flow cytometry (FC),Platelet CD42b actual/normal,Bld,RelRto
+platelets in blood,Platelet dense bodies [Presence] in Blood by Electron microscopy,Platelet dense bodies,Bld,PrThr
+platelets in blood,Platelet function (closure time) [Time] in Blood by Collagen+Adenosine diphosphate induced,Platelet function,Bld,Time
+platelets in blood,Platelet glycoprotein disorder [Interpretation] in Blood by Flow cytometry (FC) Narrative,Platelet glycoprotein disorder,Bld,Imp
+platelets in blood,Platelet aggregation in Blood by ADP induced 10 umol/L,Platelet aggregation,Bld,RelACnc
+platelets in blood,Platelet aggregation in Blood by ADP induced 5 umol/L,Platelet aggregation,Bld,RelACnc
+platelets in blood,Platelet aggregation [Units/volume] in Blood by thrombin receptor activating peptide-6 induced,Platelet aggregation,Bld,ACnc
+creatinine in serum,Creatinine in dialysis fluid/Creatinine in serum or plasma,Creatinine dial fld/Creatinine ser_plas,Dial fld+Ser/Plas,RelRto
+creatinine in serum,PhenX - serum creatinine assay for kidney function protocol 141401,PhenX - serum creatinine assay for kidney function protocol 141401,^Patient,-
+creatinine in serum,Creatinine in peritoneal fluid/Creatinine in serum,Creatinine.periton fld/Creatinine.serum,Periton fld+Ser/Plas,RelRto
+creatinine in serum,Creatinine in pleural fluid/Creatinine in serum,Creatinine.plr fld/Creatinine.serum,Ser/Plas+Plr fld,RelRto
+creatinine in serum,Creatinine [Measurement] in Serum or Plasma,Creatinine,Ser/Plas,{Measurement}
+creatinine in serum,Creatinine reduction ratio in Serum or Plasma,Creatinine reduction ratio,Ser/Plas,MFr
+creatinine in serum,"Creatinine and Glomerular filtration rate.predicted panel - Serum, Plasma or Blood",Creatinine & Glomerular filtration rate.predicted panel,Ser/Plas/Bld,-
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma,Creatinine,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Mass or Moles/volume] in Serum or Plasma,Creatinine,Ser/Plas,MSCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma,Creatinine,Ser/Plas,SCnc
+creatinine in serum,Urea/Creatinine [Mass Ratio] in Serum or Plasma,Urea/Creatinine,Ser/Plas,MRto
+creatinine in serum,HEDIS 2014-2019 Value Set - Serum Creatinine,HEDIS 2014-2019 Value Set - Serum Creatinine,^Patient,-
+creatinine in serum,Creatine/Creatinine [Molar ratio] in Serum or Plasma,Creatine/Creatinine,Ser/Plas,SRto
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --baseline,Creatinine^baseline,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --baseline,Creatinine^baseline,Ser/Plas,SCnc
+creatinine in serum,Carnitine/Creatinine [Mass Ratio] in Serum or Plasma,Carnitine/Creatinine,Ser/Plas,MRto
+creatinine in serum,Protein/Creatinine [Mass Ratio] in Serum or Plasma,Protein/Creatinine,Ser/Plas,MRto
+creatinine in serum,Urea/Creatinine [Molar ratio] in Serum or Plasma,Urea/Creatinine,Ser/Plas,SRto
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma by LC/MS/MS,Creatinine,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --4 hour specimen,Creatinine^4H specimen,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --pre dialysis,Creatinine^pre dialysis,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --pre dialysis,Creatinine^pre dialysis,Ser/Plas,SCnc
+creatinine in serum,Guanidinoacetate/Creatinine [Molar ratio] in Serum or Plasma,Guanidinoacetate/Creatinine,Ser/Plas,SRto
+creatinine in serum,Creatinine [Mass/volume] (Maximum value during study) in Serum or Plasma,Creatinine,Ser/Plas,MCnc
+creatinine in serum,"Creatinine [Moles/volume] in Serum, Plasma or Blood",Creatinine,Ser/Plas/Bld,SCnc
+creatinine in serum,2-Amino-4-hydroxypteridine/Creatinine [Molar ratio] in Serum or Plasma,2-Amino-4-hydroxypteridine/Creatinine,Ser/Plas,SRto
+creatinine in serum,Amylase/Creatinine [Mass Ratio] in Serum or Plasma,Amylase/Creatinine,Ser/Plas,MRto
+creatinine in serum,Creatinine/Urea nitrogen [Mass Ratio] in Serum or Plasma,Creatinine/Urea nitrogen,Ser/Plas,MRto
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --post dialysis,Creatinine^post dialysis,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --post dialysis,Creatinine^post dialysis,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --post XXX challenge,Creatinine^post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --pre contrast,Creatinine^pre contrast,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --pre XXX challenge,Creatinine^pre XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --pre XXX challenge,Creatinine^pre XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Glomerular filtration rate [Volume Rate/Area] in Serum or Plasma by Creatinine-based formula (MDRD)/1.73 sq M,Glomerular filtration rate,Ser/Plas,ArVRat
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --2 hour specimen,Creatinine^2H specimen,Ser/Plas,MCnc
+creatinine in serum,Metanephrine Free/Creatinine [Molar ratio] in Serum or Plasma,Metanephrine.free/Creatinine,Ser/Plas,SRto
+creatinine in serum,Normetanephrine Free/Creatinine [Molar ratio] in Serum or Plasma,Normetanephrine.free/Creatinine,Ser/Plas,SRto
+creatinine in serum,Urea nitrogen/Creatinine [Mass Ratio] in Serum or Plasma,Urea nitrogen/Creatinine,Ser/Plas,MRto
+creatinine in serum,"Creatine, guanidinoacetate and creatinine panel - Serum or Plasma","Creatine, guanidinoacetate & creatinine panel",Ser/Plas,-
+creatinine in serum,Creatinine renal clearance predicted,Creatinine renal clearance.predicted,Ser/Plas,VRat
+creatinine in serum,"Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)/1.73 sq M",Glomerular filtration rate,Ser/Plas/Bld,ArVRat
+creatinine in serum,3-Methoxytyramine.free/Creatinine [Molar ratio] in Serum or Plasma,3-Methoxytyramine.free/Creatinine,Ser/Plas,SRto
+creatinine in serum,Adenosine monophosphate.cyclic/Creatinine [Mass Ratio] in Serum or Plasma,Adenosine monophosphate.cyclic/Creatinine,Ser/Plas,MRto
+creatinine in serum,"Creatine, guanidinoacetate and creatinine pattern [Interpretation] in Serum or Plasma Narrative","Creatine, guanidinoacetate & creatinine pattern",Ser/Plas,Imp
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --10 hours post XXX challenge,Creatinine^10H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --10 hours post XXX challenge,Creatinine^10H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --12 hours post XXX challenge,Creatinine^12H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --12 hours post XXX challenge,Creatinine^12H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --16 hours post XXX challenge,Creatinine^16H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --16 hours post XXX challenge,Creatinine^16H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --18 hours post XXX challenge,Creatinine^18H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --18 hours post XXX challenge,Creatinine^18H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --1 day post XXX challenge,Creatinine^1D post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --1 day post XXX challenge,Creatinine^1D post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --2.5 hours post XXX challenge,Creatinine^2.5H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --2.5 hours post XXX challenge,Creatinine^2.5H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --2 days post XXX challenge,Creatinine^2D post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --2 days post XXX challenge,Creatinine^2D post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --3.5 hours post XXX challenge,Creatinine^3.5H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --3.5 hours post XXX challenge,Creatinine^3.5H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --3.75 hours post XXX challenge,Creatinine^3.75H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --30 minutes post XXX challenge,Creatinine^30M post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --30 minutes post XXX challenge,Creatinine^30M post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --30 minutes pre XXX challenge,Creatinine^30M pre XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --30 minutes pre XXX challenge,Creatinine^30M pre XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --3 hours post XXX challenge,Creatinine^3H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --3 hours post XXX challenge,Creatinine^3H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --45 minutes post XXX challenge,Creatinine^45M post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --45 minutes post XXX challenge,Creatinine^45M post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --45 minutes pre XXX challenge,Creatinine^45M pre XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --45 minutes pre XXX challenge,Creatinine^45M pre XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --4 days post XXX challenge,Creatinine^4D post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --4 days post XXX challenge,Creatinine^4D post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --4 hours post XXX challenge,Creatinine^4H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --4 hours post XXX challenge,Creatinine^4H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --5.25 hours post XXX challenge,Creatinine^5.25H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --5.5 hours post XXX challenge,Creatinine^5.5H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --5 hours post XXX challenge,Creatinine^5H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --5 hours post XXX challenge,Creatinine^5H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --6.5 hours post XXX challenge,Creatinine^6.5H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --6 hours post XXX challenge,Creatinine^6H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --6 hours post XXX challenge,Creatinine^6H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --7 days post XXX challenge,Creatinine^7D post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --7 days post XXX challenge,Creatinine^7D post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --8 hours post XXX challenge,Creatinine^8H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --8 hours post XXX challenge,Creatinine^8H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --9 hours post XXX challenge,Creatinine^9H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --9 hours post XXX challenge,Creatinine^9H post XXX challenge,Ser/Plas,SCnc
+creatinine in serum,Creatinine renal clearance in 12 hour Urine and Serum or Plasma,Creatinine renal clearance,Urine+Ser/Plas,VRat
+creatinine in serum,Creatinine renal clearance in 6 hour Urine and Serum or Plasma,Creatinine renal clearance,Urine+Ser/Plas,VRat
+creatinine in serum,HEDIS 2009 Codes to identify physiologic monitoring tests - Serum creatinine (SCr) (MPM-A),HEDIS 2009 Codes to identify physiologic monitoring tests - Serum creatinine (SCr) (MPM-A),^Patient,-
+creatinine in serum,"HEDIS 2010,2011 Codes to identify physiologic monitoring tests - Serum creatinine (SCr) (MPM-A)","HEDIS 2010,2011 Codes to identify physiologic monitoring tests - Serum creatinine (SCr) (MPM-A)",^Patient,-
+creatinine in serum,Deprecated PhenX measure - serum creatinine assay for kidney function,PhenX measure - serum creatinine assay for kidney function,^Patient,-
+creatinine in serum,"Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)/1.73 sq M among black population",Glomerular filtration rate,Ser/Plas/Bld,ArVRat
+creatinine in serum,"Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)/1.73 sq M among female population",Glomerular filtration rate,Ser/Plas/Bld,ArVRat
+creatinine in serum,"Glomerular filtration rate [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)/1.73 sq M among male population",Glomerular filtration rate,Ser/Plas/Bld,ArVRat
+creatinine in serum,Amylase/Creatinine renal clearance [Ratio] in Urine and Serum or Plasma,Amylase/Creatinine renal clearance,Urine+Ser/Plas,Ratio
+creatinine in serum,Creatinine [Mass/volume] in Serum or Plasma --1 hour post XXX challenge,Creatinine^1H post XXX challenge,Ser/Plas,MCnc
+creatinine in serum,Creatinine [Moles/volume] in Serum or Plasma --1 hour post XXX challenge,Creatinine^1H post XXX challenge,Ser/Plas,SCnc
