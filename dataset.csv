@@ -66,73 +66,73 @@ glucose in blood,Cefazolin [Susceptibility],Cefazolin,Isolate,Susc,0
 glucose in blood,Gentamicin [Susceptibility],Gentamicin,Isolate,Susc,0
 glucose in blood,Calcium [Moles/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,SCnc,0
 glucose in blood,Other Antibiotic [Susceptibility],Antibiotic XXX,Isolate,Susc,0
-bilirrubin in plasma,Blood product unit ID [#],Blood product unit ID,Dose,Num,0
-bilirrubin in plasma,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Alanine aminotransferase,Ser/Plas,CCnc,0
-bilirrubin in plasma,"Carbon dioxide, total [Moles/volume] in Blood",Carbon dioxide,Bld,SCnc,0
-bilirrubin in plasma,Bicarbonate [Moles/volume] in Blood,Bicarbonate,Bld,SCnc,0
-bilirrubin in plasma,Ciprofloxacin [Susceptibility],Ciprofloxacin,Isolate,Susc,0
-bilirrubin in plasma,Ampicillin+Sulbactam [Susceptibility],Ampicillin+Sulbactam,Isolate,Susc,0
-bilirrubin in plasma,Methicillin resistant Staphylococcus aureus [Presence] in Unspecified specimen by Organism specific culture,Staphylococcus aureus.methicillin resistant isolate,XXX,ACnc,0
-bilirrubin in plasma,ABO & Rh group [Type] in Blood,ABO+Rh group,Bld,Type,0
-bilirrubin in plasma,Leukocytes [#/volume] in Blood,Leukocytes,Bld,NCnc,0
-bilirrubin in plasma,Bilirubin.direct [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,MCnc,2
-bilirrubin in plasma,Body temperature,Body temperature,^Patient,Temp,0
-bilirrubin in plasma,C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method,C reactive protein,Ser/Plas,MCnc,0
-bilirrubin in plasma,Cefazolin [Susceptibility],Cefazolin,Isolate,Susc,0
-bilirrubin in plasma,Calcium.ionized [Moles/volume] in Blood,Calcium.ionized,Bld,SCnc,0
-bilirrubin in plasma,Bilirubin.total [Mass/volume] in Serum or Plasma,Bilirubin,Ser/Plas,MCnc,2
-bilirrubin in plasma,Cholesterol [Mass/volume] in Serum or Plasma,Cholesterol,Ser/Plas,MCnc,0
-bilirrubin in plasma,Rh [Type] in Blood,Rh,Bld,Type,0
-bilirrubin in plasma,Major crossmatch [interpretation],Major crossmatch,Ser/Plas,Imp,0
-bilirrubin in plasma,Nitrofurantoin [Susceptibility],Nitrofurantoin,Isolate,Susc,0
-bilirrubin in plasma,Vancomycin [Susceptibility],Vancomycin,Isolate,Susc,0
-bilirrubin in plasma,Ampicillin [Susceptibility],Ampicillin,Isolate,Susc,0
-bilirrubin in plasma,Blood group antibody screen [Presence] in Serum or Plasma,Blood group antibody screen,Ser/Plas,ACnc,0
-bilirrubin in plasma,ABO group [Type] in Blood from Blood product unit,ABO group,Bld^BPU,Type,0
-bilirrubin in plasma,Calcium [Mass/volume] in Serum or Plasma,Calcium,Ser/Plas,MCnc,0
-bilirrubin in plasma,Albumin/Globulin [Mass ratio] in Serum or Plasma,Albumin/Globulin,Ser/Plas,MCrto,0
-bilirrubin in plasma,"Carbon dioxide, total [Moles/volume] in Serum or Plasma",Carbon dioxide,Ser/Plas,SCnc,0
-bilirrubin in plasma,ABO group [Type] in Blood,ABO group,Bld,Type,0
-bilirrubin in plasma,Other Antibiotic [Susceptibility],Antibiotic XXX,Isolate,Susc,0
-bilirrubin in plasma,Bilirubin.indirect [Mass/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MCnc,2
-bilirrubin in plasma,Hepatitis B virus DNA [#/volume] (viral load) in Serum by Probe with signal amplification,Hepatitis B virus DNA,Ser,NCnc,0
-bilirrubin in plasma,"Glucose [Mass/volume] in Serum, Plasma or Blood",Glucose,Ser/Plas/Bld,MCnc,0
-bilirrubin in plasma,Glucose [Moles/volume] in Pleural fluid,Glucose,Plr fld,SCnc,0
-bilirrubin in plasma,Bilirubin.indirect [Mass or Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MSCnc,2
-bilirrubin in plasma,Cortisol [Mass/volume] in Serum or Plasma,Cortisol,Ser/Plas,MCnc,0
-bilirrubin in plasma,Carcinoembryonic Ag [Mass/volume] in Serum or Plasma,Carcinoembryonic Ag,Ser/Plas,MCnc,0
-bilirrubin in plasma,Lymphocytes [#/volume] in Blood,Lymphocytes,Bld,NCnc,0
-bilirrubin in plasma,Tyrosine aminotransferase [Mass/volume] in Plasma,Tyrosine aminotransferase,Plas,MCnc,0
-bilirrubin in plasma,Bilirubin.total [Mass/volume] in Synovial fluid,Bilirubin,Synv fld,MCnc,1
-bilirrubin in plasma,Gentamicin [Susceptibility],Gentamicin,Isolate,Susc,0
-bilirrubin in plasma,Lymphocytes/100 leukocytes in Blood,Lymphocytes/100 leukocytes,Bld,NFr,0
-bilirrubin in plasma,Indirect antiglobulin test.complement specific reagent [Presence] in Serum or Plasma,Indirect antiglobulin test.complement specific reagent,Ser/Plas,ACnc,0
-bilirrubin in plasma,Glucose [Moles/volume] in Serum or Plasma,Glucose,Ser/Plas,SCnc,0
-bilirrubin in plasma,Blood product type,Blood product type,^BPU,Type,0
-bilirrubin in plasma,Monocytes [#/volume] in Blood,Monocytes,Bld,NCnc,0
-bilirrubin in plasma,Albumin [Mass/volume] in Serum or Plasma,Albumin,Ser/Plas,MCnc,0
-bilirrubin in plasma,Cobalamin (Vitamin B12) [Mass/volume] in Serum,Cobalamins,Ser,MCnc,0
-bilirrubin in plasma,Glucose [Moles/volume] in Serum or Plasma --3 hours post 100 g glucose PO,Glucose^3H post 100 g glucose PO,Ser/Plas,SCnc,0
-bilirrubin in plasma,Glucose [Moles/volume] in Urine,Glucose,Urine,SCnc,0
-bilirrubin in plasma,Choriogonadotropin [Units/volume] in Serum or Plasma,Choriogonadotropin,Ser/Plas,ACnc,0
-bilirrubin in plasma,Blood product disposition [Type],Blood product disposition,^BPU,Type,0
-bilirrubin in plasma,Levofloxacin [Susceptibility],Levofloxacin,Isolate,Susc,0
-bilirrubin in plasma,Choriogonadotropin.beta subunit [Moles/volume] in Serum or Plasma,Choriogonadotropin.beta subunit,Ser/Plas,SCnc,0
-bilirrubin in plasma,Calcium [Moles/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,SCnc,0
-bilirrubin in plasma,Fasting glucose [Mass or Moles/volume] in Serum or Plasma,Glucose^post CFst,Ser/Plas,MSCnc,0
-bilirrubin in plasma,Chloride [Moles/volume] in Blood,Chloride,Bld,SCnc,0
-bilirrubin in plasma,Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma,Alkaline phosphatase,Ser/Plas,CCnc,0
-bilirrubin in plasma,Hematocrit [Volume Fraction] of Blood by Impedance,Hematocrit,Bld,VFr,0
-bilirrubin in plasma,Amylase [Enzymatic activity/volume] in Serum or Plasma,Amylase,Ser/Plas,CCnc,0
-bilirrubin in plasma,Chloride [Moles/volume] in Serum or Plasma,Chloride,Ser/Plas,SCnc,0
-bilirrubin in plasma,Protein C [Mass/volume] in Plasma,Protein C,Plas,MCnc,0
-bilirrubin in plasma,Trimethoprim+Sulfamethoxazole [Susceptibility],Trimethoprim+Sulfamethoxazole,Isolate,Susc,0
-bilirrubin in plasma,Calcium bilirubinate/Total in Stone,Calcium bilirubinate/Total,Calculus,MFr,0
-bilirrubin in plasma,Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Aspartate aminotransferase,Ser/Plas,CCnc,0
-bilirrubin in plasma,Cholesterol in HDL [Mass/volume] in Serum or Plasma,Cholesterol.in HDL,Ser/Plas,MCnc,0
-bilirrubin in plasma,Calcium.ionized [Moles/volume] in Serum or Plasma,Calcium.ionized,Ser/Plas,SCnc,0
-bilirrubin in plasma,Bilirubin.total [Presence] in Unspecified specimen,Bilirubin,XXX,PrThr,1
-bilirrubin in plasma,C reactive protein [Mass/volume] in Serum or Plasma,C reactive protein,Ser/Plas,MCnc,0
+bilirubin in plasma,Blood product unit ID [#],Blood product unit ID,Dose,Num,0
+bilirubin in plasma,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Alanine aminotransferase,Ser/Plas,CCnc,0
+bilirubin in plasma,"Carbon dioxide, total [Moles/volume] in Blood",Carbon dioxide,Bld,SCnc,0
+bilirubin in plasma,Bicarbonate [Moles/volume] in Blood,Bicarbonate,Bld,SCnc,0
+bilirubin in plasma,Ciprofloxacin [Susceptibility],Ciprofloxacin,Isolate,Susc,0
+bilirubin in plasma,Ampicillin+Sulbactam [Susceptibility],Ampicillin+Sulbactam,Isolate,Susc,0
+bilirubin in plasma,Methicillin resistant Staphylococcus aureus [Presence] in Unspecified specimen by Organism specific culture,Staphylococcus aureus.methicillin resistant isolate,XXX,ACnc,0
+bilirubin in plasma,ABO & Rh group [Type] in Blood,ABO+Rh group,Bld,Type,0
+bilirubin in plasma,Leukocytes [#/volume] in Blood,Leukocytes,Bld,NCnc,0
+bilirubin in plasma,Bilirubin.direct [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,MCnc,2
+bilirubin in plasma,Body temperature,Body temperature,^Patient,Temp,0
+bilirubin in plasma,C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method,C reactive protein,Ser/Plas,MCnc,0
+bilirubin in plasma,Cefazolin [Susceptibility],Cefazolin,Isolate,Susc,0
+bilirubin in plasma,Calcium.ionized [Moles/volume] in Blood,Calcium.ionized,Bld,SCnc,0
+bilirubin in plasma,Bilirubin.total [Mass/volume] in Serum or Plasma,Bilirubin,Ser/Plas,MCnc,2
+bilirubin in plasma,Cholesterol [Mass/volume] in Serum or Plasma,Cholesterol,Ser/Plas,MCnc,0
+bilirubin in plasma,Rh [Type] in Blood,Rh,Bld,Type,0
+bilirubin in plasma,Major crossmatch [interpretation],Major crossmatch,Ser/Plas,Imp,0
+bilirubin in plasma,Nitrofurantoin [Susceptibility],Nitrofurantoin,Isolate,Susc,0
+bilirubin in plasma,Vancomycin [Susceptibility],Vancomycin,Isolate,Susc,0
+bilirubin in plasma,Ampicillin [Susceptibility],Ampicillin,Isolate,Susc,0
+bilirubin in plasma,Blood group antibody screen [Presence] in Serum or Plasma,Blood group antibody screen,Ser/Plas,ACnc,0
+bilirubin in plasma,ABO group [Type] in Blood from Blood product unit,ABO group,Bld^BPU,Type,0
+bilirubin in plasma,Calcium [Mass/volume] in Serum or Plasma,Calcium,Ser/Plas,MCnc,0
+bilirubin in plasma,Albumin/Globulin [Mass ratio] in Serum or Plasma,Albumin/Globulin,Ser/Plas,MCrto,0
+bilirubin in plasma,"Carbon dioxide, total [Moles/volume] in Serum or Plasma",Carbon dioxide,Ser/Plas,SCnc,0
+bilirubin in plasma,ABO group [Type] in Blood,ABO group,Bld,Type,0
+bilirubin in plasma,Other Antibiotic [Susceptibility],Antibiotic XXX,Isolate,Susc,0
+bilirubin in plasma,Bilirubin.indirect [Mass/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MCnc,2
+bilirubin in plasma,Hepatitis B virus DNA [#/volume] (viral load) in Serum by Probe with signal amplification,Hepatitis B virus DNA,Ser,NCnc,0
+bilirubin in plasma,"Glucose [Mass/volume] in Serum, Plasma or Blood",Glucose,Ser/Plas/Bld,MCnc,0
+bilirubin in plasma,Glucose [Moles/volume] in Pleural fluid,Glucose,Plr fld,SCnc,0
+bilirubin in plasma,Bilirubin.indirect [Mass or Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MSCnc,2
+bilirubin in plasma,Cortisol [Mass/volume] in Serum or Plasma,Cortisol,Ser/Plas,MCnc,0
+bilirubin in plasma,Carcinoembryonic Ag [Mass/volume] in Serum or Plasma,Carcinoembryonic Ag,Ser/Plas,MCnc,0
+bilirubin in plasma,Lymphocytes [#/volume] in Blood,Lymphocytes,Bld,NCnc,0
+bilirubin in plasma,Tyrosine aminotransferase [Mass/volume] in Plasma,Tyrosine aminotransferase,Plas,MCnc,0
+bilirubin in plasma,Bilirubin.total [Mass/volume] in Synovial fluid,Bilirubin,Synv fld,MCnc,1
+bilirubin in plasma,Gentamicin [Susceptibility],Gentamicin,Isolate,Susc,0
+bilirubin in plasma,Lymphocytes/100 leukocytes in Blood,Lymphocytes/100 leukocytes,Bld,NFr,0
+bilirubin in plasma,Indirect antiglobulin test.complement specific reagent [Presence] in Serum or Plasma,Indirect antiglobulin test.complement specific reagent,Ser/Plas,ACnc,0
+bilirubin in plasma,Glucose [Moles/volume] in Serum or Plasma,Glucose,Ser/Plas,SCnc,0
+bilirubin in plasma,Blood product type,Blood product type,^BPU,Type,0
+bilirubin in plasma,Monocytes [#/volume] in Blood,Monocytes,Bld,NCnc,0
+bilirubin in plasma,Albumin [Mass/volume] in Serum or Plasma,Albumin,Ser/Plas,MCnc,0
+bilirubin in plasma,Cobalamin (Vitamin B12) [Mass/volume] in Serum,Cobalamins,Ser,MCnc,0
+bilirubin in plasma,Glucose [Moles/volume] in Serum or Plasma --3 hours post 100 g glucose PO,Glucose^3H post 100 g glucose PO,Ser/Plas,SCnc,0
+bilirubin in plasma,Glucose [Moles/volume] in Urine,Glucose,Urine,SCnc,0
+bilirubin in plasma,Choriogonadotropin [Units/volume] in Serum or Plasma,Choriogonadotropin,Ser/Plas,ACnc,0
+bilirubin in plasma,Blood product disposition [Type],Blood product disposition,^BPU,Type,0
+bilirubin in plasma,Levofloxacin [Susceptibility],Levofloxacin,Isolate,Susc,0
+bilirubin in plasma,Choriogonadotropin.beta subunit [Moles/volume] in Serum or Plasma,Choriogonadotropin.beta subunit,Ser/Plas,SCnc,0
+bilirubin in plasma,Calcium [Moles/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,SCnc,0
+bilirubin in plasma,Fasting glucose [Mass or Moles/volume] in Serum or Plasma,Glucose^post CFst,Ser/Plas,MSCnc,0
+bilirubin in plasma,Chloride [Moles/volume] in Blood,Chloride,Bld,SCnc,0
+bilirubin in plasma,Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma,Alkaline phosphatase,Ser/Plas,CCnc,0
+bilirubin in plasma,Hematocrit [Volume Fraction] of Blood by Impedance,Hematocrit,Bld,VFr,0
+bilirubin in plasma,Amylase [Enzymatic activity/volume] in Serum or Plasma,Amylase,Ser/Plas,CCnc,0
+bilirubin in plasma,Chloride [Moles/volume] in Serum or Plasma,Chloride,Ser/Plas,SCnc,0
+bilirubin in plasma,Protein C [Mass/volume] in Plasma,Protein C,Plas,MCnc,0
+bilirubin in plasma,Trimethoprim+Sulfamethoxazole [Susceptibility],Trimethoprim+Sulfamethoxazole,Isolate,Susc,0
+bilirubin in plasma,Calcium bilirubinate/Total in Stone,Calcium bilirubinate/Total,Calculus,MFr,0
+bilirubin in plasma,Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Aspartate aminotransferase,Ser/Plas,CCnc,0
+bilirubin in plasma,Cholesterol in HDL [Mass/volume] in Serum or Plasma,Cholesterol.in HDL,Ser/Plas,MCnc,0
+bilirubin in plasma,Calcium.ionized [Moles/volume] in Serum or Plasma,Calcium.ionized,Ser/Plas,SCnc,0
+bilirubin in plasma,Bilirubin.total [Presence] in Unspecified specimen,Bilirubin,XXX,PrThr,1
+bilirubin in plasma,C reactive protein [Mass/volume] in Serum or Plasma,C reactive protein,Ser/Plas,MCnc,0
 white blood cells count,Bilirubin.total [Presence] in Unspecified specimen,Bilirubin,XXX,PrThr,0
 white blood cells count,Calcium [Moles/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,SCnc,0
 white blood cells count,Bilirubin.total [Mass/volume] in Synovial fluid,Bilirubin,Synv fld,MCnc,0
