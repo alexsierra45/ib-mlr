@@ -73,8 +73,12 @@ class AdaRank(sklearn.base.BaseEstimator):
                 break
 
             h = best_weak_ranker
-            h['alpha'] = 0.5 * (math.log(np.dot(weights, 1 + h['score']) /
-                                         np.dot(weights, 1 - h['score'])))
+            # Si el ranker débil es perfecto en todas las consultas (score = 1),
+            # el denominador es 0 y alpha = inf, lo que produce NaN (0 * inf) en
+            # las predicciones. Se acota el score para mantener alpha finito.
+            s = np.clip(h['score'], -1 + 1e-6, 1 - 1e-6)
+            h['alpha'] = 0.5 * (math.log(np.dot(weights, 1 + s) /
+                                         np.dot(weights, 1 - s)))
             weak_rankers.append(h)
 
             # update the ranker

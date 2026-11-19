@@ -1,0 +1,33 @@
+% Preámbulo común de los documentos (article). Compatible con Overleaf (pdfLaTeX, sin -shell-escape).
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage[hidelinks]{hyperref}
+
+\captionsetup{font=small,labelfont=bf}
+\setlist{itemsep=1pt,topsep=3pt}
+
+\lstset{
+  basicstyle=\ttfamily\footnotesize,
+  columns=fullflexible,
+  keepspaces=true,
+  frame=single,
+  framerule=0.3pt,
+  rulecolor=\color{gray!60},
+  backgroundcolor=\color{gray!6},
+  breaklines=true,
+  inputencoding=utf8,
+}
+
+\newcommand{\rel}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}

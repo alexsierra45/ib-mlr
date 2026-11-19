@@ -23,7 +23,8 @@ def main():
     args = parser.parse_args()
 
     X, y, qid = load_svmlight_file(args.train_file, query_id=True)
-    X_test, y_test, qid_test = load_svmlight_file(args.test_file, query_id=True)
+    X_test, y_test, qid_test = load_svmlight_file(args.test_file, query_id=True,
+                                                  n_features=X.shape[1])
 
     model = AdaRank(max_iter=100,
                     estop=10,
@@ -33,7 +34,8 @@ def main():
     if args.no_validation or args.valid_file == '':
         model.fit(X, y, qid)
     else:
-        X_valid, y_valid, qid_valid = load_svmlight_file(args.valid_file, query_id=True)
+        X_valid, y_valid, qid_valid = load_svmlight_file(args.valid_file, query_id=True,
+                                                         n_features=X.shape[1])
         model.fit(X, y, qid, X_valid, y_valid, qid_valid)
     pred = model.predict(X_test, qid_test)
 
@@ -43,7 +45,7 @@ def main():
 
     if args.output_file:
         docno = load_docno(args.test_file, letor=True)
-        print_trec_run(qid_test, docno, pred, output=open(args.output_file, 'wb'))
+        print_trec_run(qid_test, docno, pred, output=open(args.output_file, 'w'))
 
 if __name__ == '__main__':
     main()

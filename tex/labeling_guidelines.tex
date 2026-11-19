@@ -1,0 +1,259 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\input{preamble}
+
+\title{Guía de etiquetado de relevancia (escala 0--3)\\[2pt]
+\large Listwise Learning to Rank sobre consultas LOINC}
+\author{Machine Learned Ranking --- MUIA, UPM}
+\date{Noviembre 2026}
+
+\begin{document}
+\maketitle
+
+\section{Objetivo y colección de documentos}
+
+Asignar a cada par consulta--documento una etiqueta de relevancia ordinal en $\{0,1,2,3\}$, de forma
+\textbf{reproducible y justificada}.
+
+\begin{itemize}
+\item \textbf{Parte obligatoria.} Hay tres consultas: \emph{glucose in blood}, \emph{bilirubin in plasma} y
+  \emph{white blood cells count}. Cada una se juzga contra los 67 códigos LOINC del libro \code{loinc\_dataset-v2.xlsx},
+  que son los mismos en las tres hojas aunque en distinto orden. En total son $3\times67=201$ pares.
+\item \textbf{Ampliación con consultas: selección estratificada.} Se añaden 12 consultas cuyas pruebas de origen se eligen
+  \emph{sin intervención manual} (\code{src/build\_collection.py}). El script recorre las pruebas de laboratorio de LOINC por
+  \code{COMMON\_TEST\_RANK}, el ranking oficial de las pruebas más frecuentes, y toma la \emph{primera de cada estrato}
+  (dominio clínico, columna \code{CLASS}, $\times$ grupo de muestra) aún no cubierto. Se excluyen:
+  \begin{itemize}
+  \item las entradas que no son pruebas de un paciente (tipo de muestra, comentarios, paneles, banco de sangre, pruebas de estímulo);
+  \item los índices por célula (propiedades \code{Ent*}) y las pruebas sin muestra concreta;
+  \item los analitos repetidos o ya cubiertos por las consultas oficiales.
+  \end{itemize}
+  El objetivo es que las consultas varíen en \textbf{dominio} (química, hematología, coagulación, microbiología, uroanálisis,
+  serología, fármacos, patología), \textbf{muestra} (suero/plasma, sangre, orina, vía respiratoria, tejido) y \textbf{tipo de medida}
+  (concentración, recuento, presión parcial, tiempo, presencia, identificación).
+  El \emph{texto} de cada consulta se redacta a mano, al estilo de las del profesor, porque algunos componentes de LOINC no se leen
+  como una búsqueda (el tiempo de protrombina tiene como componente \emph{``Coagulation''}). La tabla~\ref{tab:queries} recoge el resultado.
+\item \textbf{Ampliación con términos.} Los documentos se obtienen por \emph{pooling}, como en TREC/LETOR, con el mismo procedimiento para las 15 consultas.
+  Se buscan sobre las 62\,148 pruebas de laboratorio activas de LOINC:
+  \begin{itemize}
+  \item 40 candidatos por BM25 de la consulta (distractores léxicos);
+  \item 20 cuyo componente contiene el analito, por frecuencia (variantes del analito);
+  \item 300 términos aleatorios compartidos (negativos fáciles).
+  \end{itemize}
+  Se permiten como máximo 2 casi-duplicados por (componente sin números, sistema, propiedad). Junto con los 67 del Excel,
+  la colección tiene 1222 documentos (\code{data/collection.csv}).
+\end{itemize}
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{rlllll}
+\toprule
+qid & Dominio & Muestra & Prueba de origen (LOINC) & Consulta redactada \\
+\midrule
+4 & Química & suero/plasma & 2160-0 Creatinine [Mass/volume] & creatinine in serum \\
+5 & Hematología & sangre & 789-8 Erythrocytes [\#/volume] & red blood cells count \\
+6 & Química & sangre & 11556-8 Oxygen [Partial pressure] & oxygen partial pressure in blood \\
+7 & Coagulación & plasma & 5902-2 Prothrombin time (PT) & prothrombin time in plasma \\
+8 & Química & orina & 2514-8 Ketones [Presence] & ketones in urine \\
+9 & Microbiología & respiratoria & 94500-6 SARS-CoV-2 RNA [Presence] & SARS-CoV-2 RNA in respiratory specimen \\
+10 & Microbiología & orina & 630-4 Bacteria identified by Culture & bacteria in urine culture \\
+11 & Uroanálisis & orina & 5799-2 Leukocyte esterase [Presence] & leukocyte esterase in urine \\
+12 & Serología & suero & 30539-1 p-ANCA [Presence] & perinuclear ANCA in serum \\
+13 & Microbiología & suero/plasma & 56888-1 HIV 1+2 Ab + HIV1 p24 Ag & HIV antibody and antigen in serum \\
+14 & Fármacos & sangre & 11253-2 Tacrolimus [Mass/volume] & tacrolimus in blood \\
+15 & Patología & tejido & 39004-7 EGFR Ag [Presence] & EGFR antigen in tissue \\
+\bottomrule
+\end{tabular}
+\caption{Consultas de la ampliación, elegidas por estratificación (dominio $\times$ muestra) sobre \code{COMMON\_TEST\_RANK}.}
+\label{tab:queries}
+\end{table}
+
+Igual que en el Excel, donde las tres consultas comparten los mismos 67 documentos, \textbf{todas las consultas se juzgan contra
+toda la colección}.
+
+\paragraph{Por qué un procedimiento sistemático.} Una primera ampliación con términos buscados a mano (\code{data/dataset\_extended.csv})
+tenía \emph{sesgo de selección}: cada consulta tenía una lista construida de forma distinta y casi todos sus candidatos contenían la palabra
+de la consulta. El pooling aplica el mismo procedimiento a todas las consultas, mezcla distractores difíciles con negativos aleatorios
+y deja que la proporción de relevantes salga de forma natural, sin fijarla a mano.
+
+El orden de las filas en las hojas \textbf{no} se interpreta como etiqueta. La regla está implementada en \code{src/queries.py} y se aplica con
+\code{src/label.py}, que genera \code{data/relevance\_labels.csv} con una justificación (\code{rationale}) por cada par.
+
+\section{Escala}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{c l X}
+\toprule
+Etiqueta & Nombre & Significado \\
+\midrule
+\rel{3} & Muy relevante & Mide directamente el analito pedido, en la muestra pedida y con una medida adecuada. \\
+\rel{2} & Relevante con un matiz & Satisface la consulta salvo por \emph{una} desviación: muestra compatible pero distinta, fracción del analito o condición especial. \\
+\rel{1} & Relación parcial & Comparte el analito, pero no satisface la consulta (muestra incompatible, medida cualitativa, cociente, prueba funcional\ldots). \\
+\rel{0} & Irrelevante & El analito es otro, aunque comparta palabras con la consulta (p.\,ej.\ \emph{Blood product type}). \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Las tres dimensiones del juicio}
+
+\begin{description}
+\item[Analito] (columna \code{component}).
+  \begin{itemize}
+  \item \emph{Exacto}: es el concepto pedido.
+  \item \emph{Relacionado}: es una fracción, una subpoblación, un índice o una prueba derivada del concepto pedido.
+  \item \emph{Ninguno}: es otro analito, o un registro administrativo (transfusiones, protocolos, conjuntos de códigos).
+  \end{itemize}
+\item[Muestra] (columna \code{system}).
+  \begin{itemize}
+  \item \emph{Exacta}: es la muestra pedida, o un sistema LOINC que la incluye.
+  \item \emph{Compatible}: es una muestra distinta pero cercana.
+  \item \emph{Incompatible}: cualquier otra muestra (orina, líquidos biológicos, \code{XXX}, combinaciones como \code{Urine+Ser/Plas}\ldots).
+  \end{itemize}
+\item[Medida/condición] (\code{property}, \code{component} y nombre). Es \emph{desviada} si se da alguna de estas condiciones:
+  \begin{itemize}
+  \item la propiedad no es la pedida (cualitativa \code{PrThr}, fracción \code{NFr}, cocientes \code{MRto}/\code{SRto}\ldots);
+  \item el componente lleva una condición tras \code{\^{}} (ayuno, post-carga, basal, pre-diálisis\ldots);
+  \item es un \emph{panel} de varias pruebas;
+  \item es un valor derivado, no medido (\emph{Estimated from}, \emph{by calculation}).
+  \end{itemize}
+\end{description}
+
+\section{Regla de cálculo}
+
+\begin{enumerate}
+\item Si el analito es \emph{ninguno}, la etiqueta es \rel{0}.
+\item Base: \rel{3} si el analito es \emph{exacto}; \rel{2} si es \emph{relacionado}.
+\item Se resta 1 si la muestra es \emph{compatible} y 2 si es \emph{incompatible}.
+\item Se resta 1 si la medida/condición está \emph{desviada}.
+\item Si el analito es exacto o relacionado, la etiqueta mínima es \rel{1}: compartir analito nunca equivale a irrelevante.
+\end{enumerate}
+
+\section{Criterios por consulta}
+
+Grupos de muestras usados en la tabla:
+\begin{itemize}
+\item \emph{Sangre}: \code{Bld}, \code{BldA} (arterial), \code{BldV} (venosa), \code{BldC} (capilar), \code{BldMV} (venosa mixta) y \code{Ser/Plas/Bld}.
+\item \emph{Sangre especial}: \code{BldCo} (cordón), \code{Bld\^{}Fetus} (feto) y \code{Bld.dot} (gota seca).
+\end{itemize}
+Las propiedades cuantitativas son \code{MCnc}, \code{SCnc}, \code{MSCnc} y \code{\{Measurement\}}.
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{>{\raggedright}p{2.3cm} >{\raggedright}X >{\raggedright}p{2.2cm} >{\raggedright}p{2.4cm} >{\raggedright\arraybackslash}p{1.6cm}}
+\toprule
+Consulta & Analito exacto / relacionado & Muestra exacta & Muestra compatible & Propiedad adecuada \\
+\midrule
+glucose in blood & \code{Glucose} / glucosa media estimada (HbA1c) & sangre & \code{Ser/Plas}, \code{Ser}, \code{Plas}, sangre especial & cuantitativa \\
+bilirubin in plasma & \code{Bilirubin} (total) / fracciones directa, indirecta y delta; paneles; aclaramiento & \code{Plas}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Ser}, \code{Bld} & cuantitativa \\
+white blood cells count & \code{Leukocytes} / subpoblaciones (linfocitos, monocitos\ldots) y proporciones \emph{X cells/Leukocytes} & sangre (sin \code{Ser/Plas/Bld}) & sangre especial & \code{NCnc} \\
+\midrule
+creatinine in serum & \code{Creatinine} / fracción, condición, cociente, aclaramiento, panel$^*$ & \code{Ser}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Plas}, sangre & cuantitativa \\
+red blood cells count & \code{Erythrocytes} / ídem$^*$ (eritrocitos nucleados, cocientes\ldots) & sangre (sin \code{Ser/Plas/Bld}) & sangre especial & \code{NCnc} \\
+oxygen partial pressure in blood & \code{Oxygen} / contenido, saturación, capacidad, cocientes & sangre & sangre especial & \code{PPres} \\
+prothrombin time in plasma & PT (\emph{por nombre})$^\ddagger$ / INR, cocientes de PT & \code{PPP}, \code{Plas} & \code{Bld}, \code{BldC}, \code{PPP/Bld} & \code{Time}, \code{RelTime} \\
+ketones in urine & \code{Ketones} / acetoacetato, beta-hidroxibutirato & orina & --- & presencia o cuantitativa \\
+SARS-CoV-2 RNA in respiratory specimen & \code{SARS coronavirus 2 RNA} / genes diana, antígeno, anticuerpos, tests combinados & respiratoria (nasofaringe, garganta\ldots) & esputo, lavado broncoalveolar, saliva & \code{PrThr}, \code{Prid} \\
+bacteria in urine culture & \code{Bacteria} / recuentos, presencia & \code{Urine} & \code{Urine sed} & \code{Prid} \\
+leukocyte esterase in urine & \code{Leukocyte esterase} / combinado con nitritos & orina & --- & presencia \\
+perinuclear ANCA in serum & p-ANCA / c-ANCA, ANCA atípico, isotipos & \code{Ser}, \code{Ser/Plas} & \code{Plas} & presencia, título \\
+HIV antibody and antigen in serum & \code{HIV 1+2 Ab+HIV1 p24 Ag} / cualquier otra prueba de VIH & \code{Ser}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Plas}, \code{Bld}, gota seca & presencia \\
+tacrolimus in blood & \code{Tacrolimus} / ídem$^*$ & \code{Bld} & \code{Ser/Plas}, gota seca & cuantitativa \\
+EGFR antigen in tissue & \code{EGFR Ag} / receptor fosforilado, otras medidas del receptor, mutaciones del gen \emph{EGFR} & \code{Tiss} & \code{Bld/Tiss} & presencia, \code{Arb} \\
+\bottomrule
+\end{tabularx}
+\end{center}
+{\small Las 12 consultas inferiores son las de la ampliación (parte opcional). $^*$Patrón genérico (\code{analyte\_patterns} en
+\code{src/queries.py}): el analito debe aparecer como término propio, seguido de fracción (\code{X.}), condición (\code{X\^{}}),
+en un cociente (\code{X/Y}, \code{Y/X}), como aclaramiento renal o dentro de un panel. Por eso \emph{Tacrolimus induced platelet Ab}
+no es ``tacrolimus''. $^\ddagger$LOINC distingue las pruebas de coagulación por el \emph{método}, no por el componente
+(PT, aPTT y otras comparten el componente \emph{``Coagulation''}), así que para esta consulta el analito se juzga sobre el nombre largo.}
+
+\subsection*{Decisiones de diseño}
+
+\begin{itemize}
+\item \textbf{Suero/plasma frente a sangre.} \code{Ser/Plas} se considera una muestra \emph{compatible pero distinta} de
+  \code{Bld}. El suero y el plasma son fracciones de la sangre y la glucemia se mide habitualmente en ellos, pero no son
+  sangre total. Por eso \emph{Glucose [Moles/volume] in Serum or Plasma} recibe \rel{2} para \emph{glucose in blood}.
+  De forma simétrica, \code{Bld} es compatible pero distinta para \emph{bilirubin in plasma}.
+\item \textbf{Variantes de sangre.} La sangre arterial, venosa, capilar y periférica es \emph{sangre}, así que la muestra es exacta. En cambio, la sangre de cordón,
+  la de feto y la gota seca corresponden a una población o un formato especial, por lo que la muestra es compatible.
+\item \textbf{Bilirrubina total frente a fracciones.} Una consulta sin fracción (\emph{bilirubin}) se interpreta como bilirrubina total.
+  La directa (conjugada), la indirecta y la delta son fracciones.
+\item \textbf{WBC = white blood cells = leukocytes.} El recuento total es \code{Leukocytes [\#/volume]}.
+  \begin{itemize}
+  \item Los recuentos de subpoblaciones (linfocitos, monocitos) reciben \rel{2}.
+  \item Las \emph{proporciones} respecto a leucocitos (\code{Lymphocytes/100 leukocytes}, \emph{Sezary cells/Leukocytes}\ldots, \code{NFr}) no son un
+    recuento, por lo que bajan a \rel{1}.
+  \end{itemize}
+\item \textbf{Mismo analito, otra propiedad.} La velocidad de sedimentación y el RDW para \emph{red blood cells count} son el mismo
+  analito con otra propiedad, así que reciben \rel{2}. Es coherente con la regla, pero clínicamente discutible: es un candidato natural
+  a override si el equipo lo considera demasiado alto.
+\item \textbf{Consultas que no especifican la medida.} \emph{ketones in urine} y \emph{leukocyte esterase in urine} no dicen si se
+  busca el resultado cualitativo (tira reactiva) o el cuantitativo, así que ambos son medida adecuada. En cambio, un valor de ciclo umbral
+  (\emph{Cycle Threshold}) para SARS-CoV-2 no es el resultado de presencia que se busca: medida desviada.
+\item \textbf{Pruebas combinadas.} Un test que detecta SARS-CoV-2 junto con otros virus (\emph{SARS-CoV + SARS-CoV-2 Ag},
+  paneles de gripe + SARS-CoV-2) es analito relacionado. El test de SARS-CoV de 2003 (\emph{SARS coronavirus RNA}) es otro virus: \rel{0}.
+\item \textbf{Condiciones especiales.} La glucosa en ayunas, post-carga o basal, y la creatinina pre/post-diálisis o tras una prueba, miden el mismo
+  analito pero responden a una pregunta clínica distinta: medida desviada.
+\item \textbf{Valores derivados y paneles.} Un valor estimado o calculado no es una medida directa, y un panel agrupa varias pruebas: en los dos casos la medida es desviada.
+\item \textbf{Registros administrativos.} Las unidades transfundidas (\emph{Packed erythrocytes units given}), los protocolos PhenX y los \emph{value sets} HEDIS
+  no son pruebas de laboratorio: reciben \rel{0}, aunque su nombre contenga el analito.
+\item \textbf{Coincidencias léxicas engañosas.}
+  \begin{itemize}
+  \item \emph{Blood product type} y \emph{Blood glucose monitor attachment} contienen \emph{blood} o \emph{glucose}, pero su analito es otro: \rel{0}.
+  \item \emph{Calcium bilirubinate/Total in Stone} describe la composición de un cálculo biliar: \rel{0}.
+  \item El pooling genera muchos más, todos con \rel{0}: \emph{Methyl ethyl ketone} (disolvente) para \emph{ketones};
+    \emph{aPTT} y \emph{Prothrombin fragment 1.2} para \emph{prothrombin time}; \emph{Epidermal growth factor} (el ligando)
+    y la \emph{eGFR} (filtrado glomerular) para \emph{EGFR}; \emph{C1 esterase inhibitor} para \emph{leukocyte esterase};
+    \emph{MCHC} y \emph{MCV in Red Blood Cells} (índices de hemoglobina) para \emph{red blood cells count}.
+  \end{itemize}
+\item \textbf{Códigos obsoletos} (\emph{Deprecated}). Se juzga el contenido de la prueba, no su estado en LOINC.
+\item \textbf{Empates.} Documentos con la misma etiqueta pueden empatar: no se impone un orden artificial entre ellos.
+\end{itemize}
+
+\section{Resultado}
+
+\begin{table}[h]
+\centering
+\input{tables/label_distribution.tex}
+\caption{Distribución de etiquetas por consulta, primero sobre los 67 documentos del Excel y después sobre la colección completa (1222 documentos).
+$^\dagger$Consultas de la parte opcional.}
+\end{table}
+
+\begin{table}[h]
+\centering
+\footnotesize
+\input{tables/positive_labels.tex}
+\caption{Documentos del Excel con relevancia mayor que 0 en las consultas oficiales. El resto (61--63 por consulta) son \rel{0}.}
+\end{table}
+
+\begin{table}[h]
+\centering
+\footnotesize
+\input{tables/extended_examples.tex}
+\caption{Ejemplos de etiquetado de documentos de la colección, con las tres dimensiones del juicio. Incluye distractores difíciles
+(\emph{Methylene chloride}, \emph{C reactive protein}) y registros administrativos (\emph{Platelets given}).}
+\end{table}
+
+\section{Revisión manual y overrides}
+
+La regla es determinista, pero las justificaciones se revisan a mano. Si un juicio de la regla se considera
+incorrecto, se añade una fila a \code{data/overrides.csv} (\code{qid, loinc\_num, relevance, justification}).
+\code{src/label.py} aplica el override y deja constancia en el \code{rationale}
+(\code{OVERRIDE a -> b: motivo}). En la versión actual \textbf{no hay overrides}. Cualquier override futuro
+debe justificarse en esta sección.
+
+\paragraph{Diferencias con la versión anterior (escala 0--2).} Respecto al \code{data/dataset\_v0.csv} inicial,
+además de pasar a cuatro niveles, cambia el juicio en estos casos:
+\begin{itemize}
+\item \emph{Blood product type}: era 1 para glucosa y pasa a \rel{0} (otro analito).
+\item \emph{Fasting glucose}: era 0 y pasa a \rel{1} (mismo analito, con condición y muestra compatible).
+\item \emph{Glucose in Serum or Plasma}: empataba con la glucosa en orina (1) y ahora queda por encima (\rel{2} frente a \rel{1}).
+\item \emph{Lymphocytes/100 leukocytes}: empataba con el recuento total de leucocitos (2) y ahora es \rel{1} (porcentaje, no recuento).
+\item \emph{Monocytes [\#/volume]}: estaba por debajo de \emph{Lymphocytes [\#/volume]} y ahora ambos son \rel{2} (subpoblaciones).
+\end{itemize}
+Además, se corrigió la errata \emph{bilirrubin} $\rightarrow$ \emph{bilirubin} en el texto de la consulta.
+Las extensiones de la regla para la colección ampliada (variantes de sangre, paneles, valores derivados,
+registros administrativos) \textbf{no cambian ninguna} de las 201 etiquetas oficiales; lo comprueba \code{src/build\_dataset.py}.
+
+\end{document}
