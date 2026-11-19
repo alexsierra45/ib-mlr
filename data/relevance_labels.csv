@@ -1,0 +1,403 @@
+qid,query,official,loinc_num,long_common_name,component,system,property,analyte,specimen,measure,relevance,override,rationale
+1,glucose in blood,True,1988-5,C reactive protein [Mass/volume] in Serum or Plasma,C reactive protein,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (C reactive protein) -> 0
+1,glucose in blood,True,1959-6,Bicarbonate [Moles/volume] in Blood,Bicarbonate,Bld,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Bicarbonate) -> 0
+1,glucose in blood,True,10331-7,Rh [Type] in Blood,Rh,Bld,Type,ninguno,exacta,desviada,0,False,analito distinto (Rh) -> 0
+1,glucose in blood,True,18998-5,Trimethoprim+Sulfamethoxazole [Susceptibility],Trimethoprim+Sulfamethoxazole,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Trimethoprim+Sulfamethoxazole) -> 0
+1,glucose in blood,True,1975-2,Bilirubin.total [Mass/volume] in Serum or Plasma,Bilirubin,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Bilirubin) -> 0
+1,glucose in blood,True,890-4,Blood group antibody screen [Presence] in Serum or Plasma,Blood group antibody screen,Ser/Plas,ACnc,ninguno,compatible,desviada,0,False,analito distinto (Blood group antibody screen) -> 0
+1,glucose in blood,True,20565-8,"Carbon dioxide, total [Moles/volume] in Blood",Carbon dioxide,Bld,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Carbon dioxide) -> 0
+1,glucose in blood,True,18906-8,Ciprofloxacin [Susceptibility],Ciprofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ciprofloxacin) -> 0
+1,glucose in blood,True,2143-6,Cortisol [Mass/volume] in Serum or Plasma,Cortisol,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Cortisol) -> 0
+1,glucose in blood,True,2075-0,Chloride [Moles/volume] in Serum or Plasma,Chloride,Ser/Plas,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Chloride) -> 0
+1,glucose in blood,True,4671-4,Protein C [Mass/volume] in Plasma,Protein C,Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Protein C) -> 0
+1,glucose in blood,True,18864-9,Ampicillin [Susceptibility],Ampicillin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin) -> 0
+1,glucose in blood,True,15076-3,Glucose [Moles/volume] in Urine,Glucose,Urine,SCnc,exacto,incompatible,adecuada,1,False,analito exacto (Glucose): base 3; muestra incompatible (Urine): -2 -> 1
+1,glucose in blood,True,1798-8,Amylase [Enzymatic activity/volume] in Serum or Plasma,Amylase,Ser/Plas,CCnc,ninguno,compatible,desviada,0,False,analito distinto (Amylase) -> 0
+1,glucose in blood,True,26474-7,Lymphocytes [#/volume] in Blood,Lymphocytes,Bld,NCnc,ninguno,exacta,desviada,0,False,analito distinto (Lymphocytes) -> 0
+1,glucose in blood,True,1920-8,Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Aspartate aminotransferase,Ser/Plas,CCnc,ninguno,compatible,desviada,0,False,analito distinto (Aspartate aminotransferase) -> 0
+1,glucose in blood,True,13317-3,Methicillin resistant Staphylococcus aureus [Presence] in Unspecified specimen by Organism specific culture,Staphylococcus aureus.methicillin resistant isolate,XXX,ACnc,ninguno,incompatible,desviada,0,False,analito distinto (Staphylococcus aureus.methicillin resistant isolate) -> 0
+1,glucose in blood,True,925-8,Blood product disposition [Type],Blood product disposition,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product disposition) -> 0
+1,glucose in blood,True,14749-6,Glucose [Moles/volume] in Serum or Plasma,Glucose,Ser/Plas,SCnc,exacto,compatible,adecuada,2,False,analito exacto (Glucose): base 3; muestra compatible pero distinta (Ser/Plas): -1 -> 2
+1,glucose in blood,True,14747-0,Glucose [Moles/volume] in Pleural fluid,Glucose,Plr fld,SCnc,exacto,incompatible,adecuada,1,False,analito exacto (Glucose): base 3; muestra incompatible (Plr fld): -2 -> 1
+1,glucose in blood,True,2093-3,Cholesterol [Mass/volume] in Serum or Plasma,Cholesterol,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Cholesterol) -> 0
+1,glucose in blood,True,1968-7,Bilirubin.direct [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Bilirubin.glucuronidated+Bilirubin.albumin bound) -> 0
+1,glucose in blood,True,26464-8,Leukocytes [#/volume] in Blood,Leukocytes,Bld,NCnc,ninguno,exacta,desviada,0,False,analito distinto (Leukocytes) -> 0
+1,glucose in blood,True,74774-1,"Glucose [Mass/volume] in Serum, Plasma or Blood",Glucose,Ser/Plas/Bld,MCnc,exacto,exacta,adecuada,3,False,analito exacto (Glucose): base 3; muestra exacta (Ser/Plas/Bld) -> 3
+1,glucose in blood,True,8310-5,Body temperature,Body temperature,^Patient,Temp,ninguno,incompatible,desviada,0,False,analito distinto (Body temperature) -> 0
+1,glucose in blood,True,934-0,Blood product unit ID [#],Blood product unit ID,Dose,Num,ninguno,incompatible,desviada,0,False,analito distinto (Blood product unit ID) -> 0
+1,glucose in blood,True,14423-8,Bilirubin.total [Mass/volume] in Synovial fluid,Bilirubin,Synv fld,MCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Bilirubin) -> 0
+1,glucose in blood,True,1742-6,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Alanine aminotransferase,Ser/Plas,CCnc,ninguno,compatible,desviada,0,False,analito distinto (Alanine aminotransferase) -> 0
+1,glucose in blood,True,14764-5,Glucose [Moles/volume] in Serum or Plasma --3 hours post 100 g glucose PO,Glucose^3H post 100 g glucose PO,Ser/Plas,SCnc,exacto,compatible,desviada,1,False,"analito exacto (Glucose^3H post 100 g glucose PO): base 3; muestra compatible pero distinta (Ser/Plas): -1; medida desviada (condición ""3H post 100 g glucose PO""): -1 -> 1"
+1,glucose in blood,True,1994-3,Calcium.ionized [Moles/volume] in Blood,Calcium.ionized,Bld,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Calcium.ionized) -> 0
+1,glucose in blood,True,1751-7,Albumin [Mass/volume] in Serum or Plasma,Albumin,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Albumin) -> 0
+1,glucose in blood,True,1003-3,Indirect antiglobulin test.complement specific reagent [Presence] in Serum or Plasma,Indirect antiglobulin test.complement specific reagent,Ser/Plas,ACnc,ninguno,compatible,desviada,0,False,analito distinto (Indirect antiglobulin test.complement specific reagent) -> 0
+1,glucose in blood,True,1971-1,Bilirubin.indirect [Mass/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Bilirubin.non-glucuronidated) -> 0
+1,glucose in blood,True,26484-6,Monocytes [#/volume] in Blood,Monocytes,Bld,NCnc,ninguno,exacta,desviada,0,False,analito distinto (Monocytes) -> 0
+1,glucose in blood,True,18865-6,Ampicillin+Sulbactam [Susceptibility],Ampicillin+Sulbactam,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin+Sulbactam) -> 0
+1,glucose in blood,True,882-1,ABO & Rh group [Type] in Blood,ABO+Rh group,Bld,Type,ninguno,exacta,desviada,0,False,analito distinto (ABO+Rh group) -> 0
+1,glucose in blood,True,1250-0,Major crossmatch [interpretation],Major crossmatch,Ser/Plas,Imp,ninguno,compatible,desviada,0,False,analito distinto (Major crossmatch) -> 0
+1,glucose in blood,True,883-9,ABO group [Type] in Blood,ABO group,Bld,Type,ninguno,exacta,desviada,0,False,analito distinto (ABO group) -> 0
+1,glucose in blood,True,2132-9,Cobalamin (Vitamin B12) [Mass/volume] in Serum,Cobalamins,Ser,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Cobalamins) -> 0
+1,glucose in blood,True,31100-1,Hematocrit [Volume Fraction] of Blood by Impedance,Hematocrit,Bld,VFr,ninguno,exacta,desviada,0,False,analito distinto (Hematocrit) -> 0
+1,glucose in blood,True,6768-6,Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma,Alkaline phosphatase,Ser/Plas,CCnc,ninguno,compatible,desviada,0,False,analito distinto (Alkaline phosphatase) -> 0
+1,glucose in blood,True,2069-3,Chloride [Moles/volume] in Blood,Chloride,Bld,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Chloride) -> 0
+1,glucose in blood,True,3082-5,Tyrosine aminotransferase [Mass/volume] in Plasma,Tyrosine aminotransferase,Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Tyrosine aminotransferase) -> 0
+1,glucose in blood,True,30522-7,C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method,C reactive protein,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (C reactive protein) -> 0
+1,glucose in blood,True,33870-7,Bilirubin.total [Presence] in Unspecified specimen,Bilirubin,XXX,PrThr,ninguno,incompatible,desviada,0,False,analito distinto (Bilirubin) -> 0
+1,glucose in blood,True,20442-0,Hepatitis B virus DNA [#/volume] (viral load) in Serum by Probe with signal amplification,Hepatitis B virus DNA,Ser,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Hepatitis B virus DNA) -> 0
+1,glucose in blood,True,2111-3,Choriogonadotropin.beta subunit [Moles/volume] in Serum or Plasma,Choriogonadotropin.beta subunit,Ser/Plas,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Choriogonadotropin.beta subunit) -> 0
+1,glucose in blood,True,14578-9,ABO group [Type] in Blood from Blood product unit,ABO group,Bld^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (ABO group) -> 0
+1,glucose in blood,True,18955-5,Nitrofurantoin [Susceptibility],Nitrofurantoin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Nitrofurantoin) -> 0
+1,glucose in blood,True,2039-6,Carcinoembryonic Ag [Mass/volume] in Serum or Plasma,Carcinoembryonic Ag,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Carcinoembryonic Ag) -> 0
+1,glucose in blood,True,933-2,Blood product type,Blood product type,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product type) -> 0
+1,glucose in blood,True,19000-9,Vancomycin [Susceptibility],Vancomycin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Vancomycin) -> 0
+1,glucose in blood,True,26478-8,Lymphocytes/100 leukocytes in Blood,Lymphocytes/100 leukocytes,Bld,NFr,ninguno,exacta,desviada,0,False,analito distinto (Lymphocytes/100 leukocytes) -> 0
+1,glucose in blood,True,19080-1,Choriogonadotropin [Units/volume] in Serum or Plasma,Choriogonadotropin,Ser/Plas,ACnc,ninguno,compatible,desviada,0,False,analito distinto (Choriogonadotropin) -> 0
+1,glucose in blood,True,1995-0,Calcium.ionized [Moles/volume] in Serum or Plasma,Calcium.ionized,Ser/Plas,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Calcium.ionized) -> 0
+1,glucose in blood,True,35184-1,Fasting glucose [Mass or Moles/volume] in Serum or Plasma,Glucose^post CFst,Ser/Plas,MSCnc,exacto,compatible,desviada,1,False,"analito exacto (Glucose^post CFst): base 3; muestra compatible pero distinta (Ser/Plas): -1; medida desviada (condición ""post CFst""): -1 -> 1"
+1,glucose in blood,True,2085-9,Cholesterol in HDL [Mass/volume] in Serum or Plasma,Cholesterol.in HDL,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Cholesterol.in HDL) -> 0
+1,glucose in blood,True,1759-0,Albumin/Globulin [Mass ratio] in Serum or Plasma,Albumin/Globulin,Ser/Plas,MCrto,ninguno,compatible,desviada,0,False,analito distinto (Albumin/Globulin) -> 0
+1,glucose in blood,True,2028-9,"Carbon dioxide, total [Moles/volume] in Serum or Plasma",Carbon dioxide,Ser/Plas,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Carbon dioxide) -> 0
+1,glucose in blood,True,35192-4,Bilirubin.indirect [Mass or Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MSCnc,ninguno,compatible,adecuada,0,False,analito distinto (Bilirubin.non-glucuronidated) -> 0
+1,glucose in blood,True,20629-2,Levofloxacin [Susceptibility],Levofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Levofloxacin) -> 0
+1,glucose in blood,True,17861-6,Calcium [Mass/volume] in Serum or Plasma,Calcium,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Calcium) -> 0
+1,glucose in blood,True,54439-5,Calcium bilirubinate/Total in Stone,Calcium bilirubinate/Total,Calculus,MFr,ninguno,incompatible,desviada,0,False,analito distinto (Calcium bilirubinate/Total) -> 0
+1,glucose in blood,True,18878-9,Cefazolin [Susceptibility],Cefazolin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Cefazolin) -> 0
+1,glucose in blood,True,18928-2,Gentamicin [Susceptibility],Gentamicin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Gentamicin) -> 0
+1,glucose in blood,True,29265-6,Calcium [Moles/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,SCnc,ninguno,compatible,desviada,0,False,analito distinto (Calcium^^corrected for albumin) -> 0
+1,glucose in blood,True,23658-8,Other Antibiotic [Susceptibility],Antibiotic XXX,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Antibiotic XXX) -> 0
+2,bilirubin in plasma,True,934-0,Blood product unit ID [#],Blood product unit ID,Dose,Num,ninguno,incompatible,desviada,0,False,analito distinto (Blood product unit ID) -> 0
+2,bilirubin in plasma,True,1742-6,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Alanine aminotransferase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Alanine aminotransferase) -> 0
+2,bilirubin in plasma,True,20565-8,"Carbon dioxide, total [Moles/volume] in Blood",Carbon dioxide,Bld,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Carbon dioxide) -> 0
+2,bilirubin in plasma,True,1959-6,Bicarbonate [Moles/volume] in Blood,Bicarbonate,Bld,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Bicarbonate) -> 0
+2,bilirubin in plasma,True,18906-8,Ciprofloxacin [Susceptibility],Ciprofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ciprofloxacin) -> 0
+2,bilirubin in plasma,True,18865-6,Ampicillin+Sulbactam [Susceptibility],Ampicillin+Sulbactam,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin+Sulbactam) -> 0
+2,bilirubin in plasma,True,13317-3,Methicillin resistant Staphylococcus aureus [Presence] in Unspecified specimen by Organism specific culture,Staphylococcus aureus.methicillin resistant isolate,XXX,ACnc,ninguno,incompatible,desviada,0,False,analito distinto (Staphylococcus aureus.methicillin resistant isolate) -> 0
+2,bilirubin in plasma,True,882-1,ABO & Rh group [Type] in Blood,ABO+Rh group,Bld,Type,ninguno,compatible,desviada,0,False,analito distinto (ABO+Rh group) -> 0
+2,bilirubin in plasma,True,26464-8,Leukocytes [#/volume] in Blood,Leukocytes,Bld,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Leukocytes) -> 0
+2,bilirubin in plasma,True,1968-7,Bilirubin.direct [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,MCnc,relacionado,exacta,adecuada,2,False,analito relacionado (Bilirubin.glucuronidated+Bilirubin.albumin bound): base 2; muestra exacta (Ser/Plas) -> 2
+2,bilirubin in plasma,True,8310-5,Body temperature,Body temperature,^Patient,Temp,ninguno,incompatible,desviada,0,False,analito distinto (Body temperature) -> 0
+2,bilirubin in plasma,True,30522-7,C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method,C reactive protein,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (C reactive protein) -> 0
+2,bilirubin in plasma,True,18878-9,Cefazolin [Susceptibility],Cefazolin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Cefazolin) -> 0
+2,bilirubin in plasma,True,1994-3,Calcium.ionized [Moles/volume] in Blood,Calcium.ionized,Bld,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Calcium.ionized) -> 0
+2,bilirubin in plasma,True,1975-2,Bilirubin.total [Mass/volume] in Serum or Plasma,Bilirubin,Ser/Plas,MCnc,exacto,exacta,adecuada,3,False,analito exacto (Bilirubin): base 3; muestra exacta (Ser/Plas) -> 3
+2,bilirubin in plasma,True,2093-3,Cholesterol [Mass/volume] in Serum or Plasma,Cholesterol,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Cholesterol) -> 0
+2,bilirubin in plasma,True,10331-7,Rh [Type] in Blood,Rh,Bld,Type,ninguno,compatible,desviada,0,False,analito distinto (Rh) -> 0
+2,bilirubin in plasma,True,1250-0,Major crossmatch [interpretation],Major crossmatch,Ser/Plas,Imp,ninguno,exacta,desviada,0,False,analito distinto (Major crossmatch) -> 0
+2,bilirubin in plasma,True,18955-5,Nitrofurantoin [Susceptibility],Nitrofurantoin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Nitrofurantoin) -> 0
+2,bilirubin in plasma,True,19000-9,Vancomycin [Susceptibility],Vancomycin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Vancomycin) -> 0
+2,bilirubin in plasma,True,18864-9,Ampicillin [Susceptibility],Ampicillin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin) -> 0
+2,bilirubin in plasma,True,890-4,Blood group antibody screen [Presence] in Serum or Plasma,Blood group antibody screen,Ser/Plas,ACnc,ninguno,exacta,desviada,0,False,analito distinto (Blood group antibody screen) -> 0
+2,bilirubin in plasma,True,14578-9,ABO group [Type] in Blood from Blood product unit,ABO group,Bld^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (ABO group) -> 0
+2,bilirubin in plasma,True,17861-6,Calcium [Mass/volume] in Serum or Plasma,Calcium,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Calcium) -> 0
+2,bilirubin in plasma,True,1759-0,Albumin/Globulin [Mass ratio] in Serum or Plasma,Albumin/Globulin,Ser/Plas,MCrto,ninguno,exacta,desviada,0,False,analito distinto (Albumin/Globulin) -> 0
+2,bilirubin in plasma,True,2028-9,"Carbon dioxide, total [Moles/volume] in Serum or Plasma",Carbon dioxide,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Carbon dioxide) -> 0
+2,bilirubin in plasma,True,883-9,ABO group [Type] in Blood,ABO group,Bld,Type,ninguno,compatible,desviada,0,False,analito distinto (ABO group) -> 0
+2,bilirubin in plasma,True,23658-8,Other Antibiotic [Susceptibility],Antibiotic XXX,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Antibiotic XXX) -> 0
+2,bilirubin in plasma,True,1971-1,Bilirubin.indirect [Mass/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MCnc,relacionado,exacta,adecuada,2,False,analito relacionado (Bilirubin.non-glucuronidated): base 2; muestra exacta (Ser/Plas) -> 2
+2,bilirubin in plasma,True,20442-0,Hepatitis B virus DNA [#/volume] (viral load) in Serum by Probe with signal amplification,Hepatitis B virus DNA,Ser,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Hepatitis B virus DNA) -> 0
+2,bilirubin in plasma,True,74774-1,"Glucose [Mass/volume] in Serum, Plasma or Blood",Glucose,Ser/Plas/Bld,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Glucose) -> 0
+2,bilirubin in plasma,True,14747-0,Glucose [Moles/volume] in Pleural fluid,Glucose,Plr fld,SCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Glucose) -> 0
+2,bilirubin in plasma,True,35192-4,Bilirubin.indirect [Mass or Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MSCnc,relacionado,exacta,adecuada,2,False,analito relacionado (Bilirubin.non-glucuronidated): base 2; muestra exacta (Ser/Plas) -> 2
+2,bilirubin in plasma,True,2143-6,Cortisol [Mass/volume] in Serum or Plasma,Cortisol,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Cortisol) -> 0
+2,bilirubin in plasma,True,2039-6,Carcinoembryonic Ag [Mass/volume] in Serum or Plasma,Carcinoembryonic Ag,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Carcinoembryonic Ag) -> 0
+2,bilirubin in plasma,True,26474-7,Lymphocytes [#/volume] in Blood,Lymphocytes,Bld,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Lymphocytes) -> 0
+2,bilirubin in plasma,True,3082-5,Tyrosine aminotransferase [Mass/volume] in Plasma,Tyrosine aminotransferase,Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Tyrosine aminotransferase) -> 0
+2,bilirubin in plasma,True,14423-8,Bilirubin.total [Mass/volume] in Synovial fluid,Bilirubin,Synv fld,MCnc,exacto,incompatible,adecuada,1,False,analito exacto (Bilirubin): base 3; muestra incompatible (Synv fld): -2 -> 1
+2,bilirubin in plasma,True,18928-2,Gentamicin [Susceptibility],Gentamicin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Gentamicin) -> 0
+2,bilirubin in plasma,True,26478-8,Lymphocytes/100 leukocytes in Blood,Lymphocytes/100 leukocytes,Bld,NFr,ninguno,compatible,desviada,0,False,analito distinto (Lymphocytes/100 leukocytes) -> 0
+2,bilirubin in plasma,True,1003-3,Indirect antiglobulin test.complement specific reagent [Presence] in Serum or Plasma,Indirect antiglobulin test.complement specific reagent,Ser/Plas,ACnc,ninguno,exacta,desviada,0,False,analito distinto (Indirect antiglobulin test.complement specific reagent) -> 0
+2,bilirubin in plasma,True,14749-6,Glucose [Moles/volume] in Serum or Plasma,Glucose,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Glucose) -> 0
+2,bilirubin in plasma,True,933-2,Blood product type,Blood product type,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product type) -> 0
+2,bilirubin in plasma,True,26484-6,Monocytes [#/volume] in Blood,Monocytes,Bld,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Monocytes) -> 0
+2,bilirubin in plasma,True,1751-7,Albumin [Mass/volume] in Serum or Plasma,Albumin,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Albumin) -> 0
+2,bilirubin in plasma,True,2132-9,Cobalamin (Vitamin B12) [Mass/volume] in Serum,Cobalamins,Ser,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Cobalamins) -> 0
+2,bilirubin in plasma,True,14764-5,Glucose [Moles/volume] in Serum or Plasma --3 hours post 100 g glucose PO,Glucose^3H post 100 g glucose PO,Ser/Plas,SCnc,ninguno,exacta,desviada,0,False,analito distinto (Glucose^3H post 100 g glucose PO) -> 0
+2,bilirubin in plasma,True,15076-3,Glucose [Moles/volume] in Urine,Glucose,Urine,SCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Glucose) -> 0
+2,bilirubin in plasma,True,19080-1,Choriogonadotropin [Units/volume] in Serum or Plasma,Choriogonadotropin,Ser/Plas,ACnc,ninguno,exacta,desviada,0,False,analito distinto (Choriogonadotropin) -> 0
+2,bilirubin in plasma,True,925-8,Blood product disposition [Type],Blood product disposition,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product disposition) -> 0
+2,bilirubin in plasma,True,20629-2,Levofloxacin [Susceptibility],Levofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Levofloxacin) -> 0
+2,bilirubin in plasma,True,2111-3,Choriogonadotropin.beta subunit [Moles/volume] in Serum or Plasma,Choriogonadotropin.beta subunit,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Choriogonadotropin.beta subunit) -> 0
+2,bilirubin in plasma,True,29265-6,Calcium [Moles/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,SCnc,ninguno,exacta,desviada,0,False,analito distinto (Calcium^^corrected for albumin) -> 0
+2,bilirubin in plasma,True,35184-1,Fasting glucose [Mass or Moles/volume] in Serum or Plasma,Glucose^post CFst,Ser/Plas,MSCnc,ninguno,exacta,desviada,0,False,analito distinto (Glucose^post CFst) -> 0
+2,bilirubin in plasma,True,2069-3,Chloride [Moles/volume] in Blood,Chloride,Bld,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Chloride) -> 0
+2,bilirubin in plasma,True,6768-6,Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma,Alkaline phosphatase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Alkaline phosphatase) -> 0
+2,bilirubin in plasma,True,31100-1,Hematocrit [Volume Fraction] of Blood by Impedance,Hematocrit,Bld,VFr,ninguno,compatible,desviada,0,False,analito distinto (Hematocrit) -> 0
+2,bilirubin in plasma,True,1798-8,Amylase [Enzymatic activity/volume] in Serum or Plasma,Amylase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Amylase) -> 0
+2,bilirubin in plasma,True,2075-0,Chloride [Moles/volume] in Serum or Plasma,Chloride,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Chloride) -> 0
+2,bilirubin in plasma,True,4671-4,Protein C [Mass/volume] in Plasma,Protein C,Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Protein C) -> 0
+2,bilirubin in plasma,True,18998-5,Trimethoprim+Sulfamethoxazole [Susceptibility],Trimethoprim+Sulfamethoxazole,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Trimethoprim+Sulfamethoxazole) -> 0
+2,bilirubin in plasma,True,54439-5,Calcium bilirubinate/Total in Stone,Calcium bilirubinate/Total,Calculus,MFr,ninguno,incompatible,desviada,0,False,analito distinto (Calcium bilirubinate/Total) -> 0
+2,bilirubin in plasma,True,1920-8,Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Aspartate aminotransferase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Aspartate aminotransferase) -> 0
+2,bilirubin in plasma,True,2085-9,Cholesterol in HDL [Mass/volume] in Serum or Plasma,Cholesterol.in HDL,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Cholesterol.in HDL) -> 0
+2,bilirubin in plasma,True,1995-0,Calcium.ionized [Moles/volume] in Serum or Plasma,Calcium.ionized,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Calcium.ionized) -> 0
+2,bilirubin in plasma,True,33870-7,Bilirubin.total [Presence] in Unspecified specimen,Bilirubin,XXX,PrThr,exacto,incompatible,desviada,1,False,analito exacto (Bilirubin): base 3; muestra incompatible (XXX): -2; medida desviada (propiedad PrThr): -1; mínimo 1 por compartir analito -> 1
+2,bilirubin in plasma,True,1988-5,C reactive protein [Mass/volume] in Serum or Plasma,C reactive protein,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (C reactive protein) -> 0
+3,white blood cells count,True,33870-7,Bilirubin.total [Presence] in Unspecified specimen,Bilirubin,XXX,PrThr,ninguno,incompatible,desviada,0,False,analito distinto (Bilirubin) -> 0
+3,white blood cells count,True,29265-6,Calcium [Moles/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,SCnc,ninguno,incompatible,desviada,0,False,analito distinto (Calcium^^corrected for albumin) -> 0
+3,white blood cells count,True,14423-8,Bilirubin.total [Mass/volume] in Synovial fluid,Bilirubin,Synv fld,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Bilirubin) -> 0
+3,white blood cells count,True,23658-8,Other Antibiotic [Susceptibility],Antibiotic XXX,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Antibiotic XXX) -> 0
+3,white blood cells count,True,19000-9,Vancomycin [Susceptibility],Vancomycin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Vancomycin) -> 0
+3,white blood cells count,True,14749-6,Glucose [Moles/volume] in Serum or Plasma,Glucose,Ser/Plas,SCnc,ninguno,incompatible,desviada,0,False,analito distinto (Glucose) -> 0
+3,white blood cells count,True,1920-8,Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Aspartate aminotransferase,Ser/Plas,CCnc,ninguno,incompatible,desviada,0,False,analito distinto (Aspartate aminotransferase) -> 0
+3,white blood cells count,True,18878-9,Cefazolin [Susceptibility],Cefazolin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Cefazolin) -> 0
+3,white blood cells count,True,20442-0,Hepatitis B virus DNA [#/volume] (viral load) in Serum by Probe with signal amplification,Hepatitis B virus DNA,Ser,NCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Hepatitis B virus DNA) -> 0
+3,white blood cells count,True,1751-7,Albumin [Mass/volume] in Serum or Plasma,Albumin,Ser/Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Albumin) -> 0
+3,white blood cells count,True,13317-3,Methicillin resistant Staphylococcus aureus [Presence] in Unspecified specimen by Organism specific culture,Staphylococcus aureus.methicillin resistant isolate,XXX,ACnc,ninguno,incompatible,desviada,0,False,analito distinto (Staphylococcus aureus.methicillin resistant isolate) -> 0
+3,white blood cells count,True,15076-3,Glucose [Moles/volume] in Urine,Glucose,Urine,SCnc,ninguno,incompatible,desviada,0,False,analito distinto (Glucose) -> 0
+3,white blood cells count,True,35184-1,Fasting glucose [Mass or Moles/volume] in Serum or Plasma,Glucose^post CFst,Ser/Plas,MSCnc,ninguno,incompatible,desviada,0,False,analito distinto (Glucose^post CFst) -> 0
+3,white blood cells count,True,2085-9,Cholesterol in HDL [Mass/volume] in Serum or Plasma,Cholesterol.in HDL,Ser/Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Cholesterol.in HDL) -> 0
+3,white blood cells count,True,26464-8,Leukocytes [#/volume] in Blood,Leukocytes,Bld,NCnc,exacto,exacta,adecuada,3,False,analito exacto (Leukocytes): base 3; muestra exacta (Bld) -> 3
+3,white blood cells count,True,925-8,Blood product disposition [Type],Blood product disposition,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product disposition) -> 0
+3,white blood cells count,True,1994-3,Calcium.ionized [Moles/volume] in Blood,Calcium.ionized,Bld,SCnc,ninguno,exacta,desviada,0,False,analito distinto (Calcium.ionized) -> 0
+3,white blood cells count,True,1798-8,Amylase [Enzymatic activity/volume] in Serum or Plasma,Amylase,Ser/Plas,CCnc,ninguno,incompatible,desviada,0,False,analito distinto (Amylase) -> 0
+3,white blood cells count,True,1959-6,Bicarbonate [Moles/volume] in Blood,Bicarbonate,Bld,SCnc,ninguno,exacta,desviada,0,False,analito distinto (Bicarbonate) -> 0
+3,white blood cells count,True,1975-2,Bilirubin.total [Mass/volume] in Serum or Plasma,Bilirubin,Ser/Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Bilirubin) -> 0
+3,white blood cells count,True,18928-2,Gentamicin [Susceptibility],Gentamicin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Gentamicin) -> 0
+3,white blood cells count,True,14578-9,ABO group [Type] in Blood from Blood product unit,ABO group,Bld^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (ABO group) -> 0
+3,white blood cells count,True,934-0,Blood product unit ID [#],Blood product unit ID,Dose,Num,ninguno,incompatible,desviada,0,False,analito distinto (Blood product unit ID) -> 0
+3,white blood cells count,True,4671-4,Protein C [Mass/volume] in Plasma,Protein C,Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Protein C) -> 0
+3,white blood cells count,True,2069-3,Chloride [Moles/volume] in Blood,Chloride,Bld,SCnc,ninguno,exacta,desviada,0,False,analito distinto (Chloride) -> 0
+3,white blood cells count,True,2111-3,Choriogonadotropin.beta subunit [Moles/volume] in Serum or Plasma,Choriogonadotropin.beta subunit,Ser/Plas,SCnc,ninguno,incompatible,desviada,0,False,analito distinto (Choriogonadotropin.beta subunit) -> 0
+3,white blood cells count,True,17861-6,Calcium [Mass/volume] in Serum or Plasma,Calcium,Ser/Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Calcium) -> 0
+3,white blood cells count,True,2075-0,Chloride [Moles/volume] in Serum or Plasma,Chloride,Ser/Plas,SCnc,ninguno,incompatible,desviada,0,False,analito distinto (Chloride) -> 0
+3,white blood cells count,True,933-2,Blood product type,Blood product type,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product type) -> 0
+3,white blood cells count,True,2132-9,Cobalamin (Vitamin B12) [Mass/volume] in Serum,Cobalamins,Ser,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Cobalamins) -> 0
+3,white blood cells count,True,19080-1,Choriogonadotropin [Units/volume] in Serum or Plasma,Choriogonadotropin,Ser/Plas,ACnc,ninguno,incompatible,desviada,0,False,analito distinto (Choriogonadotropin) -> 0
+3,white blood cells count,True,26478-8,Lymphocytes/100 leukocytes in Blood,Lymphocytes/100 leukocytes,Bld,NFr,relacionado,exacta,desviada,1,False,analito relacionado (Lymphocytes/100 leukocytes): base 2; muestra exacta (Bld); medida desviada (propiedad NFr): -1 -> 1
+3,white blood cells count,True,14747-0,Glucose [Moles/volume] in Pleural fluid,Glucose,Plr fld,SCnc,ninguno,incompatible,desviada,0,False,analito distinto (Glucose) -> 0
+3,white blood cells count,True,20565-8,"Carbon dioxide, total [Moles/volume] in Blood",Carbon dioxide,Bld,SCnc,ninguno,exacta,desviada,0,False,analito distinto (Carbon dioxide) -> 0
+3,white blood cells count,True,2028-9,"Carbon dioxide, total [Moles/volume] in Serum or Plasma",Carbon dioxide,Ser/Plas,SCnc,ninguno,incompatible,desviada,0,False,analito distinto (Carbon dioxide) -> 0
+3,white blood cells count,True,18955-5,Nitrofurantoin [Susceptibility],Nitrofurantoin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Nitrofurantoin) -> 0
+3,white blood cells count,True,2093-3,Cholesterol [Mass/volume] in Serum or Plasma,Cholesterol,Ser/Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Cholesterol) -> 0
+3,white blood cells count,True,18998-5,Trimethoprim+Sulfamethoxazole [Susceptibility],Trimethoprim+Sulfamethoxazole,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Trimethoprim+Sulfamethoxazole) -> 0
+3,white blood cells count,True,890-4,Blood group antibody screen [Presence] in Serum or Plasma,Blood group antibody screen,Ser/Plas,ACnc,ninguno,incompatible,desviada,0,False,analito distinto (Blood group antibody screen) -> 0
+3,white blood cells count,True,14764-5,Glucose [Moles/volume] in Serum or Plasma --3 hours post 100 g glucose PO,Glucose^3H post 100 g glucose PO,Ser/Plas,SCnc,ninguno,incompatible,desviada,0,False,analito distinto (Glucose^3H post 100 g glucose PO) -> 0
+3,white blood cells count,True,2143-6,Cortisol [Mass/volume] in Serum or Plasma,Cortisol,Ser/Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Cortisol) -> 0
+3,white blood cells count,True,2039-6,Carcinoembryonic Ag [Mass/volume] in Serum or Plasma,Carcinoembryonic Ag,Ser/Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Carcinoembryonic Ag) -> 0
+3,white blood cells count,True,1971-1,Bilirubin.indirect [Mass/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Bilirubin.non-glucuronidated) -> 0
+3,white blood cells count,True,18906-8,Ciprofloxacin [Susceptibility],Ciprofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ciprofloxacin) -> 0
+3,white blood cells count,True,6768-6,Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma,Alkaline phosphatase,Ser/Plas,CCnc,ninguno,incompatible,desviada,0,False,analito distinto (Alkaline phosphatase) -> 0
+3,white blood cells count,True,1988-5,C reactive protein [Mass/volume] in Serum or Plasma,C reactive protein,Ser/Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (C reactive protein) -> 0
+3,white blood cells count,True,74774-1,"Glucose [Mass/volume] in Serum, Plasma or Blood",Glucose,Ser/Plas/Bld,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Glucose) -> 0
+3,white blood cells count,True,1995-0,Calcium.ionized [Moles/volume] in Serum or Plasma,Calcium.ionized,Ser/Plas,SCnc,ninguno,incompatible,desviada,0,False,analito distinto (Calcium.ionized) -> 0
+3,white blood cells count,True,1759-0,Albumin/Globulin [Mass ratio] in Serum or Plasma,Albumin/Globulin,Ser/Plas,MCrto,ninguno,incompatible,desviada,0,False,analito distinto (Albumin/Globulin) -> 0
+3,white blood cells count,True,20629-2,Levofloxacin [Susceptibility],Levofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Levofloxacin) -> 0
+3,white blood cells count,True,1968-7,Bilirubin.direct [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Bilirubin.glucuronidated+Bilirubin.albumin bound) -> 0
+3,white blood cells count,True,35192-4,Bilirubin.indirect [Mass or Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MSCnc,ninguno,incompatible,desviada,0,False,analito distinto (Bilirubin.non-glucuronidated) -> 0
+3,white blood cells count,True,883-9,ABO group [Type] in Blood,ABO group,Bld,Type,ninguno,exacta,desviada,0,False,analito distinto (ABO group) -> 0
+3,white blood cells count,True,1003-3,Indirect antiglobulin test.complement specific reagent [Presence] in Serum or Plasma,Indirect antiglobulin test.complement specific reagent,Ser/Plas,ACnc,ninguno,incompatible,desviada,0,False,analito distinto (Indirect antiglobulin test.complement specific reagent) -> 0
+3,white blood cells count,True,54439-5,Calcium bilirubinate/Total in Stone,Calcium bilirubinate/Total,Calculus,MFr,ninguno,incompatible,desviada,0,False,analito distinto (Calcium bilirubinate/Total) -> 0
+3,white blood cells count,True,3082-5,Tyrosine aminotransferase [Mass/volume] in Plasma,Tyrosine aminotransferase,Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (Tyrosine aminotransferase) -> 0
+3,white blood cells count,True,30522-7,C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method,C reactive protein,Ser/Plas,MCnc,ninguno,incompatible,desviada,0,False,analito distinto (C reactive protein) -> 0
+3,white blood cells count,True,10331-7,Rh [Type] in Blood,Rh,Bld,Type,ninguno,exacta,desviada,0,False,analito distinto (Rh) -> 0
+3,white blood cells count,True,26474-7,Lymphocytes [#/volume] in Blood,Lymphocytes,Bld,NCnc,relacionado,exacta,adecuada,2,False,analito relacionado (Lymphocytes): base 2; muestra exacta (Bld) -> 2
+3,white blood cells count,True,8310-5,Body temperature,Body temperature,^Patient,Temp,ninguno,incompatible,desviada,0,False,analito distinto (Body temperature) -> 0
+3,white blood cells count,True,31100-1,Hematocrit [Volume Fraction] of Blood by Impedance,Hematocrit,Bld,VFr,ninguno,exacta,desviada,0,False,analito distinto (Hematocrit) -> 0
+3,white blood cells count,True,882-1,ABO & Rh group [Type] in Blood,ABO+Rh group,Bld,Type,ninguno,exacta,desviada,0,False,analito distinto (ABO+Rh group) -> 0
+3,white blood cells count,True,26484-6,Monocytes [#/volume] in Blood,Monocytes,Bld,NCnc,relacionado,exacta,adecuada,2,False,analito relacionado (Monocytes): base 2; muestra exacta (Bld) -> 2
+3,white blood cells count,True,1250-0,Major crossmatch [interpretation],Major crossmatch,Ser/Plas,Imp,ninguno,incompatible,desviada,0,False,analito distinto (Major crossmatch) -> 0
+3,white blood cells count,True,18864-9,Ampicillin [Susceptibility],Ampicillin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin) -> 0
+3,white blood cells count,True,1742-6,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Alanine aminotransferase,Ser/Plas,CCnc,ninguno,incompatible,desviada,0,False,analito distinto (Alanine aminotransferase) -> 0
+3,white blood cells count,True,18865-6,Ampicillin+Sulbactam [Susceptibility],Ampicillin+Sulbactam,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin+Sulbactam) -> 0
+4,calcium in serum,False,1988-5,C reactive protein [Mass/volume] in Serum or Plasma,C reactive protein,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (C reactive protein) -> 0
+4,calcium in serum,False,1959-6,Bicarbonate [Moles/volume] in Blood,Bicarbonate,Bld,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Bicarbonate) -> 0
+4,calcium in serum,False,10331-7,Rh [Type] in Blood,Rh,Bld,Type,ninguno,compatible,desviada,0,False,analito distinto (Rh) -> 0
+4,calcium in serum,False,18998-5,Trimethoprim+Sulfamethoxazole [Susceptibility],Trimethoprim+Sulfamethoxazole,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Trimethoprim+Sulfamethoxazole) -> 0
+4,calcium in serum,False,1975-2,Bilirubin.total [Mass/volume] in Serum or Plasma,Bilirubin,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Bilirubin) -> 0
+4,calcium in serum,False,890-4,Blood group antibody screen [Presence] in Serum or Plasma,Blood group antibody screen,Ser/Plas,ACnc,ninguno,exacta,desviada,0,False,analito distinto (Blood group antibody screen) -> 0
+4,calcium in serum,False,20565-8,"Carbon dioxide, total [Moles/volume] in Blood",Carbon dioxide,Bld,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Carbon dioxide) -> 0
+4,calcium in serum,False,18906-8,Ciprofloxacin [Susceptibility],Ciprofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ciprofloxacin) -> 0
+4,calcium in serum,False,2143-6,Cortisol [Mass/volume] in Serum or Plasma,Cortisol,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Cortisol) -> 0
+4,calcium in serum,False,2075-0,Chloride [Moles/volume] in Serum or Plasma,Chloride,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Chloride) -> 0
+4,calcium in serum,False,4671-4,Protein C [Mass/volume] in Plasma,Protein C,Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Protein C) -> 0
+4,calcium in serum,False,18864-9,Ampicillin [Susceptibility],Ampicillin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin) -> 0
+4,calcium in serum,False,15076-3,Glucose [Moles/volume] in Urine,Glucose,Urine,SCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Glucose) -> 0
+4,calcium in serum,False,1798-8,Amylase [Enzymatic activity/volume] in Serum or Plasma,Amylase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Amylase) -> 0
+4,calcium in serum,False,26474-7,Lymphocytes [#/volume] in Blood,Lymphocytes,Bld,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Lymphocytes) -> 0
+4,calcium in serum,False,1920-8,Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Aspartate aminotransferase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Aspartate aminotransferase) -> 0
+4,calcium in serum,False,13317-3,Methicillin resistant Staphylococcus aureus [Presence] in Unspecified specimen by Organism specific culture,Staphylococcus aureus.methicillin resistant isolate,XXX,ACnc,ninguno,incompatible,desviada,0,False,analito distinto (Staphylococcus aureus.methicillin resistant isolate) -> 0
+4,calcium in serum,False,925-8,Blood product disposition [Type],Blood product disposition,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product disposition) -> 0
+4,calcium in serum,False,14749-6,Glucose [Moles/volume] in Serum or Plasma,Glucose,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Glucose) -> 0
+4,calcium in serum,False,14747-0,Glucose [Moles/volume] in Pleural fluid,Glucose,Plr fld,SCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Glucose) -> 0
+4,calcium in serum,False,2093-3,Cholesterol [Mass/volume] in Serum or Plasma,Cholesterol,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Cholesterol) -> 0
+4,calcium in serum,False,1968-7,Bilirubin.direct [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Bilirubin.glucuronidated+Bilirubin.albumin bound) -> 0
+4,calcium in serum,False,26464-8,Leukocytes [#/volume] in Blood,Leukocytes,Bld,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Leukocytes) -> 0
+4,calcium in serum,False,74774-1,"Glucose [Mass/volume] in Serum, Plasma or Blood",Glucose,Ser/Plas/Bld,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Glucose) -> 0
+4,calcium in serum,False,8310-5,Body temperature,Body temperature,^Patient,Temp,ninguno,incompatible,desviada,0,False,analito distinto (Body temperature) -> 0
+4,calcium in serum,False,934-0,Blood product unit ID [#],Blood product unit ID,Dose,Num,ninguno,incompatible,desviada,0,False,analito distinto (Blood product unit ID) -> 0
+4,calcium in serum,False,14423-8,Bilirubin.total [Mass/volume] in Synovial fluid,Bilirubin,Synv fld,MCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Bilirubin) -> 0
+4,calcium in serum,False,1742-6,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Alanine aminotransferase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Alanine aminotransferase) -> 0
+4,calcium in serum,False,14764-5,Glucose [Moles/volume] in Serum or Plasma --3 hours post 100 g glucose PO,Glucose^3H post 100 g glucose PO,Ser/Plas,SCnc,ninguno,exacta,desviada,0,False,analito distinto (Glucose^3H post 100 g glucose PO) -> 0
+4,calcium in serum,False,1994-3,Calcium.ionized [Moles/volume] in Blood,Calcium.ionized,Bld,SCnc,relacionado,compatible,adecuada,1,False,analito relacionado (Calcium.ionized): base 2; muestra compatible pero distinta (Bld): -1 -> 1
+4,calcium in serum,False,1751-7,Albumin [Mass/volume] in Serum or Plasma,Albumin,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Albumin) -> 0
+4,calcium in serum,False,1003-3,Indirect antiglobulin test.complement specific reagent [Presence] in Serum or Plasma,Indirect antiglobulin test.complement specific reagent,Ser/Plas,ACnc,ninguno,exacta,desviada,0,False,analito distinto (Indirect antiglobulin test.complement specific reagent) -> 0
+4,calcium in serum,False,1971-1,Bilirubin.indirect [Mass/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Bilirubin.non-glucuronidated) -> 0
+4,calcium in serum,False,26484-6,Monocytes [#/volume] in Blood,Monocytes,Bld,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Monocytes) -> 0
+4,calcium in serum,False,18865-6,Ampicillin+Sulbactam [Susceptibility],Ampicillin+Sulbactam,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin+Sulbactam) -> 0
+4,calcium in serum,False,882-1,ABO & Rh group [Type] in Blood,ABO+Rh group,Bld,Type,ninguno,compatible,desviada,0,False,analito distinto (ABO+Rh group) -> 0
+4,calcium in serum,False,1250-0,Major crossmatch [interpretation],Major crossmatch,Ser/Plas,Imp,ninguno,exacta,desviada,0,False,analito distinto (Major crossmatch) -> 0
+4,calcium in serum,False,883-9,ABO group [Type] in Blood,ABO group,Bld,Type,ninguno,compatible,desviada,0,False,analito distinto (ABO group) -> 0
+4,calcium in serum,False,2132-9,Cobalamin (Vitamin B12) [Mass/volume] in Serum,Cobalamins,Ser,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Cobalamins) -> 0
+4,calcium in serum,False,31100-1,Hematocrit [Volume Fraction] of Blood by Impedance,Hematocrit,Bld,VFr,ninguno,compatible,desviada,0,False,analito distinto (Hematocrit) -> 0
+4,calcium in serum,False,6768-6,Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma,Alkaline phosphatase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Alkaline phosphatase) -> 0
+4,calcium in serum,False,2069-3,Chloride [Moles/volume] in Blood,Chloride,Bld,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Chloride) -> 0
+4,calcium in serum,False,3082-5,Tyrosine aminotransferase [Mass/volume] in Plasma,Tyrosine aminotransferase,Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Tyrosine aminotransferase) -> 0
+4,calcium in serum,False,30522-7,C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method,C reactive protein,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (C reactive protein) -> 0
+4,calcium in serum,False,33870-7,Bilirubin.total [Presence] in Unspecified specimen,Bilirubin,XXX,PrThr,ninguno,incompatible,desviada,0,False,analito distinto (Bilirubin) -> 0
+4,calcium in serum,False,20442-0,Hepatitis B virus DNA [#/volume] (viral load) in Serum by Probe with signal amplification,Hepatitis B virus DNA,Ser,NCnc,ninguno,exacta,desviada,0,False,analito distinto (Hepatitis B virus DNA) -> 0
+4,calcium in serum,False,2111-3,Choriogonadotropin.beta subunit [Moles/volume] in Serum or Plasma,Choriogonadotropin.beta subunit,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Choriogonadotropin.beta subunit) -> 0
+4,calcium in serum,False,14578-9,ABO group [Type] in Blood from Blood product unit,ABO group,Bld^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (ABO group) -> 0
+4,calcium in serum,False,18955-5,Nitrofurantoin [Susceptibility],Nitrofurantoin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Nitrofurantoin) -> 0
+4,calcium in serum,False,2039-6,Carcinoembryonic Ag [Mass/volume] in Serum or Plasma,Carcinoembryonic Ag,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Carcinoembryonic Ag) -> 0
+4,calcium in serum,False,933-2,Blood product type,Blood product type,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product type) -> 0
+4,calcium in serum,False,19000-9,Vancomycin [Susceptibility],Vancomycin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Vancomycin) -> 0
+4,calcium in serum,False,26478-8,Lymphocytes/100 leukocytes in Blood,Lymphocytes/100 leukocytes,Bld,NFr,ninguno,compatible,desviada,0,False,analito distinto (Lymphocytes/100 leukocytes) -> 0
+4,calcium in serum,False,19080-1,Choriogonadotropin [Units/volume] in Serum or Plasma,Choriogonadotropin,Ser/Plas,ACnc,ninguno,exacta,desviada,0,False,analito distinto (Choriogonadotropin) -> 0
+4,calcium in serum,False,1995-0,Calcium.ionized [Moles/volume] in Serum or Plasma,Calcium.ionized,Ser/Plas,SCnc,relacionado,exacta,adecuada,2,False,analito relacionado (Calcium.ionized): base 2; muestra exacta (Ser/Plas) -> 2
+4,calcium in serum,False,35184-1,Fasting glucose [Mass or Moles/volume] in Serum or Plasma,Glucose^post CFst,Ser/Plas,MSCnc,ninguno,exacta,desviada,0,False,analito distinto (Glucose^post CFst) -> 0
+4,calcium in serum,False,2085-9,Cholesterol in HDL [Mass/volume] in Serum or Plasma,Cholesterol.in HDL,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Cholesterol.in HDL) -> 0
+4,calcium in serum,False,1759-0,Albumin/Globulin [Mass ratio] in Serum or Plasma,Albumin/Globulin,Ser/Plas,MCrto,ninguno,exacta,desviada,0,False,analito distinto (Albumin/Globulin) -> 0
+4,calcium in serum,False,2028-9,"Carbon dioxide, total [Moles/volume] in Serum or Plasma",Carbon dioxide,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Carbon dioxide) -> 0
+4,calcium in serum,False,35192-4,Bilirubin.indirect [Mass or Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MSCnc,ninguno,exacta,adecuada,0,False,analito distinto (Bilirubin.non-glucuronidated) -> 0
+4,calcium in serum,False,20629-2,Levofloxacin [Susceptibility],Levofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Levofloxacin) -> 0
+4,calcium in serum,False,17861-6,Calcium [Mass/volume] in Serum or Plasma,Calcium,Ser/Plas,MCnc,exacto,exacta,adecuada,3,False,analito exacto (Calcium): base 3; muestra exacta (Ser/Plas) -> 3
+4,calcium in serum,False,54439-5,Calcium bilirubinate/Total in Stone,Calcium bilirubinate/Total,Calculus,MFr,ninguno,incompatible,desviada,0,False,analito distinto (Calcium bilirubinate/Total) -> 0
+4,calcium in serum,False,18878-9,Cefazolin [Susceptibility],Cefazolin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Cefazolin) -> 0
+4,calcium in serum,False,18928-2,Gentamicin [Susceptibility],Gentamicin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Gentamicin) -> 0
+4,calcium in serum,False,29265-6,Calcium [Moles/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,SCnc,exacto,exacta,desviada,2,False,"analito exacto (Calcium^^corrected for albumin): base 3; muestra exacta (Ser/Plas); medida desviada (condición ""corrected for albumin""): -1 -> 2"
+4,calcium in serum,False,23658-8,Other Antibiotic [Susceptibility],Antibiotic XXX,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Antibiotic XXX) -> 0
+5,cholesterol in plasma,False,1988-5,C reactive protein [Mass/volume] in Serum or Plasma,C reactive protein,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (C reactive protein) -> 0
+5,cholesterol in plasma,False,1959-6,Bicarbonate [Moles/volume] in Blood,Bicarbonate,Bld,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Bicarbonate) -> 0
+5,cholesterol in plasma,False,10331-7,Rh [Type] in Blood,Rh,Bld,Type,ninguno,compatible,desviada,0,False,analito distinto (Rh) -> 0
+5,cholesterol in plasma,False,18998-5,Trimethoprim+Sulfamethoxazole [Susceptibility],Trimethoprim+Sulfamethoxazole,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Trimethoprim+Sulfamethoxazole) -> 0
+5,cholesterol in plasma,False,1975-2,Bilirubin.total [Mass/volume] in Serum or Plasma,Bilirubin,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Bilirubin) -> 0
+5,cholesterol in plasma,False,890-4,Blood group antibody screen [Presence] in Serum or Plasma,Blood group antibody screen,Ser/Plas,ACnc,ninguno,exacta,desviada,0,False,analito distinto (Blood group antibody screen) -> 0
+5,cholesterol in plasma,False,20565-8,"Carbon dioxide, total [Moles/volume] in Blood",Carbon dioxide,Bld,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Carbon dioxide) -> 0
+5,cholesterol in plasma,False,18906-8,Ciprofloxacin [Susceptibility],Ciprofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ciprofloxacin) -> 0
+5,cholesterol in plasma,False,2143-6,Cortisol [Mass/volume] in Serum or Plasma,Cortisol,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Cortisol) -> 0
+5,cholesterol in plasma,False,2075-0,Chloride [Moles/volume] in Serum or Plasma,Chloride,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Chloride) -> 0
+5,cholesterol in plasma,False,4671-4,Protein C [Mass/volume] in Plasma,Protein C,Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Protein C) -> 0
+5,cholesterol in plasma,False,18864-9,Ampicillin [Susceptibility],Ampicillin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin) -> 0
+5,cholesterol in plasma,False,15076-3,Glucose [Moles/volume] in Urine,Glucose,Urine,SCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Glucose) -> 0
+5,cholesterol in plasma,False,1798-8,Amylase [Enzymatic activity/volume] in Serum or Plasma,Amylase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Amylase) -> 0
+5,cholesterol in plasma,False,26474-7,Lymphocytes [#/volume] in Blood,Lymphocytes,Bld,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Lymphocytes) -> 0
+5,cholesterol in plasma,False,1920-8,Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Aspartate aminotransferase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Aspartate aminotransferase) -> 0
+5,cholesterol in plasma,False,13317-3,Methicillin resistant Staphylococcus aureus [Presence] in Unspecified specimen by Organism specific culture,Staphylococcus aureus.methicillin resistant isolate,XXX,ACnc,ninguno,incompatible,desviada,0,False,analito distinto (Staphylococcus aureus.methicillin resistant isolate) -> 0
+5,cholesterol in plasma,False,925-8,Blood product disposition [Type],Blood product disposition,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product disposition) -> 0
+5,cholesterol in plasma,False,14749-6,Glucose [Moles/volume] in Serum or Plasma,Glucose,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Glucose) -> 0
+5,cholesterol in plasma,False,14747-0,Glucose [Moles/volume] in Pleural fluid,Glucose,Plr fld,SCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Glucose) -> 0
+5,cholesterol in plasma,False,2093-3,Cholesterol [Mass/volume] in Serum or Plasma,Cholesterol,Ser/Plas,MCnc,exacto,exacta,adecuada,3,False,analito exacto (Cholesterol): base 3; muestra exacta (Ser/Plas) -> 3
+5,cholesterol in plasma,False,1968-7,Bilirubin.direct [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Bilirubin.glucuronidated+Bilirubin.albumin bound) -> 0
+5,cholesterol in plasma,False,26464-8,Leukocytes [#/volume] in Blood,Leukocytes,Bld,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Leukocytes) -> 0
+5,cholesterol in plasma,False,74774-1,"Glucose [Mass/volume] in Serum, Plasma or Blood",Glucose,Ser/Plas/Bld,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Glucose) -> 0
+5,cholesterol in plasma,False,8310-5,Body temperature,Body temperature,^Patient,Temp,ninguno,incompatible,desviada,0,False,analito distinto (Body temperature) -> 0
+5,cholesterol in plasma,False,934-0,Blood product unit ID [#],Blood product unit ID,Dose,Num,ninguno,incompatible,desviada,0,False,analito distinto (Blood product unit ID) -> 0
+5,cholesterol in plasma,False,14423-8,Bilirubin.total [Mass/volume] in Synovial fluid,Bilirubin,Synv fld,MCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Bilirubin) -> 0
+5,cholesterol in plasma,False,1742-6,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Alanine aminotransferase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Alanine aminotransferase) -> 0
+5,cholesterol in plasma,False,14764-5,Glucose [Moles/volume] in Serum or Plasma --3 hours post 100 g glucose PO,Glucose^3H post 100 g glucose PO,Ser/Plas,SCnc,ninguno,exacta,desviada,0,False,analito distinto (Glucose^3H post 100 g glucose PO) -> 0
+5,cholesterol in plasma,False,1994-3,Calcium.ionized [Moles/volume] in Blood,Calcium.ionized,Bld,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Calcium.ionized) -> 0
+5,cholesterol in plasma,False,1751-7,Albumin [Mass/volume] in Serum or Plasma,Albumin,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Albumin) -> 0
+5,cholesterol in plasma,False,1003-3,Indirect antiglobulin test.complement specific reagent [Presence] in Serum or Plasma,Indirect antiglobulin test.complement specific reagent,Ser/Plas,ACnc,ninguno,exacta,desviada,0,False,analito distinto (Indirect antiglobulin test.complement specific reagent) -> 0
+5,cholesterol in plasma,False,1971-1,Bilirubin.indirect [Mass/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Bilirubin.non-glucuronidated) -> 0
+5,cholesterol in plasma,False,26484-6,Monocytes [#/volume] in Blood,Monocytes,Bld,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Monocytes) -> 0
+5,cholesterol in plasma,False,18865-6,Ampicillin+Sulbactam [Susceptibility],Ampicillin+Sulbactam,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin+Sulbactam) -> 0
+5,cholesterol in plasma,False,882-1,ABO & Rh group [Type] in Blood,ABO+Rh group,Bld,Type,ninguno,compatible,desviada,0,False,analito distinto (ABO+Rh group) -> 0
+5,cholesterol in plasma,False,1250-0,Major crossmatch [interpretation],Major crossmatch,Ser/Plas,Imp,ninguno,exacta,desviada,0,False,analito distinto (Major crossmatch) -> 0
+5,cholesterol in plasma,False,883-9,ABO group [Type] in Blood,ABO group,Bld,Type,ninguno,compatible,desviada,0,False,analito distinto (ABO group) -> 0
+5,cholesterol in plasma,False,2132-9,Cobalamin (Vitamin B12) [Mass/volume] in Serum,Cobalamins,Ser,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Cobalamins) -> 0
+5,cholesterol in plasma,False,31100-1,Hematocrit [Volume Fraction] of Blood by Impedance,Hematocrit,Bld,VFr,ninguno,compatible,desviada,0,False,analito distinto (Hematocrit) -> 0
+5,cholesterol in plasma,False,6768-6,Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma,Alkaline phosphatase,Ser/Plas,CCnc,ninguno,exacta,desviada,0,False,analito distinto (Alkaline phosphatase) -> 0
+5,cholesterol in plasma,False,2069-3,Chloride [Moles/volume] in Blood,Chloride,Bld,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Chloride) -> 0
+5,cholesterol in plasma,False,3082-5,Tyrosine aminotransferase [Mass/volume] in Plasma,Tyrosine aminotransferase,Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Tyrosine aminotransferase) -> 0
+5,cholesterol in plasma,False,30522-7,C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method,C reactive protein,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (C reactive protein) -> 0
+5,cholesterol in plasma,False,33870-7,Bilirubin.total [Presence] in Unspecified specimen,Bilirubin,XXX,PrThr,ninguno,incompatible,desviada,0,False,analito distinto (Bilirubin) -> 0
+5,cholesterol in plasma,False,20442-0,Hepatitis B virus DNA [#/volume] (viral load) in Serum by Probe with signal amplification,Hepatitis B virus DNA,Ser,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Hepatitis B virus DNA) -> 0
+5,cholesterol in plasma,False,2111-3,Choriogonadotropin.beta subunit [Moles/volume] in Serum or Plasma,Choriogonadotropin.beta subunit,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Choriogonadotropin.beta subunit) -> 0
+5,cholesterol in plasma,False,14578-9,ABO group [Type] in Blood from Blood product unit,ABO group,Bld^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (ABO group) -> 0
+5,cholesterol in plasma,False,18955-5,Nitrofurantoin [Susceptibility],Nitrofurantoin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Nitrofurantoin) -> 0
+5,cholesterol in plasma,False,2039-6,Carcinoembryonic Ag [Mass/volume] in Serum or Plasma,Carcinoembryonic Ag,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Carcinoembryonic Ag) -> 0
+5,cholesterol in plasma,False,933-2,Blood product type,Blood product type,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product type) -> 0
+5,cholesterol in plasma,False,19000-9,Vancomycin [Susceptibility],Vancomycin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Vancomycin) -> 0
+5,cholesterol in plasma,False,26478-8,Lymphocytes/100 leukocytes in Blood,Lymphocytes/100 leukocytes,Bld,NFr,ninguno,compatible,desviada,0,False,analito distinto (Lymphocytes/100 leukocytes) -> 0
+5,cholesterol in plasma,False,19080-1,Choriogonadotropin [Units/volume] in Serum or Plasma,Choriogonadotropin,Ser/Plas,ACnc,ninguno,exacta,desviada,0,False,analito distinto (Choriogonadotropin) -> 0
+5,cholesterol in plasma,False,1995-0,Calcium.ionized [Moles/volume] in Serum or Plasma,Calcium.ionized,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Calcium.ionized) -> 0
+5,cholesterol in plasma,False,35184-1,Fasting glucose [Mass or Moles/volume] in Serum or Plasma,Glucose^post CFst,Ser/Plas,MSCnc,ninguno,exacta,desviada,0,False,analito distinto (Glucose^post CFst) -> 0
+5,cholesterol in plasma,False,2085-9,Cholesterol in HDL [Mass/volume] in Serum or Plasma,Cholesterol.in HDL,Ser/Plas,MCnc,relacionado,exacta,adecuada,2,False,analito relacionado (Cholesterol.in HDL): base 2; muestra exacta (Ser/Plas) -> 2
+5,cholesterol in plasma,False,1759-0,Albumin/Globulin [Mass ratio] in Serum or Plasma,Albumin/Globulin,Ser/Plas,MCrto,ninguno,exacta,desviada,0,False,analito distinto (Albumin/Globulin) -> 0
+5,cholesterol in plasma,False,2028-9,"Carbon dioxide, total [Moles/volume] in Serum or Plasma",Carbon dioxide,Ser/Plas,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Carbon dioxide) -> 0
+5,cholesterol in plasma,False,35192-4,Bilirubin.indirect [Mass or Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MSCnc,ninguno,exacta,adecuada,0,False,analito distinto (Bilirubin.non-glucuronidated) -> 0
+5,cholesterol in plasma,False,20629-2,Levofloxacin [Susceptibility],Levofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Levofloxacin) -> 0
+5,cholesterol in plasma,False,17861-6,Calcium [Mass/volume] in Serum or Plasma,Calcium,Ser/Plas,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Calcium) -> 0
+5,cholesterol in plasma,False,54439-5,Calcium bilirubinate/Total in Stone,Calcium bilirubinate/Total,Calculus,MFr,ninguno,incompatible,desviada,0,False,analito distinto (Calcium bilirubinate/Total) -> 0
+5,cholesterol in plasma,False,18878-9,Cefazolin [Susceptibility],Cefazolin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Cefazolin) -> 0
+5,cholesterol in plasma,False,18928-2,Gentamicin [Susceptibility],Gentamicin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Gentamicin) -> 0
+5,cholesterol in plasma,False,29265-6,Calcium [Moles/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,SCnc,ninguno,exacta,desviada,0,False,analito distinto (Calcium^^corrected for albumin) -> 0
+5,cholesterol in plasma,False,23658-8,Other Antibiotic [Susceptibility],Antibiotic XXX,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Antibiotic XXX) -> 0
+6,chloride in blood,False,1988-5,C reactive protein [Mass/volume] in Serum or Plasma,C reactive protein,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (C reactive protein) -> 0
+6,chloride in blood,False,1959-6,Bicarbonate [Moles/volume] in Blood,Bicarbonate,Bld,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Bicarbonate) -> 0
+6,chloride in blood,False,10331-7,Rh [Type] in Blood,Rh,Bld,Type,ninguno,exacta,desviada,0,False,analito distinto (Rh) -> 0
+6,chloride in blood,False,18998-5,Trimethoprim+Sulfamethoxazole [Susceptibility],Trimethoprim+Sulfamethoxazole,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Trimethoprim+Sulfamethoxazole) -> 0
+6,chloride in blood,False,1975-2,Bilirubin.total [Mass/volume] in Serum or Plasma,Bilirubin,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Bilirubin) -> 0
+6,chloride in blood,False,890-4,Blood group antibody screen [Presence] in Serum or Plasma,Blood group antibody screen,Ser/Plas,ACnc,ninguno,compatible,desviada,0,False,analito distinto (Blood group antibody screen) -> 0
+6,chloride in blood,False,20565-8,"Carbon dioxide, total [Moles/volume] in Blood",Carbon dioxide,Bld,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Carbon dioxide) -> 0
+6,chloride in blood,False,18906-8,Ciprofloxacin [Susceptibility],Ciprofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ciprofloxacin) -> 0
+6,chloride in blood,False,2143-6,Cortisol [Mass/volume] in Serum or Plasma,Cortisol,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Cortisol) -> 0
+6,chloride in blood,False,2075-0,Chloride [Moles/volume] in Serum or Plasma,Chloride,Ser/Plas,SCnc,exacto,compatible,adecuada,2,False,analito exacto (Chloride): base 3; muestra compatible pero distinta (Ser/Plas): -1 -> 2
+6,chloride in blood,False,4671-4,Protein C [Mass/volume] in Plasma,Protein C,Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Protein C) -> 0
+6,chloride in blood,False,18864-9,Ampicillin [Susceptibility],Ampicillin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin) -> 0
+6,chloride in blood,False,15076-3,Glucose [Moles/volume] in Urine,Glucose,Urine,SCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Glucose) -> 0
+6,chloride in blood,False,1798-8,Amylase [Enzymatic activity/volume] in Serum or Plasma,Amylase,Ser/Plas,CCnc,ninguno,compatible,desviada,0,False,analito distinto (Amylase) -> 0
+6,chloride in blood,False,26474-7,Lymphocytes [#/volume] in Blood,Lymphocytes,Bld,NCnc,ninguno,exacta,desviada,0,False,analito distinto (Lymphocytes) -> 0
+6,chloride in blood,False,1920-8,Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Aspartate aminotransferase,Ser/Plas,CCnc,ninguno,compatible,desviada,0,False,analito distinto (Aspartate aminotransferase) -> 0
+6,chloride in blood,False,13317-3,Methicillin resistant Staphylococcus aureus [Presence] in Unspecified specimen by Organism specific culture,Staphylococcus aureus.methicillin resistant isolate,XXX,ACnc,ninguno,incompatible,desviada,0,False,analito distinto (Staphylococcus aureus.methicillin resistant isolate) -> 0
+6,chloride in blood,False,925-8,Blood product disposition [Type],Blood product disposition,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product disposition) -> 0
+6,chloride in blood,False,14749-6,Glucose [Moles/volume] in Serum or Plasma,Glucose,Ser/Plas,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Glucose) -> 0
+6,chloride in blood,False,14747-0,Glucose [Moles/volume] in Pleural fluid,Glucose,Plr fld,SCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Glucose) -> 0
+6,chloride in blood,False,2093-3,Cholesterol [Mass/volume] in Serum or Plasma,Cholesterol,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Cholesterol) -> 0
+6,chloride in blood,False,1968-7,Bilirubin.direct [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Bilirubin.glucuronidated+Bilirubin.albumin bound) -> 0
+6,chloride in blood,False,26464-8,Leukocytes [#/volume] in Blood,Leukocytes,Bld,NCnc,ninguno,exacta,desviada,0,False,analito distinto (Leukocytes) -> 0
+6,chloride in blood,False,74774-1,"Glucose [Mass/volume] in Serum, Plasma or Blood",Glucose,Ser/Plas/Bld,MCnc,ninguno,exacta,adecuada,0,False,analito distinto (Glucose) -> 0
+6,chloride in blood,False,8310-5,Body temperature,Body temperature,^Patient,Temp,ninguno,incompatible,desviada,0,False,analito distinto (Body temperature) -> 0
+6,chloride in blood,False,934-0,Blood product unit ID [#],Blood product unit ID,Dose,Num,ninguno,incompatible,desviada,0,False,analito distinto (Blood product unit ID) -> 0
+6,chloride in blood,False,14423-8,Bilirubin.total [Mass/volume] in Synovial fluid,Bilirubin,Synv fld,MCnc,ninguno,incompatible,adecuada,0,False,analito distinto (Bilirubin) -> 0
+6,chloride in blood,False,1742-6,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Alanine aminotransferase,Ser/Plas,CCnc,ninguno,compatible,desviada,0,False,analito distinto (Alanine aminotransferase) -> 0
+6,chloride in blood,False,14764-5,Glucose [Moles/volume] in Serum or Plasma --3 hours post 100 g glucose PO,Glucose^3H post 100 g glucose PO,Ser/Plas,SCnc,ninguno,compatible,desviada,0,False,analito distinto (Glucose^3H post 100 g glucose PO) -> 0
+6,chloride in blood,False,1994-3,Calcium.ionized [Moles/volume] in Blood,Calcium.ionized,Bld,SCnc,ninguno,exacta,adecuada,0,False,analito distinto (Calcium.ionized) -> 0
+6,chloride in blood,False,1751-7,Albumin [Mass/volume] in Serum or Plasma,Albumin,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Albumin) -> 0
+6,chloride in blood,False,1003-3,Indirect antiglobulin test.complement specific reagent [Presence] in Serum or Plasma,Indirect antiglobulin test.complement specific reagent,Ser/Plas,ACnc,ninguno,compatible,desviada,0,False,analito distinto (Indirect antiglobulin test.complement specific reagent) -> 0
+6,chloride in blood,False,1971-1,Bilirubin.indirect [Mass/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Bilirubin.non-glucuronidated) -> 0
+6,chloride in blood,False,26484-6,Monocytes [#/volume] in Blood,Monocytes,Bld,NCnc,ninguno,exacta,desviada,0,False,analito distinto (Monocytes) -> 0
+6,chloride in blood,False,18865-6,Ampicillin+Sulbactam [Susceptibility],Ampicillin+Sulbactam,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Ampicillin+Sulbactam) -> 0
+6,chloride in blood,False,882-1,ABO & Rh group [Type] in Blood,ABO+Rh group,Bld,Type,ninguno,exacta,desviada,0,False,analito distinto (ABO+Rh group) -> 0
+6,chloride in blood,False,1250-0,Major crossmatch [interpretation],Major crossmatch,Ser/Plas,Imp,ninguno,compatible,desviada,0,False,analito distinto (Major crossmatch) -> 0
+6,chloride in blood,False,883-9,ABO group [Type] in Blood,ABO group,Bld,Type,ninguno,exacta,desviada,0,False,analito distinto (ABO group) -> 0
+6,chloride in blood,False,2132-9,Cobalamin (Vitamin B12) [Mass/volume] in Serum,Cobalamins,Ser,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Cobalamins) -> 0
+6,chloride in blood,False,31100-1,Hematocrit [Volume Fraction] of Blood by Impedance,Hematocrit,Bld,VFr,ninguno,exacta,desviada,0,False,analito distinto (Hematocrit) -> 0
+6,chloride in blood,False,6768-6,Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma,Alkaline phosphatase,Ser/Plas,CCnc,ninguno,compatible,desviada,0,False,analito distinto (Alkaline phosphatase) -> 0
+6,chloride in blood,False,2069-3,Chloride [Moles/volume] in Blood,Chloride,Bld,SCnc,exacto,exacta,adecuada,3,False,analito exacto (Chloride): base 3; muestra exacta (Bld) -> 3
+6,chloride in blood,False,3082-5,Tyrosine aminotransferase [Mass/volume] in Plasma,Tyrosine aminotransferase,Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Tyrosine aminotransferase) -> 0
+6,chloride in blood,False,30522-7,C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method,C reactive protein,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (C reactive protein) -> 0
+6,chloride in blood,False,33870-7,Bilirubin.total [Presence] in Unspecified specimen,Bilirubin,XXX,PrThr,ninguno,incompatible,desviada,0,False,analito distinto (Bilirubin) -> 0
+6,chloride in blood,False,20442-0,Hepatitis B virus DNA [#/volume] (viral load) in Serum by Probe with signal amplification,Hepatitis B virus DNA,Ser,NCnc,ninguno,compatible,desviada,0,False,analito distinto (Hepatitis B virus DNA) -> 0
+6,chloride in blood,False,2111-3,Choriogonadotropin.beta subunit [Moles/volume] in Serum or Plasma,Choriogonadotropin.beta subunit,Ser/Plas,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Choriogonadotropin.beta subunit) -> 0
+6,chloride in blood,False,14578-9,ABO group [Type] in Blood from Blood product unit,ABO group,Bld^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (ABO group) -> 0
+6,chloride in blood,False,18955-5,Nitrofurantoin [Susceptibility],Nitrofurantoin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Nitrofurantoin) -> 0
+6,chloride in blood,False,2039-6,Carcinoembryonic Ag [Mass/volume] in Serum or Plasma,Carcinoembryonic Ag,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Carcinoembryonic Ag) -> 0
+6,chloride in blood,False,933-2,Blood product type,Blood product type,^BPU,Type,ninguno,incompatible,desviada,0,False,analito distinto (Blood product type) -> 0
+6,chloride in blood,False,19000-9,Vancomycin [Susceptibility],Vancomycin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Vancomycin) -> 0
+6,chloride in blood,False,26478-8,Lymphocytes/100 leukocytes in Blood,Lymphocytes/100 leukocytes,Bld,NFr,ninguno,exacta,desviada,0,False,analito distinto (Lymphocytes/100 leukocytes) -> 0
+6,chloride in blood,False,19080-1,Choriogonadotropin [Units/volume] in Serum or Plasma,Choriogonadotropin,Ser/Plas,ACnc,ninguno,compatible,desviada,0,False,analito distinto (Choriogonadotropin) -> 0
+6,chloride in blood,False,1995-0,Calcium.ionized [Moles/volume] in Serum or Plasma,Calcium.ionized,Ser/Plas,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Calcium.ionized) -> 0
+6,chloride in blood,False,35184-1,Fasting glucose [Mass or Moles/volume] in Serum or Plasma,Glucose^post CFst,Ser/Plas,MSCnc,ninguno,compatible,desviada,0,False,analito distinto (Glucose^post CFst) -> 0
+6,chloride in blood,False,2085-9,Cholesterol in HDL [Mass/volume] in Serum or Plasma,Cholesterol.in HDL,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Cholesterol.in HDL) -> 0
+6,chloride in blood,False,1759-0,Albumin/Globulin [Mass ratio] in Serum or Plasma,Albumin/Globulin,Ser/Plas,MCrto,ninguno,compatible,desviada,0,False,analito distinto (Albumin/Globulin) -> 0
+6,chloride in blood,False,2028-9,"Carbon dioxide, total [Moles/volume] in Serum or Plasma",Carbon dioxide,Ser/Plas,SCnc,ninguno,compatible,adecuada,0,False,analito distinto (Carbon dioxide) -> 0
+6,chloride in blood,False,35192-4,Bilirubin.indirect [Mass or Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MSCnc,ninguno,compatible,adecuada,0,False,analito distinto (Bilirubin.non-glucuronidated) -> 0
+6,chloride in blood,False,20629-2,Levofloxacin [Susceptibility],Levofloxacin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Levofloxacin) -> 0
+6,chloride in blood,False,17861-6,Calcium [Mass/volume] in Serum or Plasma,Calcium,Ser/Plas,MCnc,ninguno,compatible,adecuada,0,False,analito distinto (Calcium) -> 0
+6,chloride in blood,False,54439-5,Calcium bilirubinate/Total in Stone,Calcium bilirubinate/Total,Calculus,MFr,ninguno,incompatible,desviada,0,False,analito distinto (Calcium bilirubinate/Total) -> 0
+6,chloride in blood,False,18878-9,Cefazolin [Susceptibility],Cefazolin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Cefazolin) -> 0
+6,chloride in blood,False,18928-2,Gentamicin [Susceptibility],Gentamicin,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Gentamicin) -> 0
+6,chloride in blood,False,29265-6,Calcium [Moles/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,SCnc,ninguno,compatible,desviada,0,False,analito distinto (Calcium^^corrected for albumin) -> 0
+6,chloride in blood,False,23658-8,Other Antibiotic [Susceptibility],Antibiotic XXX,Isolate,Susc,ninguno,incompatible,desviada,0,False,analito distinto (Antibiotic XXX) -> 0

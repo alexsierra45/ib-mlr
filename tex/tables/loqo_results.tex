@@ -1,0 +1,22 @@
+% Generado por src/export_tables.py — no editar a mano
+\begin{tabular}{lrrrr}
+\toprule
+Sistema & NDCG@1 & NDCG@3 & NDCG@5 & NDCG@10 \\
+\midrule
+\multicolumn{5}{l}{\emph{3 consultas oficiales (3 folds)}} \\
+\textbf{AdaRank} & 0.667 & 0.772 & 0.796 & 0.797 \\
+solo $f_1$ (coseno TF-IDF) & 0.667 & 0.856 & 0.889 & 0.889 \\
+solo $f_2$ (BM25) & 0.667 & 0.764 & 0.829 & 0.863 \\
+solo $f_3$ (solap. sinónimos) & 1.000 & 0.875 & 0.885 & 0.877 \\
+solo $f_4$ (analito en component) & 0.714 & 0.824 & 0.821 & 0.824 \\
+solo $f_5$ (muestra en system) & 0.333 & 0.366 & 0.475 & 0.467 \\
+\midrule
+\multicolumn{5}{l}{\emph{6 consultas, ampliado$^\dagger$ (6 folds)}} \\
+\textbf{AdaRank} & 0.833 & 0.928 & 0.944 & 0.944 \\
+solo $f_1$ (coseno TF-IDF) & 0.833 & 0.928 & 0.944 & 0.944 \\
+solo $f_2$ (BM25) & 0.833 & 0.882 & 0.914 & 0.931 \\
+solo $f_3$ (solap. sinónimos) & 0.905 & 0.878 & 0.878 & 0.893 \\
+solo $f_4$ (analito en component) & 0.619 & 0.820 & 0.832 & 0.834 \\
+solo $f_5$ (muestra en system) & 0.167 & 0.183 & 0.237 & 0.234 \\
+\bottomrule
+\end{tabular}

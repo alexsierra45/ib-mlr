@@ -1,0 +1,141 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2cm]{geometry}
+\usepackage{titlesec}
+\input{preamble}
+\titlespacing*{\section}{0pt}{8pt}{3pt}
+\titlespacing*{\subsection}{0pt}{5pt}{2pt}
+\setlength{\parskip}{2pt}
+
+\title{\vspace{-1.2cm}Listwise Learning to Rank con AdaRank\\[1pt]
+\large Construcción de un training set de relevancia para consultas LOINC}
+\author{Grupo: [Integrante 1], [Integrante 2], [Integrante 3]\\
+\small Machine Learned Ranking --- MUIA, Universidad Politécnica de Madrid}
+\date{\vspace{-0.4cm}25 de noviembre de 2026}
+
+\begin{document}
+\maketitle
+
+\section{Introducción y enfoque}
+
+El objetivo es ordenar, para cada consulta clínica, una lista de pruebas de laboratorio codificadas en LOINC
+según su relevancia. En \emph{Learning to Rank} hay tres familias. Los métodos \emph{pointwise} predicen la relevancia de cada documento por separado.
+Los \emph{pairwise} aprenden a ordenar pares de documentos. Los \emph{listwise} optimizan directamente una medida de calidad de la lista
+completa de cada consulta. Hemos elegido el enfoque \textbf{listwise}, porque lo que importa al usuario es el orden
+de la lista y no la puntuación aislada de cada documento. Como algoritmo usamos \textbf{AdaRank} \cite{xu2007adarank}.
+
+\paragraph{AdaRank.} Es un algoritmo de \emph{boosting} que construye un ranker lineal
+$f_T(\mathbf{x})=\sum_{t=1}^{T}\alpha_t h_t(\mathbf{x})$, donde cada ranker débil $h_t$ es una feature.
+Mantiene una distribución de pesos $P_t$ sobre las \emph{consultas}, que empieza uniforme. En cada ronda:
+\begin{enumerate}[nosep]
+\item Elige la feature con mayor $\sum_i P_t(i)\,E(\pi(q_i,h),\mathbf{y}_i)$, donde $E$ es la medida de ranking (aquí NDCG@10).
+\item Le da el peso $\alpha_t=\tfrac12\ln\frac{\sum_i P_t(i)\{1+E(\pi(q_i,h_t),\mathbf{y}_i)\}}{\sum_i P_t(i)\{1-E(\pi(q_i,h_t),\mathbf{y}_i)\}}$.
+\item Actualiza $P_{t+1}(i)\propto\exp(-E(\pi(q_i,f_t),\mathbf{y}_i))$, de modo que las consultas peor ordenadas ganan peso.
+\end{enumerate}
+La unidad de optimización es, por tanto, la lista de documentos de cada consulta. Usamos como métrica
+$\mathrm{NDCG@}k=\mathrm{DCG@}k/\mathrm{IDCG@}k$, con $\mathrm{DCG@}k=\sum_{r=1}^{k}(2^{y_r}-1)/\log_2(r+1)$ \cite{jarvelin2002}.
+
+\section{Dataset y etiquetas de relevancia}
+
+El libro \code{loinc\_dataset-v2.xlsx} tiene tres hojas, una por consulta: \emph{glucose in blood} (qid 1),
+\emph{bilirubin in plasma} (qid 2) y \emph{white blood cells count} (qid 3). Cada hoja contiene los mismos 67 códigos
+LOINC, en distinto orden, con las columnas \code{loinc\_num}, \code{long\_common\_name}, \code{component},
+\code{system} y \code{property}. Esto da 201 pares consulta--documento. El Excel no incluye etiquetas, y el orden de las filas
+no se usa como tal.
+
+\paragraph{Escala 0--3.} Cada par se juzga en tres dimensiones:
+\begin{itemize}[nosep]
+\item \textbf{analito} (\code{component}): exacto, relacionado (fracción o subpoblación) o ninguno;
+\item \textbf{muestra} (\code{system}): exacta, compatible pero distinta, o incompatible;
+\item \textbf{medida/condición} (\code{property} y sufijo \code{\^{}}): adecuada o desviada.
+\end{itemize}
+La regla es determinista:
+\begin{itemize}[nosep]
+\item un analito distinto da \rel{0};
+\item si no, se parte de \rel{3} (analito exacto) o \rel{2} (relacionado);
+\item se resta 1 si la muestra es compatible pero distinta y 2 si es incompatible;
+\item se resta 1 si la medida está desviada;
+\item el mínimo es \rel{1} si se comparte analito.
+\end{itemize}
+Las decisiones clave fueron:
+\begin{itemize}[nosep]
+\item \code{Ser/Plas} es compatible pero distinta de \code{Bld}, así que la glucosa en suero/plasma recibe \rel{2};
+\item WBC = leucocitos, y un \emph{porcentaje} de linfocitos no es un recuento (\rel{1});
+\item la glucosa en ayunas o post-carga es una prueba funcional (medida desviada);
+\item coincidencias léxicas como \emph{Blood product type} reciben \rel{0}.
+\end{itemize}
+La regla está implementada en \code{src/queries.py} y cada par lleva su justificación textual en
+\code{data/relevance\_labels.csv}. La guía completa está en el anexo \code{labeling\_guidelines.pdf}. Respecto a la
+versión inicial (0--2), se corrigió la errata \emph{bilirrubin} de la consulta y cinco juicios incoherentes.
+
+\begin{table}[h]
+\centering\footnotesize
+\input{tables/positive_labels.tex}
+\caption{Documentos con relevancia $>0$. Los otros 61--63 documentos de cada consulta son \rel{0}.}
+\end{table}
+
+\section{Features y formato del training set}
+
+Cada par se describe con cinco features que dependen de la consulta y se calculan \emph{sin} mirar la etiqueta
+(detalle en \code{feature\_dictionary.pdf}):
+\begin{itemize}[nosep]
+\item $f_1$: coseno TF-IDF entre la consulta y \code{long\_common\_name};
+\item $f_2$: BM25 normalizado por consulta \cite{robertson2009};
+\item $f_3$: solapamiento de términos con sinónimos (\emph{white cells}$\to$\emph{leukocytes}, \emph{blood}$\to$\emph{bld});
+\item $f_4$: el analito de la consulta aparece en \code{component} (0/1);
+\item $f_5$: el término de muestra aparece en \code{system} (0/1).
+\end{itemize}
+Las codificaciones \code{LabelEncoder} del trabajo inicial se eliminaron. Eran índices alfabéticos, iguales para cualquier consulta,
+y no tienen sentido como rankers débiles. El training set se exporta en formato LETOR (\code{data/train.txt}): 201 líneas
+agrupadas en 67 por \code{qid}, con el código LOINC en comentario. Un script comprueba los recuentos, que el conjunto de códigos es el mismo en cada consulta,
+que las etiquetas están en $\{0,\dots,3\}$, que las features son finitas y 16 casos de referencia.
+
+\input{tables/letor_example.tex}
+
+\section{Verificación, resultados y limitaciones}
+
+Con solo tres consultas no hay partición train/test fiable. Hacemos \textbf{leave-one-query-out}: cada fold entrena con dos consultas y evalúa en la tercera, sin
+repartir documentos de una misma consulta entre train y test. Comparamos con cada feature usada sola como ranker.
+Como ampliación opcional, añadimos tres consultas (\emph{calcium in serum}, \emph{cholesterol in plasma},
+\emph{chloride in blood}) etiquetadas con la misma regla sobre los mismos 67 documentos.
+
+\begin{table}[h]
+\centering\small
+\input{tables/loqo_results.tex}
+\caption{NDCG medio en leave-one-query-out. $^\dagger$Incluye las consultas adicionales.}
+\end{table}
+
+\paragraph{Resultados.} El modelo entrenado con las tres consultas ($\alpha_{f_1}{=}2.82$, $\alpha_{f_3}{=}1.41$) ordena
+perfectamente su propio conjunto: todos los documentos relevantes quedan arriba, en orden de etiqueta. También ordena bien una consulta no vista
+(\emph{cholesterol in plasma}, NDCG@10 = 1.0). En leave-one-query-out, en cambio, AdaRank \emph{no} supera a la mejor feature
+individual. Con dos consultas de entrenamiento elige la feature que mejor ordena esas dos, y esa feature no tiene por qué servir para la tercera.
+Por ejemplo, $f_1$ falla en \emph{white blood cells count} porque la consulta no comparte vocabulario con \emph{Leukocytes}, mientras que $f_3$
+(con sinónimos) acierta. Con seis consultas, AdaRank iguala al mejor baseline (NDCG@10 = 0.944). Esto apunta a que el
+cuello de botella es el número de consultas, no el algoritmo.
+
+\paragraph{Limitaciones.}
+\begin{itemize}[nosep]
+\item Tres consultas son muy pocas para estimar la generalización; los resultados son demostrativos.
+\item Las etiquetas son muy dispersas: 4--6 documentos relevantes de 67.
+\item $f_4$ y $f_5$ se inspiran en las mismas columnas que la regla de etiquetado, aunque son más gruesas.
+\item Las features binarias producen empates, y NDCG resuelve los empates según el orden de entrada.
+\item En la implementación de AdaRank \cite{adarankgit} corregimos una división por cero: si un ranker débil es perfecto en todas las
+  consultas, $\alpha=\infty$ y las predicciones salen NaN.
+\end{itemize}
+
+\section{Contribuciones}
+
+\begin{itemize}[nosep]
+\item \textbf{[Integrante 1]}: implementación de AdaRank y métricas, primera versión del dataset (0--2) y notebook inicial.
+\item \textbf{[Integrante 2]}: escala de relevancia 0--3 y guía de etiquetado, features, exportación LETOR,
+  evaluación leave-one-query-out y documentación.
+\item \textbf{[Integrante 3]}: [completar].
+\end{itemize}
+
+\begin{thebibliography}{9}\small\setlength{\itemsep}{0pt}
+\bibitem{xu2007adarank} J.~Xu y H.~Li. AdaRank: a boosting algorithm for information retrieval. \emph{SIGIR}, 2007.
+\bibitem{jarvelin2002} K.~Järvelin y J.~Kekäläinen. Cumulated gain-based evaluation of IR techniques. \emph{ACM TOIS}, 20(4), 2002.
+\bibitem{robertson2009} S.~Robertson y H.~Zaragoza. The probabilistic relevance framework: BM25 and beyond. \emph{FnTIR}, 3(4), 2009.
+\bibitem{adarankgit} R.-C.~Chen. AdaRank (implementación en Python). \url{https://github.com/rueycheng/AdaRank}.
+\end{thebibliography}
+
+\end{document}

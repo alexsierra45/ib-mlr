@@ -1,0 +1,142 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=2.2cm]{geometry}
+\input{preamble}
+
+\title{Guía de etiquetado de relevancia (escala 0--3)\\[2pt]
+\large Listwise Learning to Rank sobre consultas LOINC}
+\author{Machine Learned Ranking --- MUIA, UPM}
+\date{Noviembre 2026}
+
+\begin{document}
+\maketitle
+
+\section{Objetivo}
+
+Asignar a cada par consulta--documento una etiqueta de relevancia ordinal en $\{0,1,2,3\}$, de forma
+\textbf{reproducible y justificada}. Los documentos son los 67 códigos LOINC del libro
+\code{loinc\_dataset-v2.xlsx}, que aparecen (en distinto orden) en las tres hojas, una por consulta:
+\emph{glucose in blood}, \emph{bilirubin in plasma} y \emph{white blood cells count}. En total se juzgan
+$3 \times 67 = 201$ pares.
+
+El orden de las filas en las hojas \textbf{no} se interpreta como etiqueta. La misma prueba puede ser
+relevante para una consulta e irrelevante para otra, por lo que cada par se juzga de forma independiente.
+
+La regla está implementada en \code{src/queries.py} y se aplica con \code{src/label.py}, que genera
+\code{data/relevance\_labels.csv} con una justificación (\code{rationale}) por cada par.
+
+\section{Escala}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{c l X}
+\toprule
+Etiqueta & Nombre & Significado \\
+\midrule
+\rel{3} & Muy relevante & Mide directamente el analito pedido, en la muestra pedida y con una medida adecuada. \\
+\rel{2} & Relevante con un matiz & Satisface la consulta salvo por \emph{una} desviación: muestra compatible pero distinta, fracción del analito o condición especial. \\
+\rel{1} & Relación parcial & Comparte el analito, pero no satisface la consulta (muestra incompatible, medida cualitativa, subpoblación expresada como porcentaje\ldots). \\
+\rel{0} & Irrelevante & El analito es otro, aunque comparta palabras con la consulta (p.\,ej.\ \emph{Blood product type}). \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{Las tres dimensiones del juicio}
+
+Cada par se evalúa en tres dimensiones, que se leen de las columnas LOINC del documento:
+
+\begin{description}
+\item[Analito] (columna \code{component}).
+  \emph{Exacto}: es el concepto pedido.
+  \emph{Relacionado}: es una fracción o subpoblación del concepto pedido.
+  \emph{Ninguno}: es otro analito.
+\item[Muestra] (columna \code{system}).
+  \emph{Exacta}: es la muestra pedida, o un sistema LOINC que la incluye.
+  \emph{Compatible}: es una muestra distinta pero clínicamente intercambiable.
+  \emph{Incompatible}: cualquier otra muestra (orina, líquidos biológicos, muestra no especificada \code{XXX}\ldots).
+\item[Medida/condición] (columna \code{property} y sufijo \code{\^{}} de \code{component}).
+  \emph{Adecuada}: la propiedad es la que pide la consulta y no hay condiciones especiales.
+  \emph{Desviada}: la propiedad no es la pedida (cualitativa \code{PrThr}/\code{ACnc}, fracción \code{NFr} cuando se pide un recuento\ldots),
+  o el componente lleva una condición tras \code{\^{}} (ayuno, post-carga de glucosa, corrección por albúmina\ldots).
+\end{description}
+
+\section{Regla de cálculo}
+
+\begin{enumerate}
+\item Si el analito es \emph{ninguno}, la etiqueta es \rel{0}.
+\item Base: \rel{3} si el analito es \emph{exacto}; \rel{2} si es \emph{relacionado}.
+\item Se resta 1 si la muestra es \emph{compatible} y 2 si es \emph{incompatible}.
+\item Se resta 1 si la medida/condición está \emph{desviada}.
+\item Si el analito es exacto o relacionado, la etiqueta mínima es \rel{1}: compartir analito nunca equivale a irrelevante.
+\end{enumerate}
+
+\section{Criterios por consulta}
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{>{\raggedright}p{2.6cm} >{\raggedright}X >{\raggedright}p{2.6cm} >{\raggedright}p{2.2cm} >{\raggedright\arraybackslash}p{1.9cm}}
+\toprule
+Consulta & Analito exacto / relacionado & Muestra exacta & Muestra compatible & Propiedad adecuada \\
+\midrule
+glucose in blood & \code{Glucose} (con o sin condición \code{\^{}}) / --- & \code{Bld}, \code{BldC}, \code{Ser/Plas/Bld} & \code{Ser/Plas}, \code{Ser}, \code{Plas} & \code{MCnc}, \code{SCnc}, \code{MSCnc} \\
+bilirubin in plasma & \code{Bilirubin} (total) / fracciones directa (glucuronidada) e indirecta (no glucuronidada) & \code{Plas}, \code{Ser/Plas} & \code{Ser}, \code{Bld} & \code{MCnc}, \code{SCnc}, \code{MSCnc} \\
+white blood cells count & \code{Leukocytes} / subpoblaciones: \code{Lymphocytes}, \code{Monocytes}, neutrófilos\ldots & \code{Bld} & --- & \code{NCnc} (recuento por volumen) \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection*{Decisiones de diseño}
+
+\begin{itemize}
+\item \textbf{Suero/plasma frente a sangre.} \code{Ser/Plas} se considera una muestra \emph{compatible pero distinta} de
+  \code{Bld}: el suero y el plasma son fracciones de la sangre y la glucemia se mide habitualmente en ellos, pero no son
+  sangre total. Por eso \emph{Glucose [Moles/volume] in Serum or Plasma} recibe \rel{2} para \emph{glucose in blood}. De forma simétrica,
+  \code{Bld} es compatible pero distinta para \emph{bilirubin in plasma}. \code{Ser/Plas/Bld} incluye explícitamente la sangre, así que es exacta.
+\item \textbf{Bilirrubina total frente a fracciones.} Una consulta sin fracción (\emph{bilirubin}) se interpreta como bilirrubina total.
+  La directa y la indirecta son fracciones (analito relacionado, base 2).
+\item \textbf{WBC = white blood cells = leukocytes.} El recuento total es \code{Leukocytes [\#/volume]}. Los recuentos de
+  subpoblaciones (linfocitos, monocitos) son analito relacionado (\rel{2}). Un \emph{porcentaje} de una subpoblación
+  (\code{Lymphocytes/100 leukocytes}, \code{NFr}) no es un recuento, por lo que baja a \rel{1}.
+\item \textbf{Condiciones especiales.} La glucosa en ayunas o tras una sobrecarga oral mide el mismo analito, pero responde a una
+  pregunta clínica distinta (prueba funcional). Por eso cuenta como medida desviada.
+\item \textbf{Coincidencias léxicas engañosas.} \emph{Blood product type}, \emph{Blood group antibody screen}, \emph{ABO group in Blood}\ldots{}
+  contienen \emph{blood}, pero su analito no es glucosa ni leucocitos, así que reciben \rel{0}.
+  \emph{Calcium bilirubinate/Total in Stone} describe la composición de un cálculo biliar, no la bilirrubina circulante, así que recibe \rel{0}.
+\item \textbf{Empates.} Documentos con la misma etiqueta pueden empatar: no se impone un orden artificial entre ellos.
+\end{itemize}
+
+\section{Resultado}
+
+\begin{table}[h]
+\centering
+\input{tables/label_distribution.tex}
+\caption{Distribución de etiquetas por consulta. $^\dagger$Consultas adicionales (parte opcional),
+etiquetadas con la misma regla sobre los mismos 67 documentos.}
+\end{table}
+
+\begin{table}[h]
+\centering
+\footnotesize
+\input{tables/positive_labels.tex}
+\caption{Todos los documentos con relevancia mayor que 0 en las consultas oficiales. El resto de documentos de cada
+consulta (61--63) son \rel{0} porque su analito es distinto.}
+\end{table}
+
+\section{Revisión manual y overrides}
+
+La regla es determinista, pero las 201 justificaciones se revisan a mano. Si un juicio de la regla se considera
+incorrecto, se añade una fila a \code{data/overrides.csv} (\code{qid, loinc\_num, relevance, justification}).
+\code{src/label.py} aplica el override y deja constancia en el \code{rationale}
+(\code{OVERRIDE a -> b: motivo}). En la versión actual \textbf{no hay overrides}. Cualquier override futuro
+debe justificarse en esta sección.
+
+\paragraph{Diferencias con la versión anterior (escala 0--2).} Respecto al \code{data/dataset\_v0.csv} inicial,
+además de pasar a cuatro niveles, cambia el juicio en estos casos:
+\begin{itemize}
+\item \emph{Blood product type}: era 1 para glucosa y pasa a \rel{0} (otro analito).
+\item \emph{Fasting glucose}: era 0 y pasa a \rel{1} (mismo analito, con condición y muestra compatible).
+\item \emph{Glucose in Serum or Plasma}: empataba con la glucosa en orina (1) y ahora queda por encima (\rel{2} frente a \rel{1}).
+\item \emph{Lymphocytes/100 leukocytes}: empataba con el recuento total de leucocitos (2) y ahora es \rel{1} (porcentaje, no recuento).
+\item \emph{Monocytes [\#/volume]}: estaba por debajo de \emph{Lymphocytes [\#/volume]} y ahora ambos son \rel{2} (subpoblaciones).
+\item Se corrige la errata \emph{bilirrubin} $\rightarrow$ \emph{bilirubin} en el texto de la consulta.
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,152 @@
+\documentclass[aspectratio=169,11pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands]{babel}
+\usepackage{lmodern}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{listings}
+\usetheme{metropolis}
+\setbeamertemplate{navigation symbols}{}
+\lstset{basicstyle=\ttfamily\scriptsize,columns=fullflexible,frame=single,breaklines=true}
+\newcommand{\rel}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+
+\title{Listwise Learning to Rank con AdaRank}
+\subtitle{Training set de relevancia para consultas LOINC}
+\author{[Integrante 1] \and [Integrante 2] \and [Integrante 3]}
+\institute{Machine Learned Ranking --- MUIA, UPM}
+\date{3 de diciembre de 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{El problema}
+  \begin{itemize}
+    \item Tres consultas clínicas: \emph{glucose in blood}, \emph{bilirubin in plasma}, \emph{white blood cells count}.
+    \item 67 pruebas de laboratorio LOINC candidatas, \emph{las mismas} para las tres consultas, lo que da 201 pares.
+    \item Objetivo: ordenar los 67 documentos de cada consulta por relevancia.
+    \item El Excel no trae etiquetas: hay que \textbf{construir el training set}.
+  \end{itemize}
+  \vspace{4pt}
+  \small Cada documento tiene \code{loinc\_num}, \code{long\_common\_name}, \code{component}, \code{system} y \code{property}.
+\end{frame}
+
+\begin{frame}{Pointwise, pairwise, listwise}
+  \begin{tabular}{>{\bfseries}l p{4.2cm} p{5cm}}
+    \toprule
+    Enfoque & Unidad de aprendizaje & Ejemplos \\
+    \midrule
+    Pointwise & un documento $\rightarrow$ etiqueta & regresión, clasificación ordinal \\
+    Pairwise & par $(d_i,d_j)$: ¿cuál va antes? & RankNet, RankSVM \\
+    Listwise & la lista completa de una consulta & \alert{AdaRank}, ListNet, LambdaMART \\
+    \bottomrule
+  \end{tabular}
+  \vspace{8pt}
+  \begin{itemize}
+    \item Al usuario le importa el \emph{orden} de la lista, que es lo que optimiza un método listwise.
+    \item Por eso el training set se agrupa por \code{qid}: 3 listas de 67, no 201 filas sueltas.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{AdaRank (Xu y Li, 2007)}
+  \begin{itemize}
+    \item \emph{Boosting} sobre consultas: el ranker final es $f(\mathbf{x})=\sum_t \alpha_t h_t(\mathbf{x})$, y cada $h_t$ es una feature.
+    \item Mantiene pesos $P_t(i)$ sobre las consultas. En cada ronda:
+      \begin{enumerate}
+        \item elige la feature con mejor NDCG ponderado por $P_t$;
+        \item calcula $\alpha_t=\frac12\ln\frac{\sum_i P_t(i)(1+E_i)}{\sum_i P_t(i)(1-E_i)}$;
+        \item actualiza $P_{t+1}(i)\propto e^{-E(q_i,f_t)}$, de modo que las consultas mal ordenadas pesan más.
+      \end{enumerate}
+    \item Optimiza directamente una medida de ranking:
+      $\mathrm{NDCG@}k=\frac{1}{\mathrm{IDCG@}k}\sum_{r\le k}\frac{2^{y_r}-1}{\log_2(r+1)}$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Escala de relevancia 0--3: tres dimensiones}
+  \begin{itemize}
+    \item \textbf{Analito} (\code{component}): exacto / relacionado (fracción o subpoblación) / ninguno.
+    \item \textbf{Muestra} (\code{system}): exacta / compatible pero distinta / incompatible.
+    \item \textbf{Medida} (\code{property}, sufijo \code{\^{}}): adecuada / desviada.
+  \end{itemize}
+  \vspace{6pt}
+  \begin{block}{Regla determinista}
+    Analito distinto $\rightarrow$ \rel{0}. Si no, base \rel{3} (exacto) o \rel{2} (relacionado);
+    $-1$ si la muestra es compatible, $-2$ si es incompatible; $-1$ si la medida está desviada; mínimo \rel{1}.
+  \end{block}
+  \small Cada par tiene su justificación en \code{data/relevance\_labels.csv}.
+\end{frame}
+
+\begin{frame}{Decisiones de etiquetado}
+  \begin{itemize}
+    \item \code{Ser/Plas} frente a \code{Bld}: compatible pero distinta, así que la glucosa en suero/plasma es \rel{2}.
+    \item \textbf{WBC = leucocitos}. Los recuentos de linfocitos y monocitos son \rel{2}; el \emph{porcentaje} de linfocitos es \rel{1}.
+    \item La glucosa en ayunas o post-carga es una prueba funcional: medida desviada.
+    \item ``Mismo término'' no implica ``misma prueba'':
+      \begin{itemize}
+        \item glucosa en orina o en líquido pleural $\rightarrow$ \rel{1};
+        \item \emph{Blood product type} $\rightarrow$ \rel{0};
+        \item \emph{Calcium bilirubinate in Stone} $\rightarrow$ \rel{0}.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Etiquetas resultantes}
+  \centering\scriptsize
+  \resizebox{\linewidth}{!}{\input{tables/positive_labels.tex}}
+\end{frame}
+
+\begin{frame}[fragile]{Features (sin fuga de etiquetas)}
+  \begin{tabular}{>{\bfseries}l l}
+    \toprule
+    $f_1$ & coseno TF-IDF consulta--\code{long\_common\_name} \\
+    $f_2$ & BM25 normalizado por consulta \\
+    $f_3$ & solapamiento con sinónimos (\emph{white cells}$\to$\emph{leukocytes}) \\
+    $f_4$ & analito de la consulta en \code{component} (0/1) \\
+    $f_5$ & término de muestra en \code{system} (0/1) \\
+    \bottomrule
+  \end{tabular}
+  \vspace{6pt}
+  \begin{itemize}\small
+    \item Se eliminaron las codificaciones \code{LabelEncoder}: son índices alfabéticos que no dependen de la consulta.
+    \item Formato LETOR, 201 líneas, 67 por \code{qid}:
+  \end{itemize}
+  \vspace{-4pt}
+  \begin{lstlisting}
+3 qid:1 1:0.737931 2:1 3:1 4:1 5:1 # docid = 74774-1
+2 qid:1 1:0.537084 2:0.694848 3:0.5 4:1 5:0 # docid = 14749-6
+  \end{lstlisting}
+\end{frame}
+
+\begin{frame}{Ranking del modelo final (3 consultas)}
+  \centering\scriptsize
+  \resizebox{!}{0.8\textheight}{\input{tables/ranking_top.tex}}
+\end{frame}
+
+\begin{frame}{Evaluación leave-one-query-out}
+  \centering\scriptsize
+  \input{tables/loqo_results.tex}
+  \vspace{4pt}
+  \begin{itemize}\small
+    \item Con 2 consultas de entrenamiento, AdaRank elige la feature que mejor ordena esas dos y no generaliza mejor que la mejor feature sola.
+    \item Con 6 consultas iguala al mejor baseline. El cuello de botella es el número de consultas.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Limitaciones y conclusiones}
+  \begin{itemize}
+    \item Con 3 consultas los resultados son demostrativos; repetir los 67 documentos no crea 201 consultas.
+    \item Etiquetas dispersas: 4--6 relevantes de 67.
+    \item $f_4$ y $f_5$ se parecen a la regla de etiquetado, aunque son más gruesas.
+    \item Corregimos un bug de AdaRank: $\alpha=\infty$ cuando un ranker débil es perfecto.
+    \item[$\Rightarrow$] Entregamos un training set listwise reproducible: regla 0--3 documentada, features, LETOR,
+      validaciones y AdaRank entrenado y evaluado.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[standout]
+  ¿Preguntas?
+\end{frame}
+
+\end{document}
