@@ -3,13 +3,17 @@ Construye de forma sistemática las consultas adicionales y la colección de doc
 a partir de la tabla oficial de LOINC (Loinc.csv, no incluida en el repositorio por su tamaño
 y licencia; se descarga gratis en https://loinc.org/downloads/).
 
-1. Selección de consultas (sin elección manual):
+1. Selección estratificada de consultas (sin elección manual de las pruebas):
    se recorren las pruebas de laboratorio por COMMON_TEST_RANK (ranking oficial de LOINC de
-   las pruebas más frecuentes) y se toman las 12 primeras que cumplen:
-     - escala cuantitativa de concentración o recuento (MCnc, SCnc, NCnc, CCnc)
-     - muestra estándar (Bld o Ser/Plas)
-     - analito simple (sin "/" ni "^") y no repetido, ni ya cubierto por las consultas oficiales
-   El resultado debe coincidir con las consultas 4-15 de src/queries.py (se comprueba).
+   las pruebas más frecuentes) y se toma la PRIMERA de cada estrato
+   (dominio clínico = CLASS, grupo de muestra = SYSTEM agrupado) aún no cubierto, hasta 12:
+     - se excluyen las entradas que no son pruebas de un paciente (clases SPEC, MISC, PANEL,
+       BLDBK, CHAL; componentes genéricos como "Observation"), los índices por célula
+       (propiedades Ent*) y las pruebas sin muestra concreta (XXX, Isolate)
+     - analito simple (sin "/") y no repetido, ni ya cubierto por las consultas oficiales
+   Así las consultas varían en dominio, muestra y tipo de medida. El TEXTO de cada consulta
+   se redacta a mano en src/queries.py, al estilo de las consultas del profesor; aquí se
+   comprueba que las pruebas de origen coinciden.
 
 2. Pooling (como en TREC/LETOR), igual para las 15 consultas, sobre las pruebas de
    laboratorio activas de LOINC:
@@ -48,31 +52,62 @@ OUT = os.path.join(ROOT, 'data', 'collection.csv')
 N_BM25, N_COMPONENT, N_RANDOM, MAX_DUP, SEED = 40, 20, 300, 2, 42
 N_NEW_QUERIES = 12
 OFFICIAL_ANALYTES = {'glucose', 'bilirubin', 'leukocytes'}
-SELECT_PROPERTIES = {'MCnc', 'SCnc', 'NCnc', 'CCnc'}
-SELECT_SYSTEMS = {'Bld', 'Ser/Plas'}
+NON_TEST_CLASSES = ('SPEC', 'MISC', 'PANEL', 'BLDBK', 'CHAL')
+GENERIC_COMPONENTS = {'observation', 'specimen', 'age', 'service comment'}
 
 COLS = {'LOINC_NUM': 'loinc_num', 'LONG_COMMON_NAME': 'long_common_name', 'COMPONENT': 'component',
-        'SYSTEM': 'system', 'PROPERTY': 'property', 'COMMON_TEST_RANK': 'common_test_rank'}
+        'SYSTEM': 'system', 'PROPERTY': 'property', 'SCALE_TYP': 'scale', 'CLASS': 'loinc_class',
+        'COMMON_TEST_RANK': 'common_test_rank'}
 
 
 def load_universe(path):
     """Pruebas de laboratorio (CLASSTYPE 1) activas de LOINC."""
     d = pd.read_csv(path, dtype=str, low_memory=False, usecols=list(COLS) + ['CLASSTYPE', 'STATUS'])
     d = d[(d.CLASSTYPE == '1') & (d.STATUS == 'ACTIVE')].rename(columns=COLS)[list(COLS.values())]
+    d = d.fillna('')
     d['common_test_rank'] = pd.to_numeric(d['common_test_rank'], errors='coerce').fillna(0).astype(int)
     return d.reset_index(drop=True)
 
 
+def specimen_group(system):
+    """Agrupa el SYSTEM de LOINC en grandes tipos de muestra (None = sin muestra concreta)."""
+    s = system.split('^')[0]
+    if s.startswith('Bld') or s == 'RBC':
+        return 'sangre'
+    if s in ('Ser', 'Plas', 'Ser/Plas', 'Ser/Plas/Bld', 'PPP', 'PPP/Bld', 'PlasV', 'PlasA', 'Ser/Bld'):
+        return 'suero/plasma'
+    if s.startswith('Urine'):
+        return 'orina'
+    if s == 'CSF':
+        return 'LCR'
+    if 'Respiratory' in s or s in ('Nph', 'Thrt', 'Nose', 'Sputum', 'Bronchial'):
+        return 'respiratoria'
+    if s == 'Stool':
+        return 'heces'
+    if s in ('Tiss', 'Bld/Tiss'):
+        return 'tejido'
+    if s in ('XXX', 'Specimen', 'Isolate'):
+        return None
+    return 'otros fluidos'
+
+
 def select_queries(universe):
-    """Las 12 pruebas más frecuentes que cumplen los criterios (ver docstring)."""
+    """La prueba más frecuente de cada estrato (dominio clínico x grupo de muestra), hasta 12."""
     top = universe[universe.common_test_rank > 0].sort_values('common_test_rank')
-    chosen, seen = [], set(OFFICIAL_ANALYTES)
+    chosen, strata, seen = [], set(), set(OFFICIAL_ANALYTES)
     for r in top.itertuples():
         comp = r.component.lower()
-        if (r.property in SELECT_PROPERTIES and r.system in SELECT_SYSTEMS
-                and '/' not in comp and '^' not in comp and comp not in seen):
-            chosen.append(r)
-            seen.add(comp)
+        if r.loinc_class.startswith(NON_TEST_CLASSES) or comp in GENERIC_COMPONENTS:
+            continue
+        if r.property.startswith('Ent') or r.scale in ('-', 'Doc', 'Nar'):
+            continue
+        group = specimen_group(r.system)
+        stratum = (r.loinc_class.split('.')[0], group)
+        if group is None or stratum in strata or comp in seen or '/' in comp:
+            continue
+        chosen.append(r)
+        strata.add(stratum)
+        seen.add(comp)
         if len(chosen) == N_NEW_QUERIES:
             break
     return chosen
@@ -127,10 +162,11 @@ def main():
     # 1. Selección sistemática de consultas y comprobación contra src/queries.py
     chosen = select_queries(universe)
     new_queries = [q for q in QUERIES if not q['official']]
-    print('Consultas seleccionadas por COMMON_TEST_RANK:')
+    print('Consultas seleccionadas (estratificación dominio x muestra, por COMMON_TEST_RANK):')
     for r, q in zip(chosen, new_queries):
-        print('  rank {:3d}  {:9s} {:28s} {:9s} {:5s} -> qid {:2d} "{}"'.format(
-            r.common_test_rank, r.loinc_num, r.component, r.system, r.property, q['qid'], q['query']))
+        print('  rank {:3d}  {:9s} {:9s} {:13s} {:6s} {:30s} -> qid {:2d} "{}"'.format(
+            r.common_test_rank, r.loinc_num, r.loinc_class.split('.')[0], specimen_group(r.system),
+            r.property, r.component[:30], q['qid'], q['query']))
         assert q['source_loinc'] == r.loinc_num, (q['query'], q['source_loinc'], r.loinc_num)
     assert len(chosen) == len(new_queries) == N_NEW_QUERIES
 

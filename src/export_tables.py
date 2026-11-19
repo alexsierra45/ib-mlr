@@ -118,13 +118,14 @@ def main():
 
     # 3. Ejemplos de etiquetado de documentos de la colección (decisiones representativas)
     examples = [
-        (1, '41653-7'), (1, '2345-7'), (1, '1558-6'),
-        (3, '6690-2'), (3, '770-8'),
-        (4, '2160-0'), (4, '38483-4'),
-        (7, '2075-0'), (7, '12998-1'),
-        (12, '718-7'), (12, '41995-2'), (12, '4548-4'),
-        (13, '777-3'), (13, '32623-1'), (13, '10412-5'),
-        (14, '2885-2'), (14, '1988-5'),
+        (6, '11556-8'), (6, '2708-6'),                    # gasometría: pO2 exacta; saturación relacionada
+        (7, '5902-2'), (7, '6301-6'), (7, '3173-2'),     # PT; INR; aPTT (otra prueba)
+        (8, '33903-6'), (8, '13009-6'),                  # cetonas; metil etil cetona (disolvente)
+        (9, '104451-0'), (9, '95209-3'), (9, '41458-1'), # SARS-CoV-2 RNA; antígeno combinado; SARS-CoV 2003
+        (10, '630-4'), (10, '105917-9'),                 # urocultivo; cultivo de lavado broncoalveolar
+        (13, '56888-1'), (13, '31201-7'),                # HIV Ab+Ag; solo anticuerpos
+        (14, '11253-2'), (14, '77348-1'),                # tacrolimus; valle (condición)
+        (15, '39004-7'), (15, '14049-1'),                # EGFR; EGF (el ligando)
     ]
     lab = labels.set_index(['qid', 'loinc_num'])
     rows, last = [], None

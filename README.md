@@ -2,23 +2,23 @@
 
 Machine Learned Ranking, MUIA (UPM). Training set de relevancia (escala 0–3) para las tres consultas
 del profesor sobre 67 documentos LOINC, ampliado de forma sistemática con 12 consultas y una colección
-de 1267 documentos obtenida por *pooling* sobre la tabla oficial de LOINC. AdaRank entrenado y evaluado
+de 1222 documentos obtenida por *pooling* sobre la tabla oficial de LOINC. AdaRank entrenado y evaluado
 con leave-one-query-out.
 
 | Configuración | Archivo | Consultas × documentos | Pares |
 |---|---|---|---|
 | official | `data/train.txt` | 3 × 67 (entregable obligatorio) | 201 |
-| terms | `data/train_terms.txt` | 3 × 1267 (más términos) | 3801 |
-| extended | `data/train_extended.txt` | 15 × 1267 (más términos y consultas) | 19 005 |
+| terms | `data/train_terms.txt` | 3 × 1222 (más términos) | 3666 |
+| extended | `data/train_extended.txt` | 15 × 1222 (más términos y consultas) | 18 330 |
 
 ## Estructura
 
 ```
 data/
   loinc_dataset-v2.xlsx     Excel original del profesor (3 hojas × 67 documentos)
-  collection.csv            colección de 1267 documentos (Excel + pooling sobre LOINC)  (generado)
+  collection.csv            colección de 1222 documentos (Excel + pooling sobre LOINC)  (generado)
   overrides.csv             correcciones manuales a la regla (vacío por ahora)
-  relevance_labels.csv      etiquetas 0–3 + dimensiones + justificación de los 19 005 pares (generado)
+  relevance_labels.csv      etiquetas 0–3 + dimensiones + justificación de los 18 330 pares (generado)
   features.csv              f1–f5 por par y configuración                                (generado)
   train.txt, train_terms.txt, train_extended.txt   LETOR                                  (generado)
   dataset_v0.csv            primera versión del dataset (escala 0–2), solo como referencia

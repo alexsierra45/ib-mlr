@@ -77,9 +77,11 @@ versión inicial (0--2), se corrigió la errata \emph{bilirrubin} de la consulta
 cada consulta tenía una lista construida de forma distinta, y casi todos sus candidatos contenían la palabra de la consulta. La rehicimos
 con un procedimiento reproducible sobre la tabla oficial de LOINC (62\,148 pruebas de laboratorio activas).
 \begin{itemize}[nosep]
-\item \textbf{Más consultas (12).} Son las pruebas más frecuentes según \code{COMMON\_TEST\_RANK} que cumplen cuatro condiciones:
-  concentración o recuento, muestra sangre o suero/plasma, analito simple, y analito no cubierto por las consultas oficiales.
-  Salen, entre otras, \emph{creatinine in serum}, \emph{sodium in serum}, \emph{hemoglobin in blood} y \emph{platelets count in blood}.
+\item \textbf{Más consultas (12), por selección estratificada.} Para cada estrato \emph{dominio clínico $\times$ muestra} se toma la prueba
+  más frecuente según \code{COMMON\_TEST\_RANK}. El texto de la consulta se redacta a mano. Así varían el dominio (química, hematología,
+  coagulación, microbiología, uroanálisis, serología, fármacos, patología), la muestra (suero, sangre, orina, vía respiratoria, tejido)
+  y el tipo de medida (concentración, recuento, presión parcial, tiempo, presencia, identificación). Por ejemplo:
+  \emph{prothrombin time in plasma}, \emph{ketones in urine}, \emph{SARS-CoV-2 RNA in respiratory specimen}, \emph{EGFR antigen in tissue}.
 \item \textbf{Más términos} (\emph{pooling}, como en TREC/LETOR). Para cada una de las 15 consultas:
   \begin{itemize}[nosep]
   \item 40 candidatos por BM25 (distractores léxicos);
@@ -87,12 +89,13 @@ con un procedimiento reproducible sobre la tabla oficial de LOINC (62\,148 prueb
   \item 300 aleatorios compartidos (negativos fáciles);
   \item un límite de casi-duplicados.
   \end{itemize}
-  Con los 67 del Excel, la colección tiene \textbf{1267 documentos}.
+  Con los 67 del Excel, la colección tiene \textbf{1222 documentos}.
 \end{itemize}
-Como en el Excel, todas las consultas se juzgan contra toda la colección. Las 12 consultas nuevas usan una especificación genérica de la regla,
-derivada de su prueba de origen. La regla se extendió a variantes de sangre, paneles, valores calculados y registros administrativos,
-sin cambiar ninguna de las 201 etiquetas oficiales. Cada consulta tiene entre 16 y 93 documentos relevantes, y salen distractores
-difíciles de forma natural (\emph{C reactive protein} para \emph{protein}, \emph{Methylene chloride} para \emph{chloride}).
+Como en el Excel, todas las consultas se juzgan contra toda la colección. La regla se extendió a variantes de sangre, paneles,
+valores calculados y registros administrativos, sin cambiar ninguna de las 201 etiquetas oficiales. En la coagulación, el analito
+se juzga por el nombre largo, porque LOINC distingue el PT del aPTT por el método y no por el componente. Cada consulta tiene entre
+7 y 84 documentos relevantes, y salen distractores difíciles de forma natural: \emph{Methyl ethyl ketone} para \emph{ketones},
+\emph{aPTT} para \emph{prothrombin time}, \emph{Epidermal growth factor} (el ligando) para \emph{EGFR}.
 
 \section{Features y formato del training set}
 
@@ -109,11 +112,11 @@ Las codificaciones \code{LabelEncoder} del trabajo inicial se eliminaron. Eran �
 y no tienen sentido como rankers débiles. El training set obligatorio se exporta en formato LETOR (\code{data/train.txt}): 201 líneas
 agrupadas en 67 por \code{qid}, con el código LOINC en comentario. Las ampliaciones van en archivos aparte:
 \begin{itemize}[nosep]
-\item \code{train\_terms.txt}: $3\times1267$ pares;
-\item \code{train\_extended.txt}: $15\times1267$ pares.
+\item \code{train\_terms.txt}: $3\times1222$ pares;
+\item \code{train\_extended.txt}: $15\times1222$ pares.
 \end{itemize}
 Un script comprueba los recuentos, que la lista de documentos es la misma para cada consulta,
-que las etiquetas están en $\{0,\dots,3\}$, que las features son finitas y 26 casos de referencia.
+que las etiquetas están en $\{0,\dots,3\}$, que las features son finitas y 34 casos de referencia (incluidos distractores).
 
 \input{tables/letor_example.tex}
 
@@ -133,21 +136,24 @@ ordena perfectamente su propio conjunto: todos los documentos relevantes quedan 
 supera a la mejor feature individual. Con dos consultas de entrenamiento elige la feature que mejor ordena esas dos, y esa feature no tiene por qué servir para la tercera.
 Por ejemplo, $f_1$ falla en \emph{white blood cells count} porque la consulta no comparte vocabulario con \emph{Leukocytes}, mientras que $f_3$ (con sinónimos) acierta.
 
-La colección completa hace la tarea mucho más difícil. Con las 3 consultas oficiales sobre 1267 documentos, AdaRank cae a NDCG@10 = 0.395,
-por debajo de $f_1$ sola (0.550): con dos consultas de entrenamiento sobreajusta. Los documentos del pooling actúan como \emph{distractores difíciles}.
-En \emph{white blood cells count}, documentos como \emph{Plasma cells [\#/volume] in Blood} contienen literalmente \emph{cells} y \emph{blood},
-y desplazan a \emph{Leukocytes [\#/volume] in Blood by Automated count} (relevancia 3) hasta el puesto 47.
+La colección completa hace la tarea mucho más difícil. Con las 3 consultas oficiales sobre 1222 documentos, AdaRank cae a NDCG@10 = 0.433,
+por debajo de $f_1$ sola (0.547): con dos consultas de entrenamiento sobreajusta. Los documentos del pooling actúan como \emph{distractores difíciles}.
+En \emph{white blood cells count}, las proporciones \emph{X cells/Leukocytes in Blood} (relevancia 1) contienen literalmente \emph{cells}
+y \emph{blood}, y desplazan a \emph{Leukocytes [\#/volume] in Blood by Automated count} (relevancia 3) hasta el puesto 21.
 
-Con las 15 consultas, AdaRank ya no sobreajusta, pero tampoco aporta nada: elige solo $f_1$ e iguala a ese baseline (NDCG@10 = 0.687).
-El rendimiento varía mucho entre consultas, de 0.88 en \emph{carbon dioxide} a 0.38 en \emph{hemoglobin} y 0.06 en \emph{white blood cells count}.
-Las features léxicas no distinguen los matices que separan un 3 de un 2 o de un 1 (condición, muestra, cociente), y una combinación lineal
-de ellas no puede suplirlo. La conclusión es doble: más consultas estabilizan la evaluación, pero para mejorar el ranking hacen falta
-features más expresivas, como la similitud semántica biomédica o la especificidad estructural del término LOINC.
+Con las 15 consultas variadas, AdaRank (NDCG@10 = 0.627) queda cerca de $f_1$ (0.635) y por debajo de $f_3$ sola (0.660). El rendimiento
+depende mucho del tipo de consulta. Es alto cuando el nombre LOINC contiene las palabras de la consulta (\emph{EGFR} 1.00, \emph{leukocyte
+esterase} 0.96, \emph{p-ANCA} 0.94) y nulo cuando no: en \emph{red blood cells count}, los índices \emph{MCHC} y \emph{MCV in Red Blood Cells}
+(relevancia 0) contienen literalmente la consulta, y NDCG@10 = 0. Las features léxicas no distinguen los matices que separan un 3 de un 2
+o de un 1 (condición, muestra, cociente), y una combinación lineal de ellas no puede suplirlo. La conclusión es doble: la variedad de
+consultas revela dónde fallan las features, y para mejorar hacen falta features más expresivas, como la similitud semántica biomédica
+o la especificidad estructural del término LOINC.
 
 \paragraph{Limitaciones.}
 \begin{itemize}[nosep]
 \item Quince consultas siguen siendo pocas para estimar la generalización; los resultados son demostrativos.
-\item Las etiquetas de la colección ampliada salen de una regla genérica y solo se han revisado por muestreo.
+\item Las etiquetas de la colección ampliada se han revisado por muestreo, no una a una. El texto de las 12 consultas nuevas es nuestro,
+  aunque las pruebas se eligieron automáticamente.
 \item En el Excel las etiquetas son muy dispersas: 4--6 documentos relevantes de 67.
 \item $f_4$ y $f_5$ se inspiran en las mismas columnas que la regla de etiquetado, aunque son más gruesas.
 \item Las features binarias producen empates, y NDCG resuelve los empates según el orden de entrada.

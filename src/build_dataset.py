@@ -172,13 +172,16 @@ EXPECTED = {  # casos de referencia de tex/labeling_guidelines.tex
     (1, '2339-0'): 3,     # Glucose [Mass/volume] in Blood
     (1, '27353-2'): 1,    # Glucose mean value ... Estimated from glycated hemoglobin
     (2, '1970-3'): 2,     # Bilirubin.delta
-    (4, '2160-0'): 3,     # creatinine in serum: Creatinine [Mass/volume] in Serum or Plasma
-    (9, '1995-0'): 2,     # calcium in serum: Calcium.ionized en Ser/Plas
-    (12, '718-7'): 3,     # hemoglobin in blood: Hemoglobin [Mass/volume] in Blood
-    (12, '4548-4'): 1,    # hemoglobin in blood: Hemoglobin A1c/Hemoglobin.total (cociente)
-    (13, '777-3'): 3,     # platelets count in blood: Platelets [#/volume] in Blood
-    (14, '1988-5'): 0,    # protein in serum: C reactive protein (otro analito)
-    (14, '4671-4'): 0,    # protein in serum: Protein C (otro analito)
+    # Consultas de la ampliación: la prueba de origen es 3 ...
+    (4, '2160-0'): 3, (5, '789-8'): 3, (6, '11556-8'): 3, (7, '5902-2'): 3, (8, '33903-6'): 3,
+    (9, '104451-0'): 3, (10, '630-4'): 3, (13, '56888-1'): 3, (14, '11253-2'): 3, (15, '39004-7'): 3,
+    # ... relacionados ...
+    (7, '6301-6'): 2,     # INR (por nombre: LOINC codifica la prueba en el método)
+    # ... y distractores difíciles
+    (7, '3173-2'): 0,     # aPTT: otra prueba de coagulación
+    (8, '13009-6'): 0,    # Methyl ethyl ketone: disolvente, no cuerpo cetónico
+    (9, '41458-1'): 0,    # SARS coronavirus RNA: SARS-CoV de 2003
+    (15, '14049-1'): 0,   # Epidermal growth factor: el ligando, no el receptor
 }
 
 

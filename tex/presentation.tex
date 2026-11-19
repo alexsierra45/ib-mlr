@@ -109,15 +109,36 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Ampliación sistemática: cómo}
-  \begin{itemize}
-    \item \textbf{+12 consultas}: las pruebas más frecuentes de LOINC (\code{COMMON\_TEST\_RANK}) de concentración o recuento, en sangre o suero/plasma.
+\begin{frame}{Ampliación sistemática: 12 consultas estratificadas}
+  \begin{itemize}\small
+    \item Para cada estrato \textbf{dominio clínico $\times$ muestra}, la prueba más frecuente de LOINC (\code{COMMON\_TEST\_RANK}).
+      El texto de la consulta se redacta a mano.
+  \end{itemize}
+  \centering\scriptsize
+  \begin{tabular}{lll}
+    \toprule
+    Dominio & Muestra & Consulta \\
+    \midrule
+    Química & suero / sangre / orina & creatinine in serum; oxygen partial pressure in blood; ketones in urine \\
+    Hematología & sangre & red blood cells count \\
+    Coagulación & plasma & prothrombin time in plasma \\
+    Microbiología & respiratoria / orina / suero & SARS-CoV-2 RNA; bacteria in urine culture; HIV Ab+Ag \\
+    Uroanálisis & orina & leukocyte esterase in urine \\
+    Serología & suero & perinuclear ANCA in serum \\
+    Fármacos & sangre & tacrolimus in blood \\
+    Patología & tejido & EGFR antigen in tissue \\
+    \bottomrule
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Ampliación sistemática: pooling y etiquetas}
+  \begin{itemize}\small
     \item \textbf{Pooling} (como TREC/LETOR) sobre 62\,148 pruebas de laboratorio, igual para las 15 consultas:
-      40 por BM25 + 20 por componente + 300 aleatorias, con límite de casi-duplicados. Resultado: \textbf{1267 documentos}.
-    \item Regla genérica para las consultas nuevas; las 201 etiquetas oficiales no cambian.
+      40 por BM25 + 20 por componente + 300 aleatorias, con límite de casi-duplicados. Resultado: \textbf{1222 documentos}.
+    \item Misma regla 0--3; las 201 etiquetas oficiales no cambian. Salen distractores difíciles (rel. 0):
   \end{itemize}
   \centering\tiny
-  \resizebox{!}{0.42\textheight}{\input{tables/extended_examples.tex}}
+  \resizebox{!}{0.55\textheight}{\input{tables/extended_examples.tex}}
 \end{frame}
 
 \begin{frame}[fragile]{Features (sin fuga de etiquetas)}
@@ -133,7 +154,7 @@
   \vspace{6pt}
   \begin{itemize}\small
     \item Se eliminaron las codificaciones \code{LabelEncoder}: son índices alfabéticos que no dependen de la consulta.
-    \item LETOR: \code{train.txt} (3$\times$67), \code{train\_terms.txt} (3$\times$1267), \code{train\_extended.txt} (15$\times$1267).
+    \item LETOR: \code{train.txt} (3$\times$67), \code{train\_terms.txt} (3$\times$1222), \code{train\_extended.txt} (15$\times$1222).
   \end{itemize}
   \vspace{-4pt}
   \begin{lstlisting}
@@ -153,7 +174,8 @@
   \vspace{4pt}
   \begin{itemize}\small
     \item Con 3 consultas, AdaRank sobreajusta a las 2 de entrenamiento y no supera a la mejor feature sola.
-    \item Con 15 consultas ya no sobreajusta, pero se queda solo con $f_1$ (NDCG@10 = 0.687): las features léxicas no bastan.
+    \item Con 15 consultas variadas queda cerca de las mejores features (0.627 frente a 0.660 de $f_3$). Va bien si el nombre LOINC
+      contiene la consulta (EGFR 1.00) y falla si no (\emph{red blood cells count}: 0.00, porque \emph{MCHC in Red Blood Cells} gana).
   \end{itemize}
 \end{frame}
 
@@ -162,7 +184,7 @@
   \input{tables/ranking_terms_wbc.tex}
   \vspace{6pt}
   \begin{itemize}\small
-    \item \emph{Plasma cells [\#/volume] in Blood} contiene literalmente \emph{cells} y \emph{blood}; el recuento total de leucocitos, no.
+    \item \emph{Plasma cells/Leukocytes in Blood} contiene literalmente \emph{cells} y \emph{blood}; el recuento total de leucocitos, no.
     \item Las features léxicas no distinguen los matices que separan un 3 de un 1. Hacen falta features más expresivas.
   \end{itemize}
 \end{frame}
