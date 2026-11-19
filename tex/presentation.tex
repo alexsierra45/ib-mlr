@@ -97,16 +97,27 @@
   \resizebox{\linewidth}{!}{\input{tables/positive_labels.tex}}
 \end{frame}
 
-\begin{frame}{Ampliación: más términos y más consultas}
+\begin{frame}{Ampliación sistemática: por qué}
   \begin{itemize}
-    \item \textbf{+289 términos LOINC}, elegidos por el equipo, con su código recuperado de la API de la NLM. La colección pasa de 67 a \textbf{356} documentos.
-    \item \textbf{+5 consultas}: \emph{platelets in blood} y \emph{creatinine in serum} (con sus términos), más \emph{calcium}, \emph{cholesterol} y \emph{chloride}.
-    \item Todas las consultas se juzgan contra toda la colección, como en el Excel.
-    \item La regla se extiende a variantes de sangre, paneles, valores calculados y registros administrativos (estos últimos reciben \rel{0}).
-      Las 201 etiquetas oficiales no cambian.
+    \item Una primera ampliación con términos buscados a mano tenía \textbf{sesgo de selección}:
+      \begin{itemize}
+        \item cada consulta tenía una lista construida de forma distinta;
+        \item casi todos los candidatos contenían la palabra de la consulta.
+      \end{itemize}
+    \item ``Equilibrada'' \emph{no} significa repartir las notas por igual. Eso no es realista y distorsiona el NDCG.
+    \item Lo correcto es aplicar \textbf{el mismo procedimiento a todas las consultas} y dejar que la proporción de relevantes salga sola.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Ampliación sistemática: cómo}
+  \begin{itemize}
+    \item \textbf{+12 consultas}: las pruebas más frecuentes de LOINC (\code{COMMON\_TEST\_RANK}) de concentración o recuento, en sangre o suero/plasma.
+    \item \textbf{Pooling} (como TREC/LETOR) sobre 62\,148 pruebas de laboratorio, igual para las 15 consultas:
+      40 por BM25 + 20 por componente + 300 aleatorias, con límite de casi-duplicados. Resultado: \textbf{1267 documentos}.
+    \item Regla genérica para las consultas nuevas; las 201 etiquetas oficiales no cambian.
   \end{itemize}
   \centering\tiny
-  \resizebox{!}{0.38\textheight}{\input{tables/extended_examples.tex}}
+  \resizebox{!}{0.42\textheight}{\input{tables/extended_examples.tex}}
 \end{frame}
 
 \begin{frame}[fragile]{Features (sin fuga de etiquetas)}
@@ -122,7 +133,7 @@
   \vspace{6pt}
   \begin{itemize}\small
     \item Se eliminaron las codificaciones \code{LabelEncoder}: son índices alfabéticos que no dependen de la consulta.
-    \item LETOR: \code{train.txt} (3$\times$67), \code{train\_terms.txt} (3$\times$356), \code{train\_extended.txt} (8$\times$356).
+    \item LETOR: \code{train.txt} (3$\times$67), \code{train\_terms.txt} (3$\times$1267), \code{train\_extended.txt} (15$\times$1267).
   \end{itemize}
   \vspace{-4pt}
   \begin{lstlisting}
@@ -141,24 +152,24 @@
   \resizebox{\linewidth}{!}{\input{tables/loqo_results.tex}}
   \vspace{4pt}
   \begin{itemize}\small
-    \item Oficial: con 2 consultas de entrenamiento, AdaRank elige la feature que mejor ordena esas dos y no supera a la mejor feature sola.
-    \item Con términos nuevos la tarea es mucho más difícil, y AdaRank se queda solo con $f_1$.
+    \item Con 3 consultas, AdaRank sobreajusta a las 2 de entrenamiento y no supera a la mejor feature sola.
+    \item Con 15 consultas ya no sobreajusta, pero se queda solo con $f_1$ (NDCG@10 = 0.687): las features léxicas no bastan.
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Los términos nuevos como distractores difíciles}
+\begin{frame}{El pooling genera distractores difíciles}
   \centering\scriptsize
   \input{tables/ranking_terms_wbc.tex}
   \vspace{6pt}
   \begin{itemize}\small
-    \item \emph{Plasma cells/Leukocytes in Blood} contiene literalmente \emph{cells} y \emph{blood}; el recuento total de leucocitos, no.
+    \item \emph{Plasma cells [\#/volume] in Blood} contiene literalmente \emph{cells} y \emph{blood}; el recuento total de leucocitos, no.
     \item Las features léxicas no distinguen los matices que separan un 3 de un 1. Hacen falta features más expresivas.
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Limitaciones y conclusiones}
   \begin{itemize}
-    \item Con 3--8 consultas los resultados son demostrativos; repetir documentos no crea consultas nuevas.
+    \item Con 3--15 consultas los resultados son demostrativos; repetir documentos no crea consultas nuevas.
     \item Hacen falta más consultas \emph{y} features más expresivas (estructurales, semánticas) para los términos difíciles.
     \item $f_4$ y $f_5$ se parecen a la regla de etiquetado, aunque son más gruesas.
     \item Corregimos un bug de AdaRank: $\alpha=\infty$ cuando un ranker débil es perfecto.

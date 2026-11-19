@@ -1,10 +1,10 @@
 """
 Genera data/relevance_labels.csv aplicando la regla 0-3 de src/queries.py.
 
-Colección de documentos:
+Colección de documentos (data/collection.csv, generada por src/build_collection.py):
   - 67 documentos LOINC del Excel del profesor (doc_source = 'excel')
-  - términos nuevos del equipo, data/extended_terms.csv (doc_source = 'ampliacion'),
-    sin repetir los que ya están en el Excel
+  - documentos de LOINC obtenidos por pooling sistemático (doc_source = 'pool_bm25',
+    'pool_component' o 'random')
 
 Todas las consultas se juzgan contra TODA la colección (como en el Excel, donde las tres
 consultas comparten los mismos 67 documentos). Los subconjuntos de entrenamiento se
@@ -25,7 +25,7 @@ sys.path.insert(0, HERE)
 from queries import QUERIES, relevance  # noqa: E402
 
 XLSX = os.path.join(ROOT, 'data', 'loinc_dataset-v2.xlsx')
-EXTENDED = os.path.join(ROOT, 'data', 'extended_terms.csv')
+COLLECTION = os.path.join(ROOT, 'data', 'collection.csv')
 OVERRIDES = os.path.join(ROOT, 'data', 'overrides.csv')
 OUT = os.path.join(ROOT, 'data', 'relevance_labels.csv')
 
@@ -42,17 +42,14 @@ def load_sheets():
 
 
 def load_documents(sheets):
-    """Colección completa: 67 documentos del Excel + términos nuevos no repetidos."""
+    """Colección completa: 67 documentos del Excel + documentos del pooling."""
     codes = [set(df['loinc_num']) for df in sheets.values()]
     assert all(c == codes[0] for c in codes), 'las hojas no contienen los mismos códigos'
-    excel = next(iter(sheets.values())).reset_index(drop=True).assign(doc_source='excel')
-    assert excel['loinc_num'].is_unique
-
-    ext = pd.read_csv(EXTENDED, dtype=str).apply(lambda col: col.str.strip())
-    assert ext['loinc_num'].notna().all(), 'faltan códigos LOINC en extended_terms.csv'
-    ext = ext[~ext['loinc_num'].isin(excel['loinc_num'])].drop_duplicates('loinc_num')
-    ext = ext[DOC_COLS].assign(doc_source='ampliacion')
-    return pd.concat([excel, ext], ignore_index=True)
+    coll = pd.read_csv(COLLECTION, dtype=str).fillna('')
+    coll = coll.apply(lambda col: col.str.strip())
+    assert coll['loinc_num'].is_unique
+    assert set(coll.loc[coll.doc_source == 'excel', 'loinc_num']) == codes[0]
+    return coll[DOC_COLS + ['doc_source']]
 
 
 def load_overrides():
@@ -69,11 +66,11 @@ def build_labels():
 
     rows = []
     for q in QUERIES:
-        # Consultas oficiales: los 67 del Excel en el orden de su hoja, después los términos nuevos
+        # Consultas oficiales: los 67 del Excel en el orden de su hoja, después el resto de la colección
         if q['sheet']:
             excel_order = sheets[q['sheet']]['loinc_num']
             order = pd.concat([docs.set_index('loinc_num').loc[excel_order].reset_index(),
-                               docs[docs.doc_source == 'ampliacion']], ignore_index=True)
+                               docs[docs.doc_source != 'excel']], ignore_index=True)
         else:
             order = docs
         for d in order.itertuples(index=False):

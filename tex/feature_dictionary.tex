@@ -19,7 +19,7 @@ de los índices LETOR \code{1:}\ldots\code{5:}.
 \item Texto en minúsculas y tokenización por secuencias alfanuméricas (\code{[a-z0-9]+}).
 \item Eliminación de una lista corta de palabras vacías (\emph{in, of, or, by, the, for, and, from, to, a}).
 \item Stemming mínimo del plural inglés regular (\emph{cells} $\rightarrow$ \emph{cell}, \emph{leukocytes} $\rightarrow$ \emph{leukocyte}).
-\item El corpus de TF-IDF y BM25 es la colección de documentos \emph{únicos} de cada configuración: los 67 \code{long\_common\_name} del Excel para \code{train.txt} y los 356 de la colección ampliada para \code{train\_terms.txt} y \code{train\_extended.txt}. No se usan las filas consulta--documento, que repetirían cada documento una vez por consulta.
+\item El corpus de TF-IDF y BM25 es la colección de documentos \emph{únicos} de cada configuración: los 67 \code{long\_common\_name} del Excel para \code{train.txt} y los 1267 de la colección completa para \code{train\_terms.txt} y \code{train\_extended.txt}. No se usan las filas consulta--documento, que repetirían cada documento una vez por consulta.
 \end{itemize}
 
 \section*{Features}
@@ -46,7 +46,7 @@ f_1(q,d)=\frac{\mathbf{v}_q\cdot\mathbf{v}_d}{\lVert\mathbf{v}_q\rVert\,\lVert\m
 \mathrm{BM25}(q,d)=\sum_{t\in q}\mathrm{idf}(t)\,\frac{tf_{t,d}\,(k_1+1)}{tf_{t,d}+k_1\left(1-b+b\frac{|d|}{\mathrm{avgdl}}\right)},\qquad
 f_2=\frac{\mathrm{BM25}(q,d)}{\max_{d'}\mathrm{BM25}(q,d')}
 \]
-con $\mathrm{idf}(t)=\ln\!\left(1+\frac{N-n_t+0.5}{n_t+0.5}\right)$, $N$ = número de documentos de la colección (67 o 356).
+con $\mathrm{idf}(t)=\ln\!\left(1+\frac{N-n_t+0.5}{n_t+0.5}\right)$, $N$ = número de documentos de la colección (67 o 1267).
 \[
 f_3(q,d)=\frac{1}{|T_q|}\sum_{t\in T_q}\mathbb{1}\big[\{t\}\cup\mathrm{syn}(t)\ \cap\ \mathrm{tokens}(d)\neq\emptyset\big]
 \]
@@ -73,16 +73,17 @@ las features \code{índice:valor} y, en comentario, el código LOINC (\code{doci
 \begin{center}\small
 \begin{tabular}{lll}
 \toprule
-Archivo & Contenido & Líneas \
+Archivo & Contenido & Líneas \\
 \midrule
-\code{data/train.txt} & 3 consultas oficiales $\times$ 67 documentos del Excel (obligatorio) & 201 \
-\code{data/train\_terms.txt} & 3 consultas oficiales $\times$ 356 documentos (más términos) & 1068 \
-\code{data/train\_extended.txt} & 8 consultas $\times$ 356 documentos (más términos y consultas) & 2848 \
+\code{data/train.txt} & 3 consultas oficiales $\times$ 67 documentos del Excel (obligatorio) & 201 \\
+\code{data/train\_terms.txt} & 3 consultas oficiales $\times$ 1267 documentos (más términos) & 3801 \\
+\code{data/train\_extended.txt} & 15 consultas $\times$ 1267 documentos (más términos y consultas) & 19\,005 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-Los \code{qid} 4--8 son \emph{platelets in blood}, \emph{creatinine in serum}, \emph{calcium in serum},
-\emph{cholesterol in plasma} y \emph{chloride in blood}.
+Los \code{qid} 4--15 son las consultas de la ampliación, en el orden de \code{COMMON\_TEST\_RANK}: creatinine, sodium, potassium,
+chloride, urea nitrogen, calcium y carbon dioxide (\emph{in serum}), erythrocytes count, hemoglobin y platelets count (\emph{in blood}),
+protein y alanine aminotransferase (\emph{in serum}).
 
 \end{document}

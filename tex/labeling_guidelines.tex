@@ -19,17 +19,35 @@ Asignar a cada par consulta--documento una etiqueta de relevancia ordinal en $\{
 \item \textbf{Parte obligatoria.} Hay tres consultas: \emph{glucose in blood}, \emph{bilirubin in plasma} y
   \emph{white blood cells count}. Cada una se juzga contra los 67 códigos LOINC del libro \code{loinc\_dataset-v2.xlsx},
   que son los mismos en las tres hojas aunque en distinto orden. En total son $3\times67=201$ pares.
-\item \textbf{Ampliación con términos.} Se añaden 289 códigos LOINC nuevos (\code{data/extended\_terms.csv}), seleccionados por el
-  equipo para las consultas oficiales y para dos consultas nuevas. La colección pasa a tener 356 documentos.
-\item \textbf{Ampliación con consultas.} Se añaden cinco consultas más.
+\item \textbf{Ampliación con consultas.} Se añaden 12 consultas elegidas \emph{sin intervención manual} (\code{src/build\_collection.py}).
+  El script recorre las pruebas de laboratorio de LOINC por \code{COMMON\_TEST\_RANK}, el ranking oficial de las pruebas más frecuentes,
+  y se queda con las 12 primeras que cumplen cuatro condiciones:
   \begin{itemize}
-  \item \emph{platelets in blood} y \emph{creatinine in serum} llegan con sus propios términos.
-  \item \emph{calcium in serum}, \emph{cholesterol in plasma} y \emph{chloride in blood} se plantean sobre los documentos del Excel.
+  \item son de concentración o recuento (\code{MCnc}, \code{SCnc}, \code{NCnc}, \code{CCnc});
+  \item usan una muestra estándar (\code{Bld} o \code{Ser/Plas});
+  \item tienen un analito simple, sin ``/'' ni ``\^{}'';
+  \item su analito no está ya cubierto por las consultas oficiales.
   \end{itemize}
+  El resultado es: creatinine, sodium, potassium, chloride, urea nitrogen, calcium, carbon dioxide, erythrocytes count, hemoglobin,
+  platelets count, protein y alanine aminotransferase.
+\item \textbf{Ampliación con términos.} Los documentos se obtienen por \emph{pooling}, como en TREC/LETOR, con el mismo procedimiento para las 15 consultas.
+  Se buscan sobre las 62\,148 pruebas de laboratorio activas de LOINC:
+  \begin{itemize}
+  \item 40 candidatos por BM25 de la consulta (distractores léxicos);
+  \item 20 cuyo componente contiene el analito, por frecuencia (variantes del analito);
+  \item 300 términos aleatorios compartidos (negativos fáciles).
+  \end{itemize}
+  Se permiten como máximo 2 casi-duplicados por (componente sin números, sistema, propiedad). Junto con los 67 del Excel,
+  la colección tiene 1267 documentos (\code{data/collection.csv}).
 \end{itemize}
 
 Igual que en el Excel, donde las tres consultas comparten los mismos 67 documentos, \textbf{todas las consultas se juzgan contra
-toda la colección}. Por ejemplo, los términos de creatinina también son candidatos (irrelevantes) para \emph{glucose in blood}.
+toda la colección}.
+
+\paragraph{Por qué un procedimiento sistemático.} Una primera ampliación con términos buscados a mano (\code{data/dataset\_extended.csv})
+tenía \emph{sesgo de selección}: cada consulta tenía una lista construida de forma distinta y casi todos sus candidatos contenían la palabra
+de la consulta. El pooling aplica el mismo procedimiento a todas las consultas, mezcla distractores difíciles con negativos aleatorios
+y deja que la proporción de relevantes salga de forma natural, sin fijarla a mano.
 
 El orden de las filas en las hojas \textbf{no} se interpreta como etiqueta. La regla está implementada en \code{src/queries.py} y se aplica con
 \code{src/label.py}, que genera \code{data/relevance\_labels.csv} con una justificación (\code{rationale}) por cada par.
@@ -102,15 +120,16 @@ glucose in blood & \code{Glucose} / glucosa media estimada (HbA1c) & sangre & \c
 bilirubin in plasma & \code{Bilirubin} (total) / fracciones directa, indirecta y delta; paneles; aclaramiento & \code{Plas}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Ser}, \code{Bld} & cuantitativa \\
 white blood cells count & \code{Leukocytes} / subpoblaciones (linfocitos, monocitos\ldots) y proporciones \emph{X cells/Leukocytes} & sangre (sin \code{Ser/Plas/Bld}) & sangre especial & \code{NCnc} \\
 \midrule
-platelets in blood$^\dagger$ & \code{Platelets} / subtipos (large, giant, reticulated), índices (volumen medio, distribución) y pruebas funcionales (agregación) & sangre (sin \code{Ser/Plas/Bld}) & sangre especial & \code{NCnc} \\
-creatinine in serum$^\dagger$ & \code{Creatinine} / cocientes con creatinina, aclaramiento, paneles & \code{Ser}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Plas}, \code{Bld} & cuantitativa \\
-calcium in serum$^\dagger$ & \code{Calcium} / calcio iónico & \code{Ser}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Plas}, \code{Bld} & cuantitativa \\
-cholesterol in plasma$^\dagger$ & \code{Cholesterol} / fracciones (HDL\ldots) & \code{Plas}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Ser}, \code{Bld} & cuantitativa \\
-chloride in blood$^\dagger$ & \code{Chloride} / --- & sangre & \code{Ser/Plas}, \code{Ser}, \code{Plas}, sangre especial & cuantitativa \\
+\emph{X} in serum$^\dagger$ (9 consultas) & \code{X} / fracción (\code{X.}\ldots), condición (\code{X\^{}}\ldots), cociente (\code{X/Y}, \code{Y/X}), aclaramiento renal de X, panel que incluye X & \code{Ser}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Plas} y sangre & la de la prueba de origen \\
+\emph{X} count in blood$^\dagger$ (2) & ídem & sangre (sin \code{Ser/Plas/Bld}) & sangre especial & \code{NCnc} \\
+hemoglobin in blood$^\dagger$ & ídem + variantes (\emph{Hemoglobin A1c}, \emph{F}\ldots) & sangre & sangre especial & cuantitativa \\
 \bottomrule
 \end{tabularx}
 \end{center}
-{\small $^\dagger$Consultas de la parte opcional.}
+{\small $^\dagger$Las 12 consultas de la ampliación usan una especificación \emph{genérica} (\code{make\_query} en \code{src/queries.py}),
+generada a partir de su prueba LOINC de origen. Lo único añadido a mano son los sinónimos (solo para las features) y las variantes de hemoglobina.
+El analito relacionado exige que X aparezca como término propio: \emph{Protein C} o \emph{C reactive protein} no son ``protein'', y
+\emph{Methylene chloride} no es ``chloride''.}
 
 \subsection*{Decisiones de diseño}
 
@@ -119,7 +138,7 @@ chloride in blood$^\dagger$ & \code{Chloride} / --- & sangre & \code{Ser/Plas}, 
   \code{Bld}. El suero y el plasma son fracciones de la sangre y la glucemia se mide habitualmente en ellos, pero no son
   sangre total. Por eso \emph{Glucose [Moles/volume] in Serum or Plasma} recibe \rel{2} para \emph{glucose in blood}.
   De forma simétrica, \code{Bld} es compatible pero distinta para \emph{bilirubin in plasma}.
-\item \textbf{Variantes de sangre.} La sangre arterial, venosa y capilar es \emph{sangre}, así que la muestra es exacta. En cambio, la sangre de cordón,
+\item \textbf{Variantes de sangre.} La sangre arterial, venosa, capilar y periférica es \emph{sangre}, así que la muestra es exacta. En cambio, la sangre de cordón,
   la de feto y la gota seca corresponden a una población o un formato especial, por lo que la muestra es compatible.
 \item \textbf{Bilirrubina total frente a fracciones.} Una consulta sin fracción (\emph{bilirubin}) se interpreta como bilirrubina total.
   La directa (conjugada), la indirecta y la delta son fracciones.
@@ -129,14 +148,14 @@ chloride in blood$^\dagger$ & \code{Chloride} / --- & sangre & \code{Ser/Plas}, 
   \item Las \emph{proporciones} respecto a leucocitos (\code{Lymphocytes/100 leukocytes}, \emph{Sezary cells/Leukocytes}\ldots, \code{NFr}) no son un
     recuento, por lo que bajan a \rel{1}.
   \end{itemize}
-\item \textbf{Plaquetas.} La consulta no dice ``count'', pero en sangre la medida estándar de plaquetas es el recuento por volumen.
-  El volumen medio plaquetario o la presencia de plaquetas son el mismo analito con otra propiedad, así que reciben \rel{2}.
-  La agregación o la anchura de distribución son pruebas derivadas, así que reciben \rel{1}.
+\item \textbf{Mismo analito, otra propiedad.} El volumen plaquetario medio para \emph{platelets count}, o la velocidad de sedimentación
+  y el RDW para \emph{erythrocytes count}, son el mismo analito con otra propiedad, así que reciben \rel{2}. Es coherente con la regla, pero
+  clínicamente discutible: es un candidato natural a override si el equipo lo considera demasiado alto.
 \item \textbf{Condiciones especiales.} La glucosa en ayunas, post-carga o basal, y la creatinina pre/post-diálisis o tras una prueba, miden el mismo
   analito pero responden a una pregunta clínica distinta: medida desviada.
 \item \textbf{Valores derivados y paneles.} Un valor estimado o calculado no es una medida directa, y un panel agrupa varias pruebas: en los dos casos la medida es desviada.
-\item \textbf{Registros administrativos.} Las transfusiones de concentrados de plaquetas, los protocolos PhenX y los \emph{value sets} HEDIS no son pruebas de laboratorio:
-  reciben \rel{0}, aunque su nombre contenga el analito.
+\item \textbf{Registros administrativos.} Las unidades transfundidas (\emph{Platelets given}, \emph{Packed erythrocytes units given}), los protocolos PhenX y los \emph{value sets} HEDIS
+  no son pruebas de laboratorio: reciben \rel{0}, aunque su nombre contenga el analito.
 \item \textbf{Coincidencias léxicas engañosas.}
   \begin{itemize}
   \item \emph{Blood product type} y \emph{Blood glucose monitor attachment} contienen \emph{blood} o \emph{glucose}, pero su analito es otro: \rel{0}.
@@ -151,7 +170,7 @@ chloride in blood$^\dagger$ & \code{Chloride} / --- & sangre & \code{Ser/Plas}, 
 \begin{table}[h]
 \centering
 \input{tables/label_distribution.tex}
-\caption{Distribución de etiquetas por consulta, primero sobre los 67 documentos del Excel y después sobre la colección ampliada.
+\caption{Distribución de etiquetas por consulta, primero sobre los 67 documentos del Excel y después sobre la colección completa (1267 documentos).
 $^\dagger$Consultas de la parte opcional.}
 \end{table}
 
@@ -166,7 +185,8 @@ $^\dagger$Consultas de la parte opcional.}
 \centering
 \footnotesize
 \input{tables/extended_examples.tex}
-\caption{Ejemplos de etiquetado de términos nuevos, con las tres dimensiones del juicio.}
+\caption{Ejemplos de etiquetado de documentos de la colección, con las tres dimensiones del juicio. Incluye distractores difíciles
+(\emph{Methylene chloride}, \emph{C reactive protein}) y registros administrativos (\emph{Platelets given}).}
 \end{table}
 
 \section{Revisión manual y overrides}
@@ -187,7 +207,7 @@ además de pasar a cuatro niveles, cambia el juicio en estos casos:
 \item \emph{Monocytes [\#/volume]}: estaba por debajo de \emph{Lymphocytes [\#/volume]} y ahora ambos son \rel{2} (subpoblaciones).
 \end{itemize}
 Además, se corrigió la errata \emph{bilirrubin} $\rightarrow$ \emph{bilirubin} en el texto de la consulta.
-Las extensiones de la regla para los términos nuevos (variantes de sangre, paneles, valores derivados,
+Las extensiones de la regla para la colección ampliada (variantes de sangre, paneles, valores derivados,
 registros administrativos) \textbf{no cambian ninguna} de las 201 etiquetas oficiales; lo comprueba \code{src/build\_dataset.py}.
 
 \end{document}

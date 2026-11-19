@@ -1,9 +1,9 @@
 """
 Construye el training set Listwise en tres configuraciones:
 
-  official   3 consultas oficiales x 67 documentos del Excel   -> data/train.txt          (entregable obligatorio)
-  terms      3 consultas oficiales x colección ampliada         -> data/train_terms.txt    (más términos)
-  extended   todas las consultas   x colección ampliada         -> data/train_extended.txt (más términos y consultas)
+  official   3 consultas oficiales x 67 documentos del Excel      -> data/train.txt          (entregable obligatorio)
+  terms      3 consultas oficiales x colección completa (pooling) -> data/train_terms.txt    (más términos)
+  extended   15 consultas          x colección completa (pooling) -> data/train_extended.txt (más términos y consultas)
 
 Además:
   data/relevance_labels.csv   etiquetas 0-3 + justificación de todos los pares (vía src/label.py)
@@ -31,6 +31,7 @@ sys.path.insert(0, HERE)
 
 from label import build_labels, OUT as LABELS_OUT  # noqa: E402
 from queries import get_query  # noqa: E402
+from text import stem, tokenize  # noqa: E402
 
 FEATURES_OUT = os.path.join(ROOT, 'data', 'features.csv')
 
@@ -42,21 +43,6 @@ CONFIGS = {
 }
 
 FEATURES = ['f1_tfidf_cosine', 'f2_bm25', 'f3_synonym_overlap', 'f4_component_match', 'f5_system_match']
-
-STOPWORDS = {'in', 'of', 'or', 'by', 'the', 'for', 'and', 'from', 'to', 'a'}
-
-
-# ---------------------------------------------------------------------------
-# Texto
-# ---------------------------------------------------------------------------
-
-def stem(tok):
-    """Stemming mínimo: plural inglés regular (cells -> cell, leukocytes -> leukocyte)."""
-    return tok[:-1] if len(tok) > 3 and tok.endswith('s') and not tok.endswith('ss') else tok
-
-
-def tokenize(text):
-    return [stem(t) for t in re.findall(r'[a-z0-9]+', text.lower()) if t not in STOPWORDS]
 
 
 # ---------------------------------------------------------------------------
@@ -182,13 +168,17 @@ EXPECTED = {  # casos de referencia de tex/labeling_guidelines.tex
     (2, '1975-2'): 3, (2, '1968-7'): 2, (2, '1971-1'): 2, (2, '14423-8'): 1,
     (2, '33870-7'): 1, (2, '54439-5'): 0,
     (3, '26464-8'): 3, (3, '26474-7'): 2, (3, '26484-6'): 2, (3, '26478-8'): 1,
-    # Términos nuevos
-    (1, '2339-0'): 3,    # Glucose [Mass/volume] in Blood
-    (1, '27353-2'): 1,   # Glucose mean value ... Estimated from glycated hemoglobin
-    (2, '1970-3'): 2,    # Bilirubin.delta
-    (4, '777-3'): 3,     # Platelets [#/volume] in Blood by Automated count
-    (4, '51884-5'): 0,   # Transfuse pooled platelets units [#]
-    (5, '2160-0'): 3,    # Creatinine [Mass/volume] in Serum or Plasma
+    # Documentos de la colección (pooling sobre LOINC)
+    (1, '2339-0'): 3,     # Glucose [Mass/volume] in Blood
+    (1, '27353-2'): 1,    # Glucose mean value ... Estimated from glycated hemoglobin
+    (2, '1970-3'): 2,     # Bilirubin.delta
+    (4, '2160-0'): 3,     # creatinine in serum: Creatinine [Mass/volume] in Serum or Plasma
+    (9, '1995-0'): 2,     # calcium in serum: Calcium.ionized en Ser/Plas
+    (12, '718-7'): 3,     # hemoglobin in blood: Hemoglobin [Mass/volume] in Blood
+    (12, '4548-4'): 1,    # hemoglobin in blood: Hemoglobin A1c/Hemoglobin.total (cociente)
+    (13, '777-3'): 3,     # platelets count in blood: Platelets [#/volume] in Blood
+    (14, '1988-5'): 0,    # protein in serum: C reactive protein (otro analito)
+    (14, '4671-4'): 0,    # protein in serum: Protein C (otro analito)
 }
 
 

@@ -8,27 +8,29 @@ Cada consulta define, a partir de las columnas LOINC del documento:
   - términos y sinónimos de la consulta (solo se usan en las features, nunca en la etiqueta)
 
 Consultas:
-  qid 1-3  oficiales (Excel del profesor)
-  qid 4-5  añadidas por el equipo junto con sus términos (data/dataset_extended.csv)
-  qid 6-8  añadidas sobre los documentos del Excel
+  qid 1-3   oficiales (Excel del profesor), con especificación escrita a mano
+  qid 4-15  las 12 pruebas de laboratorio más frecuentes de LOINC que cumplen los criterios
+            de src/build_collection.py, con especificación generada por make_query()
 """
 
 import re
 
 # Muestras de sangre: total (y sus variantes arterial/venosa/capilar) y especiales
-BLOOD = {'Bld', 'BldC', 'BldV', 'BldA', 'BldMV', 'Ser/Plas/Bld'}
-BLOOD_SPECIAL = {'BldCo', 'Bld^Fetus', 'Bld.dot'}  # cordón, feto, gota seca: población o formato especial
+BLOOD = {'Bld', 'BldC', 'BldV', 'BldA', 'BldMV', 'BldP', 'Ser/Plas/Bld'}
+BLOOD_SPECIAL = {'BldCo', 'BldCoA', 'BldCoV', 'Bld^Fetus', 'Bld.dot'}  # cordón, feto, gota seca
 SERUM_OR_PLASMA = {'Ser/Plas', 'Ser', 'Plas'}
 QUANT = {'MCnc', 'SCnc', 'MSCnc', '{Measurement}'}
+# Registros administrativos que contienen el nombre del analito pero no son pruebas
+ADMIN = r'transfuse|given|units|available|phenx|hedis|value set'
 
-QUERIES = [
+OFFICIAL = [
     {
-        'qid': 1, 'query': 'glucose in blood', 'sheet': 'glucose in blood', 'official': True,
-        'origin': 'profesor',
+        'qid': 1, 'query': 'glucose in blood', 'sheet': 'glucose in blood',
         # "Glucose" o "Glucose^<condición>" (ayunas, post-carga...)
         'analyte_exact': r'^glucose(\^.*)?$',
         # Glucosa media estimada a partir de la HbA1c
         'analyte_related': r'^estimated average glucose$',
+        'analyte_exclude': ADMIN,
         'specimen_exact': BLOOD,
         'specimen_compatible': SERUM_OR_PLASMA | BLOOD_SPECIAL,
         'property_ok': QUANT,
@@ -37,13 +39,13 @@ QUERIES = [
         'synonyms': {'blood': ['bld'], 'glucose': ['glu']},
     },
     {
-        'qid': 2, 'query': 'bilirubin in plasma', 'sheet': 'bilirubin in plasma', 'official': True,
-        'origin': 'profesor',
+        'qid': 2, 'query': 'bilirubin in plasma', 'sheet': 'bilirubin in plasma',
         # "bilirubin" sin fracción se interpreta como bilirrubina total
         'analyte_exact': r'^bilirubin(\.total)?$',
         # Fracciones (directa/conjugada, indirecta, delta), paneles y aclaramiento
         'analyte_related': r'^bilirubin\.(glucuronidated|non-glucuronidated|albumin bound|direct|indirect)'
                            r'|^(neonatal )?bilirubin\b.*panel|^bilirubin renal clearance',
+        'analyte_exclude': ADMIN,
         'specimen_exact': {'Plas', 'Ser/Plas', 'Ser/Plas/Bld'},
         'specimen_compatible': {'Ser', 'Bld'},
         'property_ok': QUANT,
@@ -52,12 +54,12 @@ QUERIES = [
         'synonyms': {'plasma': ['plas'], 'bilirubin': ['bili']},
     },
     {
-        'qid': 3, 'query': 'white blood cells count', 'sheet': 'White blood cells count', 'official': True,
-        'origin': 'profesor',
+        'qid': 3, 'query': 'white blood cells count', 'sheet': 'White blood cells count',
         'analyte_exact': r'^leukocytes$',
         # Subpoblaciones de leucocitos, como recuento o como proporción "X cells/Leukocytes"
         'analyte_related': r'^(lymphocytes|monocytes|neutrophils|eosinophils|basophils|granulocytes)\b'
                            r'|cells[^/]*/leukocytes$|^leukocytes\+',
+        'analyte_exclude': ADMIN,
         'specimen_exact': BLOOD - {'Ser/Plas/Bld'},
         'specimen_compatible': BLOOD_SPECIAL,
         # "count" pide un recuento por volumen
@@ -67,73 +69,79 @@ QUERIES = [
         'synonyms': {'white': ['leukocytes', 'wbc'], 'cells': ['leukocytes'],
                      'count': ['#/volume', 'ncnc'], 'blood': ['bld']},
     },
-    # ------------- Consultas del equipo, con sus propios términos nuevos -------------
-    {
-        'qid': 4, 'query': 'platelets in blood', 'sheet': None, 'official': False, 'origin': 'equipo',
-        'analyte_exact': r'^platelets?(\^.*)?$',
-        # Subtipos (large, giant, reticulated...), índices y pruebas funcionales de las plaquetas
-        'analyte_related': r'platelet',
-        # Registros de transfusión de concentrados de plaquetas: no son pruebas de laboratorio
-        'analyte_exclude': r'transfuse|given|units|pooled|concentrate',
-        'specimen_exact': BLOOD - {'Ser/Plas/Bld'},
-        'specimen_compatible': BLOOD_SPECIAL,
-        # En sangre, la medida estándar de plaquetas es el recuento por volumen
-        'property_ok': {'NCnc'},
-        'analyte_terms': ['platelets', 'platelet'],
-        'specimen_terms': ['blood', 'bld'],
-        'synonyms': {'platelets': ['platelet', 'plt', 'thrombocytes'], 'blood': ['bld']},
-    },
-    {
-        'qid': 5, 'query': 'creatinine in serum', 'sheet': None, 'official': False, 'origin': 'equipo',
-        'analyte_exact': r'^creatinine(\^.*)?$',
-        # Cocientes con creatinina, aclaramiento, paneles...
-        'analyte_related': r'creatinine',
-        # Conjuntos de códigos administrativos (protocolos PhenX, value sets HEDIS)
-        'analyte_exclude': r'phenx|hedis',
-        'specimen_exact': {'Ser', 'Ser/Plas', 'Ser/Plas/Bld'},
-        'specimen_compatible': {'Plas', 'Bld'},
-        'property_ok': QUANT,
-        'analyte_terms': ['creatinine'],
-        'specimen_terms': ['serum', 'ser'],
-        'synonyms': {'serum': ['ser'], 'creatinine': ['crea', 'scr']},
-    },
-    # ------------- Consultas adicionales sobre los documentos del Excel -------------
-    {
-        'qid': 6, 'query': 'calcium in serum', 'sheet': None, 'official': False, 'origin': 'equipo',
-        'analyte_exact': r'^calcium(\^.*)?$',
-        'analyte_related': r'^calcium\.ionized$',
-        'specimen_exact': {'Ser', 'Ser/Plas', 'Ser/Plas/Bld'},
-        'specimen_compatible': {'Plas', 'Bld'},
-        'property_ok': QUANT,
-        'analyte_terms': ['calcium'],
-        'specimen_terms': ['serum', 'ser'],
-        'synonyms': {'serum': ['ser'], 'calcium': ['ca']},
-    },
-    {
-        'qid': 7, 'query': 'cholesterol in plasma', 'sheet': None, 'official': False, 'origin': 'equipo',
-        'analyte_exact': r'^cholesterol$',
-        'analyte_related': r'^cholesterol\.',
-        'specimen_exact': {'Plas', 'Ser/Plas', 'Ser/Plas/Bld'},
-        'specimen_compatible': {'Ser', 'Bld'},
-        'property_ok': QUANT,
-        'analyte_terms': ['cholesterol'],
-        'specimen_terms': ['plasma', 'plas'],
-        'synonyms': {'plasma': ['plas'], 'cholesterol': ['chol']},
-    },
-    {
-        'qid': 8, 'query': 'chloride in blood', 'sheet': None, 'official': False, 'origin': 'equipo',
-        'analyte_exact': r'^chloride$',
-        'analyte_related': None,
-        'specimen_exact': BLOOD,
-        'specimen_compatible': SERUM_OR_PLASMA | BLOOD_SPECIAL,
-        'property_ok': QUANT,
-        'analyte_terms': ['chloride'],
-        'specimen_terms': ['blood', 'bld'],
-        'synonyms': {'blood': ['bld'], 'chloride': ['cl']},
-    },
 ]
 
-OFFICIAL_QUERIES = [q for q in QUERIES if q['official']]
+
+def make_query(qid, component, system, prop, source_loinc, synonyms, related_extra=None):
+    """Especificación genérica a partir de la prueba LOINC más frecuente del analito.
+
+    - Analito exacto: el mismo componente (singular o plural), con o sin condición ^.
+    - Relacionado: el analito como término propio seguido de fracción (.), condición (^)
+      o en un cociente (/), p. ej. "Calcium.ionized", "Urea nitrogen/Creatinine"; su
+      aclaramiento renal; o un panel que lo incluye ("Sodium & Potassium panel").
+      `related_extra` añade variantes propias del analito (p. ej. Hemoglobin A1c).
+    - Muestra: la de la prueba de origen (suero/plasma o sangre) y sus compatibles.
+    - Propiedad: la de la prueba de origen (concentración, recuento o actividad).
+    """
+    name = component.lower()
+    base = name[:-1] if name.endswith('s') else name
+    word = re.escape(base) + 's?'
+    if system == 'Ser/Plas':
+        specimen, exact = 'serum', {'Ser', 'Ser/Plas', 'Ser/Plas/Bld'}
+        compatible = {'Plas'} | (BLOOD - {'Ser/Plas/Bld'})
+        specimen_terms = ['serum', 'ser']
+    else:
+        specimen, exact = 'blood', BLOOD - ({'Ser/Plas/Bld'} if prop == 'NCnc' else set())
+        compatible = BLOOD_SPECIAL
+        specimen_terms = ['blood', 'bld']
+    if prop == 'NCnc':
+        query, prop_ok = '{} count in {}'.format(name, specimen), {'NCnc'}
+        synonyms = dict(synonyms, count=['#/volume', 'ncnc'])
+    elif prop == 'CCnc':
+        query, prop_ok = '{} in {}'.format(name, specimen), {'CCnc', '{Measurement}'}
+    else:
+        query, prop_ok = '{} in {}'.format(name, specimen), QUANT
+    synonyms = dict(synonyms, **{specimen: specimen_terms[1:]})
+    return {
+        'qid': qid, 'query': query, 'sheet': None, 'source_loinc': source_loinc,
+        'analyte_exact': r'^{}(\^.*)?$'.format(word),
+        'analyte_related': r'(^|/){w}([./^]|$)|^{w} renal clearance|(^|& ){w}\b[^/]*panel'.format(w=word)
+                           + ('|' + related_extra if related_extra else ''),
+        'analyte_exclude': ADMIN,
+        'specimen_exact': exact, 'specimen_compatible': compatible,
+        'property_ok': prop_ok,
+        'analyte_terms': re.findall(r'[a-z0-9]+', name),
+        'specimen_terms': specimen_terms,
+        'synonyms': synonyms,
+    }
+
+
+# Salida de src/build_collection.py (selección por COMMON_TEST_RANK); allí se comprueba que coincide.
+#            qid  component                   system      property  LOINC     sinónimos (solo features)
+SELECTED = [
+    make_query(4, 'Creatinine', 'Ser/Plas', 'MCnc', '2160-0', {'creatinine': ['crea', 'scr']}),
+    make_query(5, 'Sodium', 'Ser/Plas', 'SCnc', '2951-2', {'sodium': ['na']}),
+    make_query(6, 'Potassium', 'Ser/Plas', 'SCnc', '2823-3', {'potassium': ['k']}),
+    make_query(7, 'Chloride', 'Ser/Plas', 'SCnc', '2075-0', {'chloride': ['cl']}),
+    make_query(8, 'Urea nitrogen', 'Ser/Plas', 'MCnc', '3094-0', {'urea': ['bun'], 'nitrogen': ['bun']}),
+    make_query(9, 'Calcium', 'Ser/Plas', 'MCnc', '17861-6', {'calcium': ['ca']}),
+    make_query(10, 'Carbon dioxide', 'Ser/Plas', 'SCnc', '2028-9', {'carbon': ['co2'], 'dioxide': ['co2']}),
+    make_query(11, 'Erythrocytes', 'Bld', 'NCnc', '789-8', {'erythrocytes': ['rbc', 'red']}),
+    make_query(12, 'Hemoglobin', 'Bld', 'MCnc', '718-7', {'hemoglobin': ['hgb', 'hb']},
+               related_extra=r'^hemoglobin [a-z0-9]+$'),  # variantes: A1c, F, A2...
+    make_query(13, 'Platelets', 'Bld', 'NCnc', '777-3', {'platelets': ['platelet', 'plt', 'thrombocytes']}),
+    make_query(14, 'Protein', 'Ser/Plas', 'MCnc', '2885-2', {'protein': ['prot']}),
+    make_query(15, 'Alanine aminotransferase', 'Ser/Plas', 'CCnc', '1742-6',
+               {'alanine': ['alt', 'sgpt'], 'aminotransferase': ['alt', 'sgpt']}),
+]
+
+for _q in OFFICIAL:
+    _q['official'] = True
+for _q in SELECTED:
+    _q['official'] = False
+
+QUERIES = OFFICIAL + SELECTED
+OFFICIAL_QUERIES = OFFICIAL
 
 
 def get_query(qid):

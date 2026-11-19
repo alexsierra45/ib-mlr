@@ -5,9 +5,9 @@ Con pocas consultas no hay partición train/test fiable: cada fold entrena
 con todas menos una y evalúa en la restante. Los resultados son demostrativos.
 
 Uso:  python src/evaluate.py [--config official|terms|extended|all]
-  official   data/train.txt           3 consultas x 67 documentos  (3 folds)
-  terms      data/train_terms.txt     3 consultas x 356 documentos (3 folds)
-  extended   data/train_extended.txt  8 consultas x 356 documentos (8 folds)
+  official   data/train.txt           3 consultas x 67 documentos del Excel (3 folds)
+  terms      data/train_terms.txt     3 consultas x colección completa      (3 folds)
+  extended   data/train_extended.txt  15 consultas x colección completa     (15 folds)
 
 Escribe results/loqo_<config>.csv, results/coef_<config>.csv y results/ranking_<config>.csv
 """

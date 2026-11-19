@@ -27,11 +27,8 @@ FEAT_NAME = {
     'f1_tfidf_cosine': 'coseno TF-IDF', 'f2_bm25': 'BM25', 'f3_synonym_overlap': 'solap. sinónimos',
     'f4_component_match': 'analito en component', 'f5_system_match': 'muestra en system',
 }
-CONFIG_TEX = {
-    'official': r'Oficial (3$\times$67)',
-    'terms': r'+ términos (3$\times$356)',
-    'extended': r'+ términos y consultas (8$\times$356)',
-}
+CONFIG_NAME = {'official': 'Oficial', 'terms': '+ términos', 'extended': '+ términos y consultas'}
+CONFIG_TEX = {}  # se rellena en main() con los tamaños reales, p. ej. "Oficial (3x67)"
 
 
 def esc(s):
@@ -85,11 +82,16 @@ def main():
     qname = labels.drop_duplicates('qid').set_index('qid')['query']
     names = labels.drop_duplicates('loinc_num').set_index('loinc_num')['long_common_name']
     n_all = labels['loinc_num'].nunique()
+    n_official = labels.loc[labels.official, 'qid'].nunique()
+    sizes = {'official': (n_official, 67), 'terms': (n_official, n_all),
+             'extended': (labels.qid.nunique(), n_all)}
+    for c, (nq, nd) in sizes.items():
+        CONFIG_TEX[c] = r'{} ({}$\times${})'.format(CONFIG_NAME[c], nq, nd)
 
     # 1. Distribución de etiquetas: oficial (67 docs) y colección ampliada
     rows = []
     blocks = [(labels[labels.official & (labels.doc_source == 'excel')], '67 documentos del Excel'),
-              (labels, '{} documentos (Excel + términos nuevos)'.format(n_all))]
+              (labels, 'Colección completa: {} documentos (Excel + pooling sobre LOINC)'.format(n_all))]
     for i, (sub, title) in enumerate(blocks):
         if i:
             rows.append(r'\midrule')
@@ -114,13 +116,15 @@ def main():
                                          ['Consulta', 'LOINC', 'long\\_common\\_name', 'system',
                                           'property', 'Rel.'], rows))
 
-    # 3. Ejemplos de etiquetado de términos nuevos (decisiones representativas)
+    # 3. Ejemplos de etiquetado de documentos de la colección (decisiones representativas)
     examples = [
-        (1, '2339-0'), (1, '32016-8'), (1, '47995-6'), (1, '1556-0'), (1, '27353-2'), (1, '52041-1'),
-        (2, '14631-6'), (2, '1970-3'), (2, '34543-9'), (2, '1969-5'),
-        (3, '33857-4'), (3, '14380-0'),
-        (4, '777-3'), (4, '47284-5'), (4, '28542-9'), (4, '53813-2'), (4, '51884-5'),
-        (5, '2160-0'), (5, '11042-9'), (5, '3097-3'), (5, '74256-9'),
+        (1, '41653-7'), (1, '2345-7'), (1, '1558-6'),
+        (3, '6690-2'), (3, '770-8'),
+        (4, '2160-0'), (4, '38483-4'),
+        (7, '2075-0'), (7, '12998-1'),
+        (12, '718-7'), (12, '41995-2'), (12, '4548-4'),
+        (13, '777-3'), (13, '32623-1'), (13, '10412-5'),
+        (14, '2885-2'), (14, '1988-5'),
     ]
     lab = labels.set_index(['qid', 'loinc_num'])
     rows, last = [], None
@@ -132,7 +136,7 @@ def main():
                      esc(r.analyte), esc(r.specimen), esc(r.measure), str(r.relevance)])
         last = key[0]
     write('extended_examples.tex', tabular('lp{6.6cm}lllc',
-                                           ['Consulta', 'Término nuevo', 'Analito', 'Muestra', 'Medida', 'Rel.'],
+                                           ['Consulta', 'Documento de la colección', 'Analito', 'Muestra', 'Medida', 'Rel.'],
                                            rows))
 
     # 4. Resultados LOQO (media) en las tres configuraciones: NDCG@5 y NDCG@10

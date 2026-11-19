@@ -1,0 +1,1268 @@
+loinc_num,long_common_name,component,system,property,common_test_rank,doc_source
+1988-5,C reactive protein [Mass/volume] in Serum or Plasma,C reactive protein,Ser/Plas,MCnc,128,excel
+1959-6,Bicarbonate [Moles/volume] in Blood,Bicarbonate,Bld,SCnc,236,excel
+10331-7,Rh [Type] in Blood,Rh,Bld,Type,553,excel
+18998-5,Trimethoprim+Sulfamethoxazole [Susceptibility],Trimethoprim+Sulfamethoxazole,Isolate,Susc,1291,excel
+1975-2,Bilirubin.total [Mass/volume] in Serum or Plasma,Bilirubin,Ser/Plas,MCnc,22,excel
+890-4,Blood group antibody screen [Presence] in Serum or Plasma,Blood group antibody screen,Ser/Plas,ACnc,157,excel
+20565-8,"Carbon dioxide, total [Moles/volume] in Blood",Carbon dioxide,Bld,SCnc,260,excel
+18906-8,Ciprofloxacin [Susceptibility],Ciprofloxacin,Isolate,Susc,1382,excel
+2143-6,Cortisol [Mass/volume] in Serum or Plasma,Cortisol,Ser/Plas,MCnc,475,excel
+2075-0,Chloride [Moles/volume] in Serum or Plasma,Chloride,Ser/Plas,SCnc,8,excel
+4671-4,Protein C [Mass/volume] in Plasma,Protein C,Plas,MCnc,13804,excel
+18864-9,Ampicillin [Susceptibility],Ampicillin,Isolate,Susc,1460,excel
+15076-3,Glucose [Moles/volume] in Urine,Glucose,Urine,SCnc,0,excel
+1798-8,Amylase [Enzymatic activity/volume] in Serum or Plasma,Amylase,Ser/Plas,CCnc,269,excel
+26474-7,Lymphocytes [#/volume] in Blood,Lymphocytes,Bld,NCnc,112,excel
+1920-8,Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Aspartate aminotransferase,Ser/Plas,CCnc,27,excel
+13317-3,Methicillin resistant Staphylococcus aureus [Presence] in Unspecified specimen by Organism specific culture,Staphylococcus aureus.methicillin resistant isolate,XXX,ACnc,1004,excel
+925-8,Blood product disposition [Type],Blood product disposition,^BPU,Type,325,excel
+14749-6,Glucose [Moles/volume] in Serum or Plasma,Glucose,Ser/Plas,SCnc,4506,excel
+14747-0,Glucose [Moles/volume] in Pleural fluid,Glucose,Plr fld,SCnc,0,excel
+2093-3,Cholesterol [Mass/volume] in Serum or Plasma,Cholesterol,Ser/Plas,MCnc,61,excel
+1968-7,Bilirubin.direct [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,MCnc,131,excel
+26464-8,Leukocytes [#/volume] in Blood,Leukocytes,Bld,NCnc,68,excel
+74774-1,"Glucose [Mass/volume] in Serum, Plasma or Blood",Glucose,Ser/Plas/Bld,MCnc,58,excel
+8310-5,Body temperature,Body temperature,^Patient,Temp,0,excel
+934-0,Blood product unit ID [#],Blood product unit ID,Dose,Num,411,excel
+14423-8,Bilirubin.total [Mass/volume] in Synovial fluid,Bilirubin,Synv fld,MCnc,0,excel
+1742-6,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma,Alanine aminotransferase,Ser/Plas,CCnc,24,excel
+14764-5,Glucose [Moles/volume] in Serum or Plasma --3 hours post 100 g glucose PO,Glucose^3H post 100 g glucose PO,Ser/Plas,SCnc,10489,excel
+1994-3,Calcium.ionized [Moles/volume] in Blood,Calcium.ionized,Bld,SCnc,204,excel
+1751-7,Albumin [Mass/volume] in Serum or Plasma,Albumin,Ser/Plas,MCnc,39,excel
+1003-3,Indirect antiglobulin test.complement specific reagent [Presence] in Serum or Plasma,Indirect antiglobulin test.complement specific reagent,Ser/Plas,ACnc,392,excel
+1971-1,Bilirubin.indirect [Mass/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MCnc,183,excel
+26484-6,Monocytes [#/volume] in Blood,Monocytes,Bld,NCnc,111,excel
+18865-6,Ampicillin+Sulbactam [Susceptibility],Ampicillin+Sulbactam,Isolate,Susc,1551,excel
+882-1,ABO & Rh group [Type] in Blood,ABO+Rh group,Bld,Type,207,excel
+1250-0,Major crossmatch [interpretation],Major crossmatch,Ser/Plas,Imp,447,excel
+883-9,ABO group [Type] in Blood,ABO group,Bld,Type,617,excel
+2132-9,Cobalamin (Vitamin B12) [Mass/volume] in Serum,Cobalamins,Ser,MCnc,155,excel
+31100-1,Hematocrit [Volume Fraction] of Blood by Impedance,Hematocrit,Bld,VFr,268,excel
+6768-6,Alkaline phosphatase [Enzymatic activity/volume] in Serum or Plasma,Alkaline phosphatase,Ser/Plas,CCnc,26,excel
+2069-3,Chloride [Moles/volume] in Blood,Chloride,Bld,SCnc,315,excel
+3082-5,Tyrosine aminotransferase [Mass/volume] in Plasma,Tyrosine aminotransferase,Plas,MCnc,0,excel
+30522-7,C reactive protein [Mass/volume] in Serum or Plasma by High sensitivity method,C reactive protein,Ser/Plas,MCnc,473,excel
+33870-7,Bilirubin.total [Presence] in Unspecified specimen,Bilirubin,XXX,PrThr,12528,excel
+20442-0,Hepatitis B virus DNA [#/volume] (viral load) in Serum by Probe with signal amplification,Hepatitis B virus DNA,Ser,NCnc,10456,excel
+2111-3,Choriogonadotropin.beta subunit [Moles/volume] in Serum or Plasma,Choriogonadotropin.beta subunit,Ser/Plas,SCnc,1784,excel
+14578-9,ABO group [Type] in Blood from Blood product unit,ABO group,Bld^BPU,Type,2201,excel
+18955-5,Nitrofurantoin [Susceptibility],Nitrofurantoin,Isolate,Susc,1506,excel
+2039-6,Carcinoembryonic Ag [Mass/volume] in Serum or Plasma,Carcinoembryonic Ag,Ser/Plas,MCnc,459,excel
+933-2,Blood product type,Blood product type,^BPU,Type,318,excel
+19000-9,Vancomycin [Susceptibility],Vancomycin,Isolate,Susc,2435,excel
+26478-8,Lymphocytes/100 leukocytes in Blood,Lymphocytes/100 leukocytes,Bld,NFr,67,excel
+19080-1,Choriogonadotropin [Units/volume] in Serum or Plasma,Choriogonadotropin,Ser/Plas,ACnc,730,excel
+1995-0,Calcium.ionized [Moles/volume] in Serum or Plasma,Calcium.ionized,Ser/Plas,SCnc,637,excel
+35184-1,Fasting glucose [Mass or Moles/volume] in Serum or Plasma,Glucose^post CFst,Ser/Plas,MSCnc,0,excel
+2085-9,Cholesterol in HDL [Mass/volume] in Serum or Plasma,Cholesterol.in HDL,Ser/Plas,MCnc,63,excel
+1759-0,Albumin/Globulin [Mass ratio] in Serum or Plasma,Albumin/Globulin,Ser/Plas,MCrto,101,excel
+2028-9,"Carbon dioxide, total [Moles/volume] in Serum or Plasma",Carbon dioxide,Ser/Plas,SCnc,11,excel
+35192-4,Bilirubin.indirect [Mass or Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,MSCnc,0,excel
+20629-2,Levofloxacin [Susceptibility],Levofloxacin,Isolate,Susc,1402,excel
+17861-6,Calcium [Mass/volume] in Serum or Plasma,Calcium,Ser/Plas,MCnc,10,excel
+54439-5,Calcium bilirubinate/Total in Stone,Calcium bilirubinate/Total,Calculus,MFr,12018,excel
+18878-9,Cefazolin [Susceptibility],Cefazolin,Isolate,Susc,1502,excel
+18928-2,Gentamicin [Susceptibility],Gentamicin,Isolate,Susc,1412,excel
+29265-6,Calcium [Moles/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,SCnc,4485,excel
+23658-8,Other Antibiotic [Susceptibility],Antibiotic XXX,Isolate,Susc,613,excel
+100368-0,Amino Acids Urea Cycle Panel - Serum or Plasma by LC/MS/MS,Amino Acids Urea Cycle Panel,Ser/Plas,-,0,pool_component
+100736-8,Acylcarnitine Analysis Post Mortem in Specimen Document,Acylcarnitine Analysis Post Mortem,XXX,Find,0,random
+100738-4,Alanine aminotransferase.macromolecular [Presence] in Serum or Plasma,Alanine aminotransferase.macromolecular,Ser/Plas,PrThr,0,pool_bm25
+100739-2,Aspartate aminotransferase.macromolecular [Presence] in Serum or Plasma,Aspartate aminotransferase.macromolecular,Ser/Plas,PrThr,0,pool_bm25
+100745-9,Chloride [Moles/volume] in Mixed venous blood,Chloride,BldMV,SCnc,0,pool_component
+100746-7,Glucose [Moles/volume] in Mixed venous blood,Glucose,BldMV,SCnc,0,pool_bm25
+100747-5,Legionella serogroup panel - Specimen,Legionella serogroup panel,XXX,-,0,random
+100764-0,Mycobacterium bovis reaction wheal [Diameter] Qualitative --3 days post dose mammalian tuberculin intradermal,Mycobacterium bovis reaction wheal^3D post dose mammalian tuberculin ID,Skin,Diam,0,random
+101149-3,Borrelia burgdorferi IgM Ab index [Units/volume] in Serum and CSF,Borrelia burgdorferi Ab.IgM index,Ser+CSF,ACnc,0,random
+101175-8,3-Methoxytyramine.free/Creatinine [Molar ratio] in Serum or Plasma,3-Methoxytyramine.free/Creatinine,Ser/Plas,SRto,0,pool_bm25
+101176-6,Normetanephrine Free/Creatinine [Molar ratio] in Serum or Plasma,Normetanephrine.free/Creatinine,Ser/Plas,SRto,0,pool_bm25
+101177-4,Metanephrine Free/Creatinine [Molar ratio] in Serum or Plasma,Metanephrine.free/Creatinine,Ser/Plas,SRto,0,pool_bm25
+101199-8,Protein.monoclonal band 5/Protein.total in Serum or Plasma by Electrophoresis,Protein.monoclonal band 5/Protein.total,Ser/Plas,MFr,0,pool_bm25
+101200-4,Protein.monoclonal band 6/Protein.total in Serum or Plasma by Electrophoresis,Protein.monoclonal band 6/Protein.total,Ser/Plas,MFr,0,pool_bm25
+101252-5,Urea [Mass/volume] in Dialysis fluid,Urea,Dial fld,MCnc,0,pool_component
+101476-0,Fasting glucose [Moles/volume] in Venous blood,Glucose^post CFst,BldV,SCnc,0,pool_bm25
+101668-2,Protein electrophoresis and M protein isotype panel - Urine,Protein electrophoresis & monoclonal protein isotype panel,Urine,-,0,pool_bm25
+102078-3,CAR-T therapy panel - Specimen,Chimeric antigen receptor T-cell therapy panel,XXX,-,0,random
+102096-5,HLA-DQA1 SSO panel - Blood or Tissue by NAA with probe detection,HLA-DQA1 SSO panel,Bld/Tiss,-,0,random
+102489-2,Budgerigar droppings IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST),Budgerigar droppings Ab.IgE,Ser,PrThr,13013,random
+102538-6,Pork IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST),Pork Ab.IgE,Ser,PrThr,4985,random
+102632-7,Tragacanth IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST),Astragalus spp Ab.IgE,Ser,PrThr,15424,random
+102681-4,Asparagus IgG Ab [Presence] in Serum by Radioallergosorbent test (RAST),Asparagus officinalis Ab.IgG,Ser,PrThr,0,random
+102975-0,"Rat epithelium, serum proteins + urine proteins IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",Rat epithelium+Serum proteins+Urine proteins Ab.IgE,Ser,PrThr,15466,pool_bm25
+102993-3,"Mouse epithelium, serum proteins + urine proteins IgE Ab [Presence] in Serum by Radioallergosorbent test (RAST)",Mouse epithelium+Serum proteins+Urine proteins Ab.IgE,Ser,PrThr,4099,pool_bm25
+103616-9,Creatinine [Moles/volume] in Serum or Plasma by LC/MS/MS,Creatinine,Ser/Plas,SCnc,0,pool_bm25
+10410-9,Plasma given [Type],Plasma given,^Patient,Type,0,random
+10412-5,Platelets given [Type],Platelets given,^Patient,Type,1914,pool_component
+104267-0,Protein.glycosylated [Presence] in Serum or Plasma,Protein.glycosylated,Ser/Plas,PrThr,0,pool_bm25
+104275-3,Hematopoietic progenitor cells/Cells.total in Blood by Automated count,Hematopoietic progenitor cells/Cells.total,Bld,NFr,0,pool_bm25
+104317-3,Common myeloid progenitor cell [#/volume] in Blood by Visual count,Common myeloid progenitor cell,Bld,NCnc,0,pool_bm25
+104337-1,Borna disease virus RNA [Presence] in Brain tissue by NAA with probe detection,Borna disease virus RNA,Brain tissue,PrThr,0,random
+104357-9,Borrelia recurrentis DNA [Presence] in Specimen by Sequencing,Borrelia recurrentis DNA,XXX,PrThr,0,random
+104452-8,Toxoplasma gondii IgG Ab [Presence] in Serum by Immunoblot,Toxoplasma gondii Ab.IgG,Ser,PrThr,0,random
+104503-8,Fy3 Ab [Titer] in Serum or Plasma,F little y3 Ab,Ser/Plas,Titr,0,random
+104537-6,"Creatine, guanidinoacetate and creatinine panel - Serum or Plasma","Creatine, guanidinoacetate & creatinine panel",Ser/Plas,-,0,pool_bm25
+104538-4,"Creatine, guanidinoacetate and creatinine pattern [Interpretation] in Serum or Plasma Narrative","Creatine, guanidinoacetate & creatinine pattern",Ser/Plas,Imp,0,pool_bm25
+104539-2,Creatine/Creatinine [Molar ratio] in Serum or Plasma,Creatine/Creatinine,Ser/Plas,SRto,0,pool_bm25
+104540-0,Guanidinoacetate/Creatinine [Molar ratio] in Serum or Plasma,Guanidinoacetate/Creatinine,Ser/Plas,SRto,0,pool_bm25
+104597-0,Glucose [Mass/volume] in Venous blood by Glucometer,Glucose,BldV,MCnc,0,pool_bm25
+104598-8,Glucose [Mass/volume] in Arterial blood by Glucometer,Glucose,BldA,MCnc,0,pool_bm25
+104610-1,Monkeypox virus clade II and Orthopoxvirus.non-variola DNA [Identifier] in Specimen by NAA with probe detection,Monkeypox virus clade II & Orthopoxvirus.non-variola DNA,XXX,Prid,0,random
+104632-5,"Metanephrine, Normetanephrine and Total metanephrines panel - 24 hour Urine",Metanephrine & Normetanephrine & Total metanephrines panel,Urine,-,0,random
+104655-6,Glucose [Mass/volume] in Mixed venous blood,Glucose,BldMV,MCnc,0,pool_bm25
+104697-8,N-acetyl-L-alanine/Creatinine [Molar ratio] in Urine,N-acetyl-L-alanine/Creatinine,Urine,SRto,0,pool_component
+104700-0,Platelet clump [Presence] in Blood,Platelet clump,Bld,PrThr,0,pool_bm25
+104705-9,Platelets [Presence] in Blood,Platelets,Bld,PrThr,0,pool_bm25
+104805-7,Creatinine renal clearance predicted,Creatinine renal clearance.predicted,Ser/Plas,VRat,0,pool_bm25
+104837-0,Protein.monoclonal [Mass/volume] in Serum or Plasma,Protein.monoclonal,Ser/Plas,MCnc,0,pool_bm25
+104873-5,"Glucose dumping syndrome panel - Serum, Plasma or Blood",Glucose dumping syndrome panel,Ser/Plas/Bld,-,0,pool_bm25
+104875-0,Hematocrit [Volume Fraction] of Blood --30 minutes post dose glucose,Hematocrit^30M post dose glucose,Bld,VFr,0,pool_bm25
+104876-8,Hematocrit [Volume Fraction] of Blood --1 hour post dose glucose,Hematocrit^1H post dose glucose,Bld,VFr,0,pool_bm25
+104878-4,Hematocrit [Volume Fraction] of Blood --2 hours post dose glucose,Hematocrit^2H post dose glucose,Bld,VFr,0,pool_bm25
+105009-5,Chloride.reabsorbed by renal tubules/Chloride.total filtered in Urine and Serum or Plasma,Chloride.reabsorbed by renal tubules/Chloride.total filtered,Urine+Ser/Plas,MFr,0,pool_bm25
+105200-0,Chloride [Presence] in Sweat by Screen method,Chloride,Sweat,PrThr,0,pool_bm25
+105267-9,Urea cycle disorders multigene analysis in Blood or Tissue by Molecular genetics method,Urea cycle disorders multigene analysis,Bld/Tiss,Find,0,pool_component
+10542-9,Metharbital [Mass/volume] in Serum or Plasma,Metharbital,Ser/Plas,MCnc,15206,random
+105549-0,Ku Ab [Units/volume] in Serum,Ku Ab,Ser,ACnc,0,random
+105659-7,Haemophilus haemolyticus DNA [Presence] in Specimen by NAA with probe detection,Haemophilus haemolyticus DNA,XXX,PrThr,0,random
+105733-0,Human coronavirus RNA [Presence] in Bronchoalveolar lavage by NAA with probe detection,Human coronavirus RNA,BAL,PrThr,0,random
+105871-8,Giant platelets [Presence] in Blood,Platelets.giant,Bld,PrThr,0,pool_bm25
+105872-6,Platelets Large [Presence] in Blood,Platelets.large,Bld,PrThr,0,pool_bm25
+105886-6,Candida albicans DNA [Presence] in Vaginal fluid,Candida albicans DNA,Vag,PrThr,0,random
+106549-9,Clostridioides difficile toxin A DNA [Presence] in Stool by NAA with probe detection,Clostridioides difficile toxin A DNA,Stool,PrThr,0,random
+106736-2,"C reactive protein [Mass/volume] in Serum, Plasma or Blood by Rapid immunoassay",C reactive protein,Ser/Plas/Bld,MCnc,0,random
+106943-4,CD3+TCR alpha beta+ cells/Cells in Bone marrow by Flow cytometry (FC),Cells.CD3+TCR alpha beta+/Cells,Bone mar,NFr,0,random
+107171-1,Mononuclear cells/100 leukocytes [#/volume] in Blood by Manual count,Mononuclear cells,Bld,NCnc,0,pool_bm25
+107193-5,Platelets [#/volume] in Blood by Automated count --in presence of EDTA to detect possible clumping,Platelets^in presence of EDTA to detect possible clumping,Bld,NCnc,0,pool_bm25
+107901-1,Borrelia sp Ab and Borrelia burgdorferi [Identifier] in Serum or Plasma by Immunoassay,Borrelia sp Ab & Borrelia burgdorferi,Ser/Plas,Prid,0,random
+107984-7,Migratory locust IgG Ab [Units/volume] in Serum or Plasma by Immunoassay,Locusta migratoria Ab.IgG,Ser/Plas,ACnc,0,random
+108101-7,Measles virus genotype in Blood,Measles virus genotype,Bld,Type,0,random
+108210-6,Galactomannan Ag [Presence] in Cerebrospinal Fluid by Immunoassay,Galactomannan Ag,CSF,PrThr,0,random
+11037-9,Alpha-N-acetylgalactosaminidase [Enzymatic activity/volume] in Serum or Plasma,Alpha-N-acetylgalactosaminidase,Ser/Plas,CCnc,0,random
+11041-1,Creatinine [Mass/volume] in Serum or Plasma --post dialysis,Creatinine^post dialysis,Ser/Plas,MCnc,13570,pool_bm25
+11042-9,Creatinine [Mass/volume] in Serum or Plasma --pre dialysis,Creatinine^pre dialysis,Ser/Plas,MCnc,19369,pool_bm25
+11055-1,Melatonin [Mass/volume] in Serum or Plasma,Melatonin,Ser/Plas,MCnc,12863,random
+11064-3,Urea nitrogen [Mass/volume] in Serum or Plasma --post dialysis,Urea nitrogen^post dialysis,Ser/Plas,MCnc,3968,pool_bm25
+11065-0,Urea nitrogen [Mass/volume] in Serum or Plasma --pre dialysis,Urea nitrogen^pre dialysis,Ser/Plas,MCnc,5242,pool_bm25
+11087-4,Insulin Ab [Titer] in Serum,Insulin Ab,Ser,Titr,12165,random
+11125-2,Platelets [Morphology] in Blood,Platelets,Bld,Morph,463,pool_bm25
+11126-0,Platelets [Morphology] in Bone marrow,Platelets,Bone mar,Morph,753,pool_component
+11153-4,Hematocrit [Volume Fraction] of Body fluid by calculation,Erythrocyte/Body fluid,Body fld,VFr,769,pool_component
+111545-0,Erythrocyte volume deviation [Volume] by calculation,Erythrocyte volume deviation,^Patient,Vol,0,random
+111549-2,Ideal plasma [Volume] by calculation,Ideal plasma,^Patient,Vol,0,random
+11211-0,"Carbon dioxide, total [Moles/volume] in Body fluid",Carbon dioxide,Body fld,SCnc,3827,pool_bm25
+112134-2,Brown shrimp IgE Ab [Units/volume] in Serum or Plasma by Immunoassay,Crangon crango Ab.IgE,Ser/Plas,ACnc,0,random
+11273-0,Erythrocytes [Morphology] in Blood by Automated count,Erythrocytes,Bld,Morph,1563,pool_bm25
+112870-1,Hemoglobin A1c and estimated average glucose panel - Blood,Hemoglobin A1c & estimated average glucose panel,Bld,-,0,pool_bm25
+112899-0,Aspartate aminotransferase [Enzymatic activity/volume] in Blood,Aspartate aminotransferase,Bld,CCnc,0,pool_bm25
+113055-8,Gram positive bacilli identified in Peritoneal fluid by Gram stain,Gram positive bacilli,Periton fld,Prid,0,random
+113107-7,Old World hantavirus IgM Ab [Presence] in Serum or Plasma,Old World hantavirus Ab.IgM,Ser/Plas,PrThr,0,random
+113460-0,Baclofen/Creatinine [Mass Ratio] in Urine,Baclofen/Creatinine,Urine,MRto,0,random
+113469-1,Methcathinone/Creatinine [Mass Ratio] in Urine,Methcathinone/Creatinine,Urine,MRto,0,random
+113634-0,PENTobarbital [Mass/volume] in Saliva (oral fluid) by Immunoassay,PENTobarbital,Saliva,MCnc,0,random
+113637-3,Para hydroxyamphetamine [Mass/volume] in Urine by Mass Spectrometry,Para hydroxyamphetamine,Urine,MCnc,0,random
+113780-1,Methanol [Presence] in Urine by Mass Spectrometry,Methanol,Urine,PrThr,0,random
+113938-5,Benzoylecgonine [Presence] in Urine by Mass Spectrometry>150 ng/mL,Benzoylecgonine,Urine,PrThr,0,random
+114006-0,"HYDROcodone [Mass/volume] in Serum, Plasma or Blood by Immunoassay",HYDROcodone,Ser/Plas/Bld,MCnc,0,random
+114102-7,diazePAM [Mass/volume] in Saliva (oral fluid) by Immunoassay,diazePAM,Saliva,MCnc,0,random
+114367-6,Propoxyphene + Norpropoxyphene [Mass/volume] in Urine by Mass Spectrometry,Propoxyphene+Norpropoxyphene,Urine,MCnc,0,random
+114469-0,Methylene chloride [Mass/volume] in Urine,Methylene chloride,Urine,MCnc,0,pool_bm25
+115138-0,Enterobacter roggenkampii DNA [Presence] in Specimen by Molgen,Enterobacter roggenkampii DNA,{Specimen},PrThr,0,random
+115354-3,Bordetella holmesii fumC gene [Presence] in Specimen by Molgen,Bordetella holmesii fumC gene,{Specimen},PrThr,0,random
+11557-6,Carbon dioxide [Partial pressure] in Blood,Carbon dioxide,Bld,PPres,125,pool_bm25
+115787-4,Mycophenolate [Mass] of Dose,Mycophenolate,Dose,Mass,0,random
+12180-6,Calcium.ionized [Moles/volume] in Serum or Plasma by Ion-selective membrane electrode (ISE),Calcium.ionized,Ser/Plas,SCnc,314,pool_component
+12185-5,aPTT in Blood from Control by Coagulation assay,Coagulation,Bld^Control,Time,7298,random
+12190-5,Creatinine [Mass/volume] in Body fluid,Creatinine,Body fld,MCnc,527,pool_component
+12265-5,Urea nitrogen [Mass/volume] in Peritoneal fluid,Urea nitrogen,Periton fld,MCnc,6738,pool_bm25
+12266-3,Urea nitrogen [Mass/volume] in Peritoneal fluid --2 hours post peritoneal dialysis,Urea nitrogen^2H post peritoneal dialysis,Periton fld,MCnc,0,pool_component
+12280-4,Alanine [Mass/volume] in Amniotic fluid,Alanine,Amnio fld,MCnc,0,pool_bm25
+12444-6,Nortrimipramine [Mass/volume] in Urine,Nortrimipramine,Urine,MCnc,14360,random
+12476-8,Bilirubin.total [Mass/volume] in Amniotic fluid by Spectrophotometry direct,Bilirubin,Amnio fld,MCnc,15490,pool_component
+12530-2,Chloride [Moles/volume] in Water,Chloride,Water,SCnc,0,pool_bm25
+12610-2,Glucose [Mass/volume] in Serum or Plasma --2 hours post XXX challenge,Glucose^2H post XXX challenge,Ser/Plas,MCnc,2128,pool_component
+12646-6,Glucose [Mass/volume] in Serum or Plasma --1 hour post XXX challenge,Glucose^1H post XXX challenge,Ser/Plas,MCnc,1477,pool_component
+12719-1,17-Hydroxyprogesterone [Mass/volume] in Serum or Plasma --5th specimen post XXX challenge,17-Hydroxyprogesterone^5th specimen post XXX challenge,Ser/Plas,MCnc,14664,random
+12812-4,Potassium [Moles/volume] in Serum or Plasma --2nd specimen,Potassium^2nd specimen,Ser/Plas,SCnc,0,pool_bm25
+12813-2,Potassium [Moles/volume] in Serum or Plasma --3rd specimen,Potassium^3rd specimen,Ser/Plas,SCnc,0,pool_bm25
+12814-0,Potassium [Moles/volume] in Vitreous fluid,Potassium,Vitr fld,SCnc,0,pool_bm25
+12844-7,Protein [Mass/volume] in Peritoneal dialysis fluid --2nd specimen,Protein^2nd specimen,Dial fld prt,MCnc,0,random
+12851-2,Protein Fractions [Interpretation] in Serum or Plasma by Electrophoresis,Protein pattern,Ser/Plas,Imp,903,pool_component
+12898-3,Chloride [Moles/volume] in Vitreous fluid,Chloride,Vitr fld,SCnc,0,pool_bm25
+12908-0,Sodium [Moles/volume] in Vitreous fluid,Sodium,Vitr fld,SCnc,0,pool_bm25
+12961-9,Urea nitrogen [Mass/volume] in Arterial blood,Urea nitrogen,BldA,MCnc,13142,pool_bm25
+12962-7,Urea nitrogen [Mass/volume] in Venous blood,Urea nitrogen,BldV,MCnc,3720,pool_bm25
+12963-5,Urea nitrogen [Mass/volume] in Peripheral blood,Urea nitrogen,BldP,MCnc,17380,pool_bm25
+12964-3,Urea nitrogen [Mass/volume] in Blood --baseline,Urea nitrogen^baseline,Bld,MCnc,0,pool_bm25
+12965-0,Urea nitrogen [Mass/volume] in Serum or Plasma --70 minute specimen,Urea nitrogen^70M specimen,Ser/Plas,MCnc,0,pool_bm25
+12966-8,Urea nitrogen [Mass/volume] in Serum or Plasma --2 hour specimen,Urea nitrogen^2H specimen,Ser/Plas,MCnc,0,pool_bm25
+12967-6,Urea nitrogen [Mass/volume] in 24 hour Urine,Urea nitrogen,Urine,MCnc,3630,pool_bm25
+12968-4,Urea nitrogen [Mass/volume] in Dialysis fluid --4 hour specimen,Urea nitrogen^4H specimen,Dial fld,MCnc,0,pool_component
+12969-2,Urea nitrogen [Mass/volume] in Peritoneal dialysis fluid --baseline,Urea nitrogen^baseline,Dial fld prt,MCnc,0,pool_bm25
+12970-0,Urea nitrogen [Mass/volume] in Peritoneal dialysis fluid --2 hour dwell specimen,Urea nitrogen^2H dwell specimen,Dial fld prt,MCnc,0,pool_component
+12998-1,Methylene chloride [Mass/volume] in Blood,Methylene chloride,Bld,MCnc,14201,pool_component
+13056-7,Platelets [#/volume] in Plasma by Automated count,Platelets,Plas,NCnc,19151,pool_bm25
+13201-9,Blastomyces dermatitidis Ab [Units/volume] in Cerebrospinal Fluid,Blastomyces dermatitidis Ab,CSF,ACnc,0,random
+13248-0,Hepatitis D virus Ab [Presence] in Serum,Hepatitis D virus Ab,Ser,PrThr,5331,random
+13271-2,Neisseria meningitidis serogroup A Ab [Units/volume] in Serum,Neisseria meningitidis serogroup A Ab,Ser,ACnc,18901,random
+13441-1,Creatinine renal clearance in 4 hour Urine and Serum or Plasma,Creatinine renal clearance,Urine+Ser/Plas,VRat,0,pool_bm25
+13442-9,Creatinine renal clearance in 6 hour Urine and Serum or Plasma,Creatinine renal clearance,Urine+Ser/Plas,VRat,0,pool_bm25
+13444-5,Calcium/Albumin [Mass Ratio] in Serum or Plasma,Calcium/Albumin,Ser/Plas,MRto,7018,pool_bm25
+13448-6,Calcium/Osmolality [Ratio] in Serum or Plasma,Calcium/Osmolality,Ser/Plas,Ratio,0,pool_bm25
+13467-6,Selenium/Creatinine [Mass Ratio] in Urine,Selenium/Creatinine,Urine,MRto,13591,random
+13479-1,Benzoylecgonine/Creatinine [Mass Ratio] in Urine,Benzoylecgonine/Creatinine,Urine,MRto,3440,random
+13506-1,Urea nitrogen renal clearance in Urine and Serum or Plasma,Urea nitrogen renal clearance,Urine+Ser/Plas,VRat,11795,pool_bm25
+13538-4,"Carbon dioxide, total [Moles/volume] in Urine",Carbon dioxide,Urine,SCnc,11007,pool_bm25
+13540-0,"Carbon dioxide, total [Moles/volume] in Cerebrospinal Fluid",Carbon dioxide,CSF,SCnc,0,pool_bm25
+13640-8,Vinyl chloride [Mass/volume] in Urine,Vinyl chloride,Urine,MCnc,0,pool_bm25
+13721-6,Chloride/Creatinine [Mass Ratio] in 24 hour Urine,Chloride/Creatinine,Urine,MRto,9672,pool_component
+13821-4,Urea nitrogen/Creatinine [Mass Ratio] in 24 hour Urine,Urea nitrogen/Creatinine,Urine,MRto,0,pool_bm25
+13824-8,Arsenic/Creatinine [Mass Ratio] in 24 hour Urine,Arsenic/Creatinine,Urine,MRto,1215,pool_component
+1383-9,Calcium [Moles/volume] in Serum or Plasma --pre 2.4 mg/kg calcium short IV,Calcium^pre 2.4 mg/kg calcium short IV,Ser/Plas,SCnc,0,pool_bm25
+1384-7,Calcium [Moles/volume] in Blood --post calcium infusion,Calcium^post calcium infusion,Bld,SCnc,0,pool_bm25
+13877-6,Bilirubin.total [Presence] in Amniotic fluid,Bilirubin,Amnio fld,PrThr,0,pool_bm25
+13895-8,Sodium [Moles/volume] in Milk,Sodium,Milk,SCnc,0,pool_bm25
+13937-8,Ethyl acetate [Mass/volume] in Blood,Ethyl acetate,Bld,MCnc,16003,random
+13945-1,Erythrocytes [#/area] in Urine sediment by Microscopy high power field,Erythrocytes,Urine sed,Naric,108,pool_component
+13978-2,Alpha 1 globulin/Protein.total in Serum or Plasma by Electrophoresis,Alpha 1 globulin/Protein.total,Ser/Plas,MFr,1814,pool_component
+13979-0,Prealbumin/Protein.total in Serum or Plasma by Electrophoresis,Prealbumin/Protein.total,Ser/Plas,MFr,0,pool_bm25
+13980-8,Albumin/Protein.total in Serum or Plasma by Electrophoresis,Albumin/Protein.total,Ser/Plas,MFr,1803,pool_component
+13981-6,Alpha 2 globulin/Protein.total in Serum or Plasma by Electrophoresis,Alpha 2 globulin/Protein.total,Ser/Plas,MFr,1808,pool_component
+13982-4,Beta globulin/Protein.total in Serum or Plasma by Electrophoresis,Beta globulin/Protein.total,Ser/Plas,MFr,1806,pool_component
+13983-2,Gamma globulin/Protein.total in Serum or Plasma by Electrophoresis,Gamma globulin/Protein.total,Ser/Plas,MFr,1811,pool_component
+14000-4,Urea nitrogen [Mass/volume] in Cerebrospinal Fluid,Urea nitrogen,CSF,MCnc,0,pool_bm25
+14003-8,Carbon dioxide [Partial pressure] in Cord blood,Carbon dioxide,BldCo,PPres,9573,pool_bm25
+14040-0,"Carbon dioxide, total [Moles/volume] in Stool",Carbon dioxide,Stool,SCnc,16258,pool_bm25
+14055-8,Sodium [Moles/mass] in Stool,Sodium,Stool,SCnt,0,pool_bm25
+14089-7,Herpes simplex virus 2 IgG Ab [Titer] in Cerebrospinal Fluid by Immunofluorescence,Herpes simplex virus 2 Ab.IgG,CSF,Titr,0,random
+14152-3,Bilirubin.direct [Mass/volume] in Body fluid,Bilirubin.glucuronidated+Bilirubin.albumin bound,Body fld,MCnc,5166,pool_component
+14172-1,Potassium [Moles/volume] in Synovial fluid,Potassium,Synv fld,SCnc,16259,pool_bm25
+14248-9,Purkinje cells Ab [Titer] in Cerebrospinal Fluid by Immunofluorescence,Purkinje cells Ab,CSF,Titr,4828,random
+14372-7,Erythrocytes [#/volume] in Gastric fluid by Manual count,Erythrocytes,Gast fld,NCnc,0,pool_bm25
+14393-3,Urea nitrogen [Mass/volume] in Amniotic fluid,Urea nitrogen,Amnio fld,MCnc,0,pool_bm25
+14394-1,Urea nitrogen [Mass/volume] in Pleural fluid,Urea nitrogen,Plr fld,MCnc,0,pool_bm25
+14396-6,Urea nitrogen [Mass/volume] in Synovial fluid,Urea nitrogen,Synv fld,MCnc,0,pool_bm25
+14397-4,Urea nitrogen [Mass/volume] in Gastric fluid,Urea nitrogen,Gast fld,MCnc,0,pool_bm25
+14409-7,Aspartate aminotransferase [Enzymatic activity/volume] in Pleural fluid,Aspartate aminotransferase,Plr fld,CCnc,0,pool_component
+14410-5,Aspartate aminotransferase [Enzymatic activity/volume] in Peritoneal fluid,Aspartate aminotransferase,Periton fld,CCnc,0,pool_component
+14411-3,Aspartate aminotransferase [Enzymatic activity/volume] in Synovial fluid,Aspartate aminotransferase,Synv fld,CCnc,0,pool_component
+14412-1,Aspartate aminotransferase [Enzymatic activity/volume] in Gastric fluid,Aspartate aminotransferase,Gast fld,CCnc,0,pool_component
+14413-9,Aspartate aminotransferase [Enzymatic activity/volume] in Urine,Aspartate aminotransferase,Urine,CCnc,0,pool_bm25
+14414-7,Aspartate aminotransferase [Enzymatic activity/volume] in Dialysis fluid,Aspartate aminotransferase,Dial fld,CCnc,0,pool_component
+14420-4,Bilirubin.total [Mass/volume] in Dialysis fluid,Bilirubin,Dial fld,MCnc,0,pool_bm25
+14421-2,Bilirubin.total [Mass/volume] in Pleural fluid,Bilirubin,Plr fld,MCnc,0,pool_bm25
+14422-0,Bilirubin.total [Mass/volume] in Peritoneal fluid,Bilirubin,Periton fld,MCnc,16058,pool_component
+14424-6,Bilirubin.total [Mass/volume] in Gastric fluid,Bilirubin,Gast fld,MCnc,0,pool_bm25
+14485-7,Mycoplasma sp and Ureaplasma sp [Identifier] in Vaginal fluid by Organism specific culture,Mycoplasma sp & Ureaplasma sp,Vag,Prid,0,random
+14629-0,Bilirubin.direct [Moles/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,SCnc,7439,pool_bm25
+14630-8,Bilirubin.indirect [Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,SCnc,12608,pool_bm25
+14631-6,Bilirubin.total [Moles/volume] in Serum or Plasma,Bilirubin,Ser/Plas,SCnc,4379,pool_bm25
+14634-0,C reactive protein [Titer] in Serum or Plasma,C reactive protein,Ser/Plas,Titr,816,pool_component
+14636-5,Calcium [Presence] in Stone,Calcium,Calculus,PrThr,0,pool_bm25
+14640-7,"Carbon dioxide, total [Moles/volume] in Dialysis fluid",Carbon dioxide,Dial fld,SCnc,11104,pool_bm25
+14682-9,Creatinine [Moles/volume] in Serum or Plasma,Creatinine,Ser/Plas,SCnc,2641,pool_bm25
+14743-9,Glucose [Moles/volume] in Capillary blood by Glucometer,Glucose,BldC,SCnc,654,pool_bm25
+14765-2,Glucose [Moles/volume] in Serum or Plasma --3 hours post dose glucose,Glucose^3H post dose glucose,Ser/Plas,SCnc,11869,random
+14770-2,Fasting glucose [Moles/volume] in Capillary blood by Glucometer,Glucose^post CFst,BldC,SCnc,17941,pool_bm25
+14775-1,Hemoglobin [Mass/volume] in Arterial blood by Oximetry,Hemoglobin,BldA,MCnc,450,pool_component
+14912-0,Smudge cells/Leukocytes in Blood by Manual count,Smudge cells/Leukocytes,Bld,NFr,1336,pool_bm25
+14936-9,Urea nitrogen [Moles/volume] in Peritoneal dialysis fluid,Urea nitrogen,Dial fld prt,SCnc,0,pool_bm25
+14937-7,Urea nitrogen [Moles/volume] in Serum or Plasma,Urea nitrogen,Ser/Plas,SCnc,1938,pool_bm25
+14938-5,Urea nitrogen [Moles/volume] in Urine,Urea nitrogen,Urine,SCnc,0,pool_bm25
+14939-3,Urea nitrogen [Moles/time] in 24 hour Urine,Urea nitrogen,Urine,SRat,16289,pool_bm25
+14959-1,Microalbumin/Creatinine [Mass Ratio] in Urine,Albumin/Creatinine,Urine,MRto,442,pool_component
+15013-6,Alkaline phosphatase.bone/Alkaline phosphatase.total in Serum or Plasma,Alkaline phosphatase.bone/Alkaline phosphatase.total,Ser/Plas,CFr,2320,random
+1501-6,Glucose [Mass/volume] in Serum or Plasma --1 hour post 100 g glucose PO,Glucose^1H post 100 g glucose PO,Ser/Plas,MCnc,1338,pool_component
+1504-0,Glucose [Mass/volume] in Serum or Plasma --1 hour post 50 g glucose PO,Glucose^1H post 50 g glucose PO,Ser/Plas,MCnc,629,pool_component
+15074-8,Glucose [Moles/volume] in Blood,Glucose,Bld,SCnc,7338,pool_bm25
+15137-3,Alanine+Ethanolamine [Presence] in Serum or Plasma,Alanine+Ethanolamine,Ser/Plas,PrThr,16240,pool_bm25
+15142-3,Alanine+Ethanolamine [Presence] in Urine,Alanine+Ethanolamine,Urine,PrThr,14285,pool_bm25
+15152-2,Bilirubin.conjugated [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated,Ser/Plas,MCnc,233,pool_bm25
+15158-9,Chloride [Moles/volume] in Stool,Chloride,Stool,SCnc,5773,pool_bm25
+15201-7,Platelets Large Fragments [#/volume] in Blood by Manual count,Platelets.large fragments,Bld,NCnc,13608,pool_bm25
+15202-5,Potassium [Moles/volume] in Stool,Potassium,Stool,SCnc,5155,pool_bm25
+15207-4,Sodium [Moles/volume] in Stool,Sodium,Stool,SCnc,5201,pool_bm25
+15493-0,Parainfluenza virus 3 Ab [Titer] in Serum by Hemagglutination inhibition,Parainfluenza virus 3 Ab,Ser,Titr,0,random
+1556-0,Fasting glucose [Mass/volume] in Capillary blood,Glucose^post CFst,BldC,MCnc,9090,pool_bm25
+1557-8,Fasting glucose [Mass/volume] in Venous blood,Glucose^post CFst,BldV,MCnc,915,pool_bm25
+1558-6,Fasting glucose [Mass/volume] in Serum or Plasma,Glucose^post CFst,Ser/Plas,MCnc,410,pool_component
+16188-5,Creatinine [Mass/volume] in Serum or Plasma --2 hour specimen,Creatinine^2H specimen,Ser/Plas,MCnc,18700,pool_bm25
+16189-3,Creatinine [Mass/volume] in Serum or Plasma --4 hour specimen,Creatinine^4H specimen,Ser/Plas,MCnc,0,pool_bm25
+16257-8,Sodium urate crystals [Presence] in Stone by Infrared spectroscopy,Sodium urate crystals,Calculus,PrThr,8119,pool_component
+16323-8,Alanine [Presence] in Urine,Alanine,Urine,PrThr,0,pool_bm25
+16324-6,Alanine aminotransferase [Enzymatic activity/volume] in Red Blood Cells,Alanine aminotransferase,RBC,CCnc,0,pool_bm25
+16325-3,Alanine aminotransferase/Aspartate aminotransferase [Enzymatic activity ratio] in Serum or Plasma,Alanine aminotransferase/Aspartate aminotransferase,Ser/Plas,CRto,5662,pool_bm25
+16452-5,Beta alanine [Presence] in Urine,Beta alanine,Urine,PrThr,0,pool_bm25
+16503-5,C reactive protein [Mass/volume] in Body fluid,C reactive protein,Body fld,MCnc,1492,pool_component
+16525-8,Calcium/Phosphate [Mass Ratio] in Serum or Plasma,Calcium/Phosphate,Ser/Plas,MRto,12793,pool_bm25
+16526-6,Calcium/Protein [Mass Ratio] in Serum or Plasma,Calcium/Protein,Ser/Plas,MRto,0,pool_bm25
+16527-4,Calcium/Sodium [Mass Ratio] in Serum or Plasma,Calcium/Sodium,Ser/Plas,MRto,0,pool_bm25
+16536-5,Canary serum proteins Ab [Units/volume] in Serum,Canary serum proteins Ab,Ser,ACnc,0,pool_bm25
+16551-4,"Carbon dioxide, total [Moles/volume] in Capillary blood",Carbon dioxide,BldC,SCnc,9026,pool_bm25
+17242-9,Prolactin [Mass/volume] in Serum or Plasma --40 minutes post XXX challenge,Prolactin^40M post XXX challenge,Ser/Plas,MCnc,0,random
+17278-3,Miconazole [Mass/volume] in Serum or Plasma,Miconazole,Ser/Plas,MCnc,0,random
+1728-5,Adenosine monophosphate.cyclic/Creatinine [Mass Ratio] in Serum or Plasma,Adenosine monophosphate.cyclic/Creatinine,Ser/Plas,MRto,18007,pool_bm25
+17296-5,Mycobacterium tuberculosis complex rRNA [Presence] in Specimen by Probe,Mycobacterium tuberculosis complex rRNA,XXX,PrThr,5356,random
+1736-8,Alanine [Presence] in Serum or Plasma,Alanine,Ser/Plas,PrThr,14735,pool_bm25
+1741-8,Alanine aminotransferase [Enzymatic activity/volume] in Amniotic fluid,Alanine aminotransferase,Amnio fld,CCnc,0,pool_bm25
+1743-4,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P,Alanine aminotransferase,Ser/Plas,CCnc,216,pool_bm25
+1744-2,Alanine aminotransferase [Enzymatic activity/volume] in Serum or Plasma by No addition of P-5'-P,Alanine aminotransferase,Ser/Plas,CCnc,234,pool_bm25
+17550-5,Rubella virus Ab [Units/volume] in Serum by Latex agglutination,Rubella virus Ab,Ser,ACnc,15919,random
+17757-6,Urea nitrogen [Mass/volume] in Peritoneal dialysis fluid,Urea nitrogen,Dial fld prt,MCnc,0,pool_bm25
+17758-4,Urea nitrogen [Mass/volume] in Vitreous fluid,Urea nitrogen,Vitr fld,MCnc,0,pool_bm25
+17759-2,Urea nitrogen [Mass/volume] in Arterial blood --post dialysis,Urea nitrogen^post dialysis,BldA,MCnc,0,pool_bm25
+17768-3,Vinyl chloride [Mass/volume] in Blood,Vinyl chloride,Bld,MCnc,0,pool_bm25
+17788-1,Large unstained cells/Leukocytes in Blood by Automated count,Large unstained cells/Leukocytes,Bld,NFr,3762,pool_bm25
+17789-9,Large unstained cells [#/volume] in Blood by Automated count,Large unstained cells,Bld,NCnc,3761,pool_bm25
+17795-6,Potassium [Moles/volume] in Hyperal solution,Potassium,Hyperal solution,SCnc,16203,pool_bm25
+17796-4,Sodium [Moles/volume] in Hyperal solution,Sodium,Hyperal solution,SCnc,0,pool_bm25
+1784-8,Alpha amino acid nitrogen [Mass/volume] in Plasma,Alpha amino acid nitrogen,Plas,MCnc,16368,pool_component
+17849-1,Reticulocytes/Erythrocytes in Blood by Automated count,Reticulocytes/Erythrocytes,Bld,NFr,425,pool_bm25
+17856-6,Hemoglobin A1c/Hemoglobin.total in Blood by HPLC,Hemoglobin A1c/Hemoglobin.total,Bld,MFr,136,pool_bm25
+17862-4,Calcium [Mass/volume] in Urine,Calcium,Urine,MCnc,1130,pool_bm25
+17863-2,Calcium.ionized [Mass/volume] in Serum or Plasma,Calcium.ionized,Ser/Plas,MCnc,1243,pool_bm25
+17864-0,Calcium.ionized [Mass/volume] in Serum or Plasma by Ion-selective membrane electrode (ISE),Calcium.ionized,Ser/Plas,MCnc,809,pool_component
+17870-7,Orotidine/Creatinine [Molar ratio] in Urine,Orotidine/Creatinine,Urine,SRto,0,random
+1810-1,Amylase/Creatinine [Mass Ratio] in Serum or Plasma,Amylase/Creatinine,Ser/Plas,MRto,0,pool_bm25
+18205-5,Carbon disulfide [Presence] in Urine,Carbon disulfide,Urine,PrThr,0,pool_component
+18218-8,Epidermis IgM Ab [Presence] in Tissue,Epidermis Ab.IgM,Tiss,PrThr,0,random
+1826-7,Alpha 1 antitrypsin MM [Mass/volume] in Serum or Plasma,Alpha 1 antitrypsin.MM,Ser/Plas,MCnc,0,random
+18291-5,Hemoglobin F/Hemoglobin.total in Blood from Newborn,Hemoglobin F/Hemoglobin.total,Bld^Newborn,MFr,9423,pool_bm25
+18296-4,Glucose [Interpretation] in Serum or Plasma--post dose glucose,Glucose^post dose glucose,Ser/Plas,Imp,0,pool_bm25
+18309-5,Nucleated erythrocytes/Leukocytes [Ratio] in Blood by Manual count,Erythrocytes.nucleated/Leukocytes,Bld,Ratio,765,pool_bm25
+18372-3,Potassium [Moles/time] in 6 hour Urine,Potassium,Urine,SRat,0,pool_bm25
+18377-2,Sodium [Moles/time] in 12 hour Urine,Sodium,Urine,SRat,18980,pool_component
+18396-2,HIV 1 p24 Ag [Presence] in Serum or Plasma by Immunoassay,HIV 1 p24 Ag,Ser/Plas,PrThr,936,random
+18426-7,Aspergillus sp Ab [Presence] in Cerebrospinal Fluid,Aspergillus sp Ab,CSF,PrThr,0,random
+1843-2,Ammonia nitrogen [Mass/time] in 24 hour Urine,Ammonia nitrogen,Urine,MRat,7446,pool_component
+18488-7,Calcium [Mass/volume] in 24 hour Urine,Calcium,Urine,MCnc,2783,pool_component
+19072-8,Calcium.ionized [Moles/volume] adjusted to pH 7.4 in Serum or Plasma,Calcium.ionized^^adjusted to pH 7.4,Ser/Plas,SCnc,786,pool_component
+19158-5,Urea nitrogen comment - 24 hour Urine Narrative,Urea nitrogen comment,Urine,Imp,0,pool_bm25
+19161-9,Urobilinogen [Units/volume] in Urine by Test strip,Urobilinogen,Urine,ACnc,221,random
+1916-6,Aspartate aminotransferase/Alanine aminotransferase [Enzymatic activity ratio] in Serum or Plasma,Aspartate aminotransferase/Alanine aminotransferase,Ser/Plas,CRto,5462,pool_bm25
+1919-0,Aspartate aminotransferase [Enzymatic activity/volume] in Body fluid,Aspartate aminotransferase,Body fld,CCnc,889,pool_component
+19212-0,Carbon dioxide [Partial pressure] in Mixed venous blood,Carbon dioxide,BldMV,PPres,1657,pool_bm25
+19223-7,"Carbon dioxide, total [Moles/volume] in Mixed venous blood",Carbon dioxide,BldMV,SCnc,2487,pool_bm25
+19267-4,Amphetamines cutoff [Mass/volume] in Urine for Confirmatory method,Amphetamines cutoff,Urine,MCnc,0,random
+1931-5,Beta alanine [Presence] in Serum or Plasma,Beta alanine,Ser/Plas,PrThr,0,pool_bm25
+1932-3,Beta alanine [Mass/volume] in Serum or Plasma,Beta alanine,Ser/Plas,MCnc,14368,pool_bm25
+19502-4,Methotrimeprazine [Presence] in Urine by Screen method,Methotrimeprazine,Urine,PrThr,0,random
+1969-5,Bilirubin.total renal clearance in 24 hour Urine and Serum or Plasma,Bilirubin renal clearance,Urine+Ser/Plas,VRat,0,pool_bm25
+1970-3,Bilirubin.delta [Mass/volume] in Serum or Plasma,Bilirubin.albumin bound,Ser/Plas,MCnc,13460,pool_bm25
+1972-9,Bilirubin.total [Mass/volume] in Amniotic fluid,Bilirubin,Amnio fld,MCnc,17515,pool_component
+1973-7,Bilirubin.total [Mass/volume] in Cerebrospinal Fluid,Bilirubin,CSF,MCnc,0,pool_bm25
+1974-5,Bilirubin.total [Mass/volume] in Body fluid,Bilirubin,Body fld,MCnc,1249,pool_component
+19751-7,"Mouse epithelium, serum proteins + urine proteins IgE Ab [Units/volume] in Serum",Mouse epithelium+Serum proteins+Urine proteins Ab.IgE,Ser,ACnc,4047,pool_bm25
+19753-3,"Rat epithelium, serum proteins + urine proteins IgE Ab [Units/volume] in Serum",Rat epithelium+Serum proteins+Urine proteins Ab.IgE,Ser,ACnc,15151,pool_bm25
+1976-0,Bilirubin.total [Presence] in Stool,Bilirubin,Stool,PrThr,7950,pool_bm25
+1977-8,Bilirubin.total [Presence] in Urine,Bilirubin,Urine,PrThr,201,pool_bm25
+1978-6,Bilirubin.total [Mass/volume] in Urine,Bilirubin,Urine,MCnc,279,pool_bm25
+1996-8,Calcium [Moles/volume] in Blood,Calcium,Bld,SCnc,14154,pool_bm25
+1999-2,Calcium [Moles/volume] in Semen,Calcium,Semen,SCnc,0,pool_bm25
+2000-8,Calcium [Moles/volume] in Serum or Plasma,Calcium,Ser/Plas,SCnc,496,pool_bm25
+2002-4,Calcium [Moles/volume] in Stool,Calcium,Stool,SCnc,0,pool_bm25
+2004-0,Calcium [Moles/volume] in Urine,Calcium,Urine,SCnc,9949,pool_bm25
+2018-0,Carbon dioxide [Partial pressure] in Amniotic fluid,Carbon dioxide,Amnio fld,PPres,0,pool_bm25
+2019-8,Carbon dioxide [Partial pressure] in Arterial blood,Carbon dioxide,BldA,PPres,179,pool_bm25
+2020-6,Carbon dioxide [Partial pressure] in Capillary blood,Carbon dioxide,BldC,PPres,857,pool_bm25
+2021-4,Carbon dioxide [Partial pressure] in Venous blood,Carbon dioxide,BldV,PPres,237,pool_bm25
+2022-2,Carbon dioxide [Partial pressure] in Cerebrospinal Fluid,Carbon dioxide,CSF,PPres,0,pool_bm25
+2023-0,Carbon dioxide [Partial pressure] in Body fluid,Carbon dioxide,Body fld,PPres,0,pool_bm25
+2024-8,Carbon dioxide dissolved [Moles/volume] in Plasma,Carbon dioxide.dissolved,Plas,SCnc,10980,pool_bm25
+2025-5,Carbon dioxide dissolved [Moles/volume] in Red Blood Cells,Carbon dioxide.dissolved,RBC,SCnc,16350,pool_component
+2026-3,"Carbon dioxide, total [Moles/volume] in Arterial blood",Carbon dioxide,BldA,SCnc,421,pool_bm25
+2027-1,"Carbon dioxide, total [Moles/volume] in Venous blood",Carbon dioxide,BldV,SCnc,1765,pool_bm25
+2030-5,Carboxyhemoglobin/Hemoglobin.total in Arterial blood,Carboxyhemoglobin/Hemoglobin.total,BldA,MFr,481,pool_component
+20436-2,Glucose [Mass/volume] in Serum or Plasma --2 hours post dose glucose,Glucose^2H post dose glucose,Ser/Plas,MCnc,1816,pool_component
+20438-8,Glucose [Mass/volume] in Serum or Plasma --1 hour post dose glucose,Glucose^1H post dose glucose,Ser/Plas,MCnc,1023,pool_component
+20454-5,Protein [Presence] in Urine by Test strip,Protein,Urine,PrThr,173,pool_component
+20509-6,Hemoglobin [Mass/volume] in Blood by calculation,Hemoglobin,Bld,MCnc,244,pool_component
+20511-2,Creatinine [Interpretation] in Urine,Creatinine,Urine,Imp,0,pool_bm25
+20570-8,Hematocrit [Volume Fraction] of Blood by calculation,Erythrocyte/Blood,Bld,VFr,40,pool_component
+20572-4,Hemoglobin A/Hemoglobin.total in Blood by Electrophoresis,Hemoglobin A/Hemoglobin.total,Bld,MFr,1662,pool_bm25
+20636-7,Alanine [Moles/volume] in Serum or Plasma,Alanine,Ser/Plas,SCnc,2843,pool_bm25
+2068-5,Chloride [Moles/volume] in Amniotic fluid,Chloride,Amnio fld,SCnc,0,pool_bm25
+2070-1,Chloride [Moles/volume] in Cerebrospinal Fluid,Chloride,CSF,SCnc,7596,pool_bm25
+2071-9,Chloride [Moles/volume] in Dialysis fluid,Chloride,Dial fld,SCnc,0,pool_bm25
+2072-7,Chloride [Moles/volume] in Body fluid,Chloride,Body fld,SCnc,5095,pool_bm25
+2073-5,Chloride [Moles/volume] in Red Blood Cells,Chloride,RBC,SCnc,0,pool_component
+2074-3,Chloride [Moles/volume] in Saliva (oral fluid),Chloride,Saliva,SCnc,0,pool_component
+2076-8,Chloride [Moles/mass] in Stool,Chloride,Stool,SCnt,7874,pool_bm25
+2077-6,Chloride [Moles/volume] in Sweat,Chloride,Sweat,SCnc,2927,pool_bm25
+2078-4,Chloride [Moles/volume] in Urine,Chloride,Urine,SCnc,963,pool_bm25
+2079-2,Chloride [Moles/time] in 24 hour Urine,Chloride,Urine,SRat,3148,pool_component
+21194-6,Chloride [Moles/volume] in 24 hour Urine,Chloride,Urine,SCnc,5452,pool_component
+21476-7,Potassium [Moles/volume] in 24 hour Urine,Potassium,Urine,SCnc,3550,pool_component
+21525-1,Sodium [Moles/volume] in 24 hour Urine,Sodium,Urine,SCnc,2655,pool_component
+21526-9,Sodium [Mass/volume] in 24 hour Urine,Sodium,Urine,MCnc,8739,pool_component
+21527-7,Sodium [Mass/time] in 24 hour Urine,Sodium,Urine,MRat,9280,pool_component
+2160-0,Creatinine [Mass/volume] in Serum or Plasma,Creatinine,Ser/Plas,MCnc,4,pool_bm25
+2161-8,Creatinine [Mass/volume] in Urine,Creatinine,Urine,MCnc,154,pool_component
+2162-6,Creatinine [Mass/time] in 24 hour Urine,Creatinine,Urine,MRat,824,pool_component
+21636-6,BRCA1 gene mutations found [Identifier] in Blood or Tissue by Targeted gene mutation analysis Nominal,BRCA1 gene mutations,Bld/Tiss,Prid,12928,random
+22150-7,Brucella abortus Ab [Titer] in Serum,Brucella abortus Ab,Ser,Titr,0,random
+22415-4,Mumps virus IgG Ab [Presence] in Serum,Mumps virus Ab.IgG,Ser,PrThr,1515,random
+22624-1,Xylose [Moles/volume] in Blood --2 hours post 5 g xylose PO,Xylose^2H post 5 g xylose PO,Bld,SCnc,0,random
+22657-1,Alanine [Moles/volume] in Cerebrospinal Fluid,Alanine,CSF,SCnc,8673,pool_component
+22665-4,Bilirubin.delta [Moles/volume] in Serum or Plasma,Bilirubin.albumin bound,Ser/Plas,SCnc,0,pool_bm25
+22680-3,Mercury/Creatinine [Molar ratio] in Urine,Mercury/Creatinine,Urine,SRto,0,random
+22698-5,Alanine/Creatinine [Molar ratio] in Urine,Alanine/Creatinine,Urine,SRto,11870,pool_component
+22700-9,Urea [Moles/volume] in Urine,Urea,Urine,SCnc,15818,pool_component
+22724-9,Alanine [Moles/volume] in Specimen,Alanine,XXX,SCnc,11662,pool_bm25
+22970-8,Campylobacter fetus ss venerealis IgA Ab [Presence] in Genital mucus,Campylobacter fetus subspecies venerealis Ab.IgA,Genital muc,PrThr,0,random
+22983-1,Capripox virus Ab [Presence] in Serum by Immunoblot,Capripox virus Ab,Ser,PrThr,0,random
+23005-2,Classical swine fever virus Ag [Presence] in Tissue by Immunofluorescence,Classical swine fever virus Ag,Tiss,PrThr,0,random
+2325-9,Gamma glutamyl transferase/Aspartate aminotransferase [Enzymatic activity ratio] in Serum or Plasma,Gamma glutamyl transferase/Aspartate aminotransferase,Ser/Plas,CRto,12020,pool_component
+2339-0,Glucose [Mass/volume] in Blood,Glucose,Bld,MCnc,52,pool_bm25
+2341-6,Glucose [Mass/volume] in Blood by Test strip manual,Glucose,Bld,MCnc,83,pool_bm25
+2342-4,Glucose [Mass/volume] in Cerebrospinal Fluid,Glucose,CSF,MCnc,721,pool_component
+2344-0,Glucose [Mass/volume] in Body fluid,Glucose,Body fld,MCnc,571,pool_component
+2345-7,Glucose [Mass/volume] in Serum or Plasma,Glucose,Ser/Plas,MCnc,6,pool_component
+2349-9,Glucose [Presence] in Urine,Glucose,Urine,PrThr,368,pool_component
+23521-8,Trypanosoma evansi Ab [Units/volume] in Serum,Trypanosoma evansi Ab,Ser,ACnc,0,random
+2352-3,Glucose in CSF/Glucose plas,Glucose CSF/Glucose plas,Plas+CSF,RelMCnc,0,pool_bm25
+2356-4,Glucose-6-Phosphate dehydrogenase [Presence] in Red Blood Cells,Glucose-6-Phosphate dehydrogenase,RBC,PrThr,10431,pool_bm25
+2359-8,Glucose-6-Phosphate dehydrogenase [Enzymatic activity/volume] in Serum,Glucose-6-Phosphate dehydrogenase,Ser,CCnc,8557,random
+23835-2,Carbon disulfide [Mass/volume] in Urine,Carbon disulfide,Urine,MCnc,0,pool_component
+23836-0,Carbon disulfide [Mass/volume] in Serum or Plasma,Carbon disulfide,Ser/Plas,MCnc,0,pool_component
+23860-0,Erythrocytes [#/volume] in Body fluid by Automated count,Erythrocytes,Body fld,NCnc,683,pool_bm25
+23915-2,Osmotic fragility of Red Blood Cells--0.50% sodium chloride,Osmotic fragility^0.50% sodium chloride,RBC,NFr,8052,pool_component
+23917-8,Osmotic fragility of Red Blood Cells--0.60% sodium chloride,Osmotic fragility^0.60% sodium chloride,RBC,NFr,8053,pool_component
+23968-1,Dengue virus IgM Ab [Units/volume] in Serum,Dengue virus Ab.IgM,Ser,ACnc,0,random
+24103-4,Plasma cells [#/volume] in Blood by Manual count,Plasma cells,Bld,NCnc,6020,pool_bm25
+24104-2,Lymphoma cells/Leukocytes in Blood by Manual count,Lymphoma cells/Leukocytes,Bld,NFr,12425,pool_bm25
+24105-9,Lymphoma cells [#/volume] in Blood by Manual count,Lymphoma cells,Bld,NCnc,12645,pool_bm25
+24106-7,Hairy cells/Leukocytes in Blood by Manual count,Hairy cells/Leukocytes,Bld,NFr,0,pool_bm25
+24107-5,Hairy cells [#/volume] in Blood by Manual count,Hairy cells,Bld,NCnc,0,pool_bm25
+24109-1,Progesterone [Moles/volume] in Saliva (oral fluid),Progesterone,Saliva,SCnc,0,random
+24211-5,Western equine encephalitis virus Ab [Titer] in Serum by Immunofluorescence --1st specimen,Western equine encephalitis virus Ab^1st specimen,Ser,Titr,0,random
+24346-9,Parathyrin.intact and Calcium panel - Serum or Plasma,Parathyrin.intact & Calcium panel,Ser/Plas,-,1438,pool_bm25
+24347-7,Parathyrin.mid molecule and Calcium panel - Serum or Plasma,Parathyrin.mid molecule & Calcium panel,Ser/Plas,-,0,pool_bm25
+24351-9,Protein electrophoresis panel - Serum or Plasma,Protein fractions panel,Ser/Plas,-,848,pool_bm25
+24357-6,Urinalysis macro (dipstick) panel - Urine,Urinalysis macro (dipstick) panel,Urine,-,330,random
+24465-7,Urea nitrogen [Mass/time] in 12 hour Urine,Urea nitrogen,Urine,MRat,19721,pool_bm25
+24469-9,Hemoglobin XXX/Hemoglobin.total in Blood by Electrophoresis,Hemoglobin XXX/Hemoglobin.total,Bld,MFr,7049,pool_bm25
+24471-5,Platelet function (closure time) [Time] in Blood by Collagen+Epinephrine induced,Platelet function,Bld,Time,2560,pool_component
+24472-3,Platelet function (closure time) [Time] in Blood by Collagen+Adenosine diphosphate induced,Platelet function,Bld,Time,2708,pool_component
+2483-6,Insulin-like growth factor binding protein 3 [Mass/volume] in Serum or Plasma,Insulin-like growth factor binding protein 3,Ser/Plas,MCnc,1698,pool_component
+25108-2,Hydroxydecanedioate/Creatinine [Molar ratio] in Urine,Hydroxydecanedioate/Creatinine,Urine,SRto,11832,random
+25146-2,Bilirubin crystals [#/area] in Urine sediment by Microscopy high power field,Bilirubin crystals,Urine sed,Naric,0,pool_component
+25148-8,Calcium oxalate crystals [#/area] in Urine sediment by Microscopy high power field,Calcium oxalate crystals,Urine sed,Naric,1252,pool_component
+25223-9,Doxycycline [Susceptibility] by Method for Slow-growing mycobacteria.antibiotic concentration at 30.0 ug/mL,Doxycycline,Isolate,Susc,0,random
+25300-5,Toxoplasma gondii IgG Ab [Ratio] in Serum --1st specimen/2nd specimen,Toxoplasma gondii Ab.IgG^1st specimen/2nd specimen,Ser,Ratio,0,random
+25301-3,Alanine [Moles/time] in 24 hour Urine,Alanine,Urine,SRat,13260,pool_component
+25302-1,Alanine aminotransferase [Enzymatic activity/volume] in Body fluid,Alanine aminotransferase,Body fld,CCnc,1571,pool_bm25
+25346-8,Beta alanine [Moles/time] in 24 hour Urine,Beta alanine,Urine,SRat,13283,pool_component
+25428-4,Glucose [Presence] in Urine by Test strip,Glucose,Urine,PrThr,200,pool_component
+25506-7,Potassium [Moles/mass] in Stool,Potassium,Stool,SCnt,19796,pool_bm25
+25550-5,Urea [Moles/time] in 24 hour Urine,Urea,Urine,SRat,13395,pool_component
+25564-6,Bilirubin.direct [Moles/volume] in Body fluid,Bilirubin.glucuronidated+Bilirubin.albumin bound,Body fld,SCnc,0,pool_bm25
+25873-1,Calcium [Moles/volume] in Urine --pre 500 mg calcium PO,Calcium^pre 500 mg calcium PO,Urine,SCnc,0,pool_bm25
+25998-6,Urea [Moles/volume] in 24 hour Urine,Urea,Urine,SCnc,16663,pool_component
+2615-3,Methemoglobin/Hemoglobin.total in Arterial blood,Methemoglobin/Hemoglobin.total,BldA,MFr,479,pool_component
+26450-7,Eosinophils/Leukocytes in Blood,Eosinophils/Leukocytes,Bld,NFr,72,pool_component
+26454-9,Erythrocytes [#/volume] in Cerebrospinal Fluid,Erythrocytes,CSF,NCnc,987,pool_component
+26455-6,Erythrocytes [#/volume] in Body fluid,Erythrocytes,Body fld,NCnc,659,pool_component
+26485-3,Monocytes/Leukocytes in Blood,Monocytes/Leukocytes,Bld,NFr,70,pool_component
+26511-6,Neutrophils/Leukocytes in Blood,Neutrophils/Leukocytes,Bld,NFr,182,pool_component
+26578-5,Beta alanine/Creatinine [Molar ratio] in Urine,Beta alanine/Creatinine,Urine,SRto,12515,pool_component
+26589-2,Beta alanine [Moles/volume] in Cerebrospinal Fluid,Beta alanine,CSF,SCnc,8764,pool_component
+26604-9,Beta alanine [Moles/volume] in Serum or Plasma,Beta alanine,Ser/Plas,SCnc,2847,pool_bm25
+2660-9,Nitrogen [Mass/time] in 24 hour Urine,Nitrogen,Urine,MRat,14543,pool_component
+26761-7,Sodium renal clearance in 2 hour Urine and Serum or Plasma,Sodium renal clearance,Urine+Ser/Plas,VRat,0,pool_bm25
+26813-6,Acidity.titratable [Moles/volume] in Gastric fluid,Acidity.titratable,Gast fld,SCnc,19502,random
+26848-2,Interleukin 10 [Mass/volume] in Serum or Plasma,Interleukin 10,Ser/Plas,MCnc,6932,random
+26968-8,Beta alanine [Moles/volume] in Urine,Beta alanine,Urine,SCnc,18215,pool_component
+2714-4,Fractional oxyhemoglobin in Arterial blood,Oxyhemoglobin/Hemoglobin.total,BldA,MFr,433,pool_component
+27182-5,Calcium [Presence] in Blood,Calcium,Bld,PrThr,17815,pool_bm25
+27198-1,Bilirubin.total [Units/volume] in Amniotic fluid by Spectrophotometry direct,Bilirubin,Amnio fld,ACnc,14450,pool_component
+27297-1,Leukocyte esterase [Units/volume] in Urine,Leukocyte esterase,Urine,ACnc,169,pool_component
+27326-8,Alanine [Moles/volume] in Urine,Alanine,Urine,SCnc,14973,pool_bm25
+27344-1,Aspartate aminotransferase [Presence] in Serum or Plasma,Aspartate aminotransferase,Ser/Plas,PrThr,16027,pool_bm25
+27353-2,Glucose mean value [Mass/volume] in Blood Estimated from glycated hemoglobin,Estimated average glucose,Bld,MCnc,105,pool_component
+27379-7,Insulin [Units/volume] in Serum or Plasma --1 hour post XXX challenge,Insulin^1H post XXX challenge,Ser/Plas,ACnc,11711,random
+27419-1,Sodium [Moles/time] in 24 hour Stool,Sodium,Stool,SRat,18159,pool_component
+27441-5,Potassium [Moles/mass] in 24 hour Stool,Potassium,Stool,SCnt,17879,pool_component
+28003-2,Sodium/Potassium [Molar ratio] in Serum or Plasma,Sodium/Potassium,Ser/Plas,SRto,0,pool_bm25
+2819-1,Potassium [Moles/volume] in Cerebrospinal Fluid,Potassium,CSF,SCnc,19223,pool_bm25
+2820-9,Potassium [Moles/volume] in Dialysis fluid,Potassium,Dial fld,SCnc,0,pool_bm25
+2821-7,Potassium [Moles/volume] in Body fluid,Potassium,Body fld,SCnc,1056,pool_bm25
+2822-5,Potassium [Moles/volume] in Gastric fluid,Potassium,Gast fld,SCnc,0,pool_bm25
+2823-3,Potassium [Moles/volume] in Serum or Plasma,Potassium,Ser/Plas,SCnc,7,pool_bm25
+2824-1,Potassium [Moles/volume] in Red Blood Cells,Potassium,RBC,SCnc,10742,pool_component
+2825-8,Potassium [Moles/volume] in Saliva (oral fluid),Potassium,Saliva,SCnc,0,pool_component
+2827-4,Potassium [Moles/volume] in Sweat,Potassium,Sweat,SCnc,0,pool_bm25
+2828-2,Potassium [Moles/volume] in Urine,Potassium,Urine,SCnc,901,pool_bm25
+2829-0,Potassium [Moles/time] in 24 hour Urine,Potassium,Urine,SRat,2663,pool_component
+2830-8,Potassium renal clearance in 24 hour Urine and Serum or Plasma,Potassium renal clearance,Urine+Ser/Plas,VRat,0,pool_bm25
+28539-5,MCH [Entitic mass],Hemoglobin,RBC,EntMass,104,pool_component
+28540-3,MCHC [Entitic Mass/volume] in Red Blood Cells,Hemoglobin,RBC,EntMCnc,113,pool_component
+28542-9,Platelet [Entitic mean volume] in Blood,Platelet,Bld,EntMeanVol,80,pool_component
+28588-2,Beta alanine/Creatinine [Ratio] in Urine,Beta alanine/Creatinine,Urine,Ratio,6011,pool_component
+2858-9,Protein in CSF/Protein in serum,Protein.CSF/Protein.serum,Ser+CSF,RelRto,13064,pool_bm25
+2859-7,Protein kinase [Enzymatic activity/volume] in Serum,Protein kinase,Ser,CCnc,0,pool_bm25
+28644-3,Carbon dioxide [Partial pressure] in Arterial cord blood,Carbon dioxide,BldCoA,PPres,1901,pool_bm25
+28645-0,Carbon dioxide [Partial pressure] in Venous cord blood,Carbon dioxide,BldCoV,PPres,1958,pool_bm25
+2880-3,Protein [Mass/volume] in Cerebrospinal Fluid,Protein,CSF,MCnc,736,pool_component
+2881-1,Protein [Mass/volume] in Body fluid,Protein,Body fld,MCnc,844,pool_component
+2885-2,Protein [Mass/volume] in Serum or Plasma,Protein,Ser/Plas,MCnc,23,pool_bm25
+2887-8,Protein [Presence] in Urine,Protein,Urine,PrThr,133,pool_component
+2889-4,Protein [Mass/time] in 24 hour Urine,Protein,Urine,MRat,956,pool_component
+2890-2,Protein/Creatinine [Mass Ratio] in Urine,Protein/Creatinine,Urine,MRto,285,pool_component
+29210-2,Bilirubin.indirect [Mass/volume] in Body fluid,Bilirubin.non-glucuronidated,Body fld,MCnc,7312,pool_component
+29276-3,Calcium [Presence] in Urine,Calcium,Urine,PrThr,13491,pool_bm25
+29277-1,Carbon disulfide [Presence] in Blood,Carbon disulfide,Bld,PrThr,0,pool_component
+29290-4,Carbon disulfide [Mass/volume] in Blood,Carbon disulfide,Bld,MCnc,0,pool_component
+29336-5,Mexiletine [Mass/volume] in Gastric fluid,Mexiletine,Gast fld,MCnc,0,random
+29349-8,Potassium [Moles/volume] in Serum or Plasma --post dialysis,Potassium^post dialysis,Ser/Plas,SCnc,17313,pool_bm25
+2947-0,Sodium [Moles/volume] in Blood,Sodium,Bld,SCnc,261,pool_bm25
+2948-8,Sodium [Moles/volume] in Cerebrospinal Fluid,Sodium,CSF,SCnc,17065,pool_bm25
+2949-6,Sodium [Moles/volume] in Dialysis fluid,Sodium,Dial fld,SCnc,0,pool_bm25
+2950-4,Sodium [Moles/volume] in Body fluid,Sodium,Body fld,SCnc,4328,pool_bm25
+2951-2,Sodium [Moles/volume] in Serum or Plasma,Sodium,Ser/Plas,SCnc,5,pool_bm25
+2952-0,Sodium [Molar amount] in 24 hour Stool,Sodium,Stool,Sub,15819,pool_component
+2954-6,Sodium [Moles/volume] in Sweat,Sodium,Sweat,SCnc,0,pool_bm25
+2955-3,Sodium [Moles/volume] in Urine,Sodium,Urine,SCnc,486,pool_bm25
+2956-1,Sodium [Moles/time] in 24 hour Urine,Sodium,Urine,SRat,2069,pool_component
+2957-9,Sodium renal clearance in 24 hour Urine and Serum or Plasma,Sodium renal clearance,Urine+Ser/Plas,VRat,12646,pool_bm25
+2958-7,Sodium/Potassium [Molar ratio] in Sweat,Sodium/Potassium,Sweat,SRto,0,pool_bm25
+2959-5,Sodium/Potassium [Molar ratio] in Urine,Sodium/Potassium,Urine,SRto,0,pool_bm25
+29760-6,Bilirubin.conjugated [Moles/volume] in Serum or Plasma,Bilirubin.glucuronidated,Ser/Plas,SCnc,16844,pool_bm25
+29767-1,Bilirubin.total [Moles/volume] in Body fluid,Bilirubin,Body fld,SCnc,0,pool_bm25
+29771-3,Hemoglobin [Presence] in Stool from gastrointestinal lower by Immunoassay,Hemoglobin,Stool^Patient.gastrointestinal.lower,PrThr,484,pool_component
+29816-6,La Crosse virus IgM Ab [Presence] in Serum by Immunofluorescence,La Crosse virus Ab.IgM,Ser,PrThr,15774,random
+29891-9,Helicobacter pylori [Presence] in Stomach by urea breath test,Carbon dioxide^post dose urea,Exhl gas,PrThr,1689,pool_component
+30000-4,Microalbumin/Creatinine [Ratio] in Urine,Albumin/Creatinine,Urine,Ratio,1431,pool_component
+30068-1,Alanine/Creatinine [Ratio] in Urine,Alanine/Creatinine,Urine,Ratio,6339,pool_bm25
+30077-2,Amylase/Creatinine renal clearance [Ratio] in Urine and Serum or Plasma,Amylase/Creatinine renal clearance,Urine+Ser/Plas,Ratio,19287,pool_bm25
+30131-7,Complement total hemolytic CH50 [Mass/volume] in Serum or Plasma,Complement total hemolytic CH50,Ser/Plas,MCnc,19099,random
+30149-9,Streptolysin O Ab [Units/volume] in Serum --1st specimen,Streptolysin O Ab^1st specimen,Ser,ACnc,0,random
+30154-9,Protein/Creatinine [Mass Ratio] in Serum or Plasma,Protein/Creatinine,Ser/Plas,MRto,3275,pool_bm25
+30180-4,Basophils/Leukocytes in Blood,Basophils/Leukocytes,Bld,NFr,75,pool_component
+30239-8,Aspartate aminotransferase [Enzymatic activity/volume] in Serum or Plasma by With P-5'-P,Aspartate aminotransferase,Ser/Plas,CCnc,202,pool_component
+30244-8,Acetylcholinesterase [Enzymatic activity/volume] in Blood,Acetylcholinesterase,Bld,CCnc,0,random
+30313-1,Hemoglobin [Mass/volume] in Arterial blood,Hemoglobin,BldA,MCnc,434,pool_component
+30341-2,Erythrocyte [Sedimentation Rate] in Blood,Erythrocyte,Bld,Sedimentation Rate,280,pool_component
+30350-3,Hemoglobin [Mass/volume] in Venous blood,Hemoglobin,BldV,MCnc,270,pool_component
+30353-7,Hemoglobin [Mass/volume] in Venous cord blood,Hemoglobin,BldCoV,MCnc,57,pool_component
+30355-2,Herpes simplex virus 1+2 IgM Ab [Presence] in Serum by Immunofluorescence,Herpes simplex virus 1+2 Ab.IgM,Ser,PrThr,11198,random
+30385-9,Erythrocyte [DistWidth] in Blood,Erythrocyte,Bld,DistWidth,96,pool_component
+30549-0,Potassium [Moles/volume] in Total parental nutrition,Potassium,TPN,SCnc,0,pool_component
+3091-6,Urea [Mass/volume] in Serum or Plasma,Urea,Ser/Plas,MCnc,1025,pool_component
+3092-4,Urea [Mass/volume] in Urine,Urea,Urine,MCnc,4008,pool_component
+3093-2,Urea nitrogen [Mass/volume] in Body fluid,Urea nitrogen,Body fld,MCnc,1244,pool_bm25
+3094-0,Urea nitrogen [Mass/volume] in Serum or Plasma,Urea nitrogen,Ser/Plas,MCnc,9,pool_bm25
+3095-7,Urea nitrogen [Mass/volume] in Urine,Urea nitrogen,Urine,MCnc,850,pool_bm25
+3096-5,Urea nitrogen [Mass/time] in 24 hour Urine,Urea nitrogen,Urine,MRat,3281,pool_bm25
+3097-3,Urea nitrogen/Creatinine [Mass Ratio] in Serum or Plasma,Urea nitrogen/Creatinine,Ser/Plas,MRto,109,pool_bm25
+3098-1,Urea renal clearance in 24 hour Urine and Serum or Plasma,Urea renal clearance,Urine+Ser/Plas,VRat,10202,pool_component
+31045-8,Creatinine/Urea nitrogen [Mass Ratio] in Serum or Plasma,Creatinine/Urea nitrogen,Ser/Plas,MRto,389,pool_bm25
+31105-0,Osmotic fragility of Red Blood Cells--0.55% sodium chloride 24 hour 37 degree C incubation,Osmotic fragility^0.55% sodium chloride 24H 37 deg C incubation,RBC,NFr,9756,pool_component
+31106-8,Osmotic fragility of Red Blood Cells--0.50% sodium chloride 24 hour 37 degree C incubation,Osmotic fragility^0.50% sodium chloride 24H 37 deg C incubation,RBC,NFr,9367,pool_component
+31111-8,Reticulocyte production index,Reticulocytes/Erythrocytes^^hematocrit adjusted,Bld,NFr,1470,pool_component
+31156-3,Hemoglobin Barts/Hemoglobin.total in Blood,Hemoglobin Barts/Hemoglobin.total,Bld,MFr,15234,pool_bm25
+31207-4,Progesterone receptor [Moles/mass] in Tissue,Progesterone receptor,Tiss,SCnt,0,random
+31280-1,Canary serum proteins Ab [Presence] in Serum,Canary serum proteins Ab,Ser,PrThr,0,pool_bm25
+31500-2,Ganglioside GM1 IgG+IgM Ab [Units/volume] in Serum,Ganglioside GM1 Ab.IgG+IgM,Ser,ACnc,11085,random
+3162-5,Volume [Mass/time] of 24 hour Stool,Specimen volume,Stool,MRat,0,random
+317-8,Meclocycline [Susceptibility] by Serum bactericidal titer,Meclocycline,Isolate+Ser,Titr,0,random
+31860-0,Influenza virus A+B Ag [Presence] in Throat,Influenza virus A+B Ag,Thrt,PrThr,0,random
+32016-8,Glucose [Mass/volume] in Capillary blood,Glucose,BldC,MCnc,653,pool_bm25
+32137-2,Calcium phosphate/Total in Stone,Calcium phosphate/Total,Calculus,MFr,3730,pool_bm25
+32156-2,Calcium carbonate/Total in Stone,Calcium carbonate/Total,Calculus,MFr,12016,pool_bm25
+32157-0,Calcium oxalate/Total in Stone,Calcium oxalate/Total,Calculus,MFr,0,pool_bm25
+32207-3,Platelet distribution width [Entitic volume] in Blood by Automated count,Platelet distribution width,Bld,EntVol,0,pool_bm25
+32303-0,Bilirubin.total [Moles/volume] in Specimen,Bilirubin,XXX,SCnc,9098,pool_bm25
+32305-5,Calcium [Moles/volume] in Specimen,Calcium,XXX,SCnc,8744,pool_bm25
+32306-3,Carbon dioxide [Partial pressure] in Urine,Carbon dioxide,Urine,PPres,13967,pool_bm25
+32307-1,Chloride [Moles/volume] in Specimen,Chloride,XXX,SCnc,832,pool_bm25
+32336-0,Potassium [Moles/volume] in Specimen,Potassium,XXX,SCnc,5188,pool_bm25
+32337-8,Protein [Mass/volume] in Specimen,Protein,XXX,MCnc,594,pool_component
+32340-2,Sodium [Moles/volume] in Specimen,Sodium,XXX,SCnc,5164,pool_bm25
+32354-3,Hematocrit [Volume Fraction] of Arterial blood by calculation,Erythrocyte/Arterial blood,BldA,VFr,548,pool_component
+32530-8,CD3+CD25+ cells [#/volume] in Bone marrow,Cells.CD3+CD25+,Bone mar,NCnc,0,random
+32542-3,Chloride [Molar amount] in Urine collected for unspecified duration,Chloride,Urine,Sub,7982,pool_component
+32546-4,Glucose-6-Phosphate dehydrogenase [Enzymatic activity/mass] in Red Blood Cells,Glucose-6-Phosphate dehydrogenase,RBC,CCnt,2179,pool_component
+32550-6,Potassium [Molar amount] in Urine collected for unspecified duration,Potassium,Urine,Sub,0,pool_component
+32559-7,Tau protein [Mass/volume] in Serum,Tau protein,Ser,MCnc,0,pool_bm25
+3261-5,Fibrinopeptide B beta (1-42) Ag [Mass/volume] in Platelet poor plasma by Immunoassay,Fibrinopeptide B beta (1-42) Ag,PPP,MCnc,0,random
+32623-1,Platelet [Entitic mean volume] in Blood by Automated count,Platelet,Bld,EntMeanVol,25,pool_bm25
+32629-8,Protein.monoclonal/Protein.total in Specimen by Immunofixation,Protein.monoclonal/Protein.total,XXX,MFr,0,pool_bm25
+32640-5,BLM gene mutations found [Identifier] in Blood or Tissue by Targeted gene mutation analysis Nominal,BLM gene mutations,Bld/Tiss,Prid,6562,random
+32681-9,Hemoglobin C/Hemoglobin.total in Blood by Electrophoresis,Hemoglobin C/Hemoglobin.total,Bld,MFr,1547,pool_bm25
+32683-5,Hemoglobin S/Hemoglobin.total in Blood by Electrophoresis,Hemoglobin S/Hemoglobin.total,Bld,MFr,1491,pool_bm25
+32696-7,Legionella pneumophila 1+2+3+4+5+6 Ab [Titer] in Serum,Legionella pneumophila 1+2+3+4+5+6 Ab,Ser,Titr,13730,random
+32712-2,Giant platelets/Leukocytes [Ratio] in Blood by Manual count,Platelets.giant/Leukocytes,Bld,Ratio,7116,pool_bm25
+32713-0,Potassium [Moles/volume] in Arterial blood,Potassium,BldA,SCnc,310,pool_bm25
+32717-1,Sodium [Moles/volume] in Arterial blood,Sodium,BldA,SCnc,299,pool_bm25
+32771-8,Carbon dioxide [Partial pressure] adjusted to patient's actual temperature in Arterial blood,Carbon dioxide^^adjusted to patient's actual temperature,BldA,PPres,505,pool_component
+32776-7,Erythrocytes [Presence] in Urine sediment by Light microscopy,Erythrocytes,Urine sed,PrThr,541,pool_component
+32858-3,IgG cells/cells in Specimen,Cells.IgG/Cells,XXX,NFr,0,random
+33031-6,Sodium urate crystals [#/area] in Urine sediment by Microscopy low power field,Sodium urate crystals,Urine sed,Naric,6810,pool_component
+33051-4,Erythrocytes [Presence] in Urine,Erythrocytes,Urine,PrThr,507,pool_component
+33234-6,Calcium oxalate crystals [Presence] in Urine by Computer assisted method,Calcium oxalate crystals,Urine,PrThr,3914,pool_component
+33236-1,Bilirubin crystals [Presence] in Urine by Computer assisted method,Bilirubin crystals,Urine,PrThr,0,pool_component
+33241-1,Calcium carbonate crystals [Presence] in Urine by Computer assisted method,Calcium carbonate crystals,Urine,PrThr,8706,random
+33256-9,Leukocytes [#/volume] corrected for nucleated erythrocytes in Blood by Automated count,Leukocytes^^corrected for nucleated erythrocytes,Bld,NCnc,322,pool_bm25
+33287-4,Glucose-6-Phosphate dehydrogenase [Presence] in DBS,Glucose-6-Phosphate dehydrogenase,Bld.dot,PrThr,2488,pool_component
+33355-9,Urea nitrogen [Moles/volume] in 24 hour Urine,Urea nitrogen,Urine,SCnc,0,pool_bm25
+33358-3,Protein.monoclonal [Mass/volume] in Serum or Plasma by Electrophoresis,Protein.monoclonal,Ser/Plas,MCnc,1123,pool_component
+3336-5,Amitriptyline [Mass/volume] in Serum or Plasma --trough >12 hours post dose,Amitriptyline^trough >12h post dose,Ser/Plas,MCnc,0,random
+33366-6,Chloride [Moles/volume] in Peritoneal fluid,Chloride,Periton fld,SCnc,19806,pool_component
+33458-1,Bilirubin.conjugated [Mass/volume] in Body fluid,Bilirubin.glucuronidated,Body fld,MCnc,0,pool_bm25
+33509-1,Hemoglobin [Mass/volume] in Body fluid,Hemoglobin,Body fld,MCnc,461,pool_component
+33518-2,Platelet aggregation in Platelet rich plasma by ADP induced High dose,Platelet aggregation,PRP,RelACnc,4794,pool_component
+33593-5,Hemoglobin G - Coushatta/Hemoglobin.total in Blood,Hemoglobin G-Coushatta/Hemoglobin.total,Bld,MFr,0,pool_bm25
+33594-3,Platelet factor 4 [Presence] in Platelet poor plasma,Platelet factor 4,PPP,PrThr,4476,pool_component
+33647-9,Protein.monoclonal/Protein.total in Serum or Plasma by Electrophoresis,Protein.monoclonal/Protein.total,Ser/Plas,MFr,5000,pool_bm25
+33662-8,Erythrocytes.CD59 deficient/Erythrocytes in Blood,Erythrocytes.CD59 deficient/Cells.235a,Bld,NFr,6120,pool_bm25
+33765-9,Leukocytes [#/volume] in Blood Product unit.platelet pheresis by Automated count,Leukocytes,^BPU.platelet pheresis,NCnc,0,pool_bm25
+33836-8,Malignant cells [#/volume] in Blood by Manual count,Malignant cells,Bld,NCnc,0,pool_bm25
+33837-6,Malignant cells/Leukocytes in Blood by Manual count,Malignant cells/Leukocytes,Bld,NFr,0,pool_bm25
+33839-2,Monoblasts [#/volume] in Blood by Manual count,Monoblasts,Bld,NCnc,0,pool_bm25
+33840-0,Monoblasts/Leukocytes in Blood by Manual count,Monoblasts/Leukocytes,Bld,NFr,0,pool_bm25
+33848-3,Plasma cell precursor [#/volume] in Blood by Manual count,Plasma cell precursor,Bld,NCnc,0,pool_bm25
+33849-1,Plasma cell precursor/Leukocytes in Blood by Manual count,Plasma cell precursor/Leukocytes,Bld,NFr,19074,pool_bm25
+33855-8,Promonocytes [#/volume] in Blood by Manual count,Promonocytes,Bld,NCnc,0,pool_bm25
+33856-6,Sezary cells [#/volume] in Blood by Manual count,Sezary cells,Bld,NCnc,0,pool_bm25
+33857-4,Sezary cells/Leukocytes in Blood by Manual count,Sezary cells/Leukocytes,Bld,NFr,0,pool_bm25
+33898-8,Bilirubin.conjugated+indirect [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.non-glucuronidated,Ser/Plas,MCnc,1726,pool_bm25
+33899-6,Bilirubin.conjugated+indirect [Moles/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.non-glucuronidated,Ser/Plas,SCnc,0,pool_bm25
+33949-9,Potassium/Creatinine [Molar ratio] in Urine,Potassium/Creatinine,Urine,SRto,10375,pool_bm25
+33951-5,Sodium/Creatinine [Molar ratio] in Urine,Sodium/Creatinine,Urine,SRto,5688,pool_bm25
+33979-6,Voltage-gated calcium channel N type binding Ab [Moles/volume] in Serum,Voltage-gated calcium channel N type binding Ab,Ser,SCnc,2571,pool_component
+33980-4,Voltage-gated calcium channel P/Q type binding Ab [Moles/volume] in Serum,Voltage-gated calcium channel PQ type binding Ab,Ser,SCnc,2497,pool_component
+34167-7,Platelets Large [Presence] in Blood by Automated count,Platelets.large,Bld,PrThr,831,pool_bm25
+34200-6,Nucleated erythrocytes [Presence] in Blood by Automated count,Erythrocytes.nucleated,Bld,PrThr,1734,pool_bm25
+34260-0,Catecholamines [Moles/volume] in 24 hour Urine,Catecholamines,Urine,SCnc,0,random
+34265-9,Chloride/Creatinine [Molar ratio] in Urine,Chloride/Creatinine,Urine,SRto,10874,pool_component
+34301-2,Etiocholanolone [Moles/volume] in Urine,Etiocholanolone,Urine,SCnc,0,random
+34322-8,Iron/Creatinine [Molar ratio] in Urine,Iron/Creatinine,Urine,SRto,0,random
+34366-5,Protein/Creatinine [Ratio] in Urine,Protein/Creatinine,Urine,Ratio,1758,pool_component
+34397-0,Amilsulpride [Mass/volume] in Serum or Plasma,Amilsulpride,Ser/Plas,MCnc,0,random
+34442-4,Bilirubin.conjugated/Bilirubin.total in Serum or Plasma,Bilirubin.glucuronidated/Bilirubin.total,Ser/Plas,MFr,4020,pool_bm25
+34506-6,EGR2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method,EGR2 gene targeted mutation analysis,Bld/Tiss,Find,0,random
+34520-7,"Carbon dioxide, total [Moles/volume] in Cord blood",Carbon dioxide,BldCo,SCnc,6665,pool_bm25
+34525-6,Erythrocytes.lytic resistant [Presence] in Blood by Automated count,Erythrocytes.lytic resistant,Bld,PrThr,0,pool_bm25
+34539-7,Protein electrophoresis panel - Urine,Protein fractions panel,Urine,-,1748,pool_component
+34543-9,Bilirubin direct and total panel [Mass/volume] - Serum or Plasma,Bilirubin direct & total panel,Ser/Plas,MCnc,1057,pool_bm25
+34548-8,Sodium and Potassium panel [Moles/volume] - Serum or Plasma,Sodium & Potassium panel,Ser/Plas,SCnc,0,pool_bm25
+34559-5,Cell count panel - Synovial fluid,Cell count panel,Synv fld,-,5709,random
+34581-9,Calcium.ionized [Moles/volume] in Arterial blood,Calcium.ionized,BldA,SCnc,412,pool_component
+3460-3,Chlormerodrin [Presence] in Urine,Chlormerodrin,Urine,PrThr,0,random
+34641-1,Protein Fractions [Interpretation] in Serum or Plasma,Protein pattern,Ser/Plas,Imp,18232,pool_bm25
+34689-0,Sulfatidase [Enzymatic activity/volume] in Leukocytes,Sulfatidase,WBC,CCnc,0,random
+34701-3,Heparin induced platelet Ab [Presence] in Serum,Platelet factor 4 heparin complex induced Ab,Ser,PrThr,3286,pool_component
+34705-4,Carbon dioxide [Partial pressure] adjusted to patient's actual temperature in Blood,Carbon dioxide^^adjusted to patient's actual temperature,Bld,PPres,813,pool_component
+34728-6,"Carbon dioxide, total [Moles/volume] in Blood by calculation",Carbon dioxide,Bld,SCnc,3904,pool_bm25
+34977-9,Platelet genotype [Identifier] in Blood,Platelet genotype,Bld,Prid,0,pool_bm25
+35125-4,Hemoglobin Lepore/Hemoglobin.total in Blood,Hemoglobin Lepore/Hemoglobin.total,Bld,MFr,11897,pool_bm25
+35126-2,Hemoglobin O - Arab/Hemoglobin.total in Blood,Hemoglobin O-Arab/Hemoglobin.total,Bld,MFr,9281,pool_bm25
+35127-0,Hemoglobin A2.prime/Hemoglobin.total in Blood,Hemoglobin A2.prime/Hemoglobin.total,Bld,MFr,13744,pool_bm25
+35591-7,Creatinine renal clearance predicted by Cockcroft-Gault formula,Creatinine renal clearance.predicted,Ser/Plas,VRat,127,pool_component
+35672-5,Bilirubin.direct/Bilirubin.total in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound/Bilirubin.total,Ser/Plas,MFr,0,pool_bm25
+35674-1,Creatinine [Mass/volume] in Urine collected for unspecified duration,Creatinine,Urine,MCnc,276,pool_component
+35685-7,Carbon dioxide [Moles/volume] in Urine collected for unspecified duration,Carbon dioxide,Urine,SCnc,0,pool_bm25
+35690-7,GBA gene c.IVS2(+1)G>A and IVS2(+1)G>T [Presence] in Blood or Tissue by Molecular genetics method,GBA gene.c.IVS2(+1)G>A & IVS2(+1)G>T,Bld/Tiss,Arb,0,random
+35706-1,Albumin/Protein.total in Serum or Plasma,Albumin/Protein.total,Ser/Plas,MFr,229,pool_bm25
+35746-7,Hyperchromia [Presence] in Blood by Automated count,Hyperchromia,Bld,PrThr,0,pool_bm25
+358-2,Netilmicin [Susceptibility] by Minimum lethal concentration (MLC),Netilmicin,Isolate,Susc,0,random
+3661-6,Furosemide [Mass/volume] in Urine,Furosemide,Urine,MCnc,14858,random
+380-6,Oleandomycin [Susceptibility] by Disk diffusion (KB),Oleandomycin,Isolate,Susc,0,random
+38230-9,Calcium.ionized [Mass/volume] in Blood,Calcium.ionized,Bld,MCnc,589,pool_component
+38250-7,Calcium [Mass/volume] in Specimen,Calcium,XXX,MCnc,817,pool_bm25
+38253-1,"Carbon dioxide, total [Moles/volume] in Specimen",Carbon dioxide,XXX,SCnc,2000,pool_bm25
+38295-2,Methylene chloride [Mass/volume] in Water,Methylene chloride,Water,MCnc,0,pool_bm25
+38322-4,Carbon tetrachloride [Mass/volume] in Water,Carbon tetrachloride,Water,MCnc,0,pool_component
+38335-6,Vinyl chloride [Mass/volume] in Water,Vinyl chloride,Water,MCnc,0,pool_bm25
+38442-0,Bilirubin crystals [#/area] in Urine sediment by Microscopy low power field,Bilirubin crystals,Urine sed,Naric,0,pool_component
+38466-9,Chicken serum proteins IgG Ab [Presence] in Serum,Chicken serum proteins Ab.IgG,Ser,PrThr,0,pool_bm25
+38483-4,Creatinine [Mass/volume] in Blood,Creatinine,Bld,MCnc,252,pool_component
+38518-7,Immature granulocytes/Leukocytes in Blood,Granulocytes.immature/Leukocytes,Bld,NFr,53,pool_component
+38577-3,Carbon disulfide [Mass/volume] in Air,Carbon disulfide,Air,MCnc,0,pool_component
+38578-1,Carbon tetrachloride [Mass/volume] in Air,Carbon tetrachloride,Air,MCnc,0,pool_component
+38610-2,Methylene chloride [Mass/volume] in Air,Methylene chloride,Air,MCnc,0,pool_bm25
+38626-8,Vinyl chloride [Mass/volume] in Air,Vinyl chloride,Air,MCnc,0,pool_bm25
+38631-8,Allyl chloride [Mass/volume] in Air,Allyl chloride,Air,MCnc,0,pool_bm25
+38634-2,Benzyl chloride [Mass/volume] in Air,Benzyl chloride,Air,MCnc,0,pool_bm25
+387-1,Oxytetracycline [Susceptibility] by Minimum inhibitory concentration (MIC),Oxytetracycline,Isolate,Susc,0,random
+38740-7,Dimethylcarbamoyl chloride [Mass/volume] in Air,Dimethylcarbamoyl chloride,Air,MCnc,0,pool_bm25
+38743-1,Hydrogen chloride [Mass/volume] in Air,Hydrogen chloride,Air,MCnc,0,pool_bm25
+3920-6,Pentetrazol [Presence] in Urine,Pentetrazol,Urine,PrThr,0,random
+39298-5,Influenza virus A H11 Ab [Titer] in Serum by Hemagglutination inhibition,Influenza virus A H11 Ab,Ser,Titr,0,random
+39357-9,Cholinesterase.chloride inhibited/Cholinesterase in Serum or Plasma,Cholinesterase.chloride inhibited/Cholinesterase,Ser/Plas,CFr,0,pool_bm25
+39461-9,Bilirubin.total [Moles/volume] in Peritoneal fluid,Bilirubin,Periton fld,SCnc,0,pool_component
+39462-7,Bilirubin.conjugated [Moles/volume] in Body fluid,Bilirubin.glucuronidated,Body fld,SCnc,0,pool_component
+39463-5,Bilirubin.indirect [Moles/volume] in Body fluid,Bilirubin.non-glucuronidated,Body fld,SCnc,0,pool_component
+39464-3,"Carbon dioxide, total [Moles/volume] in Peritoneal dialysis fluid",Carbon dioxide,Dial fld prt,SCnc,0,pool_bm25
+39465-0,"Carbon dioxide, total [Moles/volume] in Venous cord blood",Carbon dioxide,BldCoV,SCnc,19640,pool_component
+39466-8,"Carbon dioxide, total [Moles/volume] in Arterial cord blood",Carbon dioxide,BldCoA,SCnc,1809,pool_bm25
+39467-6,Chloride [Moles/volume] in Peritoneal dialysis fluid,Chloride,Dial fld prt,SCnc,0,pool_component
+39480-9,Glucose [Moles/volume] in Venous blood,Glucose,BldV,SCnc,4643,pool_bm25
+39481-7,Glucose [Moles/volume] in Arterial blood,Glucose,BldA,SCnc,9760,pool_bm25
+39529-3,Acetone [Presence] in Blood,Acetone,Bld,PrThr,17783,random
+3969-3,Phenytoin Free [Mass/volume] in Serum or Plasma,Phenytoin.free,Ser/Plas,MCnc,1466,random
+39783-6,Urea/Creatinine [Molar ratio] in Serum or Plasma,Urea/Creatinine,Ser/Plas,SRto,19119,pool_bm25
+39785-1,Potassium [Moles/volume] in Peritoneal dialysis fluid,Potassium,Dial fld prt,SCnc,0,pool_component
+39789-3,Potassium [Moles/volume] in Venous blood,Potassium,BldV,SCnc,253,pool_bm25
+39790-1,Potassium [Moles/volume] in Capillary blood,Potassium,BldC,SCnc,3536,pool_bm25
+39791-9,Sodium [Moles/volume] in Venous blood,Sodium,BldV,SCnc,257,pool_bm25
+39792-7,Sodium [Moles/volume] in Capillary blood,Sodium,BldC,SCnc,17253,pool_bm25
+39797-6,Vancomycin [Moles/volume] in Serum or Plasma --trough,Vancomycin^trough,Ser/Plas,SCnc,7858,random
+39802-4,Creatinine in dialysis fluid/Creatinine in serum or plasma,Creatinine dial fld/Creatinine ser_plas,Dial fld+Ser/Plas,RelRto,0,pool_bm25
+39955-0,Creatinine [Mass/volume] in Serum or Plasma --pre XXX challenge,Creatinine^pre XXX challenge,Ser/Plas,MCnc,19313,pool_bm25
+39983-2,Creatinine [Mass/volume] in Urine --30 minutes post XXX challenge,Creatinine^30M post XXX challenge,Urine,MCnc,0,random
+40053-1,Albumin [Mass/volume] in Serum or Plasma --3 hours post XXX challenge,Albumin^3H post XXX challenge,Ser/Plas,MCnc,0,random
+40067-1,Calcium [Mass/volume] in Serum or Plasma --baseline,Calcium^baseline,Ser/Plas,MCnc,0,pool_bm25
+40112-5,Creatinine [Moles/volume] in Serum or Plasma --pre XXX challenge,Creatinine^pre XXX challenge,Ser/Plas,SCnc,0,pool_bm25
+40204-0,Glucose [Moles/volume] in Serum or Plasma --12 minutes post XXX challenge,Glucose^12M post XXX challenge,Ser/Plas,SCnc,0,random
+40226-3,Calcium [Moles/volume] in Serum or Plasma --baseline,Calcium^baseline,Ser/Plas,SCnc,0,pool_bm25
+40248-7,Creatinine [Mass/volume] in Serum or Plasma --baseline,Creatinine^baseline,Ser/Plas,MCnc,13765,pool_bm25
+40264-4,Creatinine [Moles/volume] in Serum or Plasma --baseline,Creatinine^baseline,Ser/Plas,SCnc,0,pool_bm25
+40267-7,Creatinine [Moles/volume] in Serum or Plasma --1.5 hours post XXX challenge,Creatinine^1.5H post XXX challenge,Ser/Plas,SCnc,0,random
+40548-0,Mononuclear cells atypical [#/volume] in Blood by Manual count,Mononuclear cells.atypical,Bld,NCnc,6877,pool_bm25
+40574-6,Platelets [#/volume] in Body fluid by Automated count,Platelets,Body fld,NCnc,1560,pool_bm25
+40619-9,Carbon dioxide [Partial pressure] adjusted to patient's actual temperature in Venous blood,Carbon dioxide^^adjusted to patient's actual temperature,BldV,PPres,1848,pool_component
+40620-7,Carbon dioxide [Partial pressure] adjusted to patient's actual temperature in Capillary blood,Carbon dioxide^^adjusted to patient's actual temperature,BldC,PPres,0,pool_component
+40650-4,Mesothelial cells/Leukocytes in Blood by Manual count,Mesothelial cells/Leukocytes,Bld,NFr,0,pool_bm25
+40741-1,Platelet clump [Presence] in Blood by Automated count,Platelet clump,Bld,PrThr,11794,pool_bm25
+40758-5,Coxsackievirus A Ab [Titer] in Cerebrospinal Fluid,Coxsackievirus A Ab,CSF,Titr,0,random
+40858-3,Glucose [Mass/volume] in Capillary blood --baseline,Glucose^baseline,BldC,MCnc,11876,pool_bm25
+40960-7,Parietal cell IgG Ab [Units/volume] in Serum,Parietal cell Ab.IgG,Ser,ACnc,6395,random
+40991-2,Rhinovirus+Enterovirus RNA [Presence] in Specimen by NAA with probe detection,Rhinovirus+Enterovirus RNA,XXX,PrThr,833,random
+41016-7,Bilirubin.total [Moles/volume] in Urine by Test strip,Bilirubin,Urine,SCnc,5459,pool_component
+41178-5,Mumps reaction wheal [Diameter] --2 days post dose mumps intradermal,Mumps reaction wheal^2D post dose mumps ID,Skin,Diam,0,random
+41502-6,Moxifloxacin [Susceptibility] by Method for Slow-growing mycobacteria,Moxifloxacin,Isolate,Susc,0,random
+4156-6,Cathine [Mass] of Dose,Cathine,Dose,Mass,0,random
+41604-0,Fasting glucose [Mass/volume] in Capillary blood by Glucometer,Glucose^post CFst,BldC,MCnc,9744,pool_bm25
+41645-3,Calcium.ionized [Moles/volume] in Venous blood,Calcium.ionized,BldV,SCnc,337,pool_component
+41647-9,"Carbon dioxide, total [Moles/volume] in Arterial blood by calculation",Carbon dioxide,BldA,SCnc,440,pool_bm25
+41649-5,Chloride [Moles/volume] in Venous blood,Chloride,BldV,SCnc,592,pool_bm25
+41650-3,Chloride [Moles/volume] in Arterial blood,Chloride,BldA,SCnc,588,pool_bm25
+41651-1,Glucose [Mass/volume] in Arterial blood,Glucose,BldA,MCnc,431,pool_bm25
+41652-9,Glucose [Mass/volume] in Venous blood,Glucose,BldV,MCnc,336,pool_bm25
+41653-7,Glucose [Mass/volume] in Capillary blood by Glucometer,Glucose,BldC,MCnc,56,pool_bm25
+41654-5,Hematocrit [Volume Fraction] of Venous blood by calculation,Erythrocyte/Venous blood,BldV,VFr,803,pool_component
+41656-0,Potassium [Moles/volume] in Mixed venous blood,Potassium,BldMV,SCnc,2365,pool_component
+41657-8,Sodium [Moles/volume] in Mixed venous blood,Sodium,BldMV,SCnc,3263,pool_component
+41871-5,Voltage-gated potassium channel Ab [Moles/volume] in Serum,Voltage-gated potassium channel Ab,Ser,SCnc,4157,pool_bm25
+41995-2,Hemoglobin A1c [Mass/volume] in Blood,Hemoglobin A1c,Bld,MCnc,296,pool_component
+42186-7,Number of specimens received,Number of specimens received,XXX,Num,2037,random
+42246-9,Hemoglobin F/Hemoglobin.total in Blood by HPLC,Hemoglobin F/Hemoglobin.total,Bld,MFr,2145,pool_bm25
+42248-5,Hemoglobin.other/Hemoglobin.total in Blood by HPLC,Hemoglobin.other/Hemoglobin.total,Bld,MFr,4951,pool_bm25
+42483-8,Protein.monoclonal/Protein.total in Urine by Electrophoresis,Protein.monoclonal/Protein.total,Urine,MFr,4434,pool_bm25
+42484-6,Protein.monoclonal/Protein.total in 24 hour Urine by Electrophoresis,Protein.monoclonal/Protein.total,Urine,MFr,3534,pool_bm25
+42527-2,Parietal cell Ab [Titer] in Cerebrospinal Fluid,Parietal cell Ab,CSF,Titr,0,random
+42606-4,Herpes simplex virus 2 IgM Ab [Presence] in Cerebrospinal Fluid by Immunofluorescence,Herpes simplex virus 2 Ab.IgM,CSF,PrThr,13380,random
+42719-5,Bilirubin.total [Mass/volume] in Blood,Bilirubin,Bld,MCnc,912,pool_bm25
+43028-0,Herpes simplex virus 2 Ab [Titer] in Serum,Herpes simplex virus 2 Ab,Ser,Titr,0,random
+43128-8,Chloride panel - 24 hour Urine,Chloride panel,Urine,-,0,pool_bm25
+43221-1,Chloride/Creatinine [Ratio] in Urine,Chloride/Creatinine,Urine,Ratio,10559,pool_bm25
+43222-9,Potassium/Creatinine [Ratio] in Urine,Potassium/Creatinine,Urine,Ratio,10499,pool_bm25
+43223-7,Sodium/Creatinine [Ratio] in Urine,Sodium/Creatinine,Urine,Ratio,3840,pool_bm25
+43247-6,Catecholamines/Creatinine [Mass Ratio] in 24 hour Urine,Catecholamines/Creatinine,Urine,MRto,10469,random
+43423-3,Sodium urate [Saturation Fraction] in 24 hour Urine,Sodium urate,Urine,SatFr,6490,pool_component
+43428-2,Bilirubin.microscopic observation [Identifier] in Tissue by Hall's stain,Bilirubin.microscopic observation,Tiss,Prid,0,pool_component
+436-6,Rolitetracycline [Susceptibility] by Minimum inhibitory concentration (MIC),Rolitetracycline,Isolate,Susc,0,random
+437-4,Rolitetracycline [Susceptibility] by Disk diffusion (KB),Rolitetracycline,Isolate,Susc,0,random
+43749-1,SCO2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method,SCO2 gene targeted mutation analysis,Bld/Tiss,Find,0,random
+4380-2,Penicillin G potassium [Mass] of Dose,Penicillin G potassium,Dose,Mass,0,pool_bm25
+43820-0,Bilirubin.direct [Presence] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,PrThr,345,pool_bm25
+43822-6,Aspartate aminotransferase [Presence] in Body fluid,Aspartate aminotransferase,Body fld,PrThr,361,pool_bm25
+43824-2,Bilirubin.total [Presence] in Body fluid,Bilirubin,Body fld,PrThr,6919,pool_bm25
+4382-8,Penicillin V potassium [Mass] of Dose,Penicillin V potassium,Dose,Mass,0,pool_bm25
+44009-9,Herpes simplex virus 1 and 2 IgG Ab [Interpretation] in Serum by Immunoassay,Herpes simplex virus 1 & 2 Ab.IgG,Ser,Imp,13334,random
+44095-8,Unidentified cells/Leukocytes in Blood by Manual count,Unidentified cells/Leukocytes,Bld,NFr,16121,pool_bm25
+44096-6,Unidentified cells/Leukocytes in Blood by Automated count,Unidentified cells/Leukocytes,Bld,NFr,0,pool_bm25
+44333-3,Lactate/Creatinine [Mass Ratio] in 24 hour Urine,Lactate/Creatinine,Urine,MRto,0,random
+44405-9,Sodium/Creatinine [Molar ratio] in 24 hour Urine,Sodium/Creatinine,Urine,SRto,11194,pool_component
+44406-7,Sodium/Potassium [Molar ratio] in 24 hour Urine,Sodium/Potassium,Urine,SRto,0,pool_component
+44416-6,Urea nitrogen/Creatinine [Mass Ratio] in Urine,Urea nitrogen/Creatinine,Urine,MRto,0,pool_bm25
+44484-4,Herpes simplex virus 2 [Presence] in Specimen by Organism specific culture,Herpes simplex virus 2,XXX,PrThr,11263,random
+44564-3,Influenza virus A Ag [Presence] in Nose by Immunoassay,Influenza virus A Ag,Nose,PrThr,3412,random
+44596-5,IgG Ag [Presence] in Skin by Immunofluorescence,IgG Ag,Skin,PrThr,12411,random
+44734-2,Urea nitrogen/Creatinine [Mass Ratio] in Blood,Urea nitrogen/Creatinine,Bld,MRto,290,pool_component
+44735-9,Urea nitrogen/Creatinine [Mass Ratio] in Body fluid,Urea nitrogen/Creatinine,Body fld,MRto,0,pool_bm25
+44789-6,Amylase and Creatinine clearance panel - Urine and Serum or Plasma,Amylase & Creatinine clearance panel,Urine+Ser/Plas,-,0,pool_bm25
+44899-3,Malignant cells/cells in Urine by Manual count,Malignant cells/Cells,Urine,NFr,0,pool_bm25
+44921-5,Hemoglobin D/Hemoglobin.total in Blood by HPLC,Hemoglobin D/Hemoglobin.total,Bld,MFr,14390,pool_bm25
+44922-3,Hemoglobin E/Hemoglobin.total in Blood by HPLC,Hemoglobin E/Hemoglobin.total,Bld,MFr,14391,pool_bm25
+45066-8,"Creatinine and Glomerular filtration rate.predicted panel - Serum, Plasma or Blood",Creatinine & Glomerular filtration rate.predicted panel,Ser/Plas/Bld,-,402,pool_component
+45347-2,Date tick attached,Date tick attached,^Tick,Date,0,random
+4537-7,Erythrocyte [Sedimentation Rate] in Blood by Westergren method,Erythrocyte,Bld,Sedimentation Rate,164,pool_component
+4544-3,Hematocrit [Volume Fraction] of Blood by Automated count,Erythrocyte/Blood,Bld,VFr,28,pool_component
+4546-8,Hemoglobin A/Hemoglobin.total in Blood,Hemoglobin A/Hemoglobin.total,Bld,MFr,1603,pool_bm25
+4547-6,Hemoglobin A1/Hemoglobin.total in Blood,Hemoglobin A1/Hemoglobin.total,Bld,MFr,1872,pool_bm25
+4548-4,Hemoglobin A1c/Hemoglobin.total in Blood,Hemoglobin A1c/Hemoglobin.total,Bld,MFr,88,pool_bm25
+4555-9,Hemoglobin A3/Hemoglobin.total in Blood,Hemoglobin A3/Hemoglobin.total,Bld,MFr,0,pool_bm25
+4563-3,Hemoglobin C/Hemoglobin.total in Blood,Hemoglobin C/Hemoglobin.total,Bld,MFr,2136,pool_bm25
+4569-0,Hemoglobin D/Hemoglobin.total in Blood,Hemoglobin D/Hemoglobin.total,Bld,MFr,12941,pool_bm25
+4575-7,Hemoglobin E/Hemoglobin.total in Blood,Hemoglobin E/Hemoglobin.total,Bld,MFr,3209,pool_bm25
+4576-5,Hemoglobin F/Hemoglobin.total in Blood,Hemoglobin F/Hemoglobin.total,Bld,MFr,1597,pool_bm25
+4580-7,Hemoglobin F1/Hemoglobin.total in Blood,Hemoglobin F1/Hemoglobin.total,Bld,MFr,0,pool_bm25
+4587-2,Hemoglobin H/Hemoglobin.total in Blood by Electrophoresis,Hemoglobin H/Hemoglobin.total,Bld,MFr,0,pool_bm25
+4588-0,Hemoglobin H/Hemoglobin.total in Blood,Hemoglobin H/Hemoglobin.total,Bld,MFr,17798,pool_bm25
+46099-8,Calcium [Mass/volume] corrected for albumin in Serum or Plasma,Calcium^^corrected for albumin,Ser/Plas,MCnc,1147,pool_component
+4625-0,Hemoglobin S/Hemoglobin.total in Blood,Hemoglobin S/Hemoglobin.total,Bld,MFr,1742,pool_bm25
+46419-8,Erythrocytes [#/area] in Urine sediment by Automated count,Erythrocytes,Urine sed,Naric,203,pool_bm25
+46702-7,Leukocytes [#/area] in Urine sediment by Automated count,Leukocytes,Urine sed,Naric,197,pool_component
+46730-8,Bacterial vaginosis whiff test [Presence] in Vaginal fluid,Bacterial vaginosis whiff test,Vag,PrThr,3206,random
+46740-7,Hemoglobin disorders newborn screen interpretation,Hemoglobin disorders,Bld.dot,Imp,543,pool_component
+4679-7,Reticulocytes/Erythrocytes in Blood,Reticulocytes/Erythrocytes,Bld,NFr,745,pool_component
+47010-4,Ber-EP4 Ag [Presence] in Tissue by Immune stain,Ber-EP4 Ag,Tiss,PrThr,13806,random
+47225-8,Bilirubin.total [Interpretation] in Amniotic fluid,Bilirubin,Amnio fld,Imp,0,pool_bm25
+47267-0,Adenosine monophosphate.cyclic [Moles/volume] in Urine --6th specimen post XXX challenge,Adenosine monophosphate.cyclic^6th specimen post XXX challenge,Urine,SCnc,0,random
+47284-5,Platelets [#/volume] in Cord blood,Platelets,BldCo,NCnc,0,pool_bm25
+47299-3,DNA double strand Ab [Units/volume] in Serum by Farr method,DNA double strand Ab,Ser,ACnc,9810,random
+47511-1,Treponema pallidum Ab [Units/volume] in Body fluid,Treponema pallidum Ab,Body fld,ACnc,0,random
+47551-7,Alanine [Moles/volume] in DBS,Alanine,Bld.dot,SCnc,0,pool_bm25
+47555-8,Alanine/Amino acids.total in Serum or Plasma,Alanine/Amino acids.total,Ser/Plas,SFr,14068,pool_bm25
+47596-2,Calcium.ionized [Moles/volume] in Blood by Ion-selective membrane electrode (ISE),Calcium.ionized,Bld,SCnc,1198,pool_component
+4760-5,HLA-B53 [Presence] in Donor,HLA-B53,Bld/Tiss^Donor,PrThr,0,random
+47995-6,Glucose [Moles/volume] in Cord blood,Glucose,BldCo,SCnc,0,pool_bm25
+48134-1,Alanine aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma,Alanine aminotransferase.macromolecular,Ser/Plas,CCnc,0,pool_bm25
+48136-6,Aspartate aminotransferase.macromolecular [Enzymatic activity/volume] in Serum or Plasma,Aspartate aminotransferase.macromolecular,Ser/Plas,CCnc,17601,pool_bm25
+48276-0,Indomethacin triggered leukotriene release [Mass/volume] by Leukocytes,Indomethacin leukotriene release,WBC,MCnc,0,random
+48289-3,Sodium benzoate triggered leukotriene release [Mass/volume] by Leukocytes,Sodium benzoate leukotriene release,WBC,MCnc,17496,pool_component
+48291-9,Potassium metabisulfite triggered leukotriene release [Mass/volume] by Leukocytes,Potassium metabisulfite leukotriene release,WBC,MCnc,0,pool_component
+48343-8,Hemoglobin.other/Hemoglobin.total in Blood,Hemoglobin.other/Hemoglobin.total,Bld,MFr,12991,pool_bm25
+48386-7,Platelets Large/Platelets in Blood by Automated count,Platelets.large/Platelets,Bld,NFr,0,pool_bm25
+48391-7,"Carbon dioxide, total [Moles/volume] in Venous blood by calculation",Carbon dioxide,BldV,SCnc,2821,pool_bm25
+48622-5,Urea nitrogen [Mass/volume] in Peritoneal fluid --24 hours post peritoneal dialysis,Urea nitrogen^24H post peritoneal dialysis,Periton fld,MCnc,18940,pool_component
+48623-3,Bilirubin.direct [Mass/volume] in Cord blood,Bilirubin.glucuronidated+Bilirubin.albumin bound,BldCo,MCnc,18844,pool_component
+48624-1,Bilirubin.total [Mass/volume] in Cord blood,Bilirubin,BldCo,MCnc,3990,pool_component
+48705-8,Leukocytes+Platelets [Morphology] in Blood,Leukocytes+Platelets,Bld,Morph,1127,pool_bm25
+48708-2,Erythrocytes.fresh/Erythrocytes in Cerebrospinal Fluid by Manual count,Erythrocytes.fresh/Erythrocytes,CSF,NFr,14313,pool_bm25
+48811-4,Protein fractions 3 panel - Serum or Plasma,Protein fractions 3 panel,Ser/Plas,-,0,pool_bm25
+48857-7,Rickettsia africae IgM Ab [Titer] in Serum by Immunofluorescence,Rickettsia africae Ab.IgM,Ser,Titr,0,random
+48999-7,Urea [Mass/time] in 24 hour Urine,Urea,Urine,MRat,6475,pool_component
+49010-2,Platelet aggregation [Units/volume] in Platelet rich plasma by ADP induced,Platelet aggregation,PRP,ACnc,3343,pool_component
+49011-0,Platelet aggregation [Units/volume] in Platelet rich plasma by arachidonate induced,Platelet aggregation,PRP,ACnc,4159,pool_component
+49024-3,Differential cell count method - Blood,Differential cell count method,Bld,Type,73,pool_bm25
+49071-4,Urea nitrogen [Mass ratio] in Serum or Plasma--post dialysis/pre dialysis,Urea nitrogen^post dialysis/pre dialysis,Ser/Plas,MRto,9268,pool_component
+4910-6,HLA-Dw5 [Presence] in Donor,HLA-Dw5,Bld/Tiss^Donor,PrThr,0,random
+49121-7,Erythrocyte inclusion bodies [Identifier] in Blood,Erythrocyte inclusion bodies,Bld,Prid,1941,pool_component
+49134-0,Glucose [Mass/volume] in Blood --2 hours post dose glucose,Glucose^2H post dose glucose,Bld,MCnc,17297,pool_bm25
+49135-7,Fractional excretion of sodium [Ratio] in Urine and Serum or Plasma,Fractional excretion of sodium,Urine+Ser/Plas,Ratio,2456,pool_bm25
+49300-7,Protein Fractions [Interpretation] in Urine by Immunofixation Narrative,Protein pattern,Urine,Imp,1028,pool_component
+49418-7,Papova virus SV 40 DNA [#/volume] (viral load) in Bronchoalveolar lavage by NAA with probe detection,Papova virus SV40 DNA,BAL,NCnc,0,random
+49500-2,Calcium oxalate dihydrate/Total in Stone by Infrared spectroscopy,Calcium oxalate dihydrate/Total,Calculus,MFr,3909,pool_component
+49502-8,Glucose-6-Phosphate dehydrogenase [Entitic Catalytic Activity] in Blood,Glucose-6-Phosphate dehydrogenase,Bld,EntCat,6051,pool_bm25
+49610-9,Streptococcus pyogenes DNA [Identifier] in Specimen by NAA with probe detection,Streptococcus pyogenes DNA,XXX,Prid,4692,random
+49694-3,Carbon dioxide [Partial pressure] adjusted to patient's actual temperature in Arterial cord blood,Carbon dioxide^^adjusted to patient's actual temperature,BldCoA,PPres,3555,pool_component
+49763-6,Bilirubin.total [Mass/volume] in Pericardial fluid,Bilirubin,Pericard fld,MCnc,19302,pool_component
+49765-1,Calcium [Mass/volume] in Blood,Calcium,Bld,MCnc,1109,pool_bm25
+49788-3,Potassium [Moles/volume] in Amniotic fluid,Potassium,Amnio fld,SCnc,0,pool_bm25
+49789-1,Potassium [Moles/volume] in Peritoneal fluid,Potassium,Periton fld,SCnc,0,pool_bm25
+49790-9,Sodium [Moles/volume] in Peritoneal fluid,Sodium,Periton fld,SCnc,0,pool_bm25
+49791-7,Sodium [Moles/volume] in Amniotic fluid,Sodium,Amnio fld,SCnc,0,pool_bm25
+49836-0,Platelet function (closure time) [Interpretation] in Blood Narrative,Platelet function,Bld,Imp,3216,pool_component
+49929-3,Protein in pleural fluid/Protein in serum,Protein.plr fld/Protein.serum,Ser/Plas+Plr fld,RelRto,17824,pool_bm25
+49935-0,Calcium.ionized/Calcium.total corrected for albumin in Serum or Plasma,Calcium.ionized/Calcium.total^^corrected for albumin,Ser/Plas,MFr,0,pool_bm25
+49936-8,Calcium.ionized/Calcium.total corrected for albumin in Blood,Calcium.ionized/Calcium.total^^corrected for albumin,Bld,MFr,278,pool_bm25
+50041-3,Bilirubin+Urobilinogen [Presence] in Urine,Bilirubin+Urobilinogen,Urine,PrThr,0,pool_bm25
+50043-9,Protein carbonyl/Protein [Ratio] in Serum or Plasma,Protein carbonyl/protein,Ser/Plas,Ratio,0,pool_bm25
+50153-6,5-Methyltetrahydrofolate [Moles/volume] in Serum or Plasma,5-Methyltetrahydrofolate,Ser/Plas,SCnc,0,random
+50168-4,Alanine aminotransferase [Enzymatic activity/volume] in Dialysis fluid,Alanine aminotransferase,Dial fld,CCnc,0,pool_bm25
+50179-1,Calcitonin Calcium and Pentagastrin challenge panel - Serum or Plasma,Calcitonin Calcium & Pentagastrin challenge panel,Ser/Plas,-,0,pool_bm25
+50189-0,Neonatal bilirubin panel [Mass/volume] - Serum or Plasma,Neonatal bilirubin panel,Ser/Plas,MCnc,5372,pool_bm25
+50334-2,Acylglycines panel [Mass Ratio] - Urine,Acylglycines panel,Urine,MRto,10817,random
+50408-4,Protein.abnormal band/Protein.total in Urine by Electrophoresis,Protein.abnormal band/Protein.total,Urine,MFr,10217,pool_bm25
+50485-2,Gastrin [Mass/volume] in Serum or Plasma --1st specimen,Gastrin^1st specimen,Ser/Plas,MCnc,13823,random
+50559-4,Hemoglobin [Mass/volume] in Urine by Automated test strip,Hemoglobin,Urine,MCnc,546,pool_component
+50561-0,Protein [Mass/volume] in Urine by Automated test strip,Protein,Urine,MCnc,138,pool_component
+50608-9,Glucose tolerance 3 hours gestational panel - Serum or Plasma,Glucose tolerance 3H gestational panel,Ser/Plas,-,2575,pool_component
+50676-6,Calcium-phosphorus product panel - Serum or Plasma,Calcium-phosphorus product panel,Ser/Plas,-,0,pool_bm25
+50817-6,Arsenic/Creatinine [Molar ratio] in 24 hour Urine,Arsenic/Creatinine,Urine,SRto,0,random
+50836-6,Calcium [Moles/mass] in Hair,Calcium,Hair,SCnt,0,pool_bm25
+50902-6,Potassium [Moles/mass] in Hair,Potassium,Hair,SCnt,0,pool_bm25
+50911-7,Sodium [Moles/volume] in Gastric fluid,Sodium,Gast fld,SCnc,0,pool_bm25
+50912-5,Sodium [Moles/mass] in Hair,Sodium,Hair,SCnt,0,pool_bm25
+50981-0,Carbon dioxide [Partial pressure] adjusted to patient's actual temperature in Mixed venous blood,Carbon dioxide^^adjusted to patient's actual temperature,BldMV,PPres,2997,pool_component
+51032-1,CD11a blasts/Blasts in Blood,Blasts.CD11a/Blasts,Bld,NFr,0,random
+51184-0,CD117 Ag [Presence] in Blood by Immune stain,CD117 Ag,Bld,PrThr,0,random
+51205-3,Sodium [Mass/mass] in Hair,Sodium,Hair,MCnt,0,pool_bm25
+51275-6,CD3+CD16+ cells/Cells in Cerebrospinal Fluid,Cells.CD3+CD16+/Cells,CSF,NFr,0,random
+51377-0,CD9 cells/cells in Body fluid,Cells.CD9/Cells,Body fld,NFr,0,random
+51384-6,Mononuclear cells/Leukocytes in Blood by Manual count,Mononuclear cells/Leukocytes,Bld,NFr,2139,pool_bm25
+51419-0,Sodium [Moles/volume] corrected for glucose in Serum or Plasma,Sodium^^corrected for glucose,Ser/Plas,SCnc,0,pool_bm25
+51447-1,CD79a cells [Units/volume] in Blood,Cells.CD79a,Bld,ACnc,0,random
+51523-9,Grass Allergen Mix 2 (Bermuda grass+Perennial rye grass+Timothy+Kentucky blue grass+Johnson grass+Bahia grass) IgE Ab [Presence] in Serum by Multidisk,(Cynodon dactylon+Lolium perenne+Phleum pratense+Poa pratensis+Sorghum halepense+Paspalum notatum) Ab.IgE,Ser,PrThr,15769,random
+51585-8,Other cells [#/volume] in Blood by Manual count,Other cells,Bld,NCnc,760,pool_bm25
+51586-6,Other cells/Leukocytes in Blood by Manual count,Other cells/Leukocytes,Bld,NFr,5985,pool_bm25
+51588-2,Granulocytes [#/volume] in Blood by Manual count,Granulocytes,Bld,NCnc,0,pool_bm25
+51590-8,Chloride [Moles/volume] in Capillary blood,Chloride,BldC,SCnc,3998,pool_bm25
+51596-5,Glucose [Moles/volume] in Capillary blood,Glucose,BldC,SCnc,0,pool_bm25
+51613-8,Hemoglobin J/Hemoglobin.total in Blood,Hemoglobin J/Hemoglobin.total,Bld,MFr,0,pool_bm25
+51614-6,Hemoglobin M/Hemoglobin.total in Blood,Hemoglobin M/Hemoglobin.total,Bld,MFr,0,pool_bm25
+51615-3,Hemoglobin A2+C/Hemoglobin.total in Blood,Hemoglobin A2+C/Hemoglobin.total,Bld,MFr,18317,pool_bm25
+51616-1,Hemoglobin A2+E/Hemoglobin.total in Blood,Hemoglobin A2+E/Hemoglobin.total,Bld,MFr,15862,pool_bm25
+51618-7,Potassium [Moles/volume] in Serum or Plasma --pre dialysis,Potassium^pre dialysis,Ser/Plas,SCnc,0,pool_bm25
+51619-5,Creatinine [Moles/volume] in Serum or Plasma --pre dialysis,Creatinine^pre dialysis,Ser/Plas,SCnc,0,pool_bm25
+51620-3,Creatinine [Moles/volume] in Serum or Plasma --post dialysis,Creatinine^post dialysis,Ser/Plas,SCnc,0,pool_bm25
+51640-1,Platelet anisocytosis [Presence] in Blood by Light microscopy,Platelet anisocytosis,Bld,PrThr,2992,pool_component
+51695-5,Chloride [Mass/time] in 24 hour Urine,Chloride,Urine,MRat,8780,pool_component
+51720-1,Potassium [Mass/time] in 24 hour Urine,Potassium,Urine,MRat,9779,pool_component
+51735-9,Urea nitrogen renal clearance in 24 hour Urine and Serum or Plasma,Urea nitrogen renal clearance,Urine+Ser/Plas,VRat,7832,pool_bm25
+5176-3,Helicobacter pylori IgG Ab [Units/volume] in Serum by Immunoassay,Helicobacter pylori Ab.IgG,Ser,ACnc,1727,random
+51781-3,"Carbon dioxide, total [Moles/volume] in Capillary blood by calculation",Carbon dioxide,BldC,SCnc,4265,pool_bm25
+51816-7,Bartonella quintana IgG Ab [Units/volume] in Serum by Immunoassay,Bartonella quintana Ab.IgG,Ser,ACnc,0,random
+51880-3,Packed erythrocytes units given [#],Packed erythrocytes units given,^BPU,Num,739,pool_component
+51950-4,Calcium [Mass/volume] in Serum or Plasma --post dialysis,Calcium^post dialysis,Ser/Plas,MCnc,0,pool_bm25
+5215-9,Heterophile Ab [Titer] in Serum by Latex agglutination,Heterophile Ab,Ser,Titr,12750,random
+52956-0,Barbiturates [Moles/volume] in Urine,Barbiturates,Urine,SCnc,0,random
+52970-1,CV2 Ab [Units/volume] in Cerebrospinal Fluid,CV2 Ab,CSF,ACnc,0,random
+52992-5,Cytoplasmic CD79a cells/cells in Body fluid,Cells.cytoplasmic CD79a/Cells,Body fld,NFr,0,random
+53089-9,"Carbon dioxide, total [Moles/volume] in Nonbiological fluid by calculation",Carbon dioxide,Flu.nonbiological,SCnc,0,pool_bm25
+53090-7,"Carbon dioxide, total [Moles/volume] in Nonbiological fluid",Carbon dioxide,Flu.nonbiological,SCnc,0,pool_bm25
+53092-3,Collagen crosslinked C-telopeptide [Moles/volume] in Serum or Plasma,Collagen crosslinked C-telopeptide,Ser/Plas,SCnc,12345,random
+53099-8,Chloride [Moles/volume] in Total parental nutrition,Chloride,TPN,SCnc,0,pool_component
+53129-3,Sodium urate crystals [#/area] in Urine sediment by Microscopy high power field,Sodium urate crystals,Urine sed,Naric,15389,pool_component
+53150-9,Alanine+Beta Alanine+Sarcosine [Moles/volume] in DBS,Alanine+Beta Alanine+Sarcosine,Bld.dot,SCnc,18874,pool_bm25
+53154-1,Alloisoleucine+Isoleucine+Leucine+Hydroxyproline/Alanine [Molar ratio] in DBS,Alloisoleucine+Isoleucine+Leucine+Hydroxyproline/Alanine,Bld.dot,SRto,19229,pool_component
+53223-4,Hemoglobin G/Hemoglobin.total in Blood,Hemoglobin G/Hemoglobin.total,Bld,MFr,13833,pool_bm25
+53306-7,Calcium oxalate crystals [#/area] in Urine by Computer assisted method,Calcium oxalate crystals,Urine,Naric,1134,pool_component
+53327-3,Bilirubin.total [Mass/volume] in Urine by Automated test strip,Bilirubin,Urine,MCnc,174,pool_component
+53328-1,Glucose [Mass/volume] in Urine by Automated test strip,Glucose,Urine,MCnc,137,pool_component
+53374-5,Francisella tularensis Ab [Presence] in Specimen,Francisella tularensis Ab,XXX,PrThr,0,random
+53415-6,Bilirubin.total [Presence] in Cerebrospinal Fluid,Bilirubin,CSF,PrThr,0,pool_bm25
+53431-3,Fibroblast growth factor 23 [Units/volume] in Plasma by Immunoassay --6th specimen post XXX challenge,Fibroblast growth factor 23 ^6th specimen post XXX challenge,Plas,ACnc,0,random
+53455-2,Calcium [Mass/mass] in Specimen,Calcium,XXX,MCnt,0,pool_bm25
+53458-6,Carbon dioxide [Partial pressure] in Nonbiological fluid,Carbon dioxide,Flu.nonbiological,PPres,0,pool_bm25
+53502-1,Calcium [Moles/mass] in Specimen,Calcium,XXX,SCnt,0,pool_bm25
+53517-9,Erythrocytes [#/volume] in Dialysis fluid by Manual count,Erythrocytes,Dial fld,NCnc,0,pool_bm25
+53550-0,Fructosamine/Protein [Ratio] in Serum or Plasma,Fructosamine/Protein,Ser/Plas,Ratio,0,pool_bm25
+53553-4,Glucose mean value [Moles/volume] in Blood Estimated from glycated hemoglobin,Estimated average glucose,Bld,SCnc,258,pool_component
+53627-6,Chloride [Moles/volume] in Pleural fluid,Chloride,Plr fld,SCnc,0,pool_bm25
+53640-9,Chloride/Creatinine [Ratio] in 24 hour Urine,Chloride/Creatinine,Urine,Ratio,13548,pool_component
+53641-7,OCT2 Ag [Presence] in Tissue by Immune stain,OCT2 Ag,Tiss,PrThr,0,random
+53774-6,Epstein Barr virus DNA [Log #/volume] (viral load) in Specimen by NAA with probe detection,Epstein Barr virus DNA,XXX,LnCnc,1468,random
+53788-6,Sodium urate crystals [Presence] in Urine sediment by Light microscopy,Sodium urate crystals,Urine sed,PrThr,11927,pool_component
+53800-9,Platelets panel - Blood by Automated count,Platelets panel,Bld,-,0,pool_bm25
+53813-2,Platelet aggregation [Units/volume] in Blood by ADP induced,Platelet aggregation,Bld,ACnc,4869,pool_component
+53814-0,Platelet aggregation [Units/volume] in Blood by arachidonate induced,Platelet aggregation,Bld,ACnc,3747,pool_component
+540-5,Mycobacterium sp identified in Tissue by Organism specific culture,Mycobacterium sp,Tiss,Prid,3279,random
+54083-1,CFTR gene mutations found [Identifier] in DBS by Targeted gene mutation analysis Nominal,CFTR gene mutations,Bld.dot,Prid,17117,random
+54209-2,Hemoglobin C - Harlem/Hemoglobin.total in Blood,Hemoglobin C-Harlem/Hemoglobin.total,Bld,MFr,0,pool_bm25
+54363-7,Bilirubin.total [Moles/volume] in Blood,Bilirubin,Bld,SCnc,0,pool_bm25
+54369-4,Chloride [Moles/volume] in Serum or Plasma --post dialysis,Chloride^post dialysis,Ser/Plas,SCnc,0,pool_bm25
+54370-2,Chloride [Mass/volume] in Body fluid,Chloride,Body fld,MCnc,6921,pool_bm25
+54437-9,Sodium urate/Total in Stone by Infrared spectroscopy,Sodium urate/Total,Calculus,MFr,9654,pool_component
+54456-9,Urea reduction ratio in Serum or Plasma,Urea reduction ratio,Ser/Plas,SFr,4762,pool_component
+54491-6,Alanine aminotransferase [Enzymatic activity/volume] in Peritoneal fluid,Alanine aminotransferase,Periton fld,CCnc,0,pool_bm25
+54492-4,Alanine aminotransferase [Enzymatic activity/volume] in Pleural fluid,Alanine aminotransferase,Plr fld,CCnc,0,pool_bm25
+54494-0,Chloride [Mass/volume] in Water,Chloride,Water,MCnc,0,pool_bm25
+54500-4,Aspartate aminotransferase.macromolecular/Aspartate aminotransferase.total in Serum or Plasma,Aspartate aminotransferase.macromolecular/Aspartate aminotransferase.total,Ser/Plas,CFr,0,pool_bm25
+55159-8,Ursodeoxycholate [Moles/volume] in Serum or Plasma,Ursodeoxycholate,Ser/Plas,SCnc,3628,random
+55295-0,Protein electrophoresis and Immunoglobulins panel - Serum,Protein fractions & Immunoglobulins panel,Ser,-,0,pool_bm25
+55371-9,Hemoglobin A2+E+O/Hemoglobin.total in Blood,Hemoglobin A2+E+O/Hemoglobin.total,Bld,MFr,0,random
+55372-7,Hemoglobin Constant Spring/Hemoglobin.total in Blood,Hemoglobin Constant Spring/Hemoglobin.total,Bld,MFr,0,pool_bm25
+55373-5,Hemoglobin D+G/Hemoglobin.total in Blood,Hemoglobin D+G/Hemoglobin.total,Bld,MFr,0,pool_bm25
+55374-3,Hemoglobin N+I/Hemoglobin.total in Blood,Hemoglobin N+I/Hemoglobin.total,Bld,MFr,0,pool_bm25
+55375-0,Megaloblasts [#/volume] in Blood by Manual count,Megaloblasts,Bld,NCnc,0,pool_bm25
+55376-8,Megaloblasts/Leukocytes in Blood by Manual count,Megaloblasts/Leukocytes,Bld,NFr,0,pool_bm25
+55377-6,Mononuclear cells immature/Leukocytes in Blood by Manual count,Mononuclear cells.immature/Leukocytes,Bld,NFr,17628,pool_bm25
+55429-5,Short blood count panel - Blood,Short blood count panel,Bld,-,0,pool_bm25
+55435-2,Mononuclear cells immature [#/volume] in Blood by Manual count,Mononuclear cells.immature,Bld,NCnc,8363,pool_bm25
+55666-2,Cyclacillin [Susceptibility] by Gradient strip,Cyclacillin,Isolate,Susc,0,random
+55780-1,Nucleated erythrocytes [#] in Cerebrospinal Fluid by Manual count,Erythrocytes.nucleated,CSF,Num,0,pool_bm25
+55803-1,Promyelocytes [#] in Cerebrospinal Fluid by Manual count,Promyelocytes,CSF,Num,0,random
+55818-9,Organic acids [Moles/mass] in Stool,Organic acids,Stool,SCnt,0,random
+55837-9,Chloride [Moles/volume] in 24 hour Stool,Chloride,Stool,SCnc,0,pool_component
+55877-5,Homocysteine [Moles/volume] in Body fluid,Homocysteine,Body fld,SCnc,17356,random
+55899-9,Immunoglobulin light chains.free [Presence] in Urine by Electrophoresis,Immunoglobulin light chains.free,Urine,PrThr,0,random
+56012-8,Platelet aggregation interpretation in Blood Qualitative by Arachidonate induced ATP secretion.500 umol/L,Platelet aggregation interpretation,Bld,Imp,3662,pool_component
+56023-5,Foot and mouth disease virus RNA [Units/volume] (viral load) in Specimen by NAA with probe detection,Foot and mouth disease virus RNA,XXX,ACnc,0,random
+56143-1,Potassium/Creatinine [Molar ratio] in 24 hour Urine,Potassium/Creatinine,Urine,SRto,12259,pool_component
+56154-8,Protein.abnormal band/Protein.total in Serum or Plasma by Electrophoresis,Protein.abnormal band/Protein.total,Ser/Plas,MFr,0,pool_bm25
+56272-8,Goose feather IgG4 Ab [Mass/volume] in Serum,Goose feather Ab.IgG4,Ser,MCnc,0,random
+56448-4,Chloride [Moles/volume] in Sweat by Screen method,Chloride,Sweat,SCnc,11491,pool_component
+56472-4,Nucleated erythrocytes [#] in Specimen by Manual count,Erythrocytes.nucleated,XXX,Num,11435,pool_bm25
+566-0,Cryptosporidium sp Ag [Presence] in Specimen by Immunofluorescence,Cryptosporidium sp Ag,XXX,PrThr,8957,random
+56625-7,Methylene chloride [Moles/volume] in Blood,Methylene chloride,Bld,SCnc,0,pool_bm25
+56640-6,Aspartate/Creatinine [Ratio] in 24 hour Urine,Aspartate/Creatinine,Urine,Ratio,0,random
+56692-7,Insulin [Mass/volume] in Serum or Plasma --1 day post XXX challenge,Insulin^1D post XXX challenge,Ser/Plas,MCnc,0,random
+56703-2,Piroxicam IgE Ab [Units/volume] in Serum,Piroxicam Ab.IgE,Ser,ACnc,0,random
+56711-5,Sodium benzoate IgE Ab [Units/volume] in Serum,Sodium benzoate Ab.IgE,Ser,ACnc,0,pool_bm25
+56768-5,Protein.monoclonal.beta/Protein.total in Urine by Electrophoresis,Protein.monoclonal.beta/Protein.total,Urine,MFr,0,pool_bm25
+56971-5,Potassium/Creatinine [Ratio] in 24 hour Urine,Potassium/Creatinine,Urine,Ratio,0,pool_component
+56997-0,Urea/Creatinine [Mass Ratio] in Serum or Plasma,Urea/Creatinine,Ser/Plas,MRto,12111,pool_bm25
+5706-7,Opiates [Identifier] in Urine,Opiates,Urine,Prid,1061,random
+57321-2,Herpes simplex virus 2 IgG Ab [Units/volume] in Serum by Immunoassay --2nd specimen,Herpes simplex virus 2 Ab.IgG^2nd specimen,Ser,ACnc,0,random
+57342-8,Chloride [Moles/time] in 12 hour Urine,Chloride,Urine,SRat,0,pool_component
+57692-6,Cortisol [Mass/volume] in Saliva (oral fluid) --5th specimen,Cortisol^5th specimen,Saliva,MCnc,13876,random
+5771-1,Bilirubin crystals [Presence] in Urine sediment by Light microscopy,Bilirubin crystals,Urine sed,PrThr,7864,pool_component
+5774-5,Calcium oxalate crystals [Presence] in Urine sediment by Light microscopy,Calcium oxalate crystals,Urine sed,PrThr,681,pool_component
+57751-0,Hemoglobin [Presence] in Urine by Automated test strip,Hemoglobin,Urine,PrThr,420,pool_component
+57761-9,Heparin induced platelet Ab [Presence] in Serum or Plasma by Immunoassay,Platelet factor 4 heparin complex induced Ab,Ser/Plas,PrThr,4233,pool_component
+57841-9,Erythrocytes [#/volume] in Dialysis fluid by Automated count,Erythrocytes,Dial fld,NCnc,0,pool_bm25
+57842-7,Erythrocytes [#/volume] in Pericardial fluid by Automated count,Erythrocytes,Pericard fld,NCnc,0,pool_bm25
+57843-5,Erythrocytes [#/volume] in Peritoneal fluid by Automated count,Erythrocytes,Periton fld,NCnc,0,pool_bm25
+57920-1,"Carbon dioxide, total [Moles/volume] in Mixed venous blood by calculation",Carbon dioxide,BldMV,SCnc,9503,pool_component
+57921-9,"Carbon dioxide, total [Moles/volume] in Arterial cord blood by calculation",Carbon dioxide,BldCoA,SCnc,7266,pool_component
+57922-7,"Carbon dioxide, total [Moles/volume] in Serum or Plasma by calculation",Carbon dioxide,Ser/Plas,SCnc,0,pool_bm25
+57923-5,"Carbon dioxide, total [Moles/volume] in Venous cord blood by calculation",Carbon dioxide,BldCoV,SCnc,7681,pool_component
+5792-7,Glucose [Mass/volume] in Urine by Test strip,Glucose,Urine,MCnc,91,pool_component
+5794-3,Hemoglobin [Presence] in Urine by Test strip,Hemoglobin,Urine,PrThr,98,pool_component
+5799-2,Leukocyte esterase [Presence] in Urine by Test strip,Leukocyte esterase,Urine,PrThr,81,pool_component
+5804-0,Protein [Mass/volume] in Urine by Test strip,Protein,Urine,MCnc,171,pool_component
+5808-1,Erythrocytes [#/volume] in Urine sediment by Microscopy high power field,Erythrocytes,Urine sed,NCnc,735,pool_component
+5821-4,Leukocytes [#/area] in Urine sediment by Microscopy high power field,Leukocytes,Urine sed,Naric,120,pool_component
+58360-9,Buprenorphine/Creatinine [Mass Ratio] in Urine,Buprenorphine/Creatinine,Urine,MRto,2106,pool_component
+58361-7,Norbuprenorphine/Creatinine [Mass Ratio] in Urine,Norbuprenorphine/Creatinine,Urine,MRto,2091,pool_component
+58396-3,oxyMORphone/Creatinine [Mass Ratio] in Urine,oxyMORphone/Creatinine,Urine,MRto,2199,pool_component
+58409-4,Other cells/Leukocytes in Blood by Automated count,Other cells/Leukocytes,Bld,NFr,0,pool_bm25
+58413-6,Nucleated erythrocytes/Leukocytes [Ratio] in Blood by Automated count,Erythrocytes.nucleated/Leukocytes,Bld,Ratio,59,pool_component
+58443-3,Other cells [#/volume] in Blood by Automated count,Other cells,Bld,NCnc,11830,pool_bm25
+58450-8,Bilirubin [Presence] in Urine by Confirmatory method,Bilirubin,Urine,PrThr,1452,pool_bm25
+58463-1,Tau protein/Protein.total in Cerebrospinal Fluid,Tau protein/Protein.total,CSF,MFr,18590,pool_bm25
+58893-9,Vasopressin [Mass/volume] in Plasma --1.5 hours post XXX challenge,Vasopressin^1.5H post XXX challenge,Plas,MCnc,0,random
+58941-6,Bilirubin [Mass/volume] in Skin,Bilirubin,Skin,MCnc,15067,pool_bm25
+59010-9,Fractional excretion of potassium [Ratio] in Urine and Serum or Plasma collected for unspecified duration,Fractional excretion of potassium,Urine+Ser/Plas,Ratio,0,pool_component
+5905-5,Monocytes/Leukocytes in Blood by Automated count,Monocytes/Leukocytes,Bld,NFr,36,pool_component
+5908-9,Giant platelets [Presence] in Blood by Light microscopy,Platelets.giant,Bld,PrThr,1378,pool_component
+59148-7,Calcium [Moles/volume] in Serum or Plasma --post dialysis,Calcium^post dialysis,Ser/Plas,SCnc,0,pool_bm25
+59162-8,Potassium [Moles/volume] in 24 hour Stool,Potassium,Stool,SCnc,0,pool_component
+59165-1,Carbon dioxide [Partial pressure] in Dialysis fluid,Carbon dioxide,Dial fld,PPres,0,pool_bm25
+59178-4,Chloride [Moles/volume] in Gastric fluid,Chloride,Gast fld,SCnc,0,pool_bm25
+5918-8,Urea nitrogen [Mass/volume] in Dialysis fluid,Urea nitrogen,Dial fld,MCnc,5755,pool_bm25
+59223-8,Prostate specific Ag [Mass/volume] in Peritoneal fluid,Prostate specific Ag,Periton fld,MCnc,18272,random
+59245-1,Alanine glyoxylate aminotransferase [Enzymatic activity/mass] in Tissue,Alanine glyoxylate aminotransferase,Tiss,CCnt,0,pool_bm25
+59251-9,N-carbamoyl beta alanine/Creatinine [Molar ratio] in Urine,N-carbamoyl beta alanine/Creatinine,Urine,SRto,8031,pool_component
+59277-4,Cystine crystals [Presence] in Stone by X-ray diffraction,Cystine crystals,Calculus,PrThr,0,random
+59279-0,Urate crystals [Presence] in Stone by X-ray diffraction,Urate crystals,Calculus,PrThr,0,random
+59306-1,Memantine [Mass/volume] in Urine,Memantine,Urine,MCnc,0,random
+59470-5,Calcium.ionized [Mass/volume] in Arterial blood,Calcium.ionized,BldA,MCnc,518,pool_component
+59471-3,Calcium.ionized [Mass/volume] in Venous blood,Calcium.ionized,BldV,MCnc,671,pool_component
+59570-2,Urea nitrogen [Moles/volume] in Blood,Urea nitrogen,Bld,SCnc,6072,pool_bm25
+59733-6,Potassium [Mass/mass] in Tissue,Potassium,Tiss,MCnt,0,pool_bm25
+59800-3,Protein.monoclonal band 2/Protein.total in Urine by Electrophoresis,Protein.monoclonal band 2/Protein.total,Urine,MFr,6033,pool_bm25
+59826-8,Creatinine [Moles/volume] in Blood,Creatinine,Bld,SCnc,1891,pool_component
+59831-8,Gastrin [Mass/volume] in Serum or Plasma --baseline,Gastrin^baseline,Ser/Plas,MCnc,14612,random
+59834-2,Creatinine reduction ratio in Serum or Plasma,Creatinine reduction ratio,Ser/Plas,MFr,0,pool_bm25
+59905-0,fluPHENAZine [Moles/volume] in Gastric fluid,fluPHENAZine,Gast fld,SCnc,0,random
+60026-2,Leukocyte esterase [Presence] in Urine by Automated test strip,Leukocyte esterase,Urine,PrThr,209,pool_component
+60217-7,Chloride [Moles/volume] in Mother's milk,Chloride,Mmlk,SCnc,0,pool_component
+60218-5,Potassium [Moles/volume] in Mother's milk,Potassium,Mmlk,SCnc,0,pool_component
+6095-4,American house dust mite IgE Ab [Units/volume] in Serum,Dermatophagoides farinae Ab.IgE,Ser,ACnc,1107,random
+61215-0,Giant Ragweed IgE Ab/IgE total in Serum,Ambrosia trifida Ab.IgE/IgE.total,Ser,AFr,0,random
+61250-7,Coffee IgE Ab/IgE total in Serum,Coffea spp Ab.IgE/IgE.total,Ser,AFr,0,random
+61353-9,Lymphocyte proliferation stimulated by 10 ug phytohemagglutinin in Blood,Lymphocyte proliferation. 10 ug phytohemagglutinin stimulation,Bld,RelRto,0,random
+61401-6,Pseudomonas aeruginosa DNA [Presence] in Specimen by NAA with probe detection,Pseudomonas aeruginosa DNA,XXX,PrThr,5707,random
+61404-0,Staphylococcus aureus DNA [Presence] in Specimen by NAA with probe detection,Staphylococcus aureus DNA,XXX,PrThr,1178,random
+61420-6,Norhydrocodone/Creatinine [Mass Ratio] in Urine,Norhydrocodone/Creatinine,Urine,MRto,2173,pool_component
+61423-0,Noroxycodone/Creatinine [Mass Ratio] in Urine,Noroxycodone/Creatinine,Urine,MRto,2144,pool_component
+62240-7,Erythrocytes [#/volume] in Blood from Fetus by Automated count,Erythrocytes,Bld^Fetus,NCnc,0,pool_bm25
+62244-9,Platelets [#/volume] in Blood from Fetus by Automated count,Platelets,Bld^Fetus,NCnc,0,pool_bm25
+62245-6,Nucleated erythrocytes/Leukocytes [Ratio] in Blood from Fetus by Automated count,Erythrocytes.nucleated/Leukocytes,Bld^Fetus,Ratio,8211,pool_bm25
+62247-2,Erythrocyte [DistWidth] in Blood from Fetus by Automated count,Erythrocyte,Bld^Fetus,DistWidth,0,pool_bm25
+62248-0,Nucleated erythrocytes [#/volume] in Blood from Fetus by Automated count,Erythrocytes.nucleated,Bld^Fetus,NCnc,0,pool_bm25
+62425-4,Creatinine [Moles/volume] in Serum or Plasma --post XXX challenge,Creatinine^post XXX challenge,Ser/Plas,SCnc,0,pool_bm25
+62857-8,Micromegakaryocytes [#/volume] in Blood by Manual count,Micromegakaryocytes,Bld,NCnc,0,pool_bm25
+6298-4,Potassium [Moles/volume] in Blood,Potassium,Bld,SCnc,219,pool_bm25
+6299-2,Urea nitrogen [Mass/volume] in Blood,Urea nitrogen,Bld,MCnc,323,pool_bm25
+6329-7,Campylobacter coli rRNA [Presence] in Specimen by Probe,Campylobacter coli rRNA,XXX,PrThr,0,random
+63440-2,PCA-Tr Ab [Presence] in Serum by Immunoblot,Purkinje cell cytoplasmic type Tr Ab,Ser,PrThr,8194,random
+63572-2,Time received in laboratory of Specimen,Time received in laboratory,Specimen,TmStp,10436,random
+6430-3,HIV identified in Semen by Organism specific culture,HIV,Semen,Prid,0,random
+64970-7,London Plane recombinant (rPla a) 3 IgE Ab [Units/volume] in Serum,Platanus acerifolia recombinant (rPla a) 3 Ab.IgE,Ser,ACnc,0,random
+6689-4,Glucose [Mass/volume] in Blood --2 hours post meal,Glucose^2H post meal,Bld,MCnc,12443,pool_bm25
+6690-2,Leukocytes [#/volume] in Blood by Automated count,Leukocytes,Bld,NCnc,21,pool_component
+6742-1,Erythrocyte [Morphology] in Blood,Erythrocyte,Bld,Morph,217,pool_component
+6792-6,Potassium [Moles/time] in 24 hour Stool,Potassium,Stool,SRat,15282,pool_component
+6809-8,Aspergillus fumigatus 6 Ab [Presence] in Serum by Immune diffusion (ID),Aspergillus fumigatus 6 Ab,Ser,PrThr,3435,random
+68124-7,Circulating tumor cells.colon [#/volume] in Blood,Circulating tumor cells.colon,Bld,NCnc,12855,random
+68435-7,Erythrocytes [#/volume] in Vitreous fluid by Automated count,Erythrocytes,Vitr fld,NCnc,0,pool_bm25
+68437-3,Smudge cells [#/volume] in Blood by Manual count,Smudge cells,Bld,NCnc,0,pool_bm25
+6874-2,Calcium [Mass/time] in 24 hour Urine,Calcium,Urine,MRat,1516,pool_component
+68913-3,Voltage-gated potassium channel Ab [Moles/volume] in Cerebrospinal Fluid,Voltage-gated potassium channel Ab,CSF,SCnc,14652,pool_component
+68943-0,Voltage-gated potassium channel Ab [Units/volume] in Serum,Voltage-gated potassium channel Ab,Ser,ACnc,0,pool_bm25
+69003-2,Mononuclear cells atypical/Leukocytes in Blood by Manual count,Mononuclear cells.atypical/Leukocytes,Bld,NFr,16620,pool_bm25
+6927-8,Platelet IgG Ab [Presence] in Serum by Flow cytometry (FC),Platelet Ab.IgG,Ser,PrThr,3751,pool_component
+6940-1,Potassium [Moles/time] in unspecified time Stool,Potassium,Stool,SRat,17962,pool_component
+69425-7,Calcium [Mass/volume] in Semen,Calcium,Semen,MCnc,0,pool_bm25
+69942-1,Glucose [Moles/volume] in Serum or Plasma --40 minutes post dose lactose PO,Glucose^40M post dose lactose PO,Ser/Plas,SCnc,0,random
+69949-6,Epstein Barr virus capsid IgG Ab avidity [Presence] in Serum by Immunoassay,Epstein Barr virus capsid Ab.IgG avidity,Ser,PrThr,0,random
+70199-5,Bilirubin.total [Moles/volume] in Urine,Bilirubin,Urine,SCnc,18905,pool_bm25
+70264-7,Creatinine in pleural fluid/Creatinine in serum,Creatinine.plr fld/Creatinine.serum,Ser/Plas+Plr fld,RelRto,0,pool_bm25
+70265-4,Protein in pericardial fluid/Protein in serum,Protein.pericard fld/Protein.serum,Pericard fld+Ser/Plas,RelRto,0,pool_bm25
+70266-2,Creatinine in peritoneal fluid/Creatinine in serum,Creatinine.periton fld/Creatinine.serum,Periton fld+Ser/Plas,RelRto,0,pool_bm25
+70267-0,Protein in peritoneal fluid/Protein in serum,Protein.periton fld/Protein.serum,Periton fld+Ser/Plas,RelRto,0,pool_bm25
+70279-5,"t(5;17)(q25.1;q21.1)(NPM1,RARA) fusion transcript [Presence] in Blood or Tissue by Molecular genetics method","t(5;17)(q25.1;q21.1)(NPM1,RARA) fusion transcript",Bld/Tiss,Arb,0,random
+706-2,Basophils/Leukocytes in Blood by Automated count,Basophils/Leukocytes,Bld,NFr,42,pool_component
+71360-2,Y chromosome AZFb region deletion [Identifier] in Blood or Tissue by Molecular genetics method Narrative,Y chromosome AZFb region deletion,Bld/Tiss,Prid,0,random
+713-8,Eosinophils/Leukocytes in Blood by Automated count,Eosinophils/Leukocytes,Bld,NFr,41,pool_component
+71691-0,Hematopoietic progenitor cells [#/volume] in Blood by Automated count,Hematopoietic progenitor cells,Bld,NCnc,0,pool_bm25
+71692-8,Platelets reticulated [#/volume] in Blood by Automated count,Platelets.reticulated,Bld,NCnc,3419,pool_bm25
+71693-6,Platelets reticulated/Platelets in Blood by Automated count,Platelets.reticulated/Platelets,Bld,NFr,614,pool_bm25
+71695-1,Immature granulocytes/Leukocytes in Blood by Automated count,Granulocytes.immature/Leukocytes,Bld,NFr,60,pool_component
+71833-8,Hematocrit [Pure volume fraction] of Blood by Automated count,Erythrocyte/Blood,Bld,VFr.DF,923,pool_component
+718-7,Hemoglobin [Mass/volume] in Blood,Hemoglobin,Bld,MCnc,17,pool_component
+72171-2,Glucose tolerance 2 hours panel - Serum or Plasma,Glucose tolerance 2H panel,Ser/Plas,-,2133,pool_component
+72270-2,Urea nitrogen [Mass/volume] in Serum or Plasma --pre contrast,Urea nitrogen^pre contrast,Ser/Plas,MCnc,0,pool_bm25
+72271-0,Creatinine [Mass/volume] in Serum or Plasma --pre contrast,Creatinine^pre contrast,Ser/Plas,MCnc,0,pool_bm25
+72394-0,Cell count panel - Vitreous fluid by Manual count,Cell count panel,Vitr fld,-,0,pool_bm25
+72490-6,17-Hydroxyprogesterone [Moles/volume] in Saliva (oral fluid),17-Hydroxyprogesterone,Saliva,SCnc,0,random
+72516-8,Glucose [Moles/volume] in Blood by Automated test strip,Glucose,Bld,SCnc,10369,pool_bm25
+72570-5,Cholinesterase.chloride inhibited/Cholinesterase [Pure catalytic fraction] in Serum or Plasma,Cholinesterase.chloride inhibited/Cholinesterase,Ser/Plas,CFr.DF,0,pool_component
+72898-0,Bilirubin [Moles/volume] in Skin,Bilirubin,Skin,SCnc,0,pool_bm25
+72923-6,Specimen source [Identifier] of Synovial fluid,Specimen source,Synv fld,Prid,6436,random
+72999-6,Loratadine induced neutrophil IgM Ab [Presence] in Serum or Plasma by Flow cytometry (FC),Loratadine induced neutrophil Ab.IgM,Ser/Plas,PrThr,0,random
+73078-8,Warfarin induced platelet IgG Ab [Presence] in Serum or Plasma by Flow cytometry (FC),Warfarin induced platelet Ab.IgG,Ser/Plas,PrThr,0,random
+73171-1,Ramipril induced platelet IgG Ab [Presence] in Serum or Plasma by Flow cytometry (FC),Ramipril induced platelet Ab.IgG,Ser/Plas,PrThr,0,random
+73229-7,Oxacillin induced platelet IgG Ab [Presence] in Serum or Plasma by Flow cytometry (FC),Oxacillin induced platelet Ab.IgG,Ser/Plas,PrThr,0,random
+7328-8,Fusarium solani IgG Ab [Units/volume] in Serum,Fusarium solani Ab.IgG,Ser,ACnc,0,random
+73326-1,Irbesartan+hydroCHLOROthiazide induced platelet IgM Ab [Presence] in Serum or Plasma by Flow cytometry (FC),Irbesartan+hydroCHLOROthiazide induced platelet Ab.IgM,Ser/Plas,PrThr,0,random
+736-9,Lymphocytes/Leukocytes in Blood by Automated count,Lymphocytes/Leukocytes,Bld,NFr,37,pool_component
+737-7,Lymphocytes/Leukocytes in Blood by Manual count,Lymphocytes/Leukocytes,Bld,NFr,188,pool_component
+73807-0,B cell+T cell crossmatch.autologous [Interpretation] Qualitative by Complement dependent cytotoxicity,B cell+T cell crossmatch.autologous,Ser+Bld,Imp,0,random
+73818-7,Heparin induced platelet IgG Ab in Serum or Plasma by Immunoassay,Platelet factor 4 heparin complex induced Ab.IgG,Ser/Plas,OD,3357,pool_component
+73866-6,Catecholamines 3 and creatinine panel [Molar ratio] - Urine,Catecholamines 3 & creatinine panel,Urine,SRto,0,random
+74005-0,Serotonin release 0.5 IU/mL heparin.unfractionated [Units/volume] in Serum,Serotonin release 0.5 IU/mL heparin.unfractionated,Ser,ACnc,11368,random
+74393-0,Immature reticulocytes/Erythrocytes in Cord blood by Automated count,Reticulocytes.immature/Erythrocytes,BldCo,NFr,0,pool_bm25
+74396-3,Large unstained cells/Leukocytes in Cord blood by Automated count,Large unstained cells/Leukocytes,BldCo,NFr,0,pool_bm25
+74397-1,Reticulocytes/Erythrocytes in Cord blood by Automated count,Reticulocytes/Erythrocytes,BldCo,NFr,0,pool_bm25
+74452-4,Platelet distribution width [Entitic volume] in Cord blood by Automated count,Platelet distribution width,BldCo,EntVol,0,pool_bm25
+74458-1,Large unstained cells/Leukocytes in Blood from Fetus by Automated count,Large unstained cells/Leukocytes,Bld^Fetus,NFr,0,pool_bm25
+74464-9,Platelets [#/volume] in Capillary blood by Manual count,Platelets,BldC,NCnc,0,pool_bm25
+74469-8,Glucose-6-Phosphate dehydrogenase/Pyruvate kinase [Ratio] in Blood,Glucose-6-Phosphate dehydrogenase/Pyruvate kinase,Bld,Ratio,0,pool_bm25
+746-8,Myeloblasts [#/volume] in Blood by Manual count,Myeloblasts,Bld,NCnc,0,pool_bm25
+74680-0,Amphetamine [Presence] in Saliva (oral fluid) by Confirmatory method,Amphetamine,Saliva,PrThr,10002,random
+74684-2,"Carbon dioxide, total [Moles/volume] in Serum or Plasma --post dialysis",Carbon dioxide^post dialysis,Ser/Plas,SCnc,0,pool_bm25
+74688-3,Sodium [Moles/volume] in Serum or Plasma --post dialysis,Sodium^post dialysis,Ser/Plas,SCnc,0,pool_bm25
+74775-8,Platelets [#/volume] in Platelet rich plasma by Automated count,Platelets,PRP,NCnc,0,pool_bm25
+74814-5,Plasma cells.centroblasts/Leukocytes in Blood by Manual count,Plasma cells.centroblasts/Leukocytes,Bld,NFr,13302,pool_bm25
+74820-2,Plasma cells.centrocytes/Leukocytes in Blood by Manual count,Plasma cells.centrocytes/Leukocytes,Bld,NFr,0,pool_bm25
+75071-1,Acetaminophen/Creatinine [Molar ratio] in Urine,Acetaminophen/Creatinine,Urine,SRto,0,random
+75146-1,Succinylaminoimidazole carboxamide riboside [Moles/volume] in Serum or Plasma,Succinylaminoimidazole carboxamide riboside,Ser/Plas,SCnc,0,random
+75697-3,Bilirubin fractions panel [Moles/volume] - Serum or Plasma,Bilirubin fractions panel,Ser/Plas,SCnc,0,pool_bm25
+75940-7,Potassium [Mass/volume] in Blood,Potassium,Bld,MCnc,5115,pool_bm25
+76069-4,Erythrocytes.hypochromic/Erythrocytes in Blood by Automated count,Erythrocytes.hypochromic/Erythrocytes,Bld,NFr,0,pool_bm25
+76090-0,Erythrocytes.hyperchromic/Erythrocytes in Blood by Automated count,Erythrocytes.hyperchromic/Erythrocytes,Bld,NFr,0,pool_bm25
+76140-3,Reticulocytes.hypochromic/Erythrocytes in Blood by Automated count,Reticulocytes.hypochromic/Erythrocytes,Bld,NFr,0,pool_bm25
+76414-2,Sheep prion protein codon 136 [Type] in Blood by Genotype method,Sheep prion protein codon 136,Bld,Type,0,random
+76625-3,Alanine aminotransferase [Enzymatic activity/volume] in Blood,Alanine aminotransferase,Bld,CCnc,14038,pool_bm25
+76629-5,Fasting glucose [Moles/volume] in Blood,Glucose^post CFst,Bld,SCnc,2554,pool_bm25
+769-0,Segmented neutrophils/Leukocytes in Blood by Manual count,Neutrophils.segmented/Leukocytes,Bld,NFr,186,pool_component
+770-8,Neutrophils/Leukocytes in Blood by Automated count,Neutrophils/Leukocytes,Bld,NFr,35,pool_component
+77135-2,"Glucose [Moles/volume] in Serum, Plasma or Blood",Glucose,Ser/Plas/Bld,SCnc,0,pool_bm25
+77137-8,"Bilirubin.total [Moles/volume] in Serum, Plasma or Blood",Bilirubin,Ser/Plas/Bld,SCnc,0,pool_bm25
+77138-6,"Chloride [Moles/volume] in Serum, Plasma or Blood",Chloride,Ser/Plas/Bld,SCnc,0,pool_bm25
+77139-4,"Sodium [Moles/volume] in Serum, Plasma or Blood",Sodium,Ser/Plas/Bld,SCnc,0,pool_bm25
+77140-2,"Creatinine [Moles/volume] in Serum, Plasma or Blood",Creatinine,Ser/Plas/Bld,SCnc,0,pool_bm25
+77142-8,"Potassium [Moles/volume] in Serum, Plasma or Blood",Potassium,Ser/Plas/Bld,SCnc,0,pool_bm25
+77143-6,"Carbon dioxide, total [Moles/volume] in Serum, Plasma or Blood",Carbon dioxide,Ser/Plas/Bld,SCnc,0,pool_bm25
+77144-4,"Alanine aminotransferase [Enzymatic activity/volume] in Serum, Plasma or Blood",Alanine aminotransferase,Ser/Plas/Bld,CCnc,0,pool_bm25
+77145-1,"Fasting glucose [Moles/volume] in Serum, Plasma or Blood",Glucose^post CFst,Ser/Plas/Bld,SCnc,0,pool_bm25
+771-6,Nucleated erythrocytes [#/volume] in Blood by Automated count,Erythrocytes.nucleated,Bld,NCnc,178,pool_bm25
+772-4,Nucleated erythrocytes [#/volume] in Blood by Manual count,Erythrocytes.nucleated,Bld,NCnc,1456,pool_bm25
+77452-1,Bilirubin [Presence] in Peritoneal fluid,Bilirubin,Periton fld,PrThr,0,pool_bm25
+77610-4,C peptide [Moles/volume] in Serum or Plasma --15 minutes post XXX challenge,C peptide^15M post XXX challenge,Ser/Plas,SCnc,0,random
+777-3,Platelets [#/volume] in Blood by Automated count,Platelets,Bld,NCnc,20,pool_bm25
+77773-0,Morphine cutoff [Mass/volume] in Saliva (oral fluid) for Confirmatory method,Morphine cutoff,Saliva,MCnc,0,random
+778-1,Platelets [#/volume] in Blood by Manual count,Platelets,Bld,NCnc,7062,pool_bm25
+77927-2,Cortisol [Moles/volume] in Serum or Plasma --5 minutes post XXX challenge,Cortisol^5M post XXX challenge,Ser/Plas,SCnc,0,random
+78529-5,Adenovirus Ag [Presence] in Stool by Rapid immunoassay,Adenovirus Ag,Stool,PrThr,0,random
+7855-0,Dengue virus 1+2+3+4 RNA [Presence] in Serum or Plasma by NAA with probe detection,Dengue virus 1+2+3+4 RNA,Ser/Plas,PrThr,0,random
+785-6,MCH [Entitic mass] by Automated count,Hemoglobin,RBC,EntMass,15,pool_component
+786-4,MCHC [Entitic Mass/volume] in Red Blood Cells by Automated count,Hemoglobin,RBC,EntMCnc,13,pool_component
+78790-3,Amphetamine [Presence] in Body fluid by Screen method,Amphetamine,Body fld,PrThr,0,random
+788-0,Erythrocyte [DistWidth] in Blood by Automated count,Erythrocyte,Bld,DistWidth,19,pool_bm25
+789-8,Erythrocytes [#/volume] in Blood by Automated count,Erythrocytes,Bld,NCnc,16,pool_bm25
+790-6,Erythrocytes [#/volume] in Blood by Manual count,Erythrocytes,Bld,NCnc,0,pool_bm25
+79177-2,Clostridioides difficile glutamate dehydrogenase and toxins A+B [Presence] in Stool by Rapid immunoassay,Clostridioides difficile glutamate dehydrogenase & toxins A+B,Stool,PrThr,2693,random
+79426-3,Plasma cells/Leukocytes in Blood by Manual count,Plasma cells/Leukocytes,Bld,NFr,830,pool_bm25
+794-8,Erythrocytes [#/volume] in Pleural fluid by Automated count,Erythrocytes,Plr fld,NCnc,0,pool_bm25
+79571-6,BCHE gene full mutation analysis in Blood or Tissue by Sequencing,BCHE gene full mutation analysis,Bld/Tiss,Find,0,random
+79656-5,N-carbamoyl beta alanine [Moles/volume] in Serum or Plasma,N-carbamoyl beta alanine,Ser/Plas,SCnc,11156,pool_component
+79671-4,Cytidine [Moles/volume] in Cerebrospinal Fluid,Cytidine,CSF,SCnc,0,random
+79710-0,Potassium [Mass/mass] in Hair,Potassium,Hair,MCnt,0,pool_bm25
+798-9,Erythrocytes [#/volume] in Urine by Automated count,Erythrocytes,Urine,NCnc,704,pool_bm25
+799-7,Erythrocytes [#/volume] in Urine by Manual count,Erythrocytes,Urine,NCnc,4358,pool_bm25
+80148-0,Tricyclic antidepressants [Presence] in Serum or Plasma by Screen method,Tricyclic antidepressants,Ser/Plas,PrThr,0,random
+80655-4,Hemoglobin G - Philadelphia/Hemoglobin.total in Blood,Hemoglobin G-Philadelphia/Hemoglobin.total,Bld,MFr,0,pool_bm25
+80656-2,Hemoglobin Hope/Hemoglobin.total in Blood,Hemoglobin Hope/Hemoglobin.total,Bld,MFr,0,pool_bm25
+80657-0,Hemoglobin Q/Hemoglobin.total in Blood,Hemoglobin Q/Hemoglobin.total,Bld,MFr,0,pool_bm25
+8115-8,CD16 cells/cells in Blood,Cells.CD16/Cells,Bld,NFr,3413,random
+81648-8,Clostridium botulinum toxin G botG gene [Presence] in Specimen by NAA with probe detection,Clostridium botulinum toxin G botG gene,XXX,PrThr,0,random
+82588-5,Erythrocytes [#/volume] in Bone marrow by Automated count,Erythrocytes,Bone mar,NCnc,0,pool_bm25
+82721-2,Intravenous lipid emulsion [Mass/volume] in Serum by Nephelometry,Intravenous lipid emulsion,Ser,MCnc,0,random
+82875-6,Campylobacter jejuni IgA Ab [Titer] in Serum,Campylobacter jejuni Ab.IgA,Ser,Titr,0,random
+82883-0,Lysosomal acid lipase [Enzymatic activity/mass] in Leukocytes by 4-MU-palmitate substrate,Lysosomal acid lipase,WBC,CCnt,0,random
+86084-1,Streptococcus pneumoniae Danish serotype 3 IgG Ab [Mass/volume] in Serum by Immunoassay --1st specimen,Streptococcus pneumoniae Danish serotype 3 Ab.IgG^1st specimen,Ser,MCnc,16174,random
+86230-0,"HYDROmorphone [Mass/volume] in Serum, Plasma or Blood by Confirmatory method",HYDROmorphone,Ser/Plas/Bld,MCnc,6207,random
+86894-3,Adalimumab [Mass/volume] in Serum or Plasma by Immunoassay,Adalimumab,Ser/Plas,MCnc,0,random
+87367-9,Erysipelothrix rhusiopathiae Ab/Positive control in Serum by Immunoassay,Erysipelothrix rhusiopathiae Ab/Positive control,Ser,RelRto,0,random
+87392-7,Porcine teschovirus RNA [Presence] in Specimen by NAA with probe detection,Porcine teschovirus RNA,XXX,PrThr,0,random
+87422-2,Glucose [Mass/volume] in Blood --post meal,Glucose^post meal,Bld,MCnc,0,pool_bm25
+87451-1,Sodium [Mass/volume] in Specimen,Sodium,XXX,MCnc,18601,pool_bm25
+87452-9,Sodium [Mass/mass] in Specimen,Sodium,XXX,MCnt,0,pool_bm25
+87454-5,Potassium [Mass/volume] in Specimen,Potassium,XXX,MCnc,0,pool_bm25
+87455-2,Potassium [Mass/mass] in Specimen,Potassium,XXX,MCnt,0,pool_bm25
+87475-0,Chloride [Mass/volume] in Specimen,Chloride,XXX,MCnc,0,pool_bm25
+87476-8,Chloride [Mass/mass] in Specimen,Chloride,XXX,MCnt,0,pool_bm25
+87477-6,Calcium in Specimen,Calcium,XXX,MFr,0,pool_bm25
+87485-9,ADBICA N-pentanoate (synthetic cannabinoid metabolite) [Presence] in Urine by Confirmatory method,ADBICA N-pentanoate,Urine,PrThr,11554,random
+88041-9,little p phenotype [Presence] on Red Blood Cells from Blood product unit,little p phenotype,RBC^BPU,PrThr,0,random
+88192-0,Crimean-Congo hemorrhagic fever virus RNA [Presence] in Serum by NAA with probe detection,Crimean-Congo hemorrhagic fever virus RNA,Ser,PrThr,0,random
+88301-7,Kappa light chains.free [Presence] in 24 hour Urine by Immunofixation,Immunoglobulin light chains.kappa.free,Urine,PrThr,0,random
+88365-2,Glucose [Mass/volume] in Blood --pre-meal,Glucose^pre-meal,Bld,MCnc,0,pool_bm25
+88600-2,Influenza virus A RNA [Presence] in Pericardial fluid by NAA with probe detection,Influenza virus A RNA,Pericard fld,PrThr,0,random
+88719-0,Human coronavirus 229E+HKU1+NL63+OC43 RNA [Presence] in Nasopharynx by NAA with probe detection,Human coronavirus 229E+HKU1+NL63+OC43 RNA,Nph,PrThr,0,random
+89876-7,MTB complex rifAMPin and isoniazid resistance panel by Molecular genetics method,Mycobacterium tuberculosis complex rifAMPin & isoniazid resistance panel,Isolate/Specimen,-,0,random
+90991-1,Protein electrophoresis and M protein isotype panel - Serum or Plasma,Protein electrophoresis & monoclonal protein isotype panel,Ser/Plas,-,8063,pool_bm25
+91112-3,Cholesterol in LDL 1 [Moles/volume] in Serum or Plasma,Cholesterol.in LDL 1,Ser/Plas,SCnc,13452,random
+92731-9,Hepatitis C virus genotype in Serum or Plasma by Sequencing,Hepatitis C virus genotype,Ser/Plas,Type,0,random
+9317-9,Platelet adequacy [Presence] in Blood by Light microscopy,Platelets,Bld,PrThr,189,pool_component
+9318-7,Albumin/Creatinine [Mass Ratio] in Urine,Albumin/Creatinine,Urine,MRto,243,pool_component
+9321-1,Calcium/Creatinine [Mass Ratio] in Urine,Calcium/Creatinine,Urine,MRto,3321,pool_component
+9332-8,Carbon tetrachloride [Mass/volume] in Blood,Carbon tetrachloride,Bld,MCnc,15830,pool_component
+93793-8,Insulin [Units/volume] mean in Serum or Plasma,Insulin,Ser/Plas,ACnc,0,random
+9388-0,Propylthiouracil [Mass/volume] in Serum or Plasma,Propylthiouracil,Ser/Plas,MCnc,0,random
+93925-6,little e Ag [Presence] on Red Blood Cells --post hematopoietic stem cell transplant,little e Ag^post hematopoietic stem cell transplant,RBC,PrThr,0,random
+93930-6,D Ag [Presence] on Red Blood Cells --post hematopoietic stem cell transplant,D Ag^post hematopoietic stem cell transplant,RBC,PrThr,0,random
+93975-1,Urea nitrogen [Mass/volume] in Serum or Plasma --1 hour specimen,Urea nitrogen^1H specimen,Ser/Plas,MCnc,0,pool_bm25
+94240-9,CDH1 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method,CDH1 gene deletion+duplication & full mutation analysis,Bld/Tiss,Find,0,random
+94255-7,Calcium [Mass/volume] in Sweat,Calcium,Sweat,MCnc,0,pool_bm25
+94353-0,Myelopathy autoimmune Ab panel - Cerebrospinal Fluid,Myelopathy autoimmune Ab panel,CSF,-,0,random
+9439-1,Casts [#/area] in Urine sediment by Microscopy high power field,Casts,Urine sed,Naric,2514,random
+94400-9,Protein.monoclonal [Presence] in Serum or Plasma,Protein.monoclonal,Ser/Plas,PrThr,0,pool_bm25
+9443-3,IgM lymphocytes/Lymphocytes in Leukocytes,Lymphocytes.IgM/Lymphocytes,WBC,NFr,18729,random
+94578-2,Clot strength [Length fraction] in Blood by Thromboelastography.platelet thromboxane A2 receptor inhibited,Clot strength,Bld,LenFr,0,random
+9467-2,Calcium [Mass/volume] in Water,Calcium,Water,MCnc,0,pool_bm25
+94753-1,Psychotropic medication pharmacogenomic analysis in Blood or Tissue by Molecular genetics method,Psychotropic medication pharmacogenomic analysis,Bld/Tiss,Find,0,random
+9482-1,Potassium [Mass/volume] in Water,Potassium,Water,MCnc,0,pool_bm25
+94840-6,Chloride [Moles/volume] in Urine from Fetus,Chloride,Urine^Fetus,SCnc,0,pool_bm25
+94841-4,Potassium [Moles/volume] in Urine from Fetus,Potassium,Urine^Fetus,SCnc,0,pool_bm25
+94842-2,Sodium [Moles/volume] in Urine from Fetus,Sodium,Urine^Fetus,SCnc,0,pool_bm25
+9485-4,Sodium [Mass/volume] in Water,Sodium,Water,MCnc,0,pool_bm25
+95151-7,Infectious bronchitis virus RNA [#/volume] (viral load) in Specimen by NAA with probe detection,Infectious bronchitis virus RNA,XXX,NCnc,0,random
+95236-6,Hepatitis B virus DNA [Interpretation] in Serum or Plasma,Hepatitis B virus DNA,Ser/Plas,Imp,0,random
+95637-5,Jamestown canyon virus neutralizing antibody [Titer] in Specimen by Neutralization test,Jamestown Canyon virus Ab.Neut,XXX,Titr,0,random
+95824-9,SARS-CoV-2 (COVID-19) ORF1ab region [Presence] in Saliva (oral fluid) by NAA with probe detection,SARS coronavirus 2 ORF1ab region,Saliva,PrThr,0,random
+95846-2,Cell count and Differential panel - Sputum by Manual count,Cell count & Differential panel,Sputum,-,0,pool_bm25
+96118-5,SARS-CoV-2 (COVID-19) Ab panel - DBS by Immunoassay,SARS coronavirus 2 Ab panel,Bld.dot,-,0,random
+96293-6,Sodium nitrite IgE Ab [Units/volume] in Serum,Sodium nitrite Ab.IgE,Ser,ACnc,0,pool_bm25
+96354-6,Platelets Large [#/volume] in Blood by Automated count,Platelets.large,Bld,NCnc,0,pool_bm25
+96586-3,Alanine aminotransferase [Enzymatic activity/volume] in DBS,Alanine aminotransferase,Bld.dot,CCnc,0,pool_bm25
+96587-1,Aspartate aminotransferase [Enzymatic activity/volume] in DBS,Aspartate aminotransferase,Bld.dot,CCnc,0,pool_bm25
+96650-7,HLA-DPB1 unresolved alleles [Type] in Donor by High resolution,HLA-DPB1 unresolved alleles,Bld/Tiss^Donor,Type,0,random
+9742-8,Chloride [Moles/time] in 24 hour Stool,Chloride,Stool,SRat,14994,pool_component
+97538-3,Carbon dioxide [Partial pressure] in Central venous blood,Carbon dioxide,BldCV,PPres,0,pool_bm25
+9754-3,Coxsackievirus A4 Ab [Titer] in Serum by Complement fixation,Coxsackievirus A4 Ab,Ser,Titr,6892,random
+97545-8,"Carbon dioxide, total [Moles/volume] in Central venous blood",Carbon dioxide,BldCV,SCnc,0,pool_bm25
+9784-0,Ehrlichia chaffeensis IgM Ab [Titer] in Serum,Ehrlichia chaffeensis Ab.IgM,Ser,Titr,5555,random
+97994-8,Platelets Large/Platelets in Blood by Automated count.optical,Platelets.large/Platelets,Bld,NFr,0,pool_bm25
+98029-2,Crystals [type] in Stool by Light microscopy,Crystals,Stool,Prid,0,random
+9835-0,HYDROmorphone [Mass/volume] in Urine,HYDROmorphone,Urine,MCnc,1902,random
+99050-7,Erythrocytes [#/volume] in Bronchoalveolar lavage by Manual count,Erythrocytes,BAL,NCnc,0,pool_bm25
+99095-2,Streptococcus pyogenes DNA [Presence] in Cerebrospinal Fluid by NAA with probe detection,Streptococcus pyogenes DNA,CSF,PrThr,0,random
+99387-3,Carbon monoxide [Moles/volume] in Blood,Carbon monoxide,Bld,SCnc,0,random
+99394-9,Siderocytes [Presence] in Blood or Marrow by Prussian blue stain,Siderocytes,Bld/Bone mar,PrThr,0,random
+99461-6,"Rat epithelium, serum proteins + urine proteins IgG Ab [Mass/volume] in Serum",Rat epithelium+Serum proteins+Urine proteins Ab.IgG,Ser,MCnc,0,pool_bm25
+99477-2,Sheep Sorrel IgG Ab [Mass/volume] in Serum,Rumex acetosella Ab.IgG,Ser,MCnc,0,random
+99598-5,Erythrocytes.dysmorphic/Erythrocytes in Urine by Automated count,Erythrocytes.dysmorphic/Erythrocytes,Urine,NFr,0,pool_bm25
+99599-3,Protein.monoclonal band 1/Protein.total in Urine by Electrophoresis,Protein.monoclonal band 1/Protein.total,Urine,MFr,0,pool_bm25
+99777-5,Erythrocytes [#/volume] in Bronchoalveolar lavage by Automated count,Erythrocytes,BAL,NCnc,0,pool_bm25
+99863-3,Erythrocytes.dysmorphic [Presence] in Urine sediment by Computer assisted method,Erythrocytes.dysmorphic,Urine sed,PrThr,0,random
+99927-6,Erythrocytes [#/area] in Body fluid by Automated count,Erythrocytes,Body fld,Naric,0,pool_bm25
