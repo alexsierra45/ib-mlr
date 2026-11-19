@@ -1,13 +1,15 @@
 """
 Evaluación leave-one-query-out (LOQO) de AdaRank frente a baselines de una sola feature.
 
-Con solo 3 consultas oficiales no hay partición train/test fiable: cada fold entrena
-con 2 consultas y evalúa en la tercera. Los resultados son demostrativos.
+Con pocas consultas no hay partición train/test fiable: cada fold entrena
+con todas menos una y evalúa en la restante. Los resultados son demostrativos.
 
-Uso:  python src/evaluate.py [--extended]
-  --extended   usa data/train_extended.txt (6 consultas -> 6 folds)
+Uso:  python src/evaluate.py [--config official|terms|extended|all]
+  official   data/train.txt           3 consultas x 67 documentos  (3 folds)
+  terms      data/train_terms.txt     3 consultas x 356 documentos (3 folds)
+  extended   data/train_extended.txt  8 consultas x 356 documentos (8 folds)
 
-Escribe results/loqo_<set>.csv, results/coef_<set>.csv y results/ranking_<set>.csv
+Escribe results/loqo_<config>.csv, results/coef_<config>.csv y results/ranking_<config>.csv
 """
 
 import argparse
@@ -26,7 +28,7 @@ sys.path.insert(0, HERE)
 from adarank import AdaRank  # noqa: E402
 from metrics import NDCGScorer  # noqa: E402
 from utils import load_docno  # noqa: E402
-from build_dataset import FEATURES  # noqa: E402
+from build_dataset import FEATURES, CONFIGS  # noqa: E402
 
 KS = (1, 3, 5, 10)
 
@@ -41,10 +43,14 @@ def fit_adarank(X, y, qid):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument('--extended', action='store_true')
+    ap.add_argument('--config', default='all', choices=list(CONFIGS) + ['all'])
     args = ap.parse_args()
-    tag = 'extended' if args.extended else 'official'
-    path = os.path.join(ROOT, 'data', 'train_extended.txt' if args.extended else 'train.txt')
+    for config in (CONFIGS if args.config == 'all' else [args.config]):
+        evaluate(config)
+
+
+def evaluate(tag):
+    path = CONFIGS[tag][2]
 
     X, y, qid = load_svmlight_file(path, query_id=True, n_features=len(FEATURES))
     docno = load_docno(path, letor=True)
@@ -67,7 +73,7 @@ def main():
     res = pd.DataFrame(rows)
     res.to_csv(os.path.join(out_dir, 'loqo_{}.csv'.format(tag)), index=False)
     summary = res.groupby('system', sort=False)[['NDCG@{}'.format(k) for k in KS]].mean()
-    print('LOQO ({} consultas) — media por sistema'.format(len(np.unique(qid))))
+    print('\n=== {}: LOQO ({} consultas, {} pares) — media por sistema'.format(tag, len(np.unique(qid)), len(y)))
     print(summary.round(4).to_string())
 
     # Modelo final con todas las consultas: coeficientes y ranking resultante

@@ -19,7 +19,7 @@ de los índices LETOR \code{1:}\ldots\code{5:}.
 \item Texto en minúsculas y tokenización por secuencias alfanuméricas (\code{[a-z0-9]+}).
 \item Eliminación de una lista corta de palabras vacías (\emph{in, of, or, by, the, for, and, from, to, a}).
 \item Stemming mínimo del plural inglés regular (\emph{cells} $\rightarrow$ \emph{cell}, \emph{leukocytes} $\rightarrow$ \emph{leukocyte}).
-\item El corpus está formado por los 67 \code{long\_common\_name} únicos (no por las 201 filas, que repetirían cada documento tres veces).
+\item El corpus de TF-IDF y BM25 es la colección de documentos \emph{únicos} de cada configuración: los 67 \code{long\_common\_name} del Excel para \code{train.txt} y los 356 de la colección ampliada para \code{train\_terms.txt} y \code{train\_extended.txt}. No se usan las filas consulta--documento, que repetirían cada documento una vez por consulta.
 \end{itemize}
 
 \section*{Features}
@@ -32,7 +32,7 @@ de los índices LETOR \code{1:}\ldots\code{5:}.
 \midrule
 1 & \code{f1\_tfidf\_cosine} & Coseno entre los vectores TF-IDF (normalizados L2) de $q$ y de \code{long\_common\_name}. Es la feature del trabajo inicial, sin el límite \code{max\_features=20} y con la errata de la consulta corregida. & $[0,1]$ \\
 2 & \code{f2\_bm25} & BM25 ($k_1{=}1.2$, $b{=}0.75$) de $q$ sobre \code{long\_common\_name}, dividido por el máximo de la consulta. & $[0,1]$ \\
-3 & \code{f3\_synonym\_overlap} & Fracción de términos de $q$ presentes en el documento (\code{long\_common\_name}, \code{component}, \code{system}, \code{property}), aceptando sinónimos: \emph{white/cells} $\rightarrow$ \emph{leukocytes}, \emph{count} $\rightarrow$ \emph{\#/volume}, \emph{blood} $\rightarrow$ \emph{bld}, \emph{plasma} $\rightarrow$ \emph{plas}. & $[0,1]$ \\
+3 & \code{f3\_synonym\_overlap} & Fracción de términos de $q$ presentes en el documento (\code{long\_common\_name}, \code{component}, \code{system}, \code{property}), aceptando sinónimos: \emph{white/cells} $\rightarrow$ \emph{leukocytes}, \emph{count} $\rightarrow$ \emph{\#/volume}, \emph{blood} $\rightarrow$ \emph{bld}, \emph{plasma} $\rightarrow$ \emph{plas}, \emph{serum} $\rightarrow$ \emph{ser}, \emph{platelets} $\rightarrow$ \emph{platelet/plt}. & $[0,1]$ \\
 4 & \code{f4\_component\_match} & 1 si algún término de analito de la consulta aparece como palabra en \code{component}; 0 en otro caso. & $\{0,1\}$ \\
 5 & \code{f5\_system\_match} & 1 si el término de muestra de la consulta (\emph{bld}, \emph{plas}, \emph{ser}) aparece literalmente en \code{system}; 0 en otro caso. Es binaria y no distingue compatible de incompatible. & $\{0,1\}$ \\
 \bottomrule
@@ -46,7 +46,7 @@ f_1(q,d)=\frac{\mathbf{v}_q\cdot\mathbf{v}_d}{\lVert\mathbf{v}_q\rVert\,\lVert\m
 \mathrm{BM25}(q,d)=\sum_{t\in q}\mathrm{idf}(t)\,\frac{tf_{t,d}\,(k_1+1)}{tf_{t,d}+k_1\left(1-b+b\frac{|d|}{\mathrm{avgdl}}\right)},\qquad
 f_2=\frac{\mathrm{BM25}(q,d)}{\max_{d'}\mathrm{BM25}(q,d')}
 \]
-con $\mathrm{idf}(t)=\ln\!\left(1+\frac{N-n_t+0.5}{n_t+0.5}\right)$, $N=67$.
+con $\mathrm{idf}(t)=\ln\!\left(1+\frac{N-n_t+0.5}{n_t+0.5}\right)$, $N$ = número de documentos de la colección (67 o 356).
 \[
 f_3(q,d)=\frac{1}{|T_q|}\sum_{t\in T_q}\mathbb{1}\big[\{t\}\cup\mathrm{syn}(t)\ \cap\ \mathrm{tokens}(d)\neq\emptyset\big]
 \]
@@ -69,6 +69,20 @@ f_3(q,d)=\frac{1}{|T_q|}\sum_{t\in T_q}\mathbb{1}\big[\{t\}\cup\mathrm{syn}(t)\ 
 
 Cada línea contiene la etiqueta, el \code{qid} (1 = glucose in blood, 2 = bilirubin in plasma, 3 = white blood cells count),
 las features \code{índice:valor} y, en comentario, el código LOINC (\code{docid}). El archivo tiene 201 líneas, agrupadas en 67 por \code{qid}.
-\code{data/train\_extended.txt} añade las consultas 4--6 (402 líneas).
+
+\begin{center}\small
+\begin{tabular}{lll}
+\toprule
+Archivo & Contenido & Líneas \
+\midrule
+\code{data/train.txt} & 3 consultas oficiales $\times$ 67 documentos del Excel (obligatorio) & 201 \
+\code{data/train\_terms.txt} & 3 consultas oficiales $\times$ 356 documentos (más términos) & 1068 \
+\code{data/train\_extended.txt} & 8 consultas $\times$ 356 documentos (más términos y consultas) & 2848 \
+\bottomrule
+\end{tabular}
+\end{center}
+
+Los \code{qid} 4--8 son \emph{platelets in blood}, \emph{creatinine in serum}, \emph{calcium in serum},
+\emph{cholesterol in plasma} y \emph{chloride in blood}.
 
 \end{document}

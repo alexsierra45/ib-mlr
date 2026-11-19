@@ -1,13 +1,17 @@
 % Generado por src/export_tables.py — no editar a mano
-\begin{tabular}{llrrrr}
+\begin{tabular}{lrrrrrr}
 \toprule
-Consulta de test & Sistema & NDCG@1 & NDCG@3 & NDCG@5 & NDCG@10 \\
+& \multicolumn{2}{c}{Oficial (3$\times$67)} & \multicolumn{2}{c}{+ términos (3$\times$356)} & \multicolumn{2}{c}{+ términos y consultas (8$\times$356)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+Consulta de test & AdaR. & $f_1$ & AdaR. & $f_1$ & AdaR. & $f_1$ \\
 \midrule
-glucose in blood & \textbf{AdaRank} & 1.000 & 0.745 & 0.723 & 0.726 \\
-glucose in blood & solo $f_1$ (coseno TF-IDF) & 1.000 & 1.000 & 1.000 & 1.000 \\
-bilirubin in plasma & \textbf{AdaRank} & 1.000 & 1.000 & 1.000 & 1.000 \\
-bilirubin in plasma & solo $f_1$ (coseno TF-IDF) & 1.000 & 1.000 & 1.000 & 1.000 \\
-white blood cells count & \textbf{AdaRank} & 0.000 & 0.569 & 0.666 & 0.666 \\
-white blood cells count & solo $f_1$ (coseno TF-IDF) & 0.000 & 0.569 & 0.666 & 0.666 \\
+glucose in blood & 0.726 & 1.000 & 0.870 & 0.870 & 0.870 & 0.870 \\
+bilirubin in plasma & 1.000 & 1.000 & 0.652 & 0.652 & 0.652 & 0.652 \\
+white blood cells count & 0.666 & 0.666 & 0.355 & 0.355 & 0.355 & 0.355 \\
+platelets in blood$^\dagger$ & -- & -- & -- & -- & 0.652 & 0.652 \\
+creatinine in serum$^\dagger$ & -- & -- & -- & -- & 0.806 & 0.806 \\
+calcium in serum$^\dagger$ & -- & -- & -- & -- & 0.987 & 0.987 \\
+cholesterol in plasma$^\dagger$ & -- & -- & -- & -- & 1.000 & 1.000 \\
+chloride in blood$^\dagger$ & -- & -- & -- & -- & 1.000 & 1.000 \\
 \bottomrule
 \end{tabular}

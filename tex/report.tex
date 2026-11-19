@@ -73,6 +73,21 @@ versión inicial (0--2), se corrigió la errata \emph{bilirrubin} de la consulta
 \caption{Documentos con relevancia $>0$. Los otros 61--63 documentos de cada consulta son \rel{0}.}
 \end{table}
 
+\paragraph{Ampliación (parte opcional).} Ampliamos el dataset en las dos direcciones que propone el enunciado.
+\begin{itemize}[nosep]
+\item \textbf{Más términos.} Añadimos 289 códigos LOINC, buscados por el equipo para cada consulta. Muchos son variantes difíciles: glucosa capilar o en ayunas,
+  fracciones de bilirrubina, proporciones \emph{X cells/Leukocytes}. Recuperamos su \code{loinc\_num} con la API pública de LOINC de la NLM.
+\item \textbf{Más consultas.} Añadimos \emph{platelets in blood} y \emph{creatinine in serum} (con sus términos), y \emph{calcium in serum},
+  \emph{cholesterol in plasma} y \emph{chloride in blood}.
+\end{itemize}
+Como en el Excel, todas las consultas se juzgan contra toda la colección (356 documentos). La regla se extendió para cubrir:
+\begin{itemize}[nosep]
+\item variantes de sangre;
+\item paneles y valores calculados;
+\item registros administrativos.
+\end{itemize}
+Las extensiones no cambian ninguna de las 201 etiquetas oficiales.
+
 \section{Features y formato del training set}
 
 Cada par se describe con cinco features que dependen de la consulta y se calculan \emph{sin} mirar la etiqueta
@@ -85,37 +100,45 @@ Cada par se describe con cinco features que dependen de la consulta y se calcula
 \item $f_5$: el término de muestra aparece en \code{system} (0/1).
 \end{itemize}
 Las codificaciones \code{LabelEncoder} del trabajo inicial se eliminaron. Eran índices alfabéticos, iguales para cualquier consulta,
-y no tienen sentido como rankers débiles. El training set se exporta en formato LETOR (\code{data/train.txt}): 201 líneas
-agrupadas en 67 por \code{qid}, con el código LOINC en comentario. Un script comprueba los recuentos, que el conjunto de códigos es el mismo en cada consulta,
-que las etiquetas están en $\{0,\dots,3\}$, que las features son finitas y 16 casos de referencia.
+y no tienen sentido como rankers débiles. El training set obligatorio se exporta en formato LETOR (\code{data/train.txt}): 201 líneas
+agrupadas en 67 por \code{qid}, con el código LOINC en comentario. Las ampliaciones van en archivos aparte:
+\begin{itemize}[nosep]
+\item \code{train\_terms.txt}: $3\times356$ pares;
+\item \code{train\_extended.txt}: $8\times356$ pares.
+\end{itemize}
+Un script comprueba los recuentos, que la lista de documentos es la misma para cada consulta,
+que las etiquetas están en $\{0,\dots,3\}$, que las features son finitas y 22 casos de referencia.
 
 \input{tables/letor_example.tex}
 
 \section{Verificación, resultados y limitaciones}
 
-Con solo tres consultas no hay partición train/test fiable. Hacemos \textbf{leave-one-query-out}: cada fold entrena con dos consultas y evalúa en la tercera, sin
+Con pocas consultas no hay partición train/test fiable. Hacemos \textbf{leave-one-query-out}: cada fold entrena con todas las consultas menos una y evalúa en la restante, sin
 repartir documentos de una misma consulta entre train y test. Comparamos con cada feature usada sola como ranker.
-Como ampliación opcional, añadimos tres consultas (\emph{calcium in serum}, \emph{cholesterol in plasma},
-\emph{chloride in blood}) etiquetadas con la misma regla sobre los mismos 67 documentos.
 
 \begin{table}[h]
-\centering\small
+\centering\footnotesize
 \input{tables/loqo_results.tex}
-\caption{NDCG medio en leave-one-query-out. $^\dagger$Incluye las consultas adicionales.}
+\caption{NDCG@5 y NDCG@10 medios en leave-one-query-out, en las tres configuraciones (consultas $\times$ documentos).}
 \end{table}
 
-\paragraph{Resultados.} El modelo entrenado con las tres consultas ($\alpha_{f_1}{=}2.82$, $\alpha_{f_3}{=}1.41$) ordena
-perfectamente su propio conjunto: todos los documentos relevantes quedan arriba, en orden de etiqueta. También ordena bien una consulta no vista
-(\emph{cholesterol in plasma}, NDCG@10 = 1.0). En leave-one-query-out, en cambio, AdaRank \emph{no} supera a la mejor feature
-individual. Con dos consultas de entrenamiento elige la feature que mejor ordena esas dos, y esa feature no tiene por qué servir para la tercera.
-Por ejemplo, $f_1$ falla en \emph{white blood cells count} porque la consulta no comparte vocabulario con \emph{Leukocytes}, mientras que $f_3$
-(con sinónimos) acierta. Con seis consultas, AdaRank iguala al mejor baseline (NDCG@10 = 0.944). Esto apunta a que el
-cuello de botella es el número de consultas, no el algoritmo.
+\paragraph{Resultados.} Sobre el training set oficial, el modelo entrenado con las tres consultas ($\alpha_{f_1}{=}2.82$, $\alpha_{f_3}{=}1.41$)
+ordena perfectamente su propio conjunto: todos los documentos relevantes quedan arriba, en orden de etiqueta. En leave-one-query-out, en cambio, AdaRank \emph{no}
+supera a la mejor feature individual. Con dos consultas de entrenamiento elige la feature que mejor ordena esas dos, y esa feature no tiene por qué servir para la tercera.
+Por ejemplo, $f_1$ falla en \emph{white blood cells count} porque la consulta no comparte vocabulario con \emph{Leukocytes}, mientras que $f_3$ (con sinónimos) acierta.
+
+Los términos nuevos hacen la tarea mucho más difícil: el NDCG@10 de AdaRank baja de 0.797 a 0.626. Actúan como \emph{distractores difíciles}.
+En \emph{white blood cells count}, las proporciones \emph{Plasma cells/Leukocytes in Blood} (relevancia 1) contienen literalmente
+\emph{cells} y \emph{blood}, y desplazan a \emph{Leukocytes [\#/volume] in Blood} (relevancia 3) hasta el puesto 54. Las features léxicas no
+distinguen los matices que separan un 3 de un 2 o de un 1 (condición, muestra, cociente), y AdaRank acaba usando solo $f_1$ en ambas
+configuraciones ampliadas. Con ocho consultas, el modelo generaliza bien a consultas con pocos relevantes (\emph{cholesterol} y \emph{chloride},
+NDCG@10 = 1.0), pero no a las de muchos relevantes graduados. La conclusión doble es que hacen falta más consultas \emph{y} features más
+expresivas, por ejemplo estructurales o semánticas.
 
 \paragraph{Limitaciones.}
 \begin{itemize}[nosep]
-\item Tres consultas son muy pocas para estimar la generalización; los resultados son demostrativos.
-\item Las etiquetas son muy dispersas: 4--6 documentos relevantes de 67.
+\item Ocho consultas siguen siendo pocas para estimar la generalización; los resultados son demostrativos.
+\item En el Excel las etiquetas son muy dispersas: 4--6 documentos relevantes de 67.
 \item $f_4$ y $f_5$ se inspiran en las mismas columnas que la regla de etiquetado, aunque son más gruesas.
 \item Las features binarias producen empates, y NDCG resuelve los empates según el orden de entrada.
 \item En la implementación de AdaRank \cite{adarankgit} corregimos una división por cero: si un ranker débil es perfecto en todas las
@@ -128,7 +151,7 @@ cuello de botella es el número de consultas, no el algoritmo.
 \item \textbf{[Integrante 1]}: implementación de AdaRank y métricas, primera versión del dataset (0--2) y notebook inicial.
 \item \textbf{[Integrante 2]}: escala de relevancia 0--3 y guía de etiquetado, features, exportación LETOR,
   evaluación leave-one-query-out y documentación.
-\item \textbf{[Integrante 3]}: [completar].
+\item \textbf{[Integrante 3]}: ampliación del dataset con términos nuevos y las consultas \emph{platelets in blood} y \emph{creatinine in serum}.
 \end{itemize}
 
 \begin{thebibliography}{9}\small\setlength{\itemsep}{0pt}

@@ -97,6 +97,18 @@
   \resizebox{\linewidth}{!}{\input{tables/positive_labels.tex}}
 \end{frame}
 
+\begin{frame}{Ampliación: más términos y más consultas}
+  \begin{itemize}
+    \item \textbf{+289 términos LOINC}, elegidos por el equipo, con su código recuperado de la API de la NLM. La colección pasa de 67 a \textbf{356} documentos.
+    \item \textbf{+5 consultas}: \emph{platelets in blood} y \emph{creatinine in serum} (con sus términos), más \emph{calcium}, \emph{cholesterol} y \emph{chloride}.
+    \item Todas las consultas se juzgan contra toda la colección, como en el Excel.
+    \item La regla se extiende a variantes de sangre, paneles, valores calculados y registros administrativos (estos últimos reciben \rel{0}).
+      Las 201 etiquetas oficiales no cambian.
+  \end{itemize}
+  \centering\tiny
+  \resizebox{!}{0.38\textheight}{\input{tables/extended_examples.tex}}
+\end{frame}
+
 \begin{frame}[fragile]{Features (sin fuga de etiquetas)}
   \begin{tabular}{>{\bfseries}l l}
     \toprule
@@ -110,7 +122,7 @@
   \vspace{6pt}
   \begin{itemize}\small
     \item Se eliminaron las codificaciones \code{LabelEncoder}: son índices alfabéticos que no dependen de la consulta.
-    \item Formato LETOR, 201 líneas, 67 por \code{qid}:
+    \item LETOR: \code{train.txt} (3$\times$67), \code{train\_terms.txt} (3$\times$356), \code{train\_extended.txt} (8$\times$356).
   \end{itemize}
   \vspace{-4pt}
   \begin{lstlisting}
@@ -126,18 +138,28 @@
 
 \begin{frame}{Evaluación leave-one-query-out}
   \centering\scriptsize
-  \input{tables/loqo_results.tex}
+  \resizebox{\linewidth}{!}{\input{tables/loqo_results.tex}}
   \vspace{4pt}
   \begin{itemize}\small
-    \item Con 2 consultas de entrenamiento, AdaRank elige la feature que mejor ordena esas dos y no generaliza mejor que la mejor feature sola.
-    \item Con 6 consultas iguala al mejor baseline. El cuello de botella es el número de consultas.
+    \item Oficial: con 2 consultas de entrenamiento, AdaRank elige la feature que mejor ordena esas dos y no supera a la mejor feature sola.
+    \item Con términos nuevos la tarea es mucho más difícil, y AdaRank se queda solo con $f_1$.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Los términos nuevos como distractores difíciles}
+  \centering\scriptsize
+  \input{tables/ranking_terms_wbc.tex}
+  \vspace{6pt}
+  \begin{itemize}\small
+    \item \emph{Plasma cells/Leukocytes in Blood} contiene literalmente \emph{cells} y \emph{blood}; el recuento total de leucocitos, no.
+    \item Las features léxicas no distinguen los matices que separan un 3 de un 1. Hacen falta features más expresivas.
   \end{itemize}
 \end{frame}
 
 \begin{frame}{Limitaciones y conclusiones}
   \begin{itemize}
-    \item Con 3 consultas los resultados son demostrativos; repetir los 67 documentos no crea 201 consultas.
-    \item Etiquetas dispersas: 4--6 relevantes de 67.
+    \item Con 3--8 consultas los resultados son demostrativos; repetir documentos no crea consultas nuevas.
+    \item Hacen falta más consultas \emph{y} features más expresivas (estructurales, semánticas) para los términos difíciles.
     \item $f_4$ y $f_5$ se parecen a la regla de etiquetado, aunque son más gruesas.
     \item Corregimos un bug de AdaRank: $\alpha=\infty$ cuando un ranker débil es perfecto.
     \item[$\Rightarrow$] Entregamos un training set listwise reproducible: regla 0--3 documentada, features, LETOR,

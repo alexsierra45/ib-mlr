@@ -10,19 +10,29 @@
 \begin{document}
 \maketitle
 
-\section{Objetivo}
+\section{Objetivo y colección de documentos}
 
 Asignar a cada par consulta--documento una etiqueta de relevancia ordinal en $\{0,1,2,3\}$, de forma
-\textbf{reproducible y justificada}. Los documentos son los 67 códigos LOINC del libro
-\code{loinc\_dataset-v2.xlsx}, que aparecen (en distinto orden) en las tres hojas, una por consulta:
-\emph{glucose in blood}, \emph{bilirubin in plasma} y \emph{white blood cells count}. En total se juzgan
-$3 \times 67 = 201$ pares.
+\textbf{reproducible y justificada}.
 
-El orden de las filas en las hojas \textbf{no} se interpreta como etiqueta. La misma prueba puede ser
-relevante para una consulta e irrelevante para otra, por lo que cada par se juzga de forma independiente.
+\begin{itemize}
+\item \textbf{Parte obligatoria.} Hay tres consultas: \emph{glucose in blood}, \emph{bilirubin in plasma} y
+  \emph{white blood cells count}. Cada una se juzga contra los 67 códigos LOINC del libro \code{loinc\_dataset-v2.xlsx},
+  que son los mismos en las tres hojas aunque en distinto orden. En total son $3\times67=201$ pares.
+\item \textbf{Ampliación con términos.} Se añaden 289 códigos LOINC nuevos (\code{data/extended\_terms.csv}), seleccionados por el
+  equipo para las consultas oficiales y para dos consultas nuevas. La colección pasa a tener 356 documentos.
+\item \textbf{Ampliación con consultas.} Se añaden cinco consultas más.
+  \begin{itemize}
+  \item \emph{platelets in blood} y \emph{creatinine in serum} llegan con sus propios términos.
+  \item \emph{calcium in serum}, \emph{cholesterol in plasma} y \emph{chloride in blood} se plantean sobre los documentos del Excel.
+  \end{itemize}
+\end{itemize}
 
-La regla está implementada en \code{src/queries.py} y se aplica con \code{src/label.py}, que genera
-\code{data/relevance\_labels.csv} con una justificación (\code{rationale}) por cada par.
+Igual que en el Excel, donde las tres consultas comparten los mismos 67 documentos, \textbf{todas las consultas se juzgan contra
+toda la colección}. Por ejemplo, los términos de creatinina también son candidatos (irrelevantes) para \emph{glucose in blood}.
+
+El orden de las filas en las hojas \textbf{no} se interpreta como etiqueta. La regla está implementada en \code{src/queries.py} y se aplica con
+\code{src/label.py}, que genera \code{data/relevance\_labels.csv} con una justificación (\code{rationale}) por cada par.
 
 \section{Escala}
 
@@ -33,7 +43,7 @@ Etiqueta & Nombre & Significado \\
 \midrule
 \rel{3} & Muy relevante & Mide directamente el analito pedido, en la muestra pedida y con una medida adecuada. \\
 \rel{2} & Relevante con un matiz & Satisface la consulta salvo por \emph{una} desviación: muestra compatible pero distinta, fracción del analito o condición especial. \\
-\rel{1} & Relación parcial & Comparte el analito, pero no satisface la consulta (muestra incompatible, medida cualitativa, subpoblación expresada como porcentaje\ldots). \\
+\rel{1} & Relación parcial & Comparte el analito, pero no satisface la consulta (muestra incompatible, medida cualitativa, cociente, prueba funcional\ldots). \\
 \rel{0} & Irrelevante & El analito es otro, aunque comparta palabras con la consulta (p.\,ej.\ \emph{Blood product type}). \\
 \bottomrule
 \end{tabularx}
@@ -41,21 +51,26 @@ Etiqueta & Nombre & Significado \\
 
 \section{Las tres dimensiones del juicio}
 
-Cada par se evalúa en tres dimensiones, que se leen de las columnas LOINC del documento:
-
 \begin{description}
 \item[Analito] (columna \code{component}).
-  \emph{Exacto}: es el concepto pedido.
-  \emph{Relacionado}: es una fracción o subpoblación del concepto pedido.
-  \emph{Ninguno}: es otro analito.
+  \begin{itemize}
+  \item \emph{Exacto}: es el concepto pedido.
+  \item \emph{Relacionado}: es una fracción, una subpoblación, un índice o una prueba derivada del concepto pedido.
+  \item \emph{Ninguno}: es otro analito, o un registro administrativo (transfusiones, protocolos, conjuntos de códigos).
+  \end{itemize}
 \item[Muestra] (columna \code{system}).
-  \emph{Exacta}: es la muestra pedida, o un sistema LOINC que la incluye.
-  \emph{Compatible}: es una muestra distinta pero clínicamente intercambiable.
-  \emph{Incompatible}: cualquier otra muestra (orina, líquidos biológicos, muestra no especificada \code{XXX}\ldots).
-\item[Medida/condición] (columna \code{property} y sufijo \code{\^{}} de \code{component}).
-  \emph{Adecuada}: la propiedad es la que pide la consulta y no hay condiciones especiales.
-  \emph{Desviada}: la propiedad no es la pedida (cualitativa \code{PrThr}/\code{ACnc}, fracción \code{NFr} cuando se pide un recuento\ldots),
-  o el componente lleva una condición tras \code{\^{}} (ayuno, post-carga de glucosa, corrección por albúmina\ldots).
+  \begin{itemize}
+  \item \emph{Exacta}: es la muestra pedida, o un sistema LOINC que la incluye.
+  \item \emph{Compatible}: es una muestra distinta pero cercana.
+  \item \emph{Incompatible}: cualquier otra muestra (orina, líquidos biológicos, \code{XXX}, combinaciones como \code{Urine+Ser/Plas}\ldots).
+  \end{itemize}
+\item[Medida/condición] (\code{property}, \code{component} y nombre). Es \emph{desviada} si se da alguna de estas condiciones:
+  \begin{itemize}
+  \item la propiedad no es la pedida (cualitativa \code{PrThr}, fracción \code{NFr}, cocientes \code{MRto}/\code{SRto}\ldots);
+  \item el componente lleva una condición tras \code{\^{}} (ayuno, post-carga, basal, pre-diálisis\ldots);
+  \item es un \emph{panel} de varias pruebas;
+  \item es un valor derivado, no medido (\emph{Estimated from}, \emph{by calculation}).
+  \end{itemize}
 \end{description}
 
 \section{Regla de cálculo}
@@ -70,36 +85,64 @@ Cada par se evalúa en tres dimensiones, que se leen de las columnas LOINC del d
 
 \section{Criterios por consulta}
 
+Grupos de muestras usados en la tabla:
+\begin{itemize}
+\item \emph{Sangre}: \code{Bld}, \code{BldA} (arterial), \code{BldV} (venosa), \code{BldC} (capilar), \code{BldMV} (venosa mixta) y \code{Ser/Plas/Bld}.
+\item \emph{Sangre especial}: \code{BldCo} (cordón), \code{Bld\^{}Fetus} (feto) y \code{Bld.dot} (gota seca).
+\end{itemize}
+Las propiedades cuantitativas son \code{MCnc}, \code{SCnc}, \code{MSCnc} y \code{\{Measurement\}}.
+
 \begin{center}
 \small
-\begin{tabularx}{\linewidth}{>{\raggedright}p{2.6cm} >{\raggedright}X >{\raggedright}p{2.6cm} >{\raggedright}p{2.2cm} >{\raggedright\arraybackslash}p{1.9cm}}
+\begin{tabularx}{\linewidth}{>{\raggedright}p{2.3cm} >{\raggedright}X >{\raggedright}p{2.2cm} >{\raggedright}p{2.4cm} >{\raggedright\arraybackslash}p{1.6cm}}
 \toprule
 Consulta & Analito exacto / relacionado & Muestra exacta & Muestra compatible & Propiedad adecuada \\
 \midrule
-glucose in blood & \code{Glucose} (con o sin condición \code{\^{}}) / --- & \code{Bld}, \code{BldC}, \code{Ser/Plas/Bld} & \code{Ser/Plas}, \code{Ser}, \code{Plas} & \code{MCnc}, \code{SCnc}, \code{MSCnc} \\
-bilirubin in plasma & \code{Bilirubin} (total) / fracciones directa (glucuronidada) e indirecta (no glucuronidada) & \code{Plas}, \code{Ser/Plas} & \code{Ser}, \code{Bld} & \code{MCnc}, \code{SCnc}, \code{MSCnc} \\
-white blood cells count & \code{Leukocytes} / subpoblaciones: \code{Lymphocytes}, \code{Monocytes}, neutrófilos\ldots & \code{Bld} & --- & \code{NCnc} (recuento por volumen) \\
+glucose in blood & \code{Glucose} / glucosa media estimada (HbA1c) & sangre & \code{Ser/Plas}, \code{Ser}, \code{Plas}, sangre especial & cuantitativa \\
+bilirubin in plasma & \code{Bilirubin} (total) / fracciones directa, indirecta y delta; paneles; aclaramiento & \code{Plas}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Ser}, \code{Bld} & cuantitativa \\
+white blood cells count & \code{Leukocytes} / subpoblaciones (linfocitos, monocitos\ldots) y proporciones \emph{X cells/Leukocytes} & sangre (sin \code{Ser/Plas/Bld}) & sangre especial & \code{NCnc} \\
+\midrule
+platelets in blood$^\dagger$ & \code{Platelets} / subtipos (large, giant, reticulated), índices (volumen medio, distribución) y pruebas funcionales (agregación) & sangre (sin \code{Ser/Plas/Bld}) & sangre especial & \code{NCnc} \\
+creatinine in serum$^\dagger$ & \code{Creatinine} / cocientes con creatinina, aclaramiento, paneles & \code{Ser}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Plas}, \code{Bld} & cuantitativa \\
+calcium in serum$^\dagger$ & \code{Calcium} / calcio iónico & \code{Ser}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Plas}, \code{Bld} & cuantitativa \\
+cholesterol in plasma$^\dagger$ & \code{Cholesterol} / fracciones (HDL\ldots) & \code{Plas}, \code{Ser/Plas}, \code{Ser/Plas/Bld} & \code{Ser}, \code{Bld} & cuantitativa \\
+chloride in blood$^\dagger$ & \code{Chloride} / --- & sangre & \code{Ser/Plas}, \code{Ser}, \code{Plas}, sangre especial & cuantitativa \\
 \bottomrule
 \end{tabularx}
 \end{center}
+{\small $^\dagger$Consultas de la parte opcional.}
 
 \subsection*{Decisiones de diseño}
 
 \begin{itemize}
 \item \textbf{Suero/plasma frente a sangre.} \code{Ser/Plas} se considera una muestra \emph{compatible pero distinta} de
-  \code{Bld}: el suero y el plasma son fracciones de la sangre y la glucemia se mide habitualmente en ellos, pero no son
-  sangre total. Por eso \emph{Glucose [Moles/volume] in Serum or Plasma} recibe \rel{2} para \emph{glucose in blood}. De forma simétrica,
-  \code{Bld} es compatible pero distinta para \emph{bilirubin in plasma}. \code{Ser/Plas/Bld} incluye explícitamente la sangre, así que es exacta.
+  \code{Bld}. El suero y el plasma son fracciones de la sangre y la glucemia se mide habitualmente en ellos, pero no son
+  sangre total. Por eso \emph{Glucose [Moles/volume] in Serum or Plasma} recibe \rel{2} para \emph{glucose in blood}.
+  De forma simétrica, \code{Bld} es compatible pero distinta para \emph{bilirubin in plasma}.
+\item \textbf{Variantes de sangre.} La sangre arterial, venosa y capilar es \emph{sangre}, así que la muestra es exacta. En cambio, la sangre de cordón,
+  la de feto y la gota seca corresponden a una población o un formato especial, por lo que la muestra es compatible.
 \item \textbf{Bilirrubina total frente a fracciones.} Una consulta sin fracción (\emph{bilirubin}) se interpreta como bilirrubina total.
-  La directa y la indirecta son fracciones (analito relacionado, base 2).
-\item \textbf{WBC = white blood cells = leukocytes.} El recuento total es \code{Leukocytes [\#/volume]}. Los recuentos de
-  subpoblaciones (linfocitos, monocitos) son analito relacionado (\rel{2}). Un \emph{porcentaje} de una subpoblación
-  (\code{Lymphocytes/100 leukocytes}, \code{NFr}) no es un recuento, por lo que baja a \rel{1}.
-\item \textbf{Condiciones especiales.} La glucosa en ayunas o tras una sobrecarga oral mide el mismo analito, pero responde a una
-  pregunta clínica distinta (prueba funcional). Por eso cuenta como medida desviada.
-\item \textbf{Coincidencias léxicas engañosas.} \emph{Blood product type}, \emph{Blood group antibody screen}, \emph{ABO group in Blood}\ldots{}
-  contienen \emph{blood}, pero su analito no es glucosa ni leucocitos, así que reciben \rel{0}.
-  \emph{Calcium bilirubinate/Total in Stone} describe la composición de un cálculo biliar, no la bilirrubina circulante, así que recibe \rel{0}.
+  La directa (conjugada), la indirecta y la delta son fracciones.
+\item \textbf{WBC = white blood cells = leukocytes.} El recuento total es \code{Leukocytes [\#/volume]}.
+  \begin{itemize}
+  \item Los recuentos de subpoblaciones (linfocitos, monocitos) reciben \rel{2}.
+  \item Las \emph{proporciones} respecto a leucocitos (\code{Lymphocytes/100 leukocytes}, \emph{Sezary cells/Leukocytes}\ldots, \code{NFr}) no son un
+    recuento, por lo que bajan a \rel{1}.
+  \end{itemize}
+\item \textbf{Plaquetas.} La consulta no dice ``count'', pero en sangre la medida estándar de plaquetas es el recuento por volumen.
+  El volumen medio plaquetario o la presencia de plaquetas son el mismo analito con otra propiedad, así que reciben \rel{2}.
+  La agregación o la anchura de distribución son pruebas derivadas, así que reciben \rel{1}.
+\item \textbf{Condiciones especiales.} La glucosa en ayunas, post-carga o basal, y la creatinina pre/post-diálisis o tras una prueba, miden el mismo
+  analito pero responden a una pregunta clínica distinta: medida desviada.
+\item \textbf{Valores derivados y paneles.} Un valor estimado o calculado no es una medida directa, y un panel agrupa varias pruebas: en los dos casos la medida es desviada.
+\item \textbf{Registros administrativos.} Las transfusiones de concentrados de plaquetas, los protocolos PhenX y los \emph{value sets} HEDIS no son pruebas de laboratorio:
+  reciben \rel{0}, aunque su nombre contenga el analito.
+\item \textbf{Coincidencias léxicas engañosas.}
+  \begin{itemize}
+  \item \emph{Blood product type} y \emph{Blood glucose monitor attachment} contienen \emph{blood} o \emph{glucose}, pero su analito es otro: \rel{0}.
+  \item \emph{Calcium bilirubinate/Total in Stone} describe la composición de un cálculo biliar: \rel{0}.
+  \end{itemize}
+\item \textbf{Códigos obsoletos} (\emph{Deprecated}). Se juzga el contenido de la prueba, no su estado en LOINC.
 \item \textbf{Empates.} Documentos con la misma etiqueta pueden empatar: no se impone un orden artificial entre ellos.
 \end{itemize}
 
@@ -108,21 +151,27 @@ white blood cells count & \code{Leukocytes} / subpoblaciones: \code{Lymphocytes}
 \begin{table}[h]
 \centering
 \input{tables/label_distribution.tex}
-\caption{Distribución de etiquetas por consulta. $^\dagger$Consultas adicionales (parte opcional),
-etiquetadas con la misma regla sobre los mismos 67 documentos.}
+\caption{Distribución de etiquetas por consulta, primero sobre los 67 documentos del Excel y después sobre la colección ampliada.
+$^\dagger$Consultas de la parte opcional.}
 \end{table}
 
 \begin{table}[h]
 \centering
 \footnotesize
 \input{tables/positive_labels.tex}
-\caption{Todos los documentos con relevancia mayor que 0 en las consultas oficiales. El resto de documentos de cada
-consulta (61--63) son \rel{0} porque su analito es distinto.}
+\caption{Documentos del Excel con relevancia mayor que 0 en las consultas oficiales. El resto (61--63 por consulta) son \rel{0}.}
+\end{table}
+
+\begin{table}[h]
+\centering
+\footnotesize
+\input{tables/extended_examples.tex}
+\caption{Ejemplos de etiquetado de términos nuevos, con las tres dimensiones del juicio.}
 \end{table}
 
 \section{Revisión manual y overrides}
 
-La regla es determinista, pero las 201 justificaciones se revisan a mano. Si un juicio de la regla se considera
+La regla es determinista, pero las justificaciones se revisan a mano. Si un juicio de la regla se considera
 incorrecto, se añade una fila a \code{data/overrides.csv} (\code{qid, loinc\_num, relevance, justification}).
 \code{src/label.py} aplica el override y deja constancia en el \code{rationale}
 (\code{OVERRIDE a -> b: motivo}). En la versión actual \textbf{no hay overrides}. Cualquier override futuro
@@ -136,7 +185,9 @@ además de pasar a cuatro niveles, cambia el juicio en estos casos:
 \item \emph{Glucose in Serum or Plasma}: empataba con la glucosa en orina (1) y ahora queda por encima (\rel{2} frente a \rel{1}).
 \item \emph{Lymphocytes/100 leukocytes}: empataba con el recuento total de leucocitos (2) y ahora es \rel{1} (porcentaje, no recuento).
 \item \emph{Monocytes [\#/volume]}: estaba por debajo de \emph{Lymphocytes [\#/volume]} y ahora ambos son \rel{2} (subpoblaciones).
-\item Se corrige la errata \emph{bilirrubin} $\rightarrow$ \emph{bilirubin} en el texto de la consulta.
 \end{itemize}
+Además, se corrigió la errata \emph{bilirrubin} $\rightarrow$ \emph{bilirubin} en el texto de la consulta.
+Las extensiones de la regla para los términos nuevos (variantes de sangre, paneles, valores derivados,
+registros administrativos) \textbf{no cambian ninguna} de las 201 etiquetas oficiales; lo comprueba \code{src/build\_dataset.py}.
 
 \end{document}
