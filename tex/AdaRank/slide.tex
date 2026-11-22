@@ -1,0 +1,216 @@
+\documentclass{beamer}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{ctex}
+\UseRawInputEncoding
+
+% Cannot enable in Xelatex
+\usepackage{pgfpages}
+% \setbeameroption{hide notes} % Only slides
+% \setbeameroption{show only notes} % Only notes
+% \setbeameroption{show notes on second screen}
+
+% other packages
+\usepackage{latexsym,amsmath,xcolor,multicol,booktabs,calligra}
+\usepackage{graphicx,listings,stackengine}
+\usepackage{natbib}
+
+%% Enable only in Xelatex
+% \usepackage{pstricks}
+
+\author{XXX}
+\title{MLRanking Assignment}
+\subtitle{AdaRank}
+\institute [ETSIINF, UPM] {Escuelta Técnica Superior de Ingenieros Informáticos\\Universidad Politécnica de Madrid}
+%\date{\today}
+\usepackage{YTU}
+
+% defs
+\def\cmd#1{\texttt{\color{red}\footnotesize $\backslash$#1}}
+\def\env#1{\texttt{\color{blue}\footnotesize #1}}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{halfgray}{gray}{0.55}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    keywordstyle=\bfseries\color{deepblue},
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    numbers=left,
+    numberstyle=\small\color{halfgray},
+    rulesepcolor=\color{red!20!green!20!blue!20},
+    frame=shadowbox,
+}
+
+
+\begin{document}
+
+\begin{frame}
+    \titlepage
+    
+    
+    \begin{note}
+        {Introduce your self}
+    \end{note}
+
+\end{frame}
+
+\begin{frame}
+    \tableofcontents[sectionstyle=show,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+\end{frame}
+
+
+\section{Introduction}
+
+\begin{frame}{Original Template}
+    \begin{itemize}%[<+-| alert@+>] % 当然，除了alert，手动在里面插 \pause 也行
+        \item Modify from this theme \cite{origin}
+        \item Overleaf  \url{https://www.overleaf.com/latex/templates/thu-beamer-theme/vwnqmzndvwyb}
+        \item GitHub Page \url{https://github.com/Trinkle23897/THU-Beamer-Theme}
+    \end{itemize}
+    
+    \note {Write your notes.\\}
+    \begin{note}
+        {Write your notes here}
+    \end{note}
+\end{frame}
+
+\section{Estado del Arte}
+
+% \subsection{Beamer Subsection}
+
+\begin{frame}{Recuperación de la información (IR)}
+    \begin{itemize}
+        \item \textbf{Problema:} crear una función (modelo de \textit{ranking}) que pueda ordenar los documentos relevantes dada una consulta.
+        \item Cuando los modelos son más sofisticados y a mayor disponibilidad de datos, el ajuste de parámetros y entrenamiento se vuelve un \textbf{desafío}.
+        \item BM25, Ranking SVM, RankBoost.
+    \end{itemize}
+
+    \note {Write your notes.\\}
+    \begin{note}
+        {The key problem for document retrieval is ranking, specifically, how to create the ranking model (function) that can sort documents
+        based on their relevance to the given query.
+        
+        It is a common practice in IR to tune the parameters of a ranking model using some labeled data and one performance measure [1]. For example, the state-of-the-art methods of BM25 [24] and LMIR (Language Models for Information Retrieval) [18, 22] all have parameters to tune. As the ranking models become more sophisticated (more features are used) and more labeled data become available, how to tune or train
+        ranking models turns out to be a challenging issue.}
+    \end{note}
+\end{frame}
+
+\begin{frame}{Aprendizaje automático (ML)}
+    \begin{itemize}
+        \item \textbf{\textit{Learning to rank}} crear una función que asigna puntuaciones a las instancias (documentos) y luego clasificarlas.
+        \item \textbf{\textit{Boosting}} técnica para mejorar el rendimiento de los algoritmos de aprendizaje automático.
+        \item \textbf{\textit{AdaBoost}} algoritmo que construye un modelo lineal de ‘clasificadores débiles’.
+        \item \textbf{\textit{AdaRank}} método de \textit{boosting} desarrollado para ranking en IR.
+    \end{itemize}
+
+    \note {Write your notes.\\}
+    \begin{note}
+        {Learning to rank is to automatically create a ranking function that assigns scores to instances and then rank the instances by using the scores. Several approaches have been proposed to tackle the problem. One major approach to learning to rank is that of transforming it into binary classification on instance pairs. This ‘pair-wise’ approach fits well with information retrieval and thus is widely used in IR.
+
+        Boosting is a general technique for improving the accuracies of machine learning algorithms. The basic idea of boosting is to repeatedly construct ‘weak learners’ by re-weighting training data and form an ensemble of weak learners such that the total performance of the ensemble is ‘boosted’. 
+        
+        AdaBoost is an algorithm that ingeniously constructs a linear model by minimizing the ‘exponential loss function’ with respect to the training data [26]. Our work in this paper can be viewed as a boosting method developed for ranking, particularly for ranking in IR.}
+    \end{note}
+\end{frame}
+
+\section{AdaRank}
+
+\begin{frame}{\textit{Framework} general}
+    \begin{itemize}%[<+-| alert@+>] % 当然，除了alert，手动在里面插 \pause 也行
+        \item \textbf{Recuperación (prueba)} dada una consulta, el sistema retorna una lista de documentos relevantes.
+        \item \textbf{Aprendizaje (entrenamiento)} construir una función que consiga los mejores resultados de clasificación al minimizar la función de pérdida.
+        \item El modelo AdaRank se define como una combinación lineal de "clasificadores débiles".
+        \item Utiliza medidas de desempeño de IR.
+    \end{itemize}
+    
+    \note {Write your notes.\\}
+    \begin{note}
+        {In retrieval (testing), given a query the system returns a ranking list of documents in descending order of the relevance scores. The relevance scores are calculated with a ranking function (model). In learning (training), a number of queries and their corresponding retrieved documents are given. Furthermore, the relevance levels of the documents with respect to the queries are also provided. The relevance levels are represented as ranks (i.e., categories in a total order). The objective of learning is to construct a ranking function which achieves the best results in ranking of the training data in the sense of minimization of a loss function. Ideally the loss function is defined on the basis of the performance measure used in testing.
+
+        The objective of learning is to create a ranking function, such that for each query the elements in its corresponding document list can be assigned relevance scores using the function and then be ranked according to the scores.
+        
+        The learning process turns out to be that of minimizing the loss function which represents the disagreement between the permutation π(qi, di, f) and the list of ranks yi, for all of the queries.}
+    \end{note}
+\end{frame}
+
+\begin{frame}{Algoritmo}
+    \begin{itemize}
+        \item Year 1
+        \item Year 2
+        \item Year 3
+        \item ...
+    \end{itemize}
+
+    \note {Write your notes.\\}
+    \begin{note}
+        {}
+    \end{note}
+\end{frame}
+
+\section{Ventajas y diferencias}
+\begin{frame}{Ventajas}
+    \begin{itemize}
+        \item Puede incorporar cualquier \textbf{medida de desempeño} de IR.
+        \item El proceso de aprendizaje es más \textbf{eficiente}.
+        \item Las instancias corresponden a \textbf{consultas}, no a pares de documentos.
+        \item No depende del número de documentos.
+    \end{itemize}
+
+    \note {Write your notes.\\}
+    \begin{note}
+        {AdaRank has several other advantages when compared with the existing learning to rank methods such as Ranking SVM, RankBoost, and RankNet. First, AdaRank can incorporate any performance measure, provided that the measure is query based and in the range of [−1, +1]. Notice that the major IR measures meet this requirement. In contrast the existing methods only minimize loss functions that are loosely related to the IR measures [16]. 
+
+        Second, the learning process of AdaRank is more efficient than those of the existing learning algorithms. The time complexity of
+        AdaRank is of order O((k+T )·m·n log n), where k denotes the number of features, T the number of rounds, m the number of queries in training data, and n is the maximum number of documents for queries in training data.
+        
+        Third, AdaRank employs a more reasonable framework for performing the ranking task than the existing methods. Specifically in AdaRank the instances correspond to queries, while in the existing methods the instances correspond to document pairs. As a result, AdaRank does not have the following shortcomings that plague the existing methods. (a) The existing methods have to make a strong assumption that the document pairs from the same query are independently distributed. In reality, this is clearly not the case and this problem does not exist for AdaRank. (b) Ranking the most relevant documents on the tops of document lists is crucial for document retrieval. The existing methods cannot focus on the training on the tops, as indicated in [4]. Several methods for rectifying the problem have been proposed (e.g., [4]), however, they do not seem to fundamentally solve the problem. In contrast, AdaRank can naturally focus on training on the tops of document lists, because the performance measures used favor rankings for which relevant documents are on the tops. (c) In the existing methods, the numbers of document pairs vary from query to query, resulting in creating models biased toward queries with more document pairs, as pointed out in [4]. AdaRank does not have this drawback, because it treats queries rather than document pairs as basic units in learning}
+    \end{note}
+\end{frame}
+
+\begin{frame}{Diferencias con \textit{AdaBoost}}
+    \begin{itemize}
+        \item AdaRank se desarrolló en específico para ranking en IR. AdaBoost para problemas de clasificación.
+        \item AdaRank emplea medidas de desempeño de IR. AdaBoost una medida específica de clasificación.
+        \item AdaRank utiliza las consultas, sus listas de documentos y niveles de relevancia. AdaBoost vectores de características y etiquetas de clase.
+        \item AdaRank calcula la actualización de pesos de acuerdo al rendimiento del modelo. AdaBoost de acuerdo al rendimiento de sus "clasificadores débiles"
+    \end{itemize}
+
+    \note {Write your notes.\\}
+    \begin{note}
+        {First, the types of instances are different. AdaRank makes use of queries and their corresponding document lists as instances. The labels in training data are lists of ranks (relevance levels). AdaBoost makes use of feature vectors as instances. The labels in training data are simply +1 and −1. Second, the performance measures are different. In AdaRank, the performance measure is a generic measure, defined on the document list and the rank list of a query. In AdaBoost the corresponding performance measure is a specific measure for binary classification, also referred to as ‘margin’ [25]. Third, the ways of updating weights are also different. In AdaBoost, the distribution of weights on training instances is calculated according to the current distribution and the performance of the current weak learner. In AdaRank, in contrast, it is calculated according to the performance of the ranking model created so far}
+    \end{note}
+\end{frame}
+
+\section{Resultados y discusiones}
+\begin{frame}
+    \begin{itemize}
+        \item Year 1
+        \item Year 2
+        \item Year 3
+        \item ...
+    \end{itemize}
+
+    \note {Write your notes.\\}
+    \begin{note}
+        {}
+    \end{note}
+\end{frame}
+
+\section{Referencias}
+\begin{frame}[allowframebreaks]
+    \bibliography{ref}
+    \bibliographystyle{alpha}
+    % If too many references, use this command to resize：
+    %\tiny\bibliographystyle{alpha}
+\end{frame}
+
+\begin{frame}
+    \begin{center}
+        {\Huge Thanks!}
+    \end{center}
+\end{frame}
+
+\end{document}
