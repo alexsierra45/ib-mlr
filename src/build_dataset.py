@@ -42,7 +42,7 @@ CONFIGS = {
     'extended': (False, False, os.path.join(ROOT, 'data', 'train_extended.txt')),
 }
 
-FEATURES = ['f1_tfidf_cosine', 'f2_bm25', 'f3_synonym_overlap', 'f4_component_match', 'f5_system_match']
+FEATURES = ['f1_tfidf_cosine', 'f2_bm25', 'f3_synonym_overlap', 'f4_component_match', 'f5_system_match', 'f6_property_match'] 
 
 
 # ---------------------------------------------------------------------------
@@ -89,9 +89,16 @@ def f3_synonym_overlap(q, doc_raw):
 
 
 def f4_component_match(q, component):
-    """1 si algún término de analito de la consulta aparece como palabra en `component`."""
+    """Proporción de analitos de la consulta en `component`."""
     toks = set(tokenize(component))
-    return float(any(stem(t) in toks for t in q['analyte_terms']))
+    analytes = set(tokenize(' '.join(q['analyte_terms'])))
+
+    if not analytes:
+        return 0.0
+
+    matches = analytes.intersection(toks)
+
+    return len(matches) / len(analytes)
 
 
 def f5_system_match(q, system):
@@ -99,6 +106,41 @@ def f5_system_match(q, system):
     toks = set(re.findall(r'[a-z]+', system.lower()))
     return float(any(t in toks for t in q['specimen_terms']))
 
+
+def f6_property_match(q, property_value):
+    """1 si existe councidencia con la propiedad"""
+    prop = str(property_value).strip()
+
+    if prop in q['property_ok']:
+        return 1.0
+
+    return 0.0
+
+def popularity_factor(common_test_rank, max_rank=20000):
+    """Asigna un factor de popularidad en funcion  de el valor de common_test_rank
+    segun una escala logarítmica"""
+    if common_test_rank is None:
+        return 0.0
+
+    try:
+        rank = float(common_test_rank)
+    except (ValueError, TypeError):
+        return 0.0
+
+    if not np.isfinite(rank) or rank <= 0:
+        return 0.0
+
+    rank = min(rank, max_rank)
+
+    popularity = 1.0 - (
+        np.log1p(rank) / np.log1p(max_rank)
+    )
+
+    return 2.0 * popularity - 1.0
+
+def adjust_feature(feature_value, common_test_rank, alpha=0.05):
+    factor = popularity_factor(common_test_rank)
+    return feature_value * (1.0 + alpha * factor)
 
 def compute_features(labels):
     """Features de los pares de `labels`; el corpus son los documentos únicos de `labels`."""
@@ -119,11 +161,12 @@ def compute_features(labels):
             raw = ' '.join([r.long_common_name, r.component, r.system, r.property])
             out.append({
                 'qid': r.qid, 'loinc_num': r.loinc_num,
-                FEATURES[0]: round(float(f1[i]), 6),
+                FEATURES[0]: adjust_feature(round(float(f1[i]), 6), r.common_test_rank, alpha=0.1),
                 FEATURES[1]: round(float(f2[i]), 6),
-                FEATURES[2]: round(f3_synonym_overlap(q, raw), 6),
+                FEATURES[2]: adjust_feature(round(f3_synonym_overlap(q, raw), 6), r.common_test_rank, alpha=0.1),
                 FEATURES[3]: f4_component_match(q, r.component),
                 FEATURES[4]: f5_system_match(q, r.system),
+                FEATURES[5]: f6_property_match(q, r.property),
             })
     return pd.DataFrame(out)
 

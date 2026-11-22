@@ -1,6 +1,7 @@
 feature,coef
-f1_tfidf_cosine,2.8181334310997537
+f1_tfidf_cosine,2.3059811953793306
 f2_bm25,0.0
-f3_synonym_overlap,1.4059941169737191
+f3_synonym_overlap,0.0
 f4_component_match,0.0
 f5_system_match,0.0
+f6_property_match,0.0

@@ -1,0 +1,43 @@
+qid,loinc_num,relevance,score,rank,train_relevance,f1_tfidf_cosine,f2_bm25,f3_synonym_overlap,f4_component_match,f5_system_match,f6_property_match,long_common_name,component,system,property,common_test_rank,scale,loinc_class,doc_source
+1,47995-6,2,0.8014579559686515,16,2,0.56445,0.933175,1.0,1.0,0.0,1.0,Glucose [Moles/volume] in Cord blood,Glucose,BldCo,SCnc,0,Qn,CHEM,pool_bm25
+1,51596-5,3,0.8014579559686515,17,3,0.55248,0.933175,1.0,1.0,0.0,1.0,Glucose [Moles/volume] in Capillary blood,Glucose,BldC,SCnc,0,Qn,CHEM,pool_bm25
+1,77135-2,3,0.8014579559686515,20,3,0.636805,0.874722,1.0,1.0,1.0,1.0,"Glucose [Moles/volume] in Serum, Plasma or Blood",Glucose,Ser/Plas/Bld,SCnc,0,Qn,CHEM,pool_bm25
+1,77145-1,2,0.8014579559686515,21,2,0.490554,0.823161,1.0,1.0,1.0,1.0,"Fasting glucose [Moles/volume] in Serum, Plasma or Blood",Glucose^post CFst,Ser/Plas/Bld,SCnc,0,Qn,CHEM,pool_bm25
+1,87422-2,2,0.8014579559686515,22,2,0.456924,0.874722,1.0,1.0,1.0,1.0,Glucose [Mass/volume] in Blood --post meal,Glucose^post meal,Bld,MCnc,0,Qn,CHAL.ROUTINE,pool_bm25
+1,88365-2,2,0.8014579559686515,23,2,0.421714,0.874722,1.0,1.0,1.0,1.0,Glucose [Mass/volume] in Blood --pre-meal,Glucose^pre-meal,Bld,MCnc,0,Qn,CHAL.ROUTINE,pool_bm25
+1,41652-9,3,0.7874043907107413,25,3,0.595224,0.933175,0.982465,1.0,0.0,1.0,Glucose [Mass/volume] in Venous blood,Glucose,BldV,MCnc,336,Qn,CHEM,pool_bm25
+1,41651-1,3,0.7833842776036025,26,3,0.574314,0.933175,0.977449,1.0,0.0,1.0,Glucose [Mass/volume] in Arterial blood,Glucose,BldA,MCnc,431,Qn,CHEM,pool_bm25
+1,32016-8,3,0.776672868680321,27,3,0.556344,0.933175,0.969075,1.0,0.0,1.0,Glucose [Mass/volume] in Capillary blood,Glucose,BldC,MCnc,653,Qn,CHEM,pool_bm25
+1,14743-9,3,0.776648023483686,28,3,0.423178,0.874722,0.969044,1.0,0.0,1.0,Glucose [Moles/volume] in Capillary blood by Glucometer,Glucose,BldC,SCnc,654,Qn,CHEM,pool_bm25
+1,1557-8,2,0.7712197487479103,29,2,0.458018,0.874722,0.962271,1.0,0.0,1.0,Fasting glucose [Mass/volume] in Venous blood,Glucose^post CFst,BldV,MCnc,915,Qn,CHAL,pool_bm25
+1,76629-5,2,0.7546167457320637,32,2,0.501571,0.933175,0.941555,1.0,1.0,1.0,Fasting glucose [Moles/volume] in Blood,Glucose^post CFst,Bld,SCnc,2554,Qn,CHEM,pool_bm25
+1,39480-9,3,0.7449463540353459,33,3,0.539662,0.933175,0.929489,1.0,0.0,1.0,Glucose [Moles/volume] in Venous blood,Glucose,BldV,SCnc,4643,Qn,CHEM,pool_bm25
+1,15074-8,3,0.7375392796062837,35,3,0.679458,1.0,0.920247,1.0,1.0,1.0,Glucose [Moles/volume] in Blood,Glucose,Bld,SCnc,7338,Qn,CHEM,pool_bm25
+1,1556-0,2,0.7340745768626312,36,2,0.421426,0.874722,0.915924,1.0,0.0,1.0,Fasting glucose [Mass/volume] in Capillary blood,Glucose^post CFst,BldC,MCnc,9090,Qn,CHAL,pool_bm25
+1,41604-0,2,0.7329501313504072,37,2,0.353542,0.823161,0.914521,1.0,0.0,1.0,Fasting glucose [Mass/volume] in Capillary blood by Glucometer,Glucose^post CFst,BldC,MCnc,9744,Qn,CHAL,pool_bm25
+1,39481-7,3,0.7329228817799043,38,3,0.516182,0.933175,0.914487,1.0,0.0,1.0,Glucose [Moles/volume] in Arterial blood,Glucose,BldA,SCnc,9760,Qn,CHEM,pool_bm25
+1,72516-8,3,0.7319435001577106,39,3,0.404587,0.823161,0.913265,1.0,1.0,1.0,Glucose [Moles/volume] in Blood by Automated test strip,Glucose,Bld,SCnc,10369,SemiQn,CHEM,pool_bm25
+1,40858-3,2,0.7297475053583564,41,2,0.398437,0.874722,0.910525,1.0,0.0,1.0,Glucose [Mass/volume] in Capillary blood --baseline,Glucose^baseline,BldC,MCnc,11876,Qn,CHAL,pool_bm25
+1,6689-4,2,0.728992531963834,42,2,0.361785,0.777339,0.909583,1.0,1.0,1.0,Glucose [Mass/volume] in Blood --2 hours post meal,Glucose^2H post meal,Bld,MCnc,12443,Qn,CHAL,pool_bm25
+1,49134-0,2,0.7236620350986864,43,2,0.57782,0.953851,0.902932,1.0,1.0,1.0,Glucose [Mass/volume] in Blood --2 hours post dose glucose,Glucose^2H post dose glucose,Bld,MCnc,17297,Qn,CHAL,pool_bm25
+1,14770-2,2,0.7230705591271817,44,2,0.342633,0.823161,0.902194,1.0,0.0,1.0,Fasting glucose [Moles/volume] in Capillary blood by Glucometer,Glucose^post CFst,BldC,SCnc,17941,Qn,CHAL,pool_bm25
+1,2345-7,2,0.4250540284059303,45,2,0.562968,0.649597,0.530351,1.0,0.0,1.0,Glucose [Mass/volume] in Serum or Plasma,Glucose,Ser/Plas,MCnc,6,Qn,CHEM,pool_component
+1,14749-6,2,0.3727156180493535,338,2,0.465834,0.649597,0.465047,1.0,0.0,1.0,Glucose [Moles/volume] in Serum or Plasma,Glucose,Ser/Plas,SCnc,4506,,,excel
+2,15152-2,2,0.7933079300144064,11,2,0.536347,0.81581,0.989831,1.0,1.0,1.0,Bilirubin.conjugated [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated,Ser/Plas,MCnc,233,Qn,CHEM,pool_bm25
+2,33898-8,2,0.7609562781637758,14,2,0.427517,0.767721,0.949465,1.0,1.0,1.0,Bilirubin.conjugated+indirect [Mass/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.non-glucuronidated,Ser/Plas,MCnc,1726,Qn,CHEM,pool_bm25
+2,14631-6,3,0.7458936773393009,16,3,0.560048,0.81581,0.930671,1.0,1.0,1.0,Bilirubin.total [Moles/volume] in Serum or Plasma,Bilirubin,Ser/Plas,SCnc,4379,Qn,CHEM,pool_bm25
+2,14629-0,2,0.7373180772104363,18,2,0.495425,0.81581,0.919971,1.0,1.0,1.0,Bilirubin.direct [Moles/volume] in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound,Ser/Plas,SCnc,7439,Qn,CHEM,pool_bm25
+2,14630-8,2,0.7287793441475463,19,2,0.486197,0.81581,0.909317,1.0,1.0,1.0,Bilirubin.indirect [Moles/volume] in Serum or Plasma,Bilirubin.non-glucuronidated,Ser/Plas,SCnc,12608,Qn,CHEM,pool_bm25
+2,1970-3,2,0.7277214196456677,20,2,0.454855,0.81581,0.907997,1.0,1.0,1.0,Bilirubin.delta [Mass/volume] in Serum or Plasma,Bilirubin.albumin bound,Ser/Plas,MCnc,13460,Qn,CHEM,pool_bm25
+2,29760-6,2,0.7240916165630857,21,2,0.475017,0.81581,0.903468,1.0,1.0,1.0,Bilirubin.conjugated [Moles/volume] in Serum or Plasma,Bilirubin.glucuronidated,Ser/Plas,SCnc,16844,Qn,CHEM,pool_bm25
+2,54363-7,2,0.4007289779843258,113,2,0.442506,0.559451,0.5,1.0,0.0,1.0,Bilirubin.total [Moles/volume] in Blood,Bilirubin,Bld,SCnc,0,Qn,CHEM,pool_bm25
+2,42719-5,2,0.3856367232154801,180,2,0.445663,0.559451,0.481169,1.0,0.0,1.0,Bilirubin.total [Mass/volume] in Blood,Bilirubin,Bld,MCnc,912,Qn,CHEM,pool_bm25
+3,11156-7,2,0.5800127183606453,77,2,0.106217,0.223144,0.723697,0.333333,1.0,0.0,Leukocytes [Morphology] in Blood,Leukocytes,Bld,Morph,802,Nom,HEM/BC,pool_component
+3,751-8,2,0.4130121226175013,94,2,0.438036,0.61071,0.515326,0.0,1.0,1.0,Neutrophils [#/volume] in Blood by Automated count,Neutrophils,Bld,NCnc,30,Qn,HEM/BC,pool_component
+3,26484-6,2,0.4026164114706319,97,2,0.128868,0.223144,0.502355,0.0,1.0,1.0,Monocytes [#/volume] in Blood,Monocytes,Bld,NCnc,111,,,excel
+3,26474-7,2,0.4025450817125507,98,2,0.141294,0.223144,0.502266,0.0,1.0,1.0,Lymphocytes [#/volume] in Blood,Lymphocytes,Bld,NCnc,112,,,excel
+3,26499-4,2,0.4021259192015792,99,2,0.168218,0.223144,0.501743,0.0,1.0,1.0,Neutrophils [#/volume] in Blood,Neutrophils,Bld,NCnc,118,Qn,HEM/BC,pool_component
+3,768-2,2,0.3923553452603653,166,2,0.32789,0.572455,0.489552,0.0,1.0,1.0,Segmented neutrophils [#/volume] in Blood by Manual count,Neutrophils.segmented,Bld,NCnc,397,Qn,HEM/BC,pool_component
+3,30451-9,2,0.3912020472617264,168,2,0.107431,0.207165,0.488113,0.0,1.0,1.0,Segmented neutrophils [#/volume] in Blood,Neutrophils.segmented,Bld,NCnc,458,Qn,HEM/BC,pool_component
+3,763-3,2,0.3900223011505405,169,2,0.276155,0.538711,0.486641,0.0,1.0,1.0,Band form neutrophils [#/volume] in Blood by Manual count,Neutrophils.band form,Bld,NCnc,530,Qn,HEM/BC,pool_component
+3,26507-4,2,0.3885876914093567,172,2,0.085072,0.193321,0.484851,0.0,1.0,1.0,Band form neutrophils [#/volume] in Blood,Neutrophils.band form,Bld,NCnc,633,Qn,HEM/BC,pool_component

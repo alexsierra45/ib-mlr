@@ -49,7 +49,7 @@ def load_documents(sheets):
     coll = coll.apply(lambda col: col.str.strip())
     assert coll['loinc_num'].is_unique
     assert set(coll.loc[coll.doc_source == 'excel', 'loinc_num']) == codes[0]
-    return coll[DOC_COLS + ['doc_source']]
+    return coll[DOC_COLS + ['common_test_rank'] + ['doc_source']]
 
 
 def load_overrides():
@@ -87,6 +87,7 @@ def build_labels():
                 'loinc_num': d.loinc_num, 'doc_source': d.doc_source,
                 'long_common_name': d.long_common_name,
                 'component': d.component, 'system': d.system, 'property': d.property,
+                'common_test_rank': d.common_test_rank,
                 'analyte': analyte, 'specimen': specimen, 'measure': measure,
                 'relevance': label, 'override': overridden, 'rationale': why,
             })
