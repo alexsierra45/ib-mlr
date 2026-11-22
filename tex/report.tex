@@ -108,6 +108,25 @@ Cada par se describe con cinco features que dependen de la consulta y se calcula
 \item $f_4$: el analito de la consulta aparece en \code{component} (0/1);
 \item $f_5$: el término de muestra aparece en \code{system} (0/1).
 \end{itemize}
+
+Durante la experimentación comprobamos que no todas estas features aportaban información de ordenación
+independiente. En particular, $f_2$ producía prácticamente el mismo ranking que $f_1$. Esta redundancia se
+comprobó mediante la correlación de rangos de Spearman entre ambas puntuaciones, superior a 0.99 por consulta.
+Por ello, mantener ambas no aportaba una señal de ranking claramente distinta. Las features $f_4$ y $f_5$
+también se examinaron con cautela, ya que utilizan columnas (\code{component} y \code{system}) relacionadas
+directamente con los criterios empleados para generar las etiquetas.
+
+\paragraph{Features tras la revisión.}
+
+\begin{itemize}[nosep]
+\item $f_1$: coseno TF-IDF entre la consulta y \code{long\_common\_name} Ajustada con popularidad;
+\item $f_2$: BM25 normalizado por consulta \cite{robertson2009};
+\item $f_3$: solapamiento de términos con sinónimos(\emph{white cells}$\to$\emph{leukocytes}, \emph{blood}$\to$\emph{bld}) Ajustada con popularidad;
+\item $f_4$: proporción de analitos de la consulta presentes en \code{component};
+\item $f_5$: coincidencia del término de muestra de la consulta con \code{system} (0/1);
+\item $f_6$: coincidencia entre la propiedad del documento y las propiedades aceptadas para la consulta, utilizando \code{property} (0/1).
+\end{itemize}
+
 Las codificaciones \code{LabelEncoder} del trabajo inicial se eliminaron. Eran índices alfabéticos, iguales para cualquier consulta,
 y no tienen sentido como rankers débiles. El training set obligatorio se exporta en formato LETOR (\code{data/train.txt}): 201 líneas
 agrupadas en 67 por \code{qid}, con el código LOINC en comentario. Las ampliaciones van en archivos aparte:
@@ -149,6 +168,73 @@ o de un 1 (condición, muestra, cociente), y una combinación lineal de ellas no
 consultas revela dónde fallan las features, y para mejorar hacen falta features más expresivas, como la similitud semántica biomédica
 o la especificidad estructural del término LOINC.
 
+\paragraph{Refinamiento de features: popularidad de los códigos LOINC.}
+A partir de la observación de que AdaRank no aprovechaba de forma consistente todas las features inicialmente implementadas, exploramos si la frecuencia de uso de los 
+códigos podía aportar una señal complementaria. Se utilizó \code{COMMON\_TEST\_RANK} como indicador de popularidad. La primera aproximación consistió en introducir la 
+popularidad como una feature independiente; sin embargo, esta alternativa no produjo resultados suficientemente satisfactorios y no resolvió por sí sola las limitaciones 
+del ranking.
+
+La estrategia más útil fue incorporar la popularidad como un ajuste suave de las dos señales léxicas que sí resultaban útiles, $f_1$ y $f_3$, en lugar de presentarla 
+como un ranker independiente. Dado que un valor de rango más bajo representa una mayor frecuencia de uso, se aplicó una transformación logarítmica para normalizar estos 
+valores y obtener una puntuación de popularidad entre cero y uno:
+
+\[
+P(d) =
+1 - \frac{\log(1+r_d)}{\log(1+r_{\max})}
+\]
+
+donde $r_d$ representa el rango de popularidad del documento y $r_{\max}$ el rango máximo considerado (20\,000). De este modo, los códigos más frecuentes obtienen valores 
+de popularidad próximos a uno, mientras que los menos frecuentes obtienen valores próximos a cero. Los documentos sin un rango válido o con valor cero se trataron de forma 
+neutral, sin recibir bonificación ni penalización por popularidad. A continuación, se centró la puntuación de popularidad mediante la transformación:
+
+\[
+P_c(d) = 2P(d)-1
+\]
+
+Y se aplicó un factor multiplicativo a ambas features:
+
+\[
+f_i'(q,d) =
+f_i(q,d)\left[1+\alpha P_c(d)\right],
+\qquad i\in\{1,3\}
+\]
+
+donde $\alpha$ controla la intensidad del ajuste. En los experimentos se utilizó $\alpha=0.1$, por lo que el multiplicador se encuentra entre $0.9$ y $1.1$.
+
+El ajuste favorece moderadamente los códigos más frecuentes y modifica las puntuaciones originales sin sustituir su información de similitud. En los experimentos 
+leave-one-query-out, esta modificación mejoró especialmente el conjunto oficial. En el conjunto extendido también se observaron mejoras, mientras que en \code{terms} el 
+efecto fue mixto y no mejoró todas las métricas.
+
+Con el ajuste probado ($\alpha=0.1$), los resultados medios fueron:
+
+\begin{center}
+\footnotesize
+\begin{tabular}{lrrrr}
+\hline
+Configuración & NDCG@1 & NDCG@3 & NDCG@5 & NDCG@10 \\
+\hline
+Oficial & 1.0000 & 0.9519 & 0.9803 & 0.9803 \\
+Terms & 0.6667 & 0.5595 & 0.5666 & 0.4824 \\
+Extended & 0.7048 & 0.6607 & 0.6718 & 0.6947 \\
+\hline
+\end{tabular}
+\end{center}
+
+Estos resultados deben interpretarse junto con la línea base y las métricas de cada configuración: la mejora fue clara en el conjunto oficial y en el extendido, pero no 
+uniforme en \code{terms}, donde NDCG@10 disminuyó respecto a la ejecución de referencia. Por tanto, el ajuste de popularidad es una mejora prometedora, no una
+solución universal. Además, al multiplicar las puntuaciones de $f_1$ y $f_3$, los valores ajustados dejan de representar exactamente las métricas originales; por ejemplo, 
+el solapamiento ajustado puede superar 1 sin que ello implique un error de cálculo.
+
+\paragraph{Análisis de errores.}
+Para facilitar la inspección cualitativa de los rankings se desarrolló un procedimiento que combina las predicciones exportadas por el ranker con las etiquetas LETOR y los 
+metadatos de \code{collection.csv}. El análisis identifica documentos de baja relevancia situados en posiciones altas y documentos relevantes que aparecen por debajo de un 
+umbral de posición. Aunque se denominan informalmente \emph{falsos positivos} y \emph{falsos negativos}, las etiquetas son graduadas (0--3), por lo que estos grupos representan 
+promociones y pérdidas de posición según umbrales de análisis, no errores de un clasificador binario.
+
+La inspección de estos casos permitió localizar patrones que no eran evidentes en las métricas agregadas. Entre ellos, la promoción de fracciones o ratios de bilirrubina y 
+de proporciones de subpoblaciones de leucocitos, así como el descenso de mediciones relevantes de glucosa y de recuentos celulares. Este análisis sirve para orientar la revisión 
+de las features y de los criterios de relevancia, y proporciona ejemplos concretos para estudiar las limitaciones del modelo.
+
 \paragraph{Limitaciones.}
 \begin{itemize}[nosep]
 \item Quince consultas siguen siendo pocas para estimar la generalización; los resultados son demostrativos.
@@ -167,8 +253,12 @@ o la especificidad estructural del término LOINC.
 \item \textbf{[Integrante 1]}: implementación de AdaRank y métricas, primera versión del dataset (0--2) y notebook inicial.
 \item \textbf{[Integrante 2]}: escala de relevancia 0--3 y guía de etiquetado, features, exportación LETOR,
   ampliación sistemática (selección de consultas y pooling sobre LOINC), evaluación leave-one-query-out y documentación.
-\item \textbf{[Integrante 3]}: primera ampliación del dataset con términos y consultas nuevas (\emph{platelets}, \emph{creatinine}), que sirvió de piloto
+  Primera ampliación del dataset con términos y consultas nuevas (\emph{platelets}, \emph{creatinine}), que sirvió de piloto
   para detectar el sesgo de selección y diseñar la ampliación sistemática.
+\item \textbf{[Integrante 3]}: Análisis de redundancia entre features mediante correlación de Spearman, evaluación de la popularidad 
+  de los códigos LOINC como señal independiente y como ajuste de $f_1$ y $f_3$. Desarrollo de un procedimiento de análisis de errores 
+  para identificar documentos de baja relevancia promocionados a posiciones altas y documentos relevantes infravalorados, facilitando 
+  la propuesta de mejoras.
 \end{itemize}
 
 \begin{thebibliography}{9}\small\setlength{\itemsep}{0pt}

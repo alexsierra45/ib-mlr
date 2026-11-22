@@ -42,7 +42,7 @@ CONFIGS = {
     'extended': (False, False, os.path.join(ROOT, 'data', 'train_extended.txt')),
 }
 
-FEATURES = ['f1_tfidf_cosine', 'f3_synonym_overlap'] # 'f2_bm25', 'f4_component_match', 'f5_system_match', 'f6_property_match'
+FEATURES = ['f1_tfidf_cosine', 'f2_bm25', 'f3_synonym_overlap', 'f4_component_match', 'f5_system_match', 'f6_property_match'] 
 
 
 # ---------------------------------------------------------------------------
@@ -162,11 +162,11 @@ def compute_features(labels):
             out.append({
                 'qid': r.qid, 'loinc_num': r.loinc_num,
                 FEATURES[0]: adjust_feature(round(float(f1[i]), 6), r.common_test_rank, alpha=0.1),
-                #FEATURES[1]: round(float(f2[i]), 6),
-                FEATURES[1]: adjust_feature(round(f3_synonym_overlap(q, raw), 6), r.common_test_rank, alpha=0.1),
-                #FEATURES[3]: f4_component_match(q, r.component),
-                #FEATURES[4]: f5_system_match(q, r.system),
-                #FEATURES[5]: f6_property_match(q, r.property),
+                FEATURES[1]: round(float(f2[i]), 6),
+                FEATURES[2]: adjust_feature(round(f3_synonym_overlap(q, raw), 6), r.common_test_rank, alpha=0.1),
+                FEATURES[3]: f4_component_match(q, r.component),
+                FEATURES[4]: f5_system_match(q, r.system),
+                FEATURES[5]: f6_property_match(q, r.property),
             })
     return pd.DataFrame(out)
 
