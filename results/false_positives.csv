@@ -1,0 +1,13 @@
+qid,loinc_num,relevance,score,rank,train_relevance,f1_tfidf_cosine,f3_synonym_overlap,long_common_name,component,system,property,common_test_rank,scale,loinc_class,doc_source
+1,27353-2,1,0.8061224412723891,5,1,0.277937,1.00582,Glucose mean value [Mass/volume] in Blood Estimated from glycated hemoglobin,Estimated average glucose,Bld,MCnc,105,Qn,CHEM,pool_component
+2,1969-5,1,0.8014579559686515,4,1,0.361027,1.0,Bilirubin.total renal clearance in 24 hour Urine and Serum or Plasma,Bilirubin renal clearance,Urine+Ser/Plas,VRat,0,Qn,CHEM,pool_bm25
+2,35672-5,1,0.8014579559686515,7,1,0.71554,1.0,Bilirubin.direct/Bilirubin.total in Serum or Plasma,Bilirubin.glucuronidated+Bilirubin.albumin bound/Bilirubin.total,Ser/Plas,MFr,0,Qn,CHEM,pool_bm25
+2,75697-3,1,0.8014579559686515,8,1,0.502549,1.0,Bilirubin fractions panel [Moles/volume] - Serum or Plasma,Bilirubin fractions panel,Ser/Plas,SCnc,0,-,PANEL.CHEM,pool_bm25
+3,770-8,1,0.8236022392920654,2,1,0.40943,1.02763,Neutrophils/Leukocytes in Blood by Automated count,Neutrophils/Leukocytes,Bld,NFr,35,Qn,HEM/BC,pool_component
+3,5905-5,1,0.8231614374162827,3,1,0.359447,1.02708,Monocytes/Leukocytes in Blood by Automated count,Monocytes/Leukocytes,Bld,NFr,36,Qn,HEM/BC,pool_component
+3,736-9,1,0.8227286501200596,4,1,0.37719,1.02654,Lymphocytes/Leukocytes in Blood by Automated count,Lymphocytes/Leukocytes,Bld,NFr,37,Qn,HEM/BC,pool_component
+3,713-8,1,0.8211097050490029,5,1,0.358551,1.02452,Eosinophils/Leukocytes in Blood by Automated count,Eosinophils/Leukocytes,Bld,NFr,41,Qn,HEM/BC,pool_component
+3,706-2,1,0.820725005230138,6,1,0.353779,1.02404,Basophils/Leukocytes in Blood by Automated count,Basophils/Leukocytes,Bld,NFr,42,Qn,HEM/BC,pool_component
+3,58413-6,0,0.8153392077660286,7,0,0.291465,1.01732,Nucleated erythrocytes/Leukocytes [Ratio] in Blood by Automated count,Erythrocytes.nucleated/Leukocytes,Bld,Ratio,59,Qn,HEM/BC,pool_component
+3,71695-1,1,0.8150667120609992,8,1,0.293182,1.01698,Immature granulocytes/Leukocytes in Blood by Automated count,Granulocytes.immature/Leukocytes,Bld,NFr,60,Qn,HEM/BC,pool_component
+3,107171-1,0,0.8014579559686515,10,0,0.459524,1.0,Mononuclear cells/100 leukocytes [#/volume] in Blood by Manual count,Mononuclear cells,Bld,NCnc,0,Qn,HEM/BC,pool_bm25

@@ -1,201 +1,201 @@
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1988-5 query = glucose in blood
-0 qid:1 1:0.223169 2:0.418832 3:0.5 4:0 5:1 # docid = 1959-6 query = glucose in blood
-0 qid:1 1:0.226447 2:0.458793 3:0.5 4:0 5:1 # docid = 10331-7 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 18998-5 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1975-2 query = glucose in blood
-0 qid:1 1:0.146664 2:0.332063 3:0.5 4:0 5:0 # docid = 890-4 query = glucose in blood
-0 qid:1 1:0.170425 2:0.356695 3:0.5 4:0 5:1 # docid = 20565-8 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 18906-8 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 2143-6 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 2075-0 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 4671-4 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 18864-9 query = glucose in blood
-1 qid:1 1:0.428328 2:0.75537 3:0.5 4:1 5:0 # docid = 15076-3 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1798-8 query = glucose in blood
-0 qid:1 1:0.263095 2:0.458793 3:0.5 4:0 5:1 # docid = 26474-7 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1920-8 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 13317-3 query = glucose in blood
-0 qid:1 1:0.184703 2:0.418832 3:0.5 4:0 5:0 # docid = 925-8 query = glucose in blood
-2 qid:1 1:0.537084 2:0.694848 3:0.5 4:1 5:0 # docid = 14749-6 query = glucose in blood
-1 qid:1 1:0.358042 2:0.694848 3:0.5 4:1 5:0 # docid = 14747-0 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 2093-3 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1968-7 query = glucose in blood
-0 qid:1 1:0.263095 2:0.458793 3:0.5 4:0 5:1 # docid = 26464-8 query = glucose in blood
-3 qid:1 1:0.737931 2:1 3:1 4:1 5:1 # docid = 74774-1 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 8310-5 query = glucose in blood
-0 qid:1 1:0.177691 2:0.418832 3:0.5 4:0 5:0 # docid = 934-0 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 14423-8 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1742-6 query = glucose in blood
-1 qid:1 1:0.404542 2:0.687314 3:0.5 4:1 5:0 # docid = 14764-5 query = glucose in blood
-0 qid:1 1:0.200126 2:0.385274 3:0.5 4:0 5:1 # docid = 1994-3 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1751-7 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1003-3 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1971-1 query = glucose in blood
-0 qid:1 1:0.245984 2:0.458793 3:0.5 4:0 5:1 # docid = 26484-6 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 18865-6 query = glucose in blood
-0 qid:1 1:0.166785 2:0.385274 3:0.5 4:0 5:1 # docid = 882-1 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1250-0 query = glucose in blood
-0 qid:1 1:0.196589 2:0.418832 3:0.5 4:0 5:1 # docid = 883-9 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 2132-9 query = glucose in blood
-0 qid:1 1:0.156491 2:0.385274 3:0.5 4:0 5:1 # docid = 31100-1 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 6768-6 query = glucose in blood
-0 qid:1 1:0.235711 2:0.418832 3:0.5 4:0 5:1 # docid = 2069-3 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 3082-5 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 30522-7 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 33870-7 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 20442-0 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 2111-3 query = glucose in blood
-0 qid:1 1:0.278602 2:0.475262 3:0.5 4:0 5:1 # docid = 14578-9 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 18955-5 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 2039-6 query = glucose in blood
-0 qid:1 1:0.241412 2:0.458793 3:0.5 4:0 5:0 # docid = 933-2 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 19000-9 query = glucose in blood
-0 qid:1 1:0.173313 2:0.418832 3:0.5 4:0 5:1 # docid = 26478-8 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 19080-1 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1995-0 query = glucose in blood
-1 qid:1 1:0.378336 2:0.598881 3:0.5 4:1 5:0 # docid = 35184-1 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 2085-9 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 1759-0 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 2028-9 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 35192-4 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 20629-2 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 17861-6 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 54439-5 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 18878-9 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 18928-2 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 29265-6 query = glucose in blood
-0 qid:1 1:0 2:0 3:0 4:0 5:0 # docid = 23658-8 query = glucose in blood
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 934-0 query = bilirubin in plasma
-0 qid:2 1:0.099276 2:0.229813 3:0.5 4:0 5:1 # docid = 1742-6 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 20565-8 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 1959-6 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 18906-8 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 18865-6 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 13317-3 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 882-1 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 26464-8 query = bilirubin in plasma
-2 qid:2 1:0.556739 2:1 3:1 4:1 5:1 # docid = 1968-7 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 8310-5 query = bilirubin in plasma
-0 qid:2 1:0.075251 2:0.190374 3:0.5 4:0 5:1 # docid = 30522-7 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 18878-9 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 1994-3 query = bilirubin in plasma
-3 qid:2 1:0.630221 2:1 3:1 4:1 5:1 # docid = 1975-2 query = bilirubin in plasma
-0 qid:2 1:0.15052 2:0.26664 3:0.5 4:0 5:1 # docid = 2093-3 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 10331-7 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0.5 4:0 5:1 # docid = 1250-0 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 18955-5 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 19000-9 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 18864-9 query = bilirubin in plasma
-0 qid:2 1:0.093553 2:0.229813 3:0.5 4:0 5:1 # docid = 890-4 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 14578-9 query = bilirubin in plasma
-0 qid:2 1:0.165499 2:0.26664 3:0.5 4:0 5:1 # docid = 17861-6 query = bilirubin in plasma
-0 qid:2 1:0.101357 2:0.246861 3:0.5 4:0 5:1 # docid = 1759-0 query = bilirubin in plasma
-0 qid:2 1:0.107808 2:0.229813 3:0.5 4:0 5:1 # docid = 2028-9 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 883-9 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 23658-8 query = bilirubin in plasma
-2 qid:2 1:0.596962 2:1 3:1 4:1 5:1 # docid = 1971-1 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 20442-0 query = bilirubin in plasma
-0 qid:2 1:0.153303 2:0.246861 3:0.5 4:0 5:1 # docid = 74774-1 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 14747-0 query = bilirubin in plasma
-2 qid:2 1:0.555535 2:0.930944 3:1 4:1 5:1 # docid = 35192-4 query = bilirubin in plasma
-0 qid:2 1:0.142494 2:0.26664 3:0.5 4:0 5:1 # docid = 2143-6 query = bilirubin in plasma
-0 qid:2 1:0.112423 2:0.246861 3:0.5 4:0 5:1 # docid = 2039-6 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 26474-7 query = bilirubin in plasma
-0 qid:2 1:0.122917 2:0.26664 3:0.5 4:0 5:1 # docid = 3082-5 query = bilirubin in plasma
-1 qid:2 1:0.355074 2:0.753139 3:0.5 4:1 5:0 # docid = 14423-8 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 18928-2 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 26478-8 query = bilirubin in plasma
-0 qid:2 1:0.071864 2:0.201925 3:0.5 4:0 5:1 # docid = 1003-3 query = bilirubin in plasma
-0 qid:2 1:0.165469 2:0.26664 3:0.5 4:0 5:1 # docid = 14749-6 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 933-2 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 26484-6 query = bilirubin in plasma
-0 qid:2 1:0.156552 2:0.26664 3:0.5 4:0 5:1 # docid = 1751-7 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 2132-9 query = bilirubin in plasma
-0 qid:2 1:0.062317 2:0.170829 3:0.5 4:0 5:1 # docid = 14764-5 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 15076-3 query = bilirubin in plasma
-0 qid:2 1:0.130911 2:0.26664 3:0.5 4:0 5:1 # docid = 19080-1 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 925-8 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 20629-2 query = bilirubin in plasma
-0 qid:2 1:0.097406 2:0.229813 3:0.5 4:0 5:1 # docid = 2111-3 query = bilirubin in plasma
-0 qid:2 1:0.105809 2:0.229813 3:0.5 4:0 5:1 # docid = 29265-6 query = bilirubin in plasma
-0 qid:2 1:0.116561 2:0.229813 3:0.5 4:0 5:1 # docid = 35184-1 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 2069-3 query = bilirubin in plasma
-0 qid:2 1:0.095385 2:0.229813 3:0.5 4:0 5:1 # docid = 6768-6 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 31100-1 query = bilirubin in plasma
-0 qid:2 1:0.111774 2:0.246861 3:0.5 4:0 5:1 # docid = 1798-8 query = bilirubin in plasma
-0 qid:2 1:0.147994 2:0.26664 3:0.5 4:0 5:1 # docid = 2075-0 query = bilirubin in plasma
-0 qid:2 1:0.131602 2:0.26664 3:0.5 4:0 5:1 # docid = 4671-4 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 18998-5 query = bilirubin in plasma
-0 qid:2 1:0 2:0 3:0 4:0 5:0 # docid = 54439-5 query = bilirubin in plasma
-0 qid:2 1:0.099276 2:0.229813 3:0.5 4:0 5:1 # docid = 1920-8 query = bilirubin in plasma
-0 qid:2 1:0.116241 2:0.246861 3:0.5 4:0 5:1 # docid = 2085-9 query = bilirubin in plasma
-0 qid:2 1:0.126201 2:0.246861 3:0.5 4:0 5:1 # docid = 1995-0 query = bilirubin in plasma
-1 qid:2 1:0.34883 2:0.813483 3:0.5 4:1 5:0 # docid = 33870-7 query = bilirubin in plasma
-0 qid:2 1:0.107222 2:0.229813 3:0.5 4:0 5:1 # docid = 1988-5 query = bilirubin in plasma
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 33870-7 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 29265-6 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 14423-8 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 23658-8 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 19000-9 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 14749-6 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1920-8 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 18878-9 query = white blood cells count
-0 qid:3 1:0 2:0 3:0.25 4:0 5:0 # docid = 20442-0 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1751-7 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 13317-3 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 15076-3 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 35184-1 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 2085-9 query = white blood cells count
-3 qid:3 1:0.461013 2:0.965348 3:1 4:1 5:1 # docid = 26464-8 query = white blood cells count
-0 qid:3 1:0.323649 2:0.881265 3:0.25 4:0 5:0 # docid = 925-8 query = white blood cells count
-0 qid:3 1:0.350673 2:0.810656 3:0.25 4:0 5:1 # docid = 1994-3 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1798-8 query = white blood cells count
-0 qid:3 1:0.391051 2:0.881265 3:0.25 4:0 5:1 # docid = 1959-6 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1975-2 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 18928-2 query = white blood cells count
-0 qid:3 1:0.488184 2:1 3:0.25 4:0 5:1 # docid = 14578-9 query = white blood cells count
-0 qid:3 1:0.311361 2:0.881265 3:0.25 4:0 5:0 # docid = 934-0 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 4671-4 query = white blood cells count
-0 qid:3 1:0.413028 2:0.881265 3:0.25 4:0 5:1 # docid = 2069-3 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 2111-3 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 17861-6 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 2075-0 query = white blood cells count
-0 qid:3 1:0.423017 2:0.965348 3:0.25 4:0 5:0 # docid = 933-2 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 2132-9 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 19080-1 query = white blood cells count
-1 qid:3 1:0.30369 2:0.881265 3:0.75 4:1 5:1 # docid = 26478-8 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 14747-0 query = white blood cells count
-0 qid:3 1:0.29863 2:0.750523 3:0.25 4:0 5:1 # docid = 20565-8 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 2028-9 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 18955-5 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 2093-3 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 18998-5 query = white blood cells count
-0 qid:3 1:0.256995 2:0.698694 3:0.25 4:0 5:0 # docid = 890-4 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 14764-5 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 2143-6 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 2039-6 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1971-1 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 18906-8 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 6768-6 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1988-5 query = white blood cells count
-0 qid:3 1:0.42113 2:0.750523 3:0.25 4:0 5:1 # docid = 74774-1 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1995-0 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1759-0 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 20629-2 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1968-7 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 35192-4 query = white blood cells count
-0 qid:3 1:0.344476 2:0.881265 3:0.25 4:0 5:1 # docid = 883-9 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1003-3 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 54439-5 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 3082-5 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 30522-7 query = white blood cells count
-0 qid:3 1:0.396796 2:0.965348 3:0.25 4:0 5:1 # docid = 10331-7 query = white blood cells count
-2 qid:3 1:0.461013 2:0.965348 3:0.5 4:0 5:1 # docid = 26474-7 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 8310-5 query = white blood cells count
-0 qid:3 1:0.274213 2:0.810656 3:0.25 4:0 5:1 # docid = 31100-1 query = white blood cells count
-0 qid:3 1:0.292252 2:0.810656 3:0.25 4:0 5:1 # docid = 882-1 query = white blood cells count
-2 qid:3 1:0.431029 2:0.965348 3:0.5 4:0 5:1 # docid = 26484-6 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1250-0 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 18864-9 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 1742-6 query = white blood cells count
-0 qid:3 1:0 2:0 3:0 4:0 5:0 # docid = 18865-6 query = white blood cells count
+0 qid:1 1:0 2:0 # docid = 1988-5 query = glucose in blood
+0 qid:1 1:0.220842 2:0.494787 # docid = 1959-6 query = glucose in blood
+0 qid:1 1:0.220203 2:0.486213 # docid = 10331-7 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 18998-5 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 1975-2 query = glucose in blood
+0 qid:1 1:0.146336 2:0.498881 # docid = 890-4 query = glucose in blood
+0 qid:1 1:0.168316 2:0.493813 # docid = 20565-8 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 18906-8 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 2143-6 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 2075-0 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 4671-4 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 18864-9 query = glucose in blood
+1 qid:1 1:0.428328 2:0.5 # docid = 15076-3 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 1798-8 query = glucose in blood
+0 qid:1 1:0.264287 2:0.502266 # docid = 26474-7 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 1920-8 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 13317-3 query = glucose in blood
+0 qid:1 1:0.181588 2:0.491567 # docid = 925-8 query = glucose in blood
+2 qid:1 1:0.499538 2:0.465047 # docid = 14749-6 query = glucose in blood
+1 qid:1 1:0.358042 2:0.5 # docid = 14747-0 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 2093-3 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 1968-7 query = glucose in blood
+0 qid:1 1:0.266908 2:0.507247 # docid = 26464-8 query = glucose in blood
+3 qid:1 1:0.750959 2:1.01765 # docid = 74774-1 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 8310-5 query = glucose in blood
+0 qid:1 1:0.173854 2:0.489203 # docid = 934-0 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 14423-8 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 1742-6 query = glucose in blood
+1 qid:1 1:0.36936 2:0.456516 # docid = 14764-5 query = glucose in blood
+0 qid:1 1:0.198626 2:0.496251 # docid = 1994-3 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 1751-7 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 1003-3 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 1971-1 query = glucose in blood
+0 qid:1 1:0.247143 2:0.502355 # docid = 26484-6 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 18865-6 query = glucose in blood
+0 qid:1 1:0.165486 2:0.496105 # docid = 882-1 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 1250-0 query = glucose in blood
+0 qid:1 1:0.190734 2:0.485109 # docid = 883-9 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 2132-9 query = glucose in blood
+0 qid:1 1:0.154459 2:0.493508 # docid = 31100-1 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 6768-6 query = glucose in blood
+0 qid:1 1:0.231884 2:0.491882 # docid = 2069-3 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 3082-5 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 30522-7 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 33870-7 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 20442-0 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 2111-3 query = glucose in blood
+0 qid:1 1:0.263156 2:0.472279 # docid = 14578-9 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 18955-5 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 2039-6 query = glucose in blood
+0 qid:1 1:0.237446 2:0.491787 # docid = 933-2 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 19000-9 query = glucose in blood
+0 qid:1 1:0.175876 2:0.507394 # docid = 26478-8 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 19080-1 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 1995-0 query = glucose in blood
+1 qid:1 1:0.378336 2:0.5 # docid = 35184-1 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 2085-9 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 1759-0 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 2028-9 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 35192-4 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 20629-2 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 17861-6 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 54439-5 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 18878-9 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 18928-2 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 29265-6 query = glucose in blood
+0 qid:1 1:0 2:0 # docid = 23658-8 query = glucose in blood
+0 qid:2 1:0 2:0 # docid = 934-0 query = bilirubin in plasma
+0 qid:2 1:0.10275 2:0.517498 # docid = 1742-6 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 20565-8 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 1959-6 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 18906-8 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 18865-6 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 13317-3 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 882-1 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 26464-8 query = bilirubin in plasma
+2 qid:2 1:0.557514 2:1.00139 # docid = 1968-7 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 8310-5 query = bilirubin in plasma
+0 qid:2 1:0.073413 2:0.487788 # docid = 30522-7 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 18878-9 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 1994-3 query = bilirubin in plasma
+3 qid:2 1:0.653337 2:1.03668 # docid = 1975-2 query = bilirubin in plasma
+0 qid:2 1:0.153027 2:0.508327 # docid = 2093-3 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 10331-7 query = bilirubin in plasma
+0 qid:2 1:0 2:0.488357 # docid = 1250-0 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 18955-5 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 19000-9 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 18864-9 query = bilirubin in plasma
+0 qid:2 1:0.0933436 2:0.498881 # docid = 890-4 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 14578-9 query = bilirubin in plasma
+0 qid:2 1:0.174035 2:0.525787 # docid = 17861-6 query = bilirubin in plasma
+0 qid:2 1:0.102026 2:0.5033 # docid = 1759-0 query = bilirubin in plasma
+0 qid:2 1:0.113179 2:0.524909 # docid = 2028-9 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 883-9 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 23658-8 query = bilirubin in plasma
+2 qid:2 1:0.593789 2:0.994685 # docid = 1971-1 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 20442-0 query = bilirubin in plasma
+0 qid:2 1:0.15601 2:0.508827 # docid = 74774-1 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 14747-0 query = bilirubin in plasma
+2 qid:2 1:0.555535 2:1 # docid = 35192-4 query = bilirubin in plasma
+0 qid:2 1:0.139002 2:0.487745 # docid = 2143-6 query = bilirubin in plasma
+0 qid:2 1:0.109745 2:0.488091 # docid = 2039-6 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 26474-7 query = bilirubin in plasma
+0 qid:2 1:0.122917 2:0.5 # docid = 3082-5 query = bilirubin in plasma
+1 qid:2 1:0.355074 2:0.5 # docid = 14423-8 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 18928-2 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 26478-8 query = bilirubin in plasma
+0 qid:2 1:0.0703807 2:0.48968 # docid = 1003-3 query = bilirubin in plasma
+0 qid:2 1:0.153902 2:0.465047 # docid = 14749-6 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 933-2 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 26484-6 query = bilirubin in plasma
+0 qid:2 1:0.160545 2:0.512752 # docid = 1751-7 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 2132-9 query = bilirubin in plasma
+0 qid:2 1:0.0568975 2:0.456516 # docid = 14764-5 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 15076-3 query = bilirubin in plasma
+0 qid:2 1:0.126568 2:0.483414 # docid = 19080-1 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 925-8 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 20629-2 query = bilirubin in plasma
+0 qid:2 1:0.0924186 2:0.474399 # docid = 2111-3 query = bilirubin in plasma
+0 qid:2 1:0.0984222 2:0.465094 # docid = 29265-6 query = bilirubin in plasma
+0 qid:2 1:0.116561 2:0.5 # docid = 35184-1 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 2069-3 query = bilirubin in plasma
+0 qid:2 1:0.0985748 2:0.516721 # docid = 6768-6 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 31100-1 query = bilirubin in plasma
+0 qid:2 1:0.110314 2:0.49347 # docid = 1798-8 query = bilirubin in plasma
+0 qid:2 1:0.156227 2:0.527814 # docid = 2075-0 query = bilirubin in plasma
+0 qid:2 1:0.119427 2:0.453744 # docid = 4671-4 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 18998-5 query = bilirubin in plasma
+0 qid:2 1:0 2:0 # docid = 54439-5 query = bilirubin in plasma
+0 qid:2 1:0.102523 2:0.516353 # docid = 1920-8 query = bilirubin in plasma
+0 qid:2 1:0.118102 2:0.508006 # docid = 2085-9 query = bilirubin in plasma
+0 qid:2 1:0.122361 2:0.484788 # docid = 1995-0 query = bilirubin in plasma
+1 qid:2 1:0.317242 2:0.454723 # docid = 33870-7 query = bilirubin in plasma
+0 qid:2 1:0.107421 2:0.500929 # docid = 1988-5 query = bilirubin in plasma
+0 qid:3 1:0 2:0 # docid = 33870-7 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 29265-6 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 14423-8 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 23658-8 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 19000-9 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 14749-6 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1920-8 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 18878-9 query = white blood cells count
+0 qid:3 1:0 2:0.228274 # docid = 20442-0 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1751-7 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 13317-3 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 15076-3 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 35184-1 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 2085-9 query = white blood cells count
+3 qid:3 1:0.467694 2:1.01449 # docid = 26464-8 query = white blood cells count
+0 qid:3 1:0.318191 2:0.245784 # docid = 925-8 query = white blood cells count
+0 qid:3 1:0.348044 2:0.248126 # docid = 1994-3 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1798-8 query = white blood cells count
+0 qid:3 1:0.386974 2:0.247393 # docid = 1959-6 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1975-2 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 18928-2 query = white blood cells count
+0 qid:3 1:0.461118 2:0.23614 # docid = 14578-9 query = white blood cells count
+0 qid:3 1:0.304638 2:0.244602 # docid = 934-0 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 4671-4 query = white blood cells count
+0 qid:3 1:0.406322 2:0.245941 # docid = 2069-3 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 2111-3 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 17861-6 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 2075-0 query = white blood cells count
+0 qid:3 1:0.416068 2:0.245893 # docid = 933-2 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 2132-9 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 19080-1 query = white blood cells count
+1 qid:3 1:0.308181 2:0.761091 # docid = 26478-8 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 14747-0 query = white blood cells count
+0 qid:3 1:0.294935 2:0.246906 # docid = 20565-8 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 2028-9 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 18955-5 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 2093-3 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 18998-5 query = white blood cells count
+0 qid:3 1:0.25642 2:0.24944 # docid = 890-4 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 14764-5 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 2143-6 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 2039-6 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1971-1 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 18906-8 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 6768-6 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1988-5 query = white blood cells count
+0 qid:3 1:0.428565 2:0.254414 # docid = 74774-1 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1995-0 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1759-0 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 20629-2 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1968-7 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 35192-4 query = white blood cells count
+0 qid:3 1:0.334217 2:0.242555 # docid = 883-9 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1003-3 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 54439-5 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 3082-5 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 30522-7 query = white blood cells count
+0 qid:3 1:0.385855 2:0.243107 # docid = 10331-7 query = white blood cells count
+2 qid:3 1:0.463102 2:0.502266 # docid = 26474-7 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 8310-5 query = white blood cells count
+0 qid:3 1:0.270653 2:0.246754 # docid = 31100-1 query = white blood cells count
+0 qid:3 1:0.289975 2:0.248052 # docid = 882-1 query = white blood cells count
+2 qid:3 1:0.43306 2:0.502355 # docid = 26484-6 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1250-0 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 18864-9 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 1742-6 query = white blood cells count
+0 qid:3 1:0 2:0 # docid = 18865-6 query = white blood cells count
