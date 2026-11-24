@@ -19,7 +19,7 @@ data/
   collection.csv            colección de 1222 documentos (Excel + pooling sobre LOINC)  (generado)
   overrides.csv             correcciones manuales a la regla (vacío por ahora)
   relevance_labels.csv      etiquetas 0–3 + dimensiones + justificación de los 18 330 pares (generado)
-  features.csv              f1–f5 por par y configuración                                (generado)
+  features.csv              f1–f6 por par y configuración                                (generado)
   train.txt, train_terms.txt, train_extended.txt   LETOR                                  (generado)
   dataset_v0.csv            primera versión del dataset (escala 0–2), solo como referencia
   dataset_extended.csv      primera ampliación manual (piloto, sustituida por el pooling)
@@ -30,12 +30,19 @@ src/
   text.py                   tokenización común
   build_dataset.py          features + LETOR + comprobaciones
   evaluate.py               leave-one-query-out, AdaRank frente a baselines -> results/
+  falses_check.py           análisis de errores: falsos positivos/negativos de un ranking -> results/
   export_tables.py          tablas LaTeX -> tex/tables/
 adarank.py, metrics.py, utils.py   AdaRank y NDCG (adaptado de github.com/rueycheng/AdaRank)
 test.py                     CLI original: entrena y evalúa sobre ficheros LETOR
 AdaRank.ipynb               notebook de demostración
-results/                    resultados de la evaluación (generado)
-tex/                        informe, guía de etiquetado, diccionario de features y slides (LaTeX)
+results/                    resultados de la evaluación y del análisis de errores (generado)
+tex/
+  report.tex                informe del proyecto (entregable, máx. 4 páginas)
+  slides.tex                presentación del 3 de diciembre (Beamer; usa YTU.sty y ref.bib)
+  labeling_guidelines.tex   anexo: guía de etiquetado 0–3
+  feature_dictionary.tex    anexo: definición de f1–f6 y del ajuste por popularidad
+  preamble.tex              preámbulo común del informe y los anexos
+  tables/                   tablas generadas por src/export_tables.py (no editar a mano)
 ```
 
 ## Reproducir
@@ -46,6 +53,7 @@ Requiere Python 3.10 o superior.
 pip install -r requirements.txt
 python src/build_dataset.py          # etiquetas, features, LETOR + comprobaciones
 python src/evaluate.py               # LOQO en las tres configuraciones (o --config official|terms|extended)
+python src/falses_check.py --config extended   # análisis de errores (opcional)
 python src/export_tables.py          # regenera tex/tables/*.tex
 python test.py data/train.txt "" data/train.txt   # CLI original
 ```
@@ -61,8 +69,9 @@ python src/build_collection.py ruta/a/Loinc.csv   # por defecto, ./Loinc.csv
 ## Compilar los documentos (Overleaf)
 
 1. Sube la carpeta `tex/` completa como proyecto de Overleaf (*New project → Upload project*, en .zip).
-2. Compila con pdfLaTeX cada documento principal: `report.tex` (informe, máximo 4 páginas), `labeling_guidelines.tex`,
-   `feature_dictionary.tex` y `presentation.tex` (Beamer, tema metropolis).
+2. Compila con pdfLaTeX cada documento principal: `report.tex` (informe, máximo 4 páginas), `slides.tex`
+   (presentación; necesita BibTeX, que Overleaf ejecuta solo), `labeling_guidelines.tex` y `feature_dictionary.tex`.
+   En Overleaf se cambia el documento principal en *Menu → Main document*.
 
 Las tablas de `tex/tables/` se generan con `src/export_tables.py`. No se editan a mano.
 

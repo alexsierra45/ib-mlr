@@ -6,260 +6,169 @@
 \titlespacing*{\subsection}{0pt}{5pt}{2pt}
 \setlength{\parskip}{2pt}
 
-\title{\vspace{-1.2cm}Listwise Learning to Rank con AdaRank\\[1pt]
-\large Construcción de un training set de relevancia para consultas LOINC}
-\author{Grupo: [Integrante 1], [Integrante 2], [Integrante 3]\\
-\small Machine Learned Ranking --- MUIA, Universidad Politécnica de Madrid}
+% Nombres de los integrantes (se usan en la portada y en Contribuciones)
+\newcommand{\miembroA}{Alex Sierra}
+\newcommand{\miembroB}{Luis Carles}
+\newcommand{\miembroC}{Gonzalo Miranda Uribe}
+
+\title{\vspace{-1.2cm}Training set listwise para consultas LOINC\\[1pt]
+\large Machine Learned Ranking --- informe del proyecto}
+\author{\miembroA, \miembroB, \miembroC\\
+\small MUIA, Universidad Politécnica de Madrid}
 \date{\vspace{-0.4cm}25 de noviembre de 2026}
 
 \begin{document}
 \maketitle
 
-\section{Introducción y enfoque}
+\section{Objetivo y visión general}
 
-El objetivo es ordenar, para cada consulta clínica, una lista de pruebas de laboratorio codificadas en LOINC
-según su relevancia. En \emph{Learning to Rank} hay tres familias. Los métodos \emph{pointwise} predicen la relevancia de cada documento por separado.
-Los \emph{pairwise} aprenden a ordenar pares de documentos. Los \emph{listwise} optimizan directamente una medida de calidad de la lista
-completa de cada consulta. Hemos elegido el enfoque \textbf{listwise}, porque lo que importa al usuario es el orden
-de la lista y no la puntuación aislada de cada documento. Como algoritmo usamos \textbf{AdaRank} \cite{xu2007adarank}.
+El encargo es construir un \emph{training set} para aprender a ordenar, en enfoque \emph{listwise}, pruebas de laboratorio
+codificadas en LOINC según su relevancia para una consulta clínica, y entrenar con él un ranker (AdaRank \cite{xu2007adarank}).
+El punto de partida es \code{loinc\_dataset-v2.xlsx}: tres consultas (\emph{glucose in blood}, \emph{bilirubin in plasma},
+\emph{white blood cells count}) y los mismos 67 documentos para cada una, es decir, 201 pares sin etiquetar.
 
-\paragraph{AdaRank.} Es un algoritmo de \emph{boosting} que construye un ranker lineal
-$f_T(\mathbf{x})=\sum_{t=1}^{T}\alpha_t h_t(\mathbf{x})$, donde cada ranker débil $h_t$ es una feature.
-Mantiene una distribución de pesos $P_t$ sobre las \emph{consultas}, que empieza uniforme. En cada ronda:
+El proyecto se organizó como un \emph{pipeline} reproducible en cinco etapas, cada una con su script en \code{src/}:
 \begin{enumerate}[nosep]
-\item Elige la feature con mayor $\sum_i P_t(i)\,E(\pi(q_i,h),\mathbf{y}_i)$, donde $E$ es la medida de ranking (aquí NDCG@10).
-\item Le da el peso $\alpha_t=\tfrac12\ln\frac{\sum_i P_t(i)\{1+E(\pi(q_i,h_t),\mathbf{y}_i)\}}{\sum_i P_t(i)\{1-E(\pi(q_i,h_t),\mathbf{y}_i)\}}$.
-\item Actualiza $P_{t+1}(i)\propto\exp(-E(\pi(q_i,f_t),\mathbf{y}_i))$, de modo que las consultas peor ordenadas ganan peso.
+\item \textbf{Etiquetado} de cada par con una escala 0--3 definida por reglas (\code{queries.py}, \code{label.py}).
+\item \textbf{Ampliación} del dataset con más consultas y más documentos sacados de la tabla oficial de LOINC (\code{build\_collection.py}).
+\item \textbf{Features} y exportación al formato LETOR (\code{build\_dataset.py}).
+\item \textbf{Evaluación} \emph{leave-one-query-out} y comparación con cada feature sola (\code{evaluate.py}).
+\item \textbf{Análisis de errores} sobre los rankings obtenidos (\code{falses\_check.py}).
 \end{enumerate}
-La unidad de optimización es, por tanto, la lista de documentos de cada consulta. Usamos como métrica
-$\mathrm{NDCG@}k=\mathrm{DCG@}k/\mathrm{IDCG@}k$, con $\mathrm{DCG@}k=\sum_{r=1}^{k}(2^{y_r}-1)/\log_2(r+1)$ \cite{jarvelin2002}.
+Todo se regenera con tres comandos, y las tablas de este informe salen directamente de los datos (\code{export\_tables.py}).
 
-\section{Dataset y etiquetas de relevancia}
+\section{Trabajo realizado}
 
-El libro \code{loinc\_dataset-v2.xlsx} tiene tres hojas, una por consulta: \emph{glucose in blood} (qid 1),
-\emph{bilirubin in plasma} (qid 2) y \emph{white blood cells count} (qid 3). Cada hoja contiene los mismos 67 códigos
-LOINC, en distinto orden, con las columnas \code{loinc\_num}, \code{long\_common\_name}, \code{component},
-\code{system} y \code{property}. Esto da 201 pares consulta--documento. El Excel no incluye etiquetas, y el orden de las filas
-no se usa como tal.
+\subsection{Etiquetado: escala 0--3 por reglas}
+Cada par consulta--documento se juzga en tres dimensiones, tomadas de las columnas de LOINC:
+el \textbf{analito} (\code{component}: exacto, relacionado o ninguno), la \textbf{muestra} (\code{system}: exacta, compatible
+pero distinta, o incompatible) y la \textbf{medida} (\code{property} y condiciones como \emph{fasting}: adecuada o desviada).
+La etiqueta se calcula de forma determinista: un analito distinto da \rel{0}; si no, se parte de \rel{3} (exacto) o \rel{2}
+(relacionado), se resta 1 si la muestra es compatible y 2 si es incompatible, y 1 más si la medida está desviada, con un
+mínimo de \rel{1}. Cada par guarda sus tres dimensiones y una justificación textual en \code{data/relevance\_labels.csv}, y
+la guía completa está en el anexo \code{labeling\_guidelines.pdf}.
 
-\paragraph{Escala 0--3.} Cada par se juzga en tres dimensiones:
+\subsection{Ampliación del dataset}
+Una primera ampliación manual (\emph{platelets}, \emph{creatinine} y términos buscados a mano) sirvió de piloto y mostró un
+\emph{sesgo de selección}: casi todos los candidatos contenían la palabra de la consulta. La ampliación final se hizo con un
+procedimiento fijo sobre las 62\,148 pruebas activas de LOINC:
 \begin{itemize}[nosep]
-\item \textbf{analito} (\code{component}): exacto, relacionado (fracción o subpoblación) o ninguno;
-\item \textbf{muestra} (\code{system}): exacta, compatible pero distinta, o incompatible;
-\item \textbf{medida/condición} (\code{property} y sufijo \code{\^{}}): adecuada o desviada.
+\item \textbf{12 consultas nuevas por selección estratificada}: para cada estrato \emph{dominio clínico $\times$ muestra} se toma la
+  prueba más frecuente (\code{COMMON\_TEST\_RANK}) y se redacta la consulta a mano. Cubren química, hematología, coagulación,
+  microbiología, uroanálisis, serología, fármacos y patología, y muestras de suero, sangre, orina, vía respiratoria y tejido.
+\item \textbf{Más documentos por \emph{pooling}}, como en TREC/LETOR: por consulta, 40 candidatos por BM25, 20 variantes del
+  analito y 300 aleatorios compartidos, con un límite de casi-duplicados. Con los 67 del Excel suman \textbf{1222 documentos}.
 \end{itemize}
-La regla es determinista:
-\begin{itemize}[nosep]
-\item un analito distinto da \rel{0};
-\item si no, se parte de \rel{3} (analito exacto) o \rel{2} (relacionado);
-\item se resta 1 si la muestra es compatible pero distinta y 2 si es incompatible;
-\item se resta 1 si la medida está desviada;
-\item el mínimo es \rel{1} si se comparte analito.
-\end{itemize}
-Las decisiones clave fueron:
-\begin{itemize}[nosep]
-\item \code{Ser/Plas} es compatible pero distinta de \code{Bld}, así que la glucosa en suero/plasma recibe \rel{2};
-\item WBC = leucocitos, y un \emph{porcentaje} de linfocitos no es un recuento (\rel{1});
-\item la glucosa en ayunas o post-carga es una prueba funcional (medida desviada);
-\item coincidencias léxicas como \emph{Blood product type} reciben \rel{0}.
-\end{itemize}
-La regla está implementada en \code{src/queries.py} y cada par lleva su justificación textual en
-\code{data/relevance\_labels.csv}. La guía completa está en el anexo \code{labeling\_guidelines.pdf}. Respecto a la
-versión inicial (0--2), se corrigió la errata \emph{bilirrubin} de la consulta y cinco juicios incoherentes.
+Todas las consultas se juzgan contra toda la colección con la misma regla, sin cambiar ninguna de las 201 etiquetas oficiales.
 
 \begin{table}[h]
 \centering\footnotesize
-\input{tables/positive_labels.tex}
-\caption{Documentos con relevancia $>0$. Los otros 61--63 documentos de cada consulta son \rel{0}.}
+\input{tables/label_distribution.tex}
+\caption{Distribución de etiquetas. $^\dagger$: consultas de la ampliación.}
 \end{table}
 
-\paragraph{Ampliación sistemática (parte opcional).} Una primera ampliación con términos buscados a mano tenía \emph{sesgo de selección}:
-cada consulta tenía una lista construida de forma distinta, y casi todos sus candidatos contenían la palabra de la consulta. La rehicimos
-con un procedimiento reproducible sobre la tabla oficial de LOINC (62\,148 pruebas de laboratorio activas).
+\subsection{Features y formato LETOR}
+Cada par se describe con seis features que dependen de la consulta y se calculan sin mirar la etiqueta
+(detalle en el anexo \code{feature\_dictionary.pdf}):
 \begin{itemize}[nosep]
-\item \textbf{Más consultas (12), por selección estratificada.} Para cada estrato \emph{dominio clínico $\times$ muestra} se toma la prueba
-  más frecuente según \code{COMMON\_TEST\_RANK}. El texto de la consulta se redacta a mano. Así varían el dominio (química, hematología,
-  coagulación, microbiología, uroanálisis, serología, fármacos, patología), la muestra (suero, sangre, orina, vía respiratoria, tejido)
-  y el tipo de medida (concentración, recuento, presión parcial, tiempo, presencia, identificación). Por ejemplo:
-  \emph{prothrombin time in plasma}, \emph{ketones in urine}, \emph{SARS-CoV-2 RNA in respiratory specimen}, \emph{EGFR antigen in tissue}.
-\item \textbf{Más términos} (\emph{pooling}, como en TREC/LETOR). Para cada una de las 15 consultas:
-  \begin{itemize}[nosep]
-  \item 40 candidatos por BM25 (distractores léxicos);
-  \item 20 cuyo componente contiene el analito (variantes);
-  \item 300 aleatorios compartidos (negativos fáciles);
-  \item un límite de casi-duplicados.
-  \end{itemize}
-  Con los 67 del Excel, la colección tiene \textbf{1222 documentos}.
+\item $f_1$ coseno TF-IDF y $f_2$ BM25 \cite{robertson2009} entre la consulta y \code{long\_common\_name};
+\item $f_3$ solapamiento de términos aceptando sinónimos (\emph{white cells}$\to$\emph{leukocytes}, \emph{blood}$\to$\emph{bld});
+\item $f_4$ proporción de términos del analito presentes en \code{component};
+\item $f_5$ término de muestra en \code{system} (0/1) y $f_6$ propiedad aceptada para la consulta (0/1).
 \end{itemize}
-Como en el Excel, todas las consultas se juzgan contra toda la colección. La regla se extendió a variantes de sangre, paneles,
-valores calculados y registros administrativos, sin cambiar ninguna de las 201 etiquetas oficiales. En la coagulación, el analito
-se juzga por el nombre largo, porque LOINC distingue el PT del aPTT por el método y no por el componente. Cada consulta tiene entre
-7 y 84 documentos relevantes, y salen distractores difíciles de forma natural: \emph{Methyl ethyl ketone} para \emph{ketones},
-\emph{aPTT} para \emph{prothrombin time}, \emph{Epidermal growth factor} (el ligando) para \emph{EGFR}.
+Tras revisar las features, $f_1$ y $f_3$ se ajustan con la \textbf{popularidad} del código LOINC. Con $r_d$ el
+\code{COMMON\_TEST\_RANK} del documento, $P(d)=1-\log(1+r_d)/\log(1+20\,000)$ y
+$f_i'=f_i\,[1+\alpha\,(2P(d)-1)]$ con $\alpha=0.1$: un multiplicador entre 0.9 y 1.1 que, a igualdad de texto, favorece las
+pruebas más usadas. Los documentos sin rango no se modifican.
+El training set obligatorio es \code{data/train.txt} (201 líneas, 67 por \code{qid}); las ampliaciones van en
+\code{train\_terms.txt} ($3\times1222$) y \code{train\_extended.txt} ($15\times1222$). Un script comprueba recuentos, rangos y
+34 casos de referencia antes de escribir los ficheros.
 
-\section{Features y formato del training set}
+\subsection{Evaluación y análisis de errores}
+Con tan pocas consultas no hay partición train/test fiable, así que usamos \textbf{leave-one-query-out}: cada fold entrena con
+todas las consultas menos una y evalúa en la restante con NDCG@$k$ \cite{jarvelin2002}. Cada feature usada sola sirve de línea base.
+Además, un script cruza los rankings con las etiquetas y localiza documentos poco relevantes promocionados al top-10
+(\emph{falsos positivos}) y documentos relevantes que quedan por debajo del puesto 10 (\emph{falsos negativos}).
 
-Cada par se describe con cinco features que dependen de la consulta y se calculan \emph{sin} mirar la etiqueta
-(detalle en \code{feature\_dictionary.pdf}):
-\begin{itemize}[nosep]
-\item $f_1$: coseno TF-IDF entre la consulta y \code{long\_common\_name};
-\item $f_2$: BM25 normalizado por consulta \cite{robertson2009};
-\item $f_3$: solapamiento de términos con sinónimos (\emph{white cells}$\to$\emph{leukocytes}, \emph{blood}$\to$\emph{bld});
-\item $f_4$: el analito de la consulta aparece en \code{component} (0/1);
-\item $f_5$: el término de muestra aparece en \code{system} (0/1).
-\end{itemize}
+\section{Decisiones fundamentales}
 
-Durante la experimentación comprobamos que no todas estas features aportaban información de ordenación
-independiente. En particular, $f_2$ producía prácticamente el mismo ranking que $f_1$. Esta redundancia se
-comprobó mediante la correlación de rangos de Spearman entre ambas puntuaciones, superior a 0.99 por consulta.
-Por ello, mantener ambas no aportaba una señal de ranking claramente distinta. Las features $f_4$ y $f_5$
-también se examinaron con cautela, ya que utilizan columnas (\code{component} y \code{system}) relacionadas
-directamente con los criterios empleados para generar las etiquetas.
+\begin{center}
+\footnotesize
+\begin{tabularx}{\linewidth}{>{\raggedright}p{4.3cm} >{\raggedright\arraybackslash}X}
+\toprule
+Decisión & Motivo \\
+\midrule
+Escala 0--3 calculada por reglas, no a ojo & Etiquetas reproducibles y explicables; cada par tiene su justificación. La versión inicial (0--2) tenía juicios incoherentes. \\
+\code{Ser/Plas} frente a \code{Bld}: compatible, \rel{2} & Es la misma determinación en otra muestra: relevante, pero no lo que se pidió. \\
+WBC = leucocitos; un porcentaje no es un recuento & La consulta pide un recuento total: subpoblaciones \rel{2}, proporciones \rel{1}. \\
+Coincidencia léxica no implica relevancia & \emph{Blood product type} para \emph{glucose in blood}, o \emph{aPTT} para \emph{prothrombin time}, son \rel{0}. \\
+Ampliación por pooling y estratificación, no a mano & El piloto manual tenía sesgo de selección; un procedimiento fijo trata igual a todas las consultas. \\
+No forzar una distribución ``equilibrada'' de etiquetas & Repartir las notas por igual no es realista y distorsiona el NDCG; la proporción de relevantes sale sola. \\
+Features que dependen de la consulta & Se eliminaron las codificaciones \code{LabelEncoder}: son iguales para cualquier consulta y no sirven para ordenar. \\
+Popularidad como ajuste de $f_1$ y $f_3$, no como feature & Como feature independiente no mejoraba; como ajuste suave desempata a favor de la prueba de uso común. \\
+Evaluación leave-one-query-out & Con 3--15 consultas, una partición train/test dejaría una sola consulta de test. \\
+\bottomrule
+\end{tabularx}
+\end{center}
 
-\paragraph{Features tras la revisión.}
-
-\begin{itemize}[nosep]
-\item $f_1$: coseno TF-IDF entre la consulta y \code{long\_common\_name} Ajustada con popularidad;
-\item $f_2$: BM25 normalizado por consulta \cite{robertson2009};
-\item $f_3$: solapamiento de términos con sinónimos(\emph{white cells}$\to$\emph{leukocytes}, \emph{blood}$\to$\emph{bld}) Ajustada con popularidad;
-\item $f_4$: proporción de analitos de la consulta presentes en \code{component};
-\item $f_5$: coincidencia del término de muestra de la consulta con \code{system} (0/1);
-\item $f_6$: coincidencia entre la propiedad del documento y las propiedades aceptadas para la consulta, utilizando \code{property} (0/1).
-\end{itemize}
-
-Las codificaciones \code{LabelEncoder} del trabajo inicial se eliminaron. Eran índices alfabéticos, iguales para cualquier consulta,
-y no tienen sentido como rankers débiles. El training set obligatorio se exporta en formato LETOR (\code{data/train.txt}): 201 líneas
-agrupadas en 67 por \code{qid}, con el código LOINC en comentario. Las ampliaciones van en archivos aparte:
-\begin{itemize}[nosep]
-\item \code{train\_terms.txt}: $3\times1222$ pares;
-\item \code{train\_extended.txt}: $15\times1222$ pares.
-\end{itemize}
-Un script comprueba los recuentos, que la lista de documentos es la misma para cada consulta,
-que las etiquetas están en $\{0,\dots,3\}$, que las features son finitas y 34 casos de referencia (incluidos distractores).
-
-\input{tables/letor_example.tex}
-
-\section{Verificación, resultados y limitaciones}
-
-Con pocas consultas no hay partición train/test fiable. Hacemos \textbf{leave-one-query-out}: cada fold entrena con todas las consultas menos una y evalúa en la restante, sin
-repartir documentos de una misma consulta entre train y test. Comparamos con cada feature usada sola como ranker.
+\section{Resultados y limitaciones}
 
 \begin{table}[h]
 \centering\footnotesize
 \input{tables/loqo_results.tex}
-\caption{NDCG@5 y NDCG@10 medios en leave-one-query-out, en las tres configuraciones (consultas $\times$ documentos).}
+\caption{NDCG@5 y NDCG@10 medios en leave-one-query-out (consultas $\times$ documentos).}
 \end{table}
 
-\paragraph{Resultados.} Sobre el training set oficial, el modelo entrenado con las tres consultas ($\alpha_{f_1}{=}2.82$, $\alpha_{f_3}{=}1.41$)
-ordena perfectamente su propio conjunto: todos los documentos relevantes quedan arriba, en orden de etiqueta. En leave-one-query-out, en cambio, AdaRank \emph{no}
-supera a la mejor feature individual. Con dos consultas de entrenamiento elige la feature que mejor ordena esas dos, y esa feature no tiene por qué servir para la tercera.
-Por ejemplo, $f_1$ falla en \emph{white blood cells count} porque la consulta no comparte vocabulario con \emph{Leukocytes}, mientras que $f_3$ (con sinónimos) acierta.
-
-La colección completa hace la tarea mucho más difícil. Con las 3 consultas oficiales sobre 1222 documentos, AdaRank cae a NDCG@10 = 0.433,
-por debajo de $f_1$ sola (0.547): con dos consultas de entrenamiento sobreajusta. Los documentos del pooling actúan como \emph{distractores difíciles}.
-En \emph{white blood cells count}, las proporciones \emph{X cells/Leukocytes in Blood} (relevancia 1) contienen literalmente \emph{cells}
-y \emph{blood}, y desplazan a \emph{Leukocytes [\#/volume] in Blood by Automated count} (relevancia 3) hasta el puesto 21.
-
-Con las 15 consultas variadas, AdaRank (NDCG@10 = 0.627) queda cerca de $f_1$ (0.635) y por debajo de $f_3$ sola (0.660). El rendimiento
-depende mucho del tipo de consulta. Es alto cuando el nombre LOINC contiene las palabras de la consulta (\emph{EGFR} 1.00, \emph{leukocyte
-esterase} 0.96, \emph{p-ANCA} 0.94) y nulo cuando no: en \emph{red blood cells count}, los índices \emph{MCHC} y \emph{MCV in Red Blood Cells}
-(relevancia 0) contienen literalmente la consulta, y NDCG@10 = 0. Las features léxicas no distinguen los matices que separan un 3 de un 2
-o de un 1 (condición, muestra, cociente), y una combinación lineal de ellas no puede suplirlo. La conclusión es doble: la variedad de
-consultas revela dónde fallan las features, y para mejorar hacen falta features más expresivas, como la similitud semántica biomédica
-o la especificidad estructural del término LOINC.
-
-\paragraph{Refinamiento de features: popularidad de los códigos LOINC.}
-A partir de la observación de que AdaRank no aprovechaba de forma consistente todas las features inicialmente implementadas, exploramos si la frecuencia de uso de los 
-códigos podía aportar una señal complementaria. Se utilizó \code{COMMON\_TEST\_RANK} como indicador de popularidad. La primera aproximación consistió en introducir la 
-popularidad como una feature independiente; sin embargo, esta alternativa no produjo resultados suficientemente satisfactorios y no resolvió por sí sola las limitaciones 
-del ranking.
-
-La estrategia más útil fue incorporar la popularidad como un ajuste suave de las dos señales léxicas que sí resultaban útiles, $f_1$ y $f_3$, en lugar de presentarla 
-como un ranker independiente. Dado que un valor de rango más bajo representa una mayor frecuencia de uso, se aplicó una transformación logarítmica para normalizar estos 
-valores y obtener una puntuación de popularidad entre cero y uno:
-
-\[
-P(d) =
-1 - \frac{\log(1+r_d)}{\log(1+r_{\max})}
-\]
-
-donde $r_d$ representa el rango de popularidad del documento y $r_{\max}$ el rango máximo considerado (20\,000). De este modo, los códigos más frecuentes obtienen valores 
-de popularidad próximos a uno, mientras que los menos frecuentes obtienen valores próximos a cero. Los documentos sin un rango válido o con valor cero se trataron de forma 
-neutral, sin recibir bonificación ni penalización por popularidad. A continuación, se centró la puntuación de popularidad mediante la transformación:
-
-\[
-P_c(d) = 2P(d)-1
-\]
-
-Y se aplicó un factor multiplicativo a ambas features:
-
-\[
-f_i'(q,d) =
-f_i(q,d)\left[1+\alpha P_c(d)\right],
-\qquad i\in\{1,3\}
-\]
-
-donde $\alpha$ controla la intensidad del ajuste. En los experimentos se utilizó $\alpha=0.1$, por lo que el multiplicador se encuentra entre $0.9$ y $1.1$.
-
-El ajuste favorece moderadamente los códigos más frecuentes y modifica las puntuaciones originales sin sustituir su información de similitud. En los experimentos 
-leave-one-query-out, esta modificación mejoró especialmente el conjunto oficial. En el conjunto extendido también se observaron mejoras, mientras que en \code{terms} el 
-efecto fue mixto y no mejoró todas las métricas.
-
-Con el ajuste probado ($\alpha=0.1$), los resultados medios fueron:
-
-\begin{center}
-\footnotesize
-\begin{tabular}{lrrrr}
-\hline
-Configuración & NDCG@1 & NDCG@3 & NDCG@5 & NDCG@10 \\
-\hline
-Oficial & 1.0000 & 0.9519 & 0.9803 & 0.9803 \\
-Terms & 0.6667 & 0.5595 & 0.5666 & 0.4824 \\
-Extended & 0.7048 & 0.6607 & 0.6718 & 0.6947 \\
-\hline
-\end{tabular}
-\end{center}
-
-Estos resultados deben interpretarse junto con la línea base y las métricas de cada configuración: la mejora fue clara en el conjunto oficial y en el extendido, pero no 
-uniforme en \code{terms}, donde NDCG@10 disminuyó respecto a la ejecución de referencia. Por tanto, el ajuste de popularidad es una mejora prometedora, no una
-solución universal. Además, al multiplicar las puntuaciones de $f_1$ y $f_3$, los valores ajustados dejan de representar exactamente las métricas originales; por ejemplo, 
-el solapamiento ajustado puede superar 1 sin que ello implique un error de cálculo.
-
-\paragraph{Análisis de errores.}
-Para facilitar la inspección cualitativa de los rankings se desarrolló un procedimiento que combina las predicciones exportadas por el ranker con las etiquetas LETOR y los 
-metadatos de \code{collection.csv}. El análisis identifica documentos de baja relevancia situados en posiciones altas y documentos relevantes que aparecen por debajo de un 
-umbral de posición. Aunque se denominan informalmente \emph{falsos positivos} y \emph{falsos negativos}, las etiquetas son graduadas (0--3), por lo que estos grupos representan 
-promociones y pérdidas de posición según umbrales de análisis, no errores de un clasificador binario.
-
-La inspección de estos casos permitió localizar patrones que no eran evidentes en las métricas agregadas. Entre ellos, la promoción de fracciones o ratios de bilirrubina y 
-de proporciones de subpoblaciones de leucocitos, así como el descenso de mediciones relevantes de glucosa y de recuentos celulares. Este análisis sirve para orientar la revisión 
-de las features y de los criterios de relevancia, y proporciona ejemplos concretos para estudiar las limitaciones del modelo.
+\paragraph{Resultados.}
+\begin{itemize}[nosep]
+\item El \textbf{ajuste de popularidad} es la mejora más clara. Respecto a la versión anterior de las features, el NDCG@10 de
+  AdaRank pasa de 0.798 a 0.980 en el conjunto oficial, de 0.433 a 0.482 con más términos y de 0.627 a 0.695 con 15 consultas.
+  En \emph{white blood cells count} sobre la colección completa, el recuento total de leucocitos pasa del puesto 21 al 1.
+\item AdaRank acaba eligiendo \textbf{una sola feature}: $f_1$ con el conjunto oficial y $f_3$ con la colección completa. Con 15
+  consultas iguala a $f_3$ sola (0.695). Con 3 consultas sobre 1222 documentos sobreajusta y queda por debajo de $f_3$ (0.482 frente a 0.665).
+\item El rendimiento depende del tipo de consulta: es alto cuando el nombre LOINC contiene la consulta (\emph{leukocyte esterase} 0.96,
+  \emph{bacteria in urine culture} 0.90, \emph{prothrombin time} 0.88) y bajo cuando no (\emph{red blood cells count} 0.49,
+  \emph{SARS-CoV-2 RNA} 0.51).
+\item El análisis de errores muestra el patrón: las features léxicas no distinguen fracciones o cocientes (\emph{Bilirubin.direct/Bilirubin.total}),
+  muestras especiales (\emph{cord blood}) ni condiciones, que son justo lo que separa un \rel{3} de un \rel{1}.
+\end{itemize}
 
 \paragraph{Limitaciones.}
 \begin{itemize}[nosep]
-\item Quince consultas siguen siendo pocas para estimar la generalización; los resultados son demostrativos.
-\item Las etiquetas de la colección ampliada se han revisado por muestreo, no una a una. El texto de las 12 consultas nuevas es nuestro,
-  aunque las pruebas se eligieron automáticamente.
-\item En el Excel las etiquetas son muy dispersas: 4--6 documentos relevantes de 67.
-\item $f_4$ y $f_5$ se inspiran en las mismas columnas que la regla de etiquetado, aunque son más gruesas.
-\item Las features binarias producen empates, y NDCG resuelve los empates según el orden de entrada.
-\item En la implementación de AdaRank \cite{adarankgit} corregimos una división por cero: si un ranker débil es perfecto en todas las
-  consultas, $\alpha=\infty$ y las predicciones salen NaN.
+\item Quince consultas siguen siendo pocas: los resultados son demostrativos.
+\item La popularidad tiene un sesgo de construcción: las consultas nuevas se eligieron como la prueba más frecuente de su estrato,
+  y esa prueba es su documento \rel{3}. Parte de la mejora puede venir de ahí.
+\item $f_4$, $f_5$ y $f_6$ usan las mismas columnas que la regla de etiquetado, aunque de forma más gruesa. En la práctica AdaRank no las elige.
+\item Las etiquetas de la colección ampliada se revisaron por muestreo, no una a una.
+\item Hacen falta features más expresivas (similitud semántica biomédica, estructura del término LOINC) para los casos difíciles.
 \end{itemize}
 
 \section{Contribuciones}
 
-\begin{itemize}[nosep]
-\item \textbf{[Integrante 1]}: implementación de AdaRank y métricas, primera versión del dataset (0--2) y notebook inicial.
-\item \textbf{[Integrante 2]}: escala de relevancia 0--3 y guía de etiquetado, features, exportación LETOR,
-  ampliación sistemática (selección de consultas y pooling sobre LOINC), evaluación leave-one-query-out y documentación.
-  Primera ampliación del dataset con términos y consultas nuevas (\emph{platelets}, \emph{creatinine}), que sirvió de piloto
-  para detectar el sesgo de selección y diseñar la ampliación sistemática.
-\item \textbf{[Integrante 3]}: Análisis de redundancia entre features mediante correlación de Spearman, evaluación de la popularidad 
-  de los códigos LOINC como señal independiente y como ajuste de $f_1$ y $f_3$. Desarrollo de un procedimiento de análisis de errores 
-  para identificar documentos de baja relevancia promocionados a posiciones altas y documentos relevantes infravalorados, facilitando 
-  la propuesta de mejoras.
-\end{itemize}
+El trabajo se repartió por etapas del pipeline, y las decisiones de la sección~3 se discutieron entre los tres.
+
+\begin{center}
+\footnotesize
+\begin{tabularx}{\linewidth}{>{\raggedright}p{2.6cm} >{\raggedright}p{3.6cm} >{\raggedright\arraybackslash}X}
+\toprule
+Integrante & Área & Trabajo \\
+\midrule
+\miembroC & Base del proyecto y presentación &
+  Implementación base de AdaRank \cite{adarankgit} y de las métricas, primera versión del dataset (0--2) y notebook.
+  Ampliación piloto con \emph{platelets} y \emph{creatinine}, que destapó el sesgo de selección.
+  Estudio de AdaRank y presentación del proyecto. \\
+\addlinespace
+\miembroA & Etiquetado y ampliación &
+  Escala 0--3, regla de relevancia y guía de etiquetado. Ampliación sistemática: selección estratificada de las 12 consultas y
+  pooling sobre LOINC. Pipeline reproducible con comprobaciones, exportación LETOR y documentación LaTeX. \\
+\addlinespace
+\miembroB & Features y análisis &
+  Revisión de las features: redundancia $f_1$--$f_2$ (Spearman $>0.99$), $f_4$ proporcional y nueva $f_6$.
+  Popularidad de los códigos LOINC, primero como feature y después como ajuste de $f_1$ y $f_3$.
+  Análisis de errores (falsos positivos y negativos) para orientar las mejoras. \\
+\bottomrule
+\end{tabularx}
+\end{center}
 
 \begin{thebibliography}{9}\small\setlength{\itemsep}{0pt}
 \bibitem{xu2007adarank} J.~Xu y H.~Li. AdaRank: a boosting algorithm for information retrieval. \emph{SIGIR}, 2007.
