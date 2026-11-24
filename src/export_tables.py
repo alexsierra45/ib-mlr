@@ -26,6 +26,7 @@ FEAT_TEX = {f: r'$f_{}$'.format(i + 1) for i, f in enumerate(FEATURES)}
 FEAT_NAME = {
     'f1_tfidf_cosine': 'coseno TF-IDF', 'f2_bm25': 'BM25', 'f3_synonym_overlap': 'solap. sinónimos',
     'f4_component_match': 'analito en component', 'f5_system_match': 'muestra en system',
+    'f6_property_match': 'propiedad aceptada',
 }
 CONFIG_NAME = {'official': 'Oficial', 'terms': '+ términos', 'extended': '+ términos y consultas'}
 CONFIG_TEX = {}  # se rellena en main() con los tamaños reales, p. ej. "Oficial (3x67)"
@@ -155,7 +156,7 @@ def main():
         rows.append([system_label(s)] + vals)
     write('loqo_results.tex', tabular('lrrrrrr', header, rows))
 
-    # 5. LOQO por consulta de test: AdaRank vs f1, NDCG@10 en las tres configuraciones
+    # 5. LOQO por consulta de test: AdaRank vs f3 (la mejor feature sola), NDCG@10 en las tres configuraciones
     per = {c: pd.read_csv(os.path.join(ROOT, 'results', 'loqo_{}.csv'.format(c))) for c in CONFIG_TEX}
     rows = []
     for qid in per['extended'].test_qid.unique():
@@ -163,13 +164,13 @@ def main():
         for c in CONFIG_TEX:
             r = per[c][per[c].test_qid == qid].set_index('system')
             vals += ['{:.3f}'.format(r.loc[s, 'NDCG@10']) if qid in per[c].test_qid.values else '--'
-                     for s in ('AdaRank', 'solo f1_tfidf_cosine')]
+                     for s in ('AdaRank', 'solo f3_synonym_overlap')]
         mark = '' if qid <= 3 else r'$^\dagger$'
         rows.append([esc(qname[qid]) + mark] + vals)
     header = [r'& \multicolumn{2}{c}{' + CONFIG_TEX['official'] + r'} & \multicolumn{2}{c}{' +
               CONFIG_TEX['terms'] + r'} & \multicolumn{2}{c}{' + CONFIG_TEX['extended'] + r'} \\',
               r'\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}',
-              r'Consulta de test & AdaR. & $f_1$ & AdaR. & $f_1$ & AdaR. & $f_1$ \\']
+              r'Consulta de test & AdaR. & $f_3$ & AdaR. & $f_3$ & AdaR. & $f_3$ \\']
     write('loqo_per_fold.tex', tabular('lrrrrrr', header, rows))
 
     # 6. Coeficientes del modelo final en cada configuración
@@ -188,8 +189,9 @@ def main():
     rk = rk[rk.qid == 3]
     rows = ranking_rows(rk, names, qname, 6)
     best = rk[rk.relevance == 3].iloc[0]
-    rows += [r'\multicolumn{5}{c}{$\vdots$} \\',
-             ['', str(best['rank']), esc(names[best.loinc_num]), '3', '{:.2f}'.format(best.score)]]
+    if best['rank'] > 6:  # el primer documento 3 queda fuera del top-6: se muestra aparte
+        rows += [r'\multicolumn{5}{c}{$\vdots$} \\',
+                 ['', str(best['rank']), esc(names[best.loinc_num]), '3', '{:.2f}'.format(best.score)]]
     write('ranking_terms_wbc.tex', tabular('lrp{7cm}cr', ['Consulta', 'Pos.', 'Documento', 'Rel.', 'Score'],
                                            rows))
 
